@@ -1,6 +1,6 @@
 const Offer: React.FC = () => {
 	return (
-		<section id='oferta'>
+		<section id='oferta' style={{ minHeight: '100vh' }}>
 			<p>Oferta!</p>
 		</section>
 	);

@@ -1,6 +1,6 @@
 const Welcome: React.FC = () => {
 	return (
-		<section>
+		<section style={{ minHeight: '100vh' }}>
 			<p>Powitalny jpeg!</p>
 		</section>
 	);
