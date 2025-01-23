@@ -1,2 +1,32 @@
 @media screen and (min-width: 768px) {
+	.header {
+		&__container {
+			justify-content: space-around;
+		}
+	}
+
+	.navbar {
+		&__desktop {
+			display: block;
+		}
+
+		&__mobile-burger-btn {
+			display: none;
+		}
+
+		&__desktop-list {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			list-style-type: none;
+		}
+
+		&__item {
+			margin: 0 1rem;
+		}
+
+		&__login-icon {
+			margin-top: 5px;
+		}
+	}
 }

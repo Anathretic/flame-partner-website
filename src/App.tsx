@@ -1,7 +1,7 @@
 import { Route, Routes, Outlet } from 'react-router-dom';
-import { Header, Footer, CookieBar } from './components';
+import { Navbar, Footer, CookieBar } from './components';
 import { Welcome, Offer, ChooseUs, Contact } from './sections';
-import { BoltWork, Blog, Prices, PrivacyPolicy, PageNotFound } from './subpages';
+import { BoltWork, Blog, Prices, PrivacyPolicy, PageNotFound, UberWork, FreeNowWork } from './subpages';
 
 export const App: React.FC = () => {
 	return (
@@ -9,7 +9,7 @@ export const App: React.FC = () => {
 			<Route
 				element={
 					<>
-						<Header />
+						<Navbar />
 						<Outlet />
 						<Footer />
 						<CookieBar />
@@ -27,6 +27,8 @@ export const App: React.FC = () => {
 					}
 				/>
 				<Route path='/praca-w-bolt' element={<BoltWork />} />
+				<Route path='/praca-w-uber' element={<UberWork />} />
+				<Route path='/praca-we-freenow' element={<FreeNowWork />} />
 				<Route path='/blog' element={<Blog />} />
 				<Route path='/cennik' element={<Prices />} />
 				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />

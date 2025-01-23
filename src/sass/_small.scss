@@ -1,2 +1,23 @@
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 500px) {
+	.navbar {
+		&__mobile-list {
+			width: 70vw;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.footer {
+		&__copyright-company-name {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.footer {
+		&__box:nth-of-type(2) {
+			display: block;
+		}
+	}
 }
