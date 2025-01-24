@@ -1,7 +1,7 @@
 @use 'globals';
 
 @media screen and (min-width: 990px) {
-	.header {
+	.navbar {
 		&__container {
 			padding: 0.5rem 0;
 		}
@@ -13,9 +13,7 @@
 		&__title-text {
 			padding: 0;
 		}
-	}
 
-	.navbar {
 		&__desktop-list {
 			font-size: 1.125rem;
 		}
@@ -53,6 +51,10 @@
 
 		&__box:nth-of-type(3) {
 			display: block;
+		}
+
+		&__copyright-box {
+			margin: 1.25rem 0;
 		}
 	}
 }
