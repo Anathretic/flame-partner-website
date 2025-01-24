@@ -31,7 +31,15 @@ body {
 	animation: slideOut 0.5s ease-out;
 }
 
-.header {
+.cookie-banner-text {
+	padding: 0.25em;
+}
+
+.cookie-banner-link {
+	color: globals.$special-yellow-color;
+}
+
+.navbar {
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -69,17 +77,12 @@ body {
 	}
 
 	&__title-text {
-		text-decoration: none;
-
-		h2 {
-			padding: 0.5rem;
-			color: globals.$black-color;
-			text-transform: uppercase;
-		}
+		padding: 0.5rem;
+		color: globals.$black-color;
+		text-transform: uppercase;
+		cursor: pointer;
 	}
-}
 
-.navbar {
 	&__desktop {
 		display: none;
 	}
@@ -201,13 +204,14 @@ body {
 
 	&__copyright-box {
 		@include mixins.flex;
-		margin: 1.25rem 0 0.5rem;
+		margin: 0.75rem 0 1.25rem;
 		z-index: 10;
 	}
 
 	&__copyright-icon {
 		margin: 0 0.25rem;
 		height: auto;
+		color: globals.$black-color;
 	}
 
 	&__copyright-company-name {

@@ -4,3 +4,7 @@ export interface NavbarItemModel {
 	classProps?: string;
 	onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
+
+export interface NavbarTitleModel {
+	divRef: React.MutableRefObject<HTMLDivElement | null>;
+}

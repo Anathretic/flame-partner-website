@@ -1,5 +1,5 @@
 import { Route, Routes, Outlet } from 'react-router-dom';
-import { Navbar, Footer, CookieBar } from './components';
+import { Navbar, Footer, CookieBanner } from './components';
 import { Welcome, Offer, ChooseUs, Contact } from './sections';
 import { BoltWork, Blog, Prices, PrivacyPolicy, PageNotFound, UberWork, FreeNowWork } from './subpages';
 
@@ -12,7 +12,7 @@ export const App: React.FC = () => {
 						<Navbar />
 						<Outlet />
 						<Footer />
-						<CookieBar />
+						<CookieBanner />
 					</>
 				}>
 				<Route
