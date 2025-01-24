@@ -2,9 +2,9 @@ import { FooterItemsModel } from '../../../models/footerItems.model';
 import { scrollToTop } from '../../../utils/scrollToTopUtils';
 
 export const footerHomeItems: FooterItemsModel[] = [
-	{ to: '/#oferta', onClick: scrollToTop, content: 'Oferta' },
-	{ to: '/#wybierz-nas', onClick: scrollToTop, content: 'Wybierz Nas' },
-	{ to: '/#kontakt', onClick: scrollToTop, content: 'Kontakt' },
+	{ to: '/#oferta', content: 'Oferta' },
+	{ to: '/#wybierz-nas', content: 'Wybierz Nas' },
+	{ to: '/#kontakt', content: 'Kontakt' },
 ];
 
 export const footerWorkItems: FooterItemsModel[] = [

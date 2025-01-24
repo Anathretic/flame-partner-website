@@ -35,7 +35,7 @@
 @media screen and (min-width: 1024px) {
 	.navbar {
 		&__item-link:hover {
-			color: globals.$gray-btn-hover-color;
+			color: globals.$gray-hover-color;
 		}
 	}
 
@@ -47,7 +47,7 @@
 
 		&__box {
 			a:hover {
-				color: globals.$gray-btn-hover-color;
+				color: globals.$gray-hover-color;
 			}
 		}
 
