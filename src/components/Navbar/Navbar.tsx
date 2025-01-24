@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { AiOutlineClose } from 'react-icons/ai';
-import { HiMenuAlt4 } from 'react-icons/hi';
 import { HashLink } from 'react-router-hash-link';
 import { NavbarItem } from './components/NavbarItem';
 import { navbarItems } from './components/navbarData/navbarItems';
+import { AiOutlineClose } from 'react-icons/ai';
+import { HiMenuAlt4 } from 'react-icons/hi';
 
 const Navbar: React.FC = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);

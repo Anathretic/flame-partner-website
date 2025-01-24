@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { FaRegCopyright, FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { footerMoreItems, footerHomeItems, footerWorkItems } from './footerItems/footerItems';
+import { FaRegCopyright, FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
@@ -35,9 +35,7 @@ const Footer: React.FC = () => {
 					<ul>
 						{footerHomeItems.map((item, id) => (
 							<li key={id}>
-								<HashLink to={item.to} onClick={item.onClick}>
-									{item.content}
-								</HashLink>
+								<HashLink to={item.to}>{item.content}</HashLink>
 							</li>
 						))}
 					</ul>
