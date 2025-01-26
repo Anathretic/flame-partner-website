@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
 	};
 
 	const handleScroll = () => {
-		if (window.scrollY > 80) {
+		if (window.scrollY > 30) {
 			setIsScrolled(true);
 		} else {
 			setIsScrolled(false);
@@ -47,7 +47,10 @@ const Navbar: React.FC = () => {
 	return (
 		<header ref={divRef}>
 			<div className='navbar'>
-				<div className={`navbar__container ${isScrolled ? 'navbar__container--is-scrolled' : ''}`}>
+				<div
+					className={`navbar__container ${
+						isScrolled ? 'navbar__container--is-scrolled navbar-is-scrolled' : 'navbar-is-not-scrolled'
+					}`}>
 					<NavbarTitle divRef={divRef} />
 					{isMobile ? (
 						<>

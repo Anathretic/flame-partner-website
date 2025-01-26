@@ -19,3 +19,9 @@
 		transform: translateX(120%);
 	}
 }
+
+@keyframes bounce {
+	65% {
+		bottom: 5em;
+	}
+}

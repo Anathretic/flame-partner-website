@@ -1,9 +1,5 @@
 export const navbarItems = [
 	{
-		title: 'home',
-		section: '/#',
-	},
-	{
 		title: 'oferta',
 		section: '/#oferta',
 	},
