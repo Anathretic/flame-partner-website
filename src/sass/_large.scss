@@ -2,10 +2,6 @@
 
 @media screen and (min-width: 990px) {
 	.navbar {
-		&__container {
-			padding: 0.5rem 0;
-		}
-
 		&__title-box {
 			margin: 0 0.5rem;
 		}
@@ -21,6 +17,10 @@
 		&__item {
 			margin: 0 2rem;
 		}
+
+		&__item-link {
+			font-size: 1rem;
+		}
 	}
 
 	.footer {
@@ -32,8 +32,105 @@
 
 @media screen and (min-width: 1024px) {
 	.navbar {
+		&__container {
+			padding: 0 0.5rem;
+		}
+
+		&__title {
+			padding-left: 2rem;
+		}
+
 		&__item-link:hover {
 			color: globals.$gray-hover-color;
+		}
+	}
+
+	.welcome {
+		display: grid;
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		background: transparent;
+		background-color: globals.$dark-blue-color;
+
+		&__text-container {
+			position: relative;
+			grid-column: 1/2;
+			text-align: left;
+		}
+
+		&__text-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		&__text-container-icon {
+			display: block;
+			position: absolute;
+			color: rgba(255, 255, 255, 0.15);
+
+			&--first {
+				top: -2em;
+				right: 5em;
+			}
+
+			&--second {
+				display: none;
+			}
+
+			&--third {
+				bottom: -4em;
+				left: 1em;
+			}
+
+			&--fourth {
+				bottom: -2.5em;
+				right: 2.5em;
+			}
+
+			&--fifth {
+				top: -1.25em;
+				right: 1em;
+			}
+		}
+
+		&__special-text {
+			font-size: 3.5em;
+		}
+
+		&__subtext {
+			margin-left: 4px;
+		}
+
+		&__special-button:hover {
+			color: globals.$white-color;
+			background-color: globals.$darker-blue-color;
+		}
+
+		&__image-container {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-image: url('../images/welcome-section/welcome-image.jpg');
+			background-position: center;
+			background-size: cover;
+			grid-column: 2/3;
+		}
+
+		&__image-button-box {
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			padding-bottom: 3em;
+			height: 100%;
+
+			img {
+				padding: 0.5em;
+				max-width: 80px;
+				border-radius: 24px;
+			}
 		}
 	}
 
@@ -59,16 +156,96 @@
 	}
 }
 
+@media screen and (min-width: 1358px) {
+	.navbar {
+		&__container {
+			padding: 0 6rem;
+		}
+
+		&__item-link {
+			font-size: 1.1rem;
+		}
+	}
+}
+
 @media screen and (min-width: 1536px) {
 	.navbar {
+		&__container {
+			padding: 0 8rem;
+		}
+
+		&__title {
+			padding-left: 1rem;
+		}
+
 		&__login-icon {
 			margin: 5px 2rem 0;
+		}
+	}
+
+	.welcome {
+		&__special-text {
+			font-size: 4.5rem;
+		}
+
+		&__subtext {
+			font-size: 1.1rem;
+		}
+
+		&__text-container-icon {
+			display: block;
+			position: absolute;
+			color: rgba(255, 255, 255, 0.15);
+
+			&--first {
+				top: -2.5em;
+				right: 6em;
+			}
+
+			&--second {
+				top: -0.5em;
+				left: 1.5em;
+			}
+
+			&--third {
+				bottom: -3.5em;
+				left: 3em;
+			}
+
+			&--fourth {
+				bottom: -3.5em;
+				right: 3em;
+			}
+
+			&--fifth {
+				top: 0;
+				right: 1em;
+			}
+		}
+
+		&__image-button-box {
+			padding-bottom: 5em;
+
+			img {
+				padding: 0.75em;
+				margin: 0.25em;
+				max-width: 96px;
+			}
 		}
 	}
 
 	.footer {
 		&__box:nth-of-type(4) {
 			display: block;
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.navbar {
+		&__container {
+			max-width: 2160px;
+			padding: 0 13rem;
 		}
 	}
 }

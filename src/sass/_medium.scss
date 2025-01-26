@@ -1,7 +1,10 @@
+@use 'globals';
+
 @media screen and (min-width: 768px) {
 	.navbar {
 		&__container {
-			justify-content: space-around;
+			padding: 0 2.5rem;
+			justify-content: space-between;
 		}
 
 		&__desktop {
@@ -25,6 +28,37 @@
 
 		&__login-icon {
 			margin-top: 5px;
+		}
+	}
+
+	.navbar-is-not-scrolled {
+		.navbar {
+			&__item-link {
+				color: globals.$white-color;
+			}
+		}
+	}
+
+	.navbar-is-scrolled {
+		.navbar {
+			&__item-link {
+				color: globals.$black-color;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+	.welcome {
+		&__special-text {
+			font-size: 5rem;
+		}
+
+		&__special-button {
+			padding: 0.7em 3em;
+			max-width: 200px;
+			width: 200px;
+			text-align: center;
 		}
 	}
 }
