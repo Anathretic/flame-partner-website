@@ -193,7 +193,7 @@ body {
 		width: 100%;
 	}
 
-	&__special-text {
+	&__main-text {
 		text-align: center;
 		padding-bottom: 2rem;
 		font-size: 2.5rem;
@@ -201,14 +201,14 @@ body {
 		font-weight: bold;
 	}
 
-	&__special-subtext {
+	&__sub-text {
 		span {
 			font-weight: bold;
 			font-style: italic;
 		}
 	}
 
-	&__special-button {
+	&__special-btn {
 		display: none;
 	}
 
@@ -216,8 +216,8 @@ body {
 		display: none;
 	}
 
-	&__image-container,
-	&__image-button-box {
+	&__btn-container,
+	&__btn-box {
 		display: none;
 	}
 }

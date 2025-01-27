@@ -50,14 +50,15 @@
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
 	.welcome {
-		&__special-text {
+		&__main-text {
 			font-size: 5rem;
 		}
 
-		&__special-button {
-			padding: 0.7em 3em;
-			max-width: 200px;
-			width: 200px;
+		&__special-btn {
+			padding: 0.8em 0;
+			margin-top: 1em;
+			max-width: 250px;
+			width: 250px;
 			text-align: center;
 		}
 	}
