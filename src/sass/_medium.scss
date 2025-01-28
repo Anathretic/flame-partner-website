@@ -42,8 +42,22 @@
 	.navbar-is-scrolled {
 		.navbar {
 			&__item-link {
-				color: globals.$black-color;
+				color: globals.$darker-blue-color;
 			}
+		}
+	}
+
+	.choose-us {
+		&__special-block {
+			width: 35%;
+			height: 50px;
+		}
+	}
+
+	.contact {
+		&__special-block {
+			width: 35%;
+			height: 50px;
 		}
 	}
 }
@@ -61,5 +75,28 @@
 			width: 250px;
 			text-align: center;
 		}
+
+		&__icon-container {
+			position: absolute;
+			display: block;
+			bottom: 1em;
+			left: 50%;
+			padding: 0.25em;
+			transform: translateX(-50%);
+			animation: bounce 2s infinite;
+		}
+	}
+
+	.form {
+		&__submit {
+			padding: 0.8em 0;
+			margin-top: 1em;
+			max-width: 250px;
+			width: 250px;
+		}
+	}
+
+	.loader {
+		margin: 1.23em 0;
 	}
 }

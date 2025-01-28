@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { scrollToTop } from '../utils/scrollToTopUtils';
 import { FaTaxi } from 'react-icons/fa';
+import { SlArrowDown } from 'react-icons/sl';
 
 import BoltIcon from '../images/welcome-section/brand-icons/bolt-icon.jpg';
 import UberIcon from '../images/welcome-section/brand-icons/uber-icon.jpg';
@@ -40,6 +41,11 @@ const Welcome: React.FC = () => {
 						<img src={FreenowIcon} alt='' />
 					</Link>
 				</div>
+			</div>
+			<div className='welcome__icon-container'>
+				<HashLink smooth to='/#oferta' className='welcome__arrow-icon'>
+					<SlArrowDown fontSize={60} color='#f0f0f0' />
+				</HashLink>
 			</div>
 		</section>
 	);

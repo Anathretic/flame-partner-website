@@ -1,4 +1,5 @@
 @use 'globals';
+@use 'mixins';
 
 @media screen and (min-width: 990px) {
 	.navbar {
@@ -41,7 +42,7 @@
 		}
 
 		&__item-link:hover {
-			color: globals.$gray-hover-color;
+			color: globals.$gray-color;
 		}
 	}
 
@@ -59,9 +60,7 @@
 		}
 
 		&__text-box {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include mixins.flex;
 			flex-direction: column;
 			width: 100%;
 		}
@@ -147,15 +146,49 @@
 		}
 	}
 
+	.contact {
+		&__title {
+			font-size: 3rem;
+		}
+	}
+
+	.form {
+		&__label {
+			font-size: 1.1em;
+		}
+
+		&__input-error,
+		&__textarea-error {
+			font-size: 0.9em;
+		}
+
+		&__submit {
+			font-size: 1.1em;
+
+			&:hover {
+				color: globals.$white-color;
+				background-color: globals.$dark-blue-color;
+			}
+		}
+
+		&__special-text {
+			font-size: 1.1rem;
+		}
+	}
+
+	.loader {
+		margin: 1.49em 0;
+	}
+
 	.footer {
 		&__container {
 			padding: 4rem;
-			margin: 2.5rem 0 0;
+			margin: 0;
 		}
 
 		&__box {
 			a:hover {
-				color: globals.$gray-hover-color;
+				color: globals.$gray-color;
 			}
 		}
 
@@ -177,6 +210,85 @@
 
 		&__item-link {
 			font-size: 1.1rem;
+		}
+	}
+
+	.choose-us {
+		&__special-block {
+			width: 41%;
+			height: 45px;
+
+			&--right {
+				display: none;
+			}
+		}
+	}
+
+	.contact {
+		padding-top: 70px;
+
+		&__container {
+			align-items: start;
+			flex-direction: row;
+		}
+
+		&__title-box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			margin-left: 4rem;
+		}
+
+		&__title,
+		&__title-subtext {
+			text-align: left;
+		}
+
+		&__title {
+			padding: 0.5rem 0.85rem 0;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__title-info-box {
+			padding: 2rem 1rem;
+			justify-content: start;
+			font-size: 1.1rem;
+		}
+
+		&__title-icon {
+			position: absolute;
+			display: block;
+			color: rgba(10, 10, 10, 0.3);
+
+			&--first {
+				bottom: -1.5em;
+				left: 2em;
+			}
+
+			&--second {
+				bottom: -2.35em;
+				left: 3.2em;
+			}
+
+			&--third {
+				bottom: -1.4em;
+				left: 4.5em;
+			}
+		}
+
+		&__form {
+			margin-right: 2.5rem;
+		}
+
+		&__special-block {
+			width: 41%;
+			height: 45px;
+
+			&--right {
+				display: none;
+			}
 		}
 	}
 }
@@ -247,6 +359,11 @@
 				max-width: 96px;
 			}
 		}
+
+		&__icon-container {
+			bottom: 2em;
+			left: 50%;
+		}
 	}
 
 	.footer {
@@ -256,11 +373,36 @@
 	}
 }
 
+@media screen and (min-width: 1720px) {
+	.contact {
+		&__title-box {
+			margin-left: 2em;
+		}
+
+		&__title-icon {
+			&--first {
+				bottom: -3em;
+				left: 3.8em;
+			}
+
+			&--second {
+				bottom: -4em;
+				left: 5.3em;
+			}
+
+			&--third {
+				bottom: -3.2em;
+				left: 7.4em;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 1920px) {
 	.navbar {
 		&__container {
 			max-width: 2160px;
-			padding: 0 13rem;
+			padding: 0 11.6rem;
 		}
 	}
 }
