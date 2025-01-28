@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
 
 		setTimeout(() => {
 			setIsAnimating(false);
-		}, 480);
+		}, 450);
 	};
 
 	const handleAnimationEnd = () => {
