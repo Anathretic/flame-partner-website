@@ -20,9 +20,15 @@
 	}
 }
 
-@keyframes bounce {
+@keyframes arrow-bounce {
 	65% {
 		bottom: 5em;
+	}
+}
+
+@keyframes car-appear {
+	50% {
+		transform: scale(1%);
 	}
 }
 
