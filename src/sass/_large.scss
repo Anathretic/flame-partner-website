@@ -73,6 +73,7 @@
 			&--first {
 				top: -2em;
 				right: 5em;
+				animation: car-appear 12s infinite;
 			}
 
 			&--second {
@@ -87,6 +88,7 @@
 			&--fourth {
 				bottom: -2em;
 				right: 1.5em;
+				animation: car-appear 10s infinite;
 			}
 
 			&--fifth {
@@ -334,11 +336,13 @@
 			&--second {
 				top: -0.5em;
 				left: 1.5em;
+				animation: car-appear 16s infinite;
 			}
 
 			&--third {
 				bottom: -2.5em;
 				left: 3em;
+				animation: car-appear 14s infinite;
 			}
 
 			&--fourth {
@@ -349,6 +353,7 @@
 			&--fifth {
 				top: 0;
 				right: 1em;
+				animation: car-appear 11s infinite;
 			}
 		}
 
