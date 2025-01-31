@@ -69,11 +69,12 @@
 			display: block;
 			position: absolute;
 			color: rgba(255, 255, 255, 0.15);
+			transform: scale(0.1);
 
 			&--first {
 				top: -2em;
 				right: 5em;
-				animation: car-appear 12s infinite;
+				animation: car-appear 5s 1 forwards;
 			}
 
 			&--second {
@@ -83,17 +84,19 @@
 			&--third {
 				bottom: -3em;
 				left: 1em;
+				animation: car-appear 5.5s 1 forwards;
 			}
 
 			&--fourth {
 				bottom: -2em;
 				right: 1.5em;
-				animation: car-appear 10s infinite;
+				animation: car-appear 4s 1 forwards;
 			}
 
 			&--fifth {
 				top: -1.25em;
 				right: 1em;
+				animation: car-appear 6s 1 forwards;
 			}
 		}
 
@@ -132,12 +135,12 @@
 				border: none;
 				border-radius: 24px;
 				background-color: transparent;
-				transition: transform 0.5s ease-out;
+				transition: transform 0.5s ease;
 				text-decoration: none;
 				cursor: pointer;
 
 				&:hover {
-					transform: rotate(360deg);
+					transform: rotate(360deg) translateY(-1px);
 				}
 			}
 
@@ -148,9 +151,33 @@
 		}
 	}
 
+	.choose-us,
 	.contact {
 		&__title {
 			font-size: 3rem;
+		}
+	}
+
+	.choose-us {
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+			align-items: start;
+			width: 100%;
+		}
+
+		&__box-item {
+			padding: 2em;
+			max-width: 450px;
+		}
+
+		&__box-item-image {
+			max-width: 450px;
+		}
+
+		&__box-item:last-of-type {
+			grid-column: 1/-1;
 		}
 	}
 
@@ -215,7 +242,9 @@
 		}
 	}
 
-	.choose-us {
+	.offer,
+	.choose-us,
+	.contact {
 		&__special-block {
 			width: 41%;
 			height: 45px;
@@ -223,6 +252,36 @@
 			&--right {
 				display: none;
 			}
+		}
+	}
+
+	.choose-us {
+		padding-top: 70px;
+
+		&__title {
+			padding: 0.5rem 0.85rem 0;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__box {
+			padding: 4em 0;
+			max-width: 1368px;
+		}
+
+		&__box-item,
+		&__box-item-image {
+			max-width: 500px;
+		}
+
+		&__box-item {
+			h3 {
+				font-size: 1.8em;
+			}
+		}
+
+		&__box-item-image {
+			height: 350px;
 		}
 	}
 
@@ -248,7 +307,7 @@
 		}
 
 		&__title {
-			padding: 0.5rem 0.85rem 0;
+			padding: 0.5rem 0.85rem 0 0.75rem;
 			width: 100%;
 			font-size: 3.5rem;
 		}
@@ -282,15 +341,6 @@
 
 		&__form {
 			margin-right: 2.5rem;
-		}
-
-		&__special-block {
-			width: 41%;
-			height: 45px;
-
-			&--right {
-				display: none;
-			}
 		}
 	}
 }
@@ -336,13 +386,12 @@
 			&--second {
 				top: -0.5em;
 				left: 1.5em;
-				animation: car-appear 16s infinite;
+				animation: car-appear 4.5s 1 forwards;
 			}
 
 			&--third {
 				bottom: -2.5em;
 				left: 3em;
-				animation: car-appear 14s infinite;
 			}
 
 			&--fourth {
@@ -353,7 +402,6 @@
 			&--fifth {
 				top: 0;
 				right: 1em;
-				animation: car-appear 11s infinite;
 			}
 		}
 
@@ -406,7 +454,6 @@
 @media screen and (min-width: 1920px) {
 	.navbar {
 		&__container {
-			max-width: 2160px;
 			padding: 0 11.6rem;
 		}
 	}

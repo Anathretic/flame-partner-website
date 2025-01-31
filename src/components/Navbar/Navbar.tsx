@@ -51,40 +51,42 @@ const Navbar: React.FC = () => {
 					className={`navbar__container ${
 						isScrolled ? 'navbar__container--is-scrolled navbar-is-scrolled' : 'navbar-is-not-scrolled'
 					}`}>
-					<NavbarTitle divRef={divRef} />
-					{isMobile ? (
-						<>
-							<HiMenuAlt4 className='navbar__mobile-burger-btn' fontSize={32} onClick={() => setToggleMenu(true)} />
-							{(toggleMenu || isAnimating) && (
-								<nav className='navbar__mobile'>
-									<ul
-										onAnimationEnd={handleAnimationEnd}
-										className={`navbar__mobile-list ${toggleMenu ? 'animate-slide-in' : 'animate-slide-out'}`}>
-										<li className='navbar__mobile-exit-icon'>
-											<AiOutlineClose fontSize={28} onClick={handleMenuClose} />
-										</li>
-										{navbarItems.map(({ title, section }) => (
-											<NavbarItem
-												key={title}
-												title={title}
-												section={section}
-												classProps={'navbar__item-margin'}
-												onClick={handleMenuClose}
-											/>
-										))}
-									</ul>
-								</nav>
-							)}
-						</>
-					) : (
-						<nav className='navbar__desktop'>
-							<ul className='navbar__desktop-list'>
-								{navbarItems.map(({ title, section }) => (
-									<NavbarItem key={title} title={title} section={section} />
-								))}
-							</ul>
-						</nav>
-					)}
+					<div className='navbar__wrapper'>
+						<NavbarTitle divRef={divRef} />
+						{isMobile ? (
+							<>
+								<HiMenuAlt4 className='navbar__mobile-burger-btn' fontSize={32} onClick={() => setToggleMenu(true)} />
+								{(toggleMenu || isAnimating) && (
+									<nav className='navbar__mobile'>
+										<ul
+											onAnimationEnd={handleAnimationEnd}
+											className={`navbar__mobile-list ${toggleMenu ? 'animate-slide-in' : 'animate-slide-out'}`}>
+											<li className='navbar__mobile-exit-icon'>
+												<AiOutlineClose fontSize={28} onClick={handleMenuClose} />
+											</li>
+											{navbarItems.map(({ title, section }) => (
+												<NavbarItem
+													key={title}
+													title={title}
+													section={section}
+													classProps={'navbar__item-margin'}
+													onClick={handleMenuClose}
+												/>
+											))}
+										</ul>
+									</nav>
+								)}
+							</>
+						) : (
+							<nav className='navbar__desktop'>
+								<ul className='navbar__desktop-list'>
+									{navbarItems.map(({ title, section }) => (
+										<NavbarItem key={title} title={title} section={section} />
+									))}
+								</ul>
+							</nav>
+						)}
+					</div>
 				</div>
 			</div>
 		</header>
