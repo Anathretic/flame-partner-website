@@ -30,8 +30,8 @@ const Contact: React.FC = () => {
 							<p>NIP:</p>
 						</div>
 						<div>
-							<p>test@test.gmail.com</p>
-							<p>111-111-111</p>
+							<p>biuro.flamepartner@gmail.com</p>
+							<p>+48 730 940 696</p>
 							<p>1234567890</p>
 						</div>
 					</div>
