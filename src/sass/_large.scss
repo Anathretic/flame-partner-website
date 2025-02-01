@@ -32,6 +32,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.cookie-banner-text {
+		padding: 1em;
+	}
+
 	.navbar {
 		&__container {
 			padding: 0 0.5rem;
@@ -179,6 +183,52 @@
 		&__box-item:last-of-type {
 			grid-column: 1/-1;
 		}
+
+		&__special-decoration {
+			position: absolute;
+			display: block;
+			border: 1px solid globals.$white-color;
+
+			&--first {
+				top: -300px;
+				left: -1000px;
+				width: 1200px;
+				height: 600px;
+				transform: rotate(45deg);
+			}
+
+			&--second {
+				top: 55%;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(55deg);
+			}
+
+			&--third {
+				top: 55%;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(55deg);
+			}
+
+			&--fourth {
+				top: 100px;
+				right: -850px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(45deg);
+			}
+
+			&--fifth {
+				top: 45%;
+				right: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(65deg);
+			}
+		}
 	}
 
 	.form {
@@ -283,6 +333,33 @@
 		&__box-item-image {
 			height: 350px;
 		}
+
+		&__special-decoration {
+			&--first {
+				top: 0;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(45deg);
+			}
+
+			&--fourth {
+				top: 0;
+				right: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(45deg);
+			}
+
+			&--sixth {
+				display: block;
+				top: 96%;
+				right: -1500px;
+				width: 2000px;
+				height: 1500px;
+				transform: rotate(65deg);
+			}
+		}
 	}
 
 	.contact {
@@ -346,6 +423,10 @@
 }
 
 @media screen and (min-width: 1536px) {
+	.cookie-banner-text {
+		font-size: 1.1em;
+	}
+
 	.navbar {
 		&__container {
 			padding: 0 8rem;
@@ -416,6 +497,58 @@
 		&__icon-container {
 			bottom: 2em;
 			left: 50%;
+		}
+	}
+
+	.choose-us {
+		&__special-decoration {
+			&--first {
+				top: 0;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(45deg);
+			}
+
+			&--second {
+				top: 55%;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(55deg);
+			}
+
+			&--third {
+				top: 55%;
+				left: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(55deg);
+			}
+
+			&--fourth {
+				top: 0;
+				right: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(45deg);
+			}
+
+			&--fifth {
+				top: 45%;
+				right: -700px;
+				width: 1000px;
+				height: 500px;
+				transform: rotate(65deg);
+			}
+
+			&--sixth {
+				top: 96%;
+				right: -1200px;
+				width: 2000px;
+				height: 1500px;
+				transform: rotate(65deg);
+			}
 		}
 	}
 

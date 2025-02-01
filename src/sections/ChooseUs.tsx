@@ -34,20 +34,26 @@ const ChooseUs: React.FC = () => {
 							<div className='choose-us__box-item-image' />
 							<h3>Wiele form zatrudnienia</h3>
 							<p>
-								B2B? Umowa zlecenie? Możesz być spokojny, gdyż umowa, którą z Nami podpiszesz będzie korzystna dla obu
-								stron! Zależy Nam, byś czerpał przyjemność z pokonywania kolejnych kilometrów.
+								B2B? Umowa zlecenie? Możesz być spokojny, gdyż umowa, którą z nami podpiszesz będzie korzystna dla obu
+								stron! Zależy nam, byś czerpał przyjemność z pokonywania kolejnych kilometrów.
 							</p>
 						</div>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
 							<h3>Obsługa w różnych językach</h3>
 							<p>
-								Nie bój się do Nas napisać! Nasz zespół jest wielojęzyczny i zapewnimy Ci odpowiedni komfort pracy,
-								który będzie widoczny już od pierwszej rozmowy.
+								Nie bój się napisać! Nasz zespół jest wielojęzyczny i zapewnimy Ci odpowiedni komfort pracy, który
+								będzie widoczny już od pierwszej rozmowy.
 							</p>
 						</div>
 					</div>
 				</div>
+				<div className='choose-us__special-decoration choose-us__special-decoration--first' />
+				<div className='choose-us__special-decoration choose-us__special-decoration--second' />
+				<div className='choose-us__special-decoration choose-us__special-decoration--third' />
+				<div className='choose-us__special-decoration choose-us__special-decoration--fourth' />
+				<div className='choose-us__special-decoration choose-us__special-decoration--fifth' />
+				<div className='choose-us__special-decoration choose-us__special-decoration--sixth' />
 			</div>
 			<div className='choose-us__special-block choose-us__special-block--left' />
 			<div className='choose-us__special-block choose-us__special-block--right' />

@@ -9,7 +9,7 @@ const CookieBanner: React.FC = ({ ...otherProps }) => {
 			buttonText='OK'
 			style={{
 				color: '#fff',
-				backgroundColor: '#24485c',
+				backgroundColor: '#19323f',
 				fontSize: '12px',
 				padding: '10px',
 				textAlign: 'center',
