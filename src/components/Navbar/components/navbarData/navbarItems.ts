@@ -1,14 +1,14 @@
 export const navbarItems = [
 	{
-		title: 'oferta',
+		title: 'Oferta',
 		section: '/#oferta',
 	},
 	{
-		title: 'wybierz nas',
+		title: 'Wybierz nas',
 		section: '/#wybierz-nas',
 	},
 	{
-		title: 'kontakt',
+		title: 'Kontakt',
 		section: '/#kontakt',
 	},
 ];

@@ -146,7 +146,6 @@ body {
 	&__item-link {
 		padding: 0.5rem;
 		color: globals.$darker-blue-color;
-		text-transform: capitalize;
 		text-decoration: none;
 		transition: color 0.3s ease-out;
 	}
@@ -270,9 +269,10 @@ body {
 	min-height: 100vh;
 	background-color: globals.$dark-blue-color;
 	color: globals.$white-color;
-	overflow-x: hidden;
+	overflow: hidden;
 
 	&__container {
+		position: relative;
 		@include mixins.flex;
 		flex-direction: column;
 	}
@@ -304,6 +304,7 @@ body {
 		padding: 2em 0;
 		width: 100%;
 		max-width: 400px;
+		z-index: 10;
 
 		h3 {
 			padding: 1em;
@@ -362,6 +363,10 @@ body {
 		div {
 			background-image: url('../images/choose-us-section/fifth-box-item.jpg');
 		}
+	}
+
+	&__special-decoration {
+		display: none;
 	}
 
 	&__special-block {
@@ -424,12 +429,16 @@ body {
 
 	&__title-info-box {
 		@include mixins.flex;
-		padding: 2rem 1rem 0;
+		flex-direction: column;
+		padding: 2rem 0;
 		width: 90%;
 		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
 
-		div:nth-of-type(2) {
-			padding-left: 2rem;
+		li {
+			padding: 0.5em;
+			width: 100%;
 		}
 
 		p {
