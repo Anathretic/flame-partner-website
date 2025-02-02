@@ -23,18 +23,21 @@ const Contact: React.FC = () => {
 						Gotowy by wyruszyć w drogę? Świetnie! Ale jeśli Twoją głowę męczy jakieś pytanie skorzystaj z formularza
 						kontaktowego lub zadzwoń na poniższy numer!
 					</p>
-					<div className='contact__title-info-box'>
-						<div>
+					<ul className='contact__title-info-box'>
+						<li>
 							<p>E-mail:</p>
-							<p>Telefon:</p>
-							<p>NIP:</p>
-						</div>
-						<div>
 							<p>biuro.flamepartner@gmail.com</p>
+						</li>
+						<li>
+							<p>Telefon:</p>
+							<p>+48 730 940 691</p>
 							<p>+48 730 940 696</p>
-							<p>1234567890</p>
-						</div>
-					</div>
+						</li>
+						<li>
+							<p>NIP:</p>
+							<p>525-302-61-91</p>
+						</li>
+					</ul>
 					<FaTaxi className='contact__title-icon contact__title-icon--first' fontSize={70} />
 					<FaTaxi className='contact__title-icon contact__title-icon--second' fontSize={66} />
 					<FaTaxi className='contact__title-icon contact__title-icon--third' fontSize={54} />

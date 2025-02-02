@@ -429,12 +429,16 @@ body {
 
 	&__title-info-box {
 		@include mixins.flex;
-		padding: 2rem 1rem 0;
+		flex-direction: column;
+		padding: 2rem 0;
 		width: 90%;
 		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
 
-		div:nth-of-type(2) {
-			padding-left: 2rem;
+		li {
+			padding: 0.5em;
+			width: 100%;
 		}
 
 		p {

@@ -384,13 +384,14 @@
 		}
 
 		&__title {
-			padding: 0.5rem 0.85rem 0 0.75rem;
+			padding: 0.5rem 0.85rem 0 0.7rem;
 			width: 100%;
 			font-size: 3.5rem;
 		}
 
 		&__title-info-box {
-			padding: 2rem 1rem;
+			padding: 2rem 2.25rem;
+			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
 		}
@@ -401,18 +402,18 @@
 			color: rgba(10, 10, 10, 0.3);
 
 			&--first {
-				bottom: -1.5em;
-				left: 2em;
+				bottom: -0.5em;
+				left: 3.9em;
 			}
 
 			&--second {
-				bottom: -2.35em;
-				left: 3.2em;
+				bottom: -1.4em;
+				left: 5.4em;
 			}
 
 			&--third {
-				bottom: -1.4em;
-				left: 4.5em;
+				bottom: 0.1em;
+				left: 7.5em;
 			}
 		}
 
@@ -563,23 +564,6 @@
 	.contact {
 		&__title-box {
 			margin-left: 2em;
-		}
-
-		&__title-icon {
-			&--first {
-				bottom: -3em;
-				left: 3.8em;
-			}
-
-			&--second {
-				bottom: -4em;
-				left: 5.3em;
-			}
-
-			&--third {
-				bottom: -3.2em;
-				left: 7.4em;
-			}
 		}
 	}
 }
