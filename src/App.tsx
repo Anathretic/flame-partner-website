@@ -9,29 +9,36 @@ export const App: React.FC = () => {
 			<Route
 				element={
 					<>
-						<Navbar />
 						<Outlet />
 						<Footer />
 						<CookieBanner />
 					</>
 				}>
 				<Route
-					path='/'
 					element={
 						<>
-							<Welcome />
-							<Offer />
-							<ChooseUs />
-							<Contact />
+							<Navbar />
+							<Outlet />
 						</>
-					}
-				/>
-				<Route path='/praca-w-bolt' element={<BoltWork />} />
-				<Route path='/praca-w-uber' element={<UberWork />} />
-				<Route path='/praca-we-freenow' element={<FreeNowWork />} />
-				<Route path='/blog' element={<Blog />} />
-				<Route path='/cennik' element={<Prices />} />
-				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
+					}>
+					<Route
+						path='/'
+						element={
+							<>
+								<Welcome />
+								<Offer />
+								<ChooseUs />
+								<Contact />
+							</>
+						}
+					/>
+					<Route path='/praca-w-bolt' element={<BoltWork />} />
+					<Route path='/praca-w-uber' element={<UberWork />} />
+					<Route path='/praca-we-freenow' element={<FreeNowWork />} />
+					<Route path='/blog' element={<Blog />} />
+					<Route path='/cennik' element={<Prices />} />
+					<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
+				</Route>
 				<Route path='*' element={<PageNotFound />} />
 			</Route>
 		</Routes>
