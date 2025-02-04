@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { InputAndTextareaModel, ReCaptchaV2Model, SubmitButtonModel } from '../../../models/formElements.model';
 import { Loader } from '../../Loader';
@@ -56,7 +57,9 @@ export const FormSubmit: React.FC<SubmitButtonModel> = ({ isLoading, buttonText 
 	);
 };
 
-export const ReCaptchaV2Component: React.FC<ReCaptchaV2Model> = ({ isMobile, refCaptcha, errorValue }) => {
+export const ReCaptchaV2Component: React.FC<ReCaptchaV2Model> = ({ refCaptcha, errorValue }) => {
+	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
+
 	return (
 		<div className='form__recaptcha-box'>
 			<ReCAPTCHA

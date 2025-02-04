@@ -28,7 +28,6 @@ export interface LoaderModel {
 }
 
 export interface ReCaptchaV2Model {
-	isMobile: boolean;
 	refCaptcha: React.RefObject<ReCAPTCHA>;
 	errorValue: string;
 }
