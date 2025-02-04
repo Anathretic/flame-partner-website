@@ -1,21 +1,21 @@
+import { useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import emailjs from '@emailjs/browser';
 import { FormSubmit, InputElement, ReCaptchaV2Component, TextareaElement } from './components/FormElements';
 import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
+import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
-import { ContactComponentModel, ContactFormModel } from '../../models/contactForm.model';
+import { ContactFormModel } from '../../models/contactForm.model';
 
-export const ContactForm: React.FC<ContactComponentModel> = ({
-	isLoading,
-	setIsLoading,
-	errorValue,
-	setErrorValue,
-	buttonText,
-	setButtonText,
-	isMobile,
-	refCaptcha,
-}) => {
+const initialSubmitButtonState = 'Wyślij';
+
+export const ContactForm: React.FC = () => {
+	const [isLoading, setIsLoading] = useState(false);
+	const [errorValue, setErrorValue] = useState('');
+	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState });
+
 	const {
 		register,
 		handleSubmit,
@@ -31,6 +31,7 @@ export const ContactForm: React.FC<ContactComponentModel> = ({
 		resolver: yupResolver(contactSchema),
 	});
 
+	const refCaptcha = useRef<ReCAPTCHA>(null);
 	const contactFormInputs = contactFormInputsConfig(errors, register);
 
 	const onSubmit: SubmitHandler<ContactFormModel> = async ({ name, email, subject, message }) => {
@@ -97,7 +98,7 @@ export const ContactForm: React.FC<ContactComponentModel> = ({
 				aria-invalid={errors.message ? true : false}
 				{...register('message')}
 			/>
-			<ReCaptchaV2Component isMobile={isMobile} refCaptcha={refCaptcha} errorValue={errorValue} />
+			<ReCaptchaV2Component refCaptcha={refCaptcha} errorValue={errorValue} />
 			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
 		</form>
 	);
