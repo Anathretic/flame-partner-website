@@ -211,7 +211,6 @@ body {
 		padding-bottom: 2rem;
 		font-size: 2.5rem;
 		text-transform: uppercase;
-		font-weight: bold;
 	}
 
 	&__sub-text {
@@ -690,6 +689,75 @@ body {
 		font-size: 0.875rem;
 		text-align: center;
 		text-transform: uppercase;
+	}
+}
+
+.privacy-policy {
+	@include mixins.flex;
+	flex-direction: column;
+	padding: 1em;
+	width: 100%;
+
+	&__container {
+		@include mixins.flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 40px;
+	}
+
+	&__title {
+		padding-bottom: 2rem;
+		font-size: 2.5rem;
+		text-align: left;
+		font-weight: 300;
+	}
+
+	&__box {
+		padding: 1em 0;
+		width: 100%;
+		max-width: 400px;
+		line-height: 1.8em;
+
+		h3 {
+			padding: 1em 0;
+			font-weight: 300;
+			font-style: italic;
+			font-size: 1.2em;
+		}
+
+		p,
+		ul {
+			font-weight: 300;
+		}
+
+		ul {
+			padding-top: 0.25em;
+			padding-left: 1.3em;
+
+			li {
+				padding: 0.25em 0;
+			}
+		}
+	}
+
+	&__cookie-box-ul {
+		padding-bottom: 1em;
+	}
+
+	&__btn {
+		display: block;
+		padding: 0.75em 3.5em;
+		margin: 3em 0;
+		color: globals.$darker-blue-color;
+		background-color: transparent;
+		font-family: globals.$main-font;
+		font-size: 1em;
+		text-align: center;
+		border: 2px solid globals.$dark-blue-color;
+		border-radius: 2em;
+		transition: background-color 0.3s, color 0.3s;
+		text-decoration: none;
+		cursor: pointer;
 	}
 }
 

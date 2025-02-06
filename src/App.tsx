@@ -37,8 +37,8 @@ export const App: React.FC = () => {
 					<Route path='/praca-we-freenow' element={<FreeNowWork />} />
 					<Route path='/blog' element={<Blog />} />
 					<Route path='/cennik' element={<Prices />} />
-					<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				</Route>
+				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				<Route path='*' element={<PageNotFound />} />
 			</Route>
 		</Routes>

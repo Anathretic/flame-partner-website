@@ -7,7 +7,7 @@ const ChooseUs: React.FC = () => {
 					<div className='choose-us__box'>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
-							<h3>Oficjalny partner</h3>
+							<h3>1. Oficjalny partner</h3>
 							<p>
 								Jesteśmy oficjalnym partnerem popularnych na rynku firm, które umożliwiają pracę przez aplikacje mobilne
 								takie jak Uber, Bolt, czy FreeNow. Z nami wszystko będzie jasne, a Ty będziesz mógł się skupić na swojej
@@ -16,7 +16,7 @@ const ChooseUs: React.FC = () => {
 						</div>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
-							<h3>Księgowość</h3>
+							<h3>2. Księgowość</h3>
 							<p>
 								Doskonale znamy naszych klientów, dlatego gwarantujemy pełną obsługę rozliczeniową i księgową, gdzie
 								wszystko będzie dla Ciebie jasne, a drobny druczek, czy gwiazdki nie istnieją.
@@ -24,7 +24,7 @@ const ChooseUs: React.FC = () => {
 						</div>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
-							<h3>Profesjonalny zespół</h3>
+							<h3>3. Profesjonalny zespół</h3>
 							<p>
 								Nasi pracownicy to profesjonaliści, którzy każdego dnia pogłębiają swoją wiedzę oraz badają aktualny
 								rynek. Są na bieżąco z każdą nowością serwowaną branży transportu publicznego.
@@ -32,7 +32,7 @@ const ChooseUs: React.FC = () => {
 						</div>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
-							<h3>Wiele form zatrudnienia</h3>
+							<h3>4. Kilka form zatrudnienia</h3>
 							<p>
 								B2B? Umowa zlecenie? Możesz być spokojny, gdyż umowa, którą z nami podpiszesz będzie korzystna dla obu
 								stron! Zależy nam, byś czerpał przyjemność z pokonywania kolejnych kilometrów.
@@ -40,7 +40,7 @@ const ChooseUs: React.FC = () => {
 						</div>
 						<div className='choose-us__box-item'>
 							<div className='choose-us__box-item-image' />
-							<h3>Obsługa w różnych językach</h3>
+							<h3>5. Obsługa w wielu językach</h3>
 							<p>
 								Nie bój się napisać! Nasz zespół jest wielojęzyczny i zapewnimy Ci odpowiedni komfort pracy, który
 								będzie widoczny już od pierwszej rozmowy.
