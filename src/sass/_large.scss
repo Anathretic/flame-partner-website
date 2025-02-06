@@ -156,7 +156,8 @@
 	}
 
 	.choose-us,
-	.contact {
+	.contact,
+	.privacy-policy {
 		&__title {
 			font-size: 3rem;
 		}
@@ -280,14 +281,8 @@
 		}
 	}
 
-	.notfound {
-		padding-bottom: 1em;
-
-		&__img {
-			width: 35%;
-			max-width: 660px;
-		}
-
+	.notfound,
+	.privacy-policy {
 		&__btn {
 			font-size: 1.1em;
 
@@ -295,6 +290,25 @@
 				color: globals.$white-color;
 				background-color: globals.$dark-blue-color;
 			}
+		}
+	}
+
+	.privacy-policy {
+		&__box {
+			max-width: 480px;
+		}
+
+		&__btn {
+			margin: 4em 0;
+		}
+	}
+
+	.notfound {
+		padding-bottom: 1em;
+
+		&__img {
+			width: 35%;
+			max-width: 660px;
 		}
 	}
 }
