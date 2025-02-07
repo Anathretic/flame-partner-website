@@ -11,7 +11,6 @@ export const footerWorkItems: FooterItemsModel[] = [
 	{ to: '/praca-w-bolt', onClick: scrollToTop, content: 'Praca w Bolt' },
 	{ to: '/praca-w-uber', onClick: scrollToTop, content: 'Praca w Uber' },
 	{ to: '/praca-we-freenow', onClick: scrollToTop, content: 'Praca we FreeNow' },
-	{ to: '/cennik', onClick: scrollToTop, content: 'Cennik' },
 ];
 
 export const footerMoreItems: FooterItemsModel[] = [

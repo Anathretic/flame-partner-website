@@ -1,3 +1,18 @@
+@keyframes phone-bounce {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(3%);
+	}
+	75% {
+		transform: translateX(-3%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
 @keyframes slideIn {
 	0% {
 		-webkit-transform: translateX(120%);

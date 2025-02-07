@@ -56,6 +56,12 @@
 		}
 	}
 
+	.offer {
+		&__content-box {
+			max-width: 325px;
+		}
+	}
+
 	.contact {
 		&__title-info-box {
 			list-style-type: disc;
