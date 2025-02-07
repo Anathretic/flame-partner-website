@@ -14,24 +14,24 @@ const Offer: React.FC = () => {
 					<h2 className='offer__title'>Oferta</h2>
 					<div className='offer__content-wrapper'>
 						<div className='offer__text-content'>
-							<div className='offer__content-box'>
-								<GiTeacher fontSize={56} color='#19323f' />
+							<div className='offer__text-content-box'>
+								<GiTeacher fontSize={56} color='#24485c' />
 								<h3>Profesjonalny onboarding</h3>
 								<p>
 									Nie wiesz jak zacząć? Spokojnie! Jeśli nigdy nie korzystałeś z aplikacji Bolt/Uber/FreeNow
 									przeprowadzimy Cię przez cały proces rejestracji i będziesz mógł od razu zacząć jeździć i zarabiać!
 								</p>
 							</div>
-							<div className='offer__content-box'>
-								<HiDocumentCheck fontSize={56} color='#19323f' />
+							<div className='offer__text-content-box'>
+								<HiDocumentCheck fontSize={56} color='#24485c' />
 								<h3>Prostota rozliczeń</h3>
 								<p>
 									Znajomość prawa, jak i wielu systemów rozliczeniowych pozwala nam prowadzić księgowość w sposób prosty
 									i efektywny. Niczym się nie martw, mamy w tym doświadczenie.
 								</p>
 							</div>
-							<div className='offer__content-box'>
-								<FaCar fontSize={56} color='#19323f' />
+							<div className='offer__text-content-box'>
+								<FaCar fontSize={56} color='#24485c' />
 								<h3>Wynajem samochodów</h3>
 								<p>
 									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż oferujemy wynajem na
@@ -41,15 +41,19 @@ const Offer: React.FC = () => {
 						</div>
 						<div className='offer__image-content'>
 							<div className='offer__image-content-box'>
-								<div className='offer__image-box'>
+								<div className='offer__image-container'>
 									<img src={PhoneImage} alt='Obraz przedstawiający telefon' />
 									<Link to='/praca-w-uber' onClick={scrollToTop}>
 										Sprawdź
 									</Link>
-									<FaPhoneAlt fontSize={56} className='offer__image-box-icon' />
+									<FaPhoneAlt fontSize={56} className='offer__image-container-icon' />
 									<p>Twoja Oferta</p>
 								</div>
-								<div className='offer__special-circle' />
+								<div className='offer__special-circle offer__special-circle--first' />
+								<div className='offer__special-circle offer__special-circle--second' />
+								<div className='offer__special-circle offer__special-circle--third' />
+								<div className='offer__special-circle offer__special-circle--fourth' />
+								<div className='offer__special-circle offer__special-circle--fifth' />
 							</div>
 						</div>
 					</div>
