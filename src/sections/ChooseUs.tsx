@@ -53,7 +53,6 @@ const ChooseUs: React.FC = () => {
 				<div className='choose-us__special-decoration choose-us__special-decoration--third' />
 				<div className='choose-us__special-decoration choose-us__special-decoration--fourth' />
 				<div className='choose-us__special-decoration choose-us__special-decoration--fifth' />
-				<div className='choose-us__special-decoration choose-us__special-decoration--sixth' />
 			</div>
 			<div className='choose-us__special-block choose-us__special-block--left' />
 			<div className='choose-us__special-block choose-us__special-block--right' />

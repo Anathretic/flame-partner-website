@@ -155,11 +155,53 @@
 		}
 	}
 
+	.offer,
 	.choose-us,
 	.contact,
 	.privacy-policy {
 		&__title {
 			font-size: 3rem;
+		}
+	}
+
+	.offer {
+		&__content-wrapper {
+			width: 100%;
+			justify-content: space-evenly;
+			flex-direction: row;
+		}
+
+		&__image-box {
+			width: auto;
+			margin-left: 0;
+
+			img {
+				width: auto;
+			}
+
+			a {
+				left: 7.5%;
+				padding: 0.75em 3.5em;
+				max-width: 220px;
+				transform: skew(-20deg, 28deg);
+				cursor: pointer;
+
+				&:hover {
+					background-color: rgb(34, 155, 44);
+				}
+			}
+
+			p {
+				top: 42%;
+				left: 29%;
+				transform: skew(-20deg, 23deg);
+			}
+		}
+
+		&__image-box-icon {
+			top: 25%;
+			left: 46%;
+			transform: skew(-30deg, 30deg);
 		}
 	}
 
@@ -207,14 +249,6 @@
 			}
 
 			&--third {
-				top: 55%;
-				left: -700px;
-				width: 1000px;
-				height: 500px;
-				transform: rotate(55deg);
-			}
-
-			&--fourth {
 				top: 100px;
 				right: -850px;
 				width: 1000px;
@@ -222,12 +256,17 @@
 				transform: rotate(45deg);
 			}
 
-			&--fifth {
+			&--fourth {
 				top: 45%;
 				right: -700px;
 				width: 1000px;
 				height: 500px;
 				transform: rotate(65deg);
+			}
+
+			&--fifth {
+				top: 96%;
+				right: -750px;
 			}
 		}
 	}
@@ -337,6 +376,28 @@
 		}
 	}
 
+	.offer {
+		padding-top: 70px;
+
+		&__title {
+			padding: 0.5rem 0.85rem 0;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__content-wrapper {
+			padding: 4em 0;
+		}
+
+		&__text-content {
+			margin-left: 10em;
+		}
+
+		&__image-content {
+			margin-right: 10em;
+		}
+	}
+
 	.choose-us {
 		padding-top: 70px;
 
@@ -375,16 +436,7 @@
 				transform: rotate(45deg);
 			}
 
-			&--fourth {
-				top: 0;
-				right: -700px;
-				width: 1000px;
-				height: 500px;
-				transform: rotate(45deg);
-			}
-
-			&--sixth {
-				display: block;
+			&--fifth {
 				top: 96%;
 				right: -1500px;
 				width: 2000px;
@@ -552,14 +604,6 @@
 			}
 
 			&--third {
-				top: 55%;
-				left: -700px;
-				width: 1000px;
-				height: 500px;
-				transform: rotate(55deg);
-			}
-
-			&--fourth {
 				top: 0;
 				right: -700px;
 				width: 1000px;
@@ -567,7 +611,7 @@
 				transform: rotate(45deg);
 			}
 
-			&--fifth {
+			&--fourth {
 				top: 45%;
 				right: -700px;
 				width: 1000px;
@@ -575,7 +619,7 @@
 				transform: rotate(65deg);
 			}
 
-			&--sixth {
+			&--fifth {
 				top: 96%;
 				right: -1200px;
 				width: 2000px;
