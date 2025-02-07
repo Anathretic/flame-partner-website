@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 319px) {
 	.offer {
-		&__image-box {
+		&__image-container {
 			a {
 				top: 55%;
 				left: 9%;
@@ -34,22 +34,24 @@
 			}
 		}
 
-		&__image-box-icon {
+		&__image-container-icon {
 			left: 43%;
 			font-size: 42px;
 		}
 
 		&__special-circle {
-			left: 6.5%;
-			width: 250px;
-			height: 250px;
+			&__third {
+				left: 6.5%;
+				width: 250px;
+				height: 250px;
+			}
 		}
 	}
 }
 
 @media screen and (min-width: 320px) and (max-width: 400px) {
 	.offer {
-		&__image-box {
+		&__image-container {
 			a {
 				top: 58%;
 				left: 6.5%;
@@ -68,15 +70,17 @@
 			}
 		}
 
-		&__image-box-icon {
+		&__image-container-icon {
 			left: 43%;
 			font-size: 42px;
 		}
 
 		&__special-circle {
-			left: 2.5%;
-			width: 300px;
-			height: 300px;
+			&__third {
+				left: 2.5%;
+				width: 300px;
+				height: 300px;
+			}
 		}
 	}
 }
