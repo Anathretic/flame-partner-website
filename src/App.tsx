@@ -1,7 +1,7 @@
 import { Route, Routes, Outlet } from 'react-router-dom';
 import { Navbar, Footer, CookieBanner } from './components';
-import { Welcome, Offer, ChooseUs, Contact } from './sections';
-import { BoltWork, Blog, PrivacyPolicy, PageNotFound, UberWork, FreeNowWork } from './subpages';
+import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
+import { WorkOffer, PrivacyPolicy, PageNotFound } from './subpages';
 
 export const App: React.FC = () => {
 	return (
@@ -28,15 +28,13 @@ export const App: React.FC = () => {
 								<Welcome />
 								<Offer />
 								<ChooseUs />
+								<Blog />
 								<Contact />
 							</>
 						}
 					/>
-					<Route path='/praca-w-bolt' element={<BoltWork />} />
-					<Route path='/praca-w-uber' element={<UberWork />} />
-					<Route path='/praca-we-freenow' element={<FreeNowWork />} />
-					<Route path='/blog' element={<Blog />} />
 				</Route>
+				<Route path='/oferta-pracy' element={<WorkOffer />} />
 				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				<Route path='*' element={<PageNotFound />} />
 			</Route>

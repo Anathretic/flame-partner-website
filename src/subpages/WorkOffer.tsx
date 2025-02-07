@@ -1,12 +1,12 @@
 import { WorkForm } from '../components/Forms/WorkForm';
 
-const BoltWork: React.FC = () => {
+const WorkOffer: React.FC = () => {
 	return (
 		<section>
-			<p>Praca w Bolt!</p>
+			<p>Oferta pracy!</p>
 			<WorkForm />
 		</section>
 	);
 };
 
-export default BoltWork;
+export default WorkOffer;

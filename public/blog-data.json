@@ -1,0 +1,75 @@
+[
+	{
+		"id": 0,
+		"main_title": "Jak zostać kierowcą Bolt, Uber lub FreeNow? Dowiedz się!",
+		"text_array": [
+			{
+				"id": 11,
+				"title": "Krok 1: Sprawdź wymagania",
+				"content": "Aby zostać kierowcą w jednej z aplikacji, musisz spełniać kilka podstawowych warunków. W przypadku Ubera, Bolta i FreeNow zwykle wymagane są:\n- Posiadanie prawa jazdy kategorii B (zwykle minimum 2 lata doświadczenia),\n- Posiadanie samochodu, który spełnia określone normy (przeważnie rocznik minimum 2006-2010),\n- Bycie osobą pełnoletnią (minimum 21 lat).\nKażda aplikacja może mieć nieco różne wymagania dotyczące stanu technicznego pojazdu, dlatego warto zapoznać się z dokładnymi kryteriami na stronie internetowej konkretnej platformy."
+			},
+			{
+				"id": 22,
+				"title": "Krok 2: Rejestracja w aplikacji",
+				"content": "Po spełnieniu wymagań czas na rejestrację w aplikacji. Przez internet możesz założyć konto, wypełniając formularz i przesyłając wymagane dokumenty, takie jak:\n- kopia prawa jazdy,\n- zdjęcie samochodu,\n- dokumenty potwierdzające ubezpieczenie.\nPo zatwierdzeniu aplikacji przez system, będziesz mógł rozpocząć jazdy."
+			},
+			{
+				"id": 33,
+				"title": "Krok 3: Wybierz odpowiedniego partnera",
+				"content": "Bolt, Uber i FreeNow współpracują z różnymi partnerami, którzy wspierają kierowców w kwestiach związanych z wynajmem pojazdów, wsparciem technicznym czy szkoleniami. Możesz skorzystać z takiej współpracy, aby ułatwić sobie początki w branży."
+			},
+			{
+				"id": 44,
+				"title": "Krok 4: Rozpocznij pracę",
+				"content": "Po zatwierdzeniu Twojego konta w aplikacji możesz rozpocząć przyjmowanie zleceń. Pamiętaj, że elastyczność to jedna z głównych zalet tej pracy – sam decydujesz, w jakie dni i godziny chcesz pracować."
+			}
+		]
+	},
+	{
+		"id": 1,
+		"main_title": "Dlaczego warto pracować jako kierowca?",
+		"text_array": [
+			{
+				"id": 11,
+				"title": "Elastyczność godzin pracy",
+				"content": "Największą zaletą pracy jako kierowca w aplikacjach jest elastyczność. Możesz samodzielnie wybrać, kiedy i jak długo będziesz pracować, co pozwala dopasować grafik do swoich innych obowiązków. Dla osób, które szukają pracy w niepełnym wymiarze godzin lub po prostu dodatkowego źródła dochodu, ta opcja jest niezwykle atrakcyjna."
+			},
+			{
+				"id": 22,
+				"title": "Szeroki zasięg usług",
+				"content": "Dzięki aplikacjom takim jak Uber, Bolt i FreeNow masz dostęp do szerokiego kręgu klientów. Bez względu na to, czy mieszkasz w dużym mieście, czy mniejszej miejscowości, aplikacje te działają w wielu miejscach, co oznacza większą liczbę potencjalnych zleceń i możliwość zarobienia więcej."
+			},
+			{
+				"id": 33,
+				"title": "Wsparcie techniczne i narzędzia",
+				"content": "Aplikacje takie jak Uber, Bolt i FreeNow oferują swoim kierowcom wsparcie techniczne i narzędzia, które pomagają w zarządzaniu czasem pracy. Dzięki wbudowanym systemom nawigacyjnym, kalkulacjom opłat czy dostępności wsparcia w razie problemów, praca staje się łatwiejsza i bardziej efektywna."
+			},
+			{
+				"id": 44,
+				"title": "Bezpieczeństwo finansowe",
+				"content": "Dzięki jasnym zasadom wypłat, kierowcy mogą liczyć na przejrzystość w kwestiach finansowych. Regularne wypłaty, transparentne rozliczenia i dostęp do historii swoich zarobków pozwalają na skuteczne zarządzanie finansami. Dodatkowo, w przypadku problemów z płatnościami, platformy oferują pomoc, aby rozwiązać wszelkie nieporozumienia."
+			}
+		]
+	},
+	{
+		"id": 2,
+		"main_title": "Jak dbać o bezpieczeństwo i komfort pracy?",
+		"text_array": [
+			{
+				"id": 11,
+				"title": "Bezpieczeństwo na drodze",
+				"content": "Bezpieczeństwo jest priorytetem dla każdego kierowcy. Warto zadbać o odpowiedni stan techniczny swojego pojazdu. Regularne przeglądy, wymiana opon czy dbanie o system hamulcowy mogą zapobiec wielu nieprzewidzianym sytuacjom. Przestrzeganie zasad ruchu drogowego to podstawa, ale warto także zwrócić uwagę na warunki atmosferyczne, które mogą wpływać na bezpieczeństwo podróży."
+			},
+			{
+				"id": 22,
+				"title": "Komfort pasażerów",
+				"content": "Aby pasażerowie czuli się komfortowo i bezpiecznie, ważne jest utrzymanie czystości w pojeździe. Regularne sprzątanie wnętrza, kontrolowanie klimatyzacji oraz dbanie o odpowiednią temperaturę to elementy, które wpływają na pozytywne doświadczenia pasażerów i oceny kierowcy."
+			},
+			{
+				"id": 33,
+				"title": "Technologia i wsparcie",
+				"content": "Korzystanie z narzędzi oferowanych przez aplikację, takich jak systemy nawigacyjne czy pomoc w razie wypadków, pozwala na komfortową pracę. Ponadto, w razie jakichkolwiek problemów, możesz skontaktować się z zespołem wsparcia technicznego, który pomoże Ci w każdej sytuacji. Aplikacje oferują także możliwość oceny pasażerów, co pozwala na monitorowanie jakości współpracy."
+			}
+		]
+	}
+]
