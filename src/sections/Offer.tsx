@@ -43,7 +43,7 @@ const Offer: React.FC = () => {
 							<div className='offer__image-content-box'>
 								<div className='offer__image-container'>
 									<img src={PhoneImage} alt='Obraz przedstawiający telefon' />
-									<Link to='/praca-w-uber' onClick={scrollToTop}>
+									<Link to='/oferta-pracy' onClick={scrollToTop}>
 										Sprawdź
 									</Link>
 									<FaPhoneAlt fontSize={56} className='offer__image-container-icon' />

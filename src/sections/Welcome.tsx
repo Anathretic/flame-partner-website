@@ -33,13 +33,13 @@ const Welcome: React.FC = () => {
 			</div>
 			<div className='welcome__btn-container'>
 				<div className='welcome__btn-box'>
-					<Link to='/praca-w-bolt' onClick={scrollToTop}>
+					<Link to='/oferta-pracy' onClick={scrollToTop}>
 						<img src={BoltIcon} alt='' />
 					</Link>
-					<Link to='/praca-w-uber' onClick={scrollToTop}>
+					<Link to='/oferta-pracy' onClick={scrollToTop}>
 						<img src={UberIcon} alt='' />
 					</Link>
-					<Link to='praca-we-freenow' onClick={scrollToTop}>
+					<Link to='/oferta-pracy' onClick={scrollToTop}>
 						<img src={FreenowIcon} alt='' />
 					</Link>
 				</div>

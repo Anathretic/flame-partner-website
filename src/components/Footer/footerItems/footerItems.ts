@@ -8,12 +8,12 @@ export const footerHomeItems: FooterItemsModel[] = [
 ];
 
 export const footerWorkItems: FooterItemsModel[] = [
-	{ to: '/praca-w-bolt', onClick: scrollToTop, content: 'Praca w Bolt' },
-	{ to: '/praca-w-uber', onClick: scrollToTop, content: 'Praca w Uber' },
-	{ to: '/praca-we-freenow', onClick: scrollToTop, content: 'Praca we FreeNow' },
+	{ to: '/oferta-pracy', onClick: scrollToTop, content: 'Praca w Bolt' },
+	{ to: '/oferta-pracy', onClick: scrollToTop, content: 'Praca w Uber' },
+	{ to: '/oferta-pracy', onClick: scrollToTop, content: 'Praca we FreeNow' },
 ];
 
 export const footerMoreItems: FooterItemsModel[] = [
-	{ to: '/blog', onClick: scrollToTop, content: 'Blog' },
+	{ to: '/#blog', onClick: scrollToTop, content: 'Blog' },
 	{ to: '/polityka-prywatnosci', onClick: scrollToTop, content: 'Polityka prywatności' },
 ];
