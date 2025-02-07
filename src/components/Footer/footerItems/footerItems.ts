@@ -12,8 +12,3 @@ export const footerWorkItems: FooterItemsModel[] = [
 	{ to: '/oferta-pracy', onClick: scrollToTop, content: 'Praca w Uber' },
 	{ to: '/oferta-pracy', onClick: scrollToTop, content: 'Praca we FreeNow' },
 ];
-
-export const footerMoreItems: FooterItemsModel[] = [
-	{ to: '/#blog', onClick: scrollToTop, content: 'Blog' },
-	{ to: '/polityka-prywatnosci', onClick: scrollToTop, content: 'Polityka prywatności' },
-];

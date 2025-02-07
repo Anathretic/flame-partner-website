@@ -157,6 +157,7 @@
 
 	.offer,
 	.choose-us,
+	.blog,
 	.contact,
 	.privacy-policy {
 		&__title {
@@ -399,6 +400,7 @@
 
 	.offer,
 	.choose-us,
+	.blog,
 	.contact {
 		&__special-block {
 			width: 41%;
@@ -435,6 +437,16 @@
 			&--fifth {
 				top: 130%;
 			}
+		}
+	}
+
+	.blog {
+		padding: 70px 0;
+
+		&__title {
+			padding: 0.5rem 0.85rem 5rem;
+			width: 100%;
+			font-size: 3.5rem;
 		}
 	}
 

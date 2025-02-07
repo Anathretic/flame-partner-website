@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { footerMoreItems, footerHomeItems, footerWorkItems } from './footerItems/footerItems';
+import { footerHomeItems, footerWorkItems } from './footerItems/footerItems';
+import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -56,13 +57,16 @@ const Footer: React.FC = () => {
 					<div className='footer__box'>
 						<h3>Więcej</h3>
 						<ul>
-							{footerMoreItems.map((item, id) => (
-								<li key={id}>
-									<Link to={item.to} onClick={item.onClick}>
-										{item.content}
-									</Link>
-								</li>
-							))}
+							<li>
+								<HashLink to='/#blog' onClick={scrollToTop}>
+									Blog
+								</HashLink>
+							</li>
+							<li>
+								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
+									Polityka prywatności
+								</Link>
+							</li>
 						</ul>
 					</div>
 				</div>

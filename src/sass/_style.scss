@@ -526,8 +526,66 @@ body {
 		bottom: 0;
 		width: 40%;
 		height: 40px;
-		background-color: globals.$white-color;
+		background-color: #c4c4c4;
 		transform: skew(45deg);
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+}
+
+.blog {
+	position: relative;
+	padding: 30px 0 40px;
+	width: 100%;
+	background-color: #c4c4c4;
+	color: globals.$dark-blue-color;
+	overflow: hidden;
+
+	&__container {
+		position: relative;
+		@include mixins.flex;
+		flex-direction: column;
+	}
+
+	&__wrapper {
+		position: relative;
+		@include mixins.flex;
+		flex-direction: column;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 2160px;
+		padding-bottom: 6em;
+	}
+
+	&__title {
+		padding-bottom: 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__carousel-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+		background-color: globals.$white-color;
 
 		&--left {
 			left: -50px;
