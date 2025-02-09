@@ -22,19 +22,20 @@ const BlogPopup: React.FC = () => {
 			{showPopup ? (
 				<div className='blog-popup'>
 					<div className='blog-popup__container'>
-						<button type='button' className='blog-popup__close-btn' onClick={handleCloseBtn}>
-							X
-						</button>
 						{slideItemData && (
 							<>
-								<h3>{slideItemData.main_title}</h3>
-								<div>
+								<h3 className='blog-popup__title'>{slideItemData.main_title}</h3>
+								<p className='blog-popup__public-date'>Opublikowano: {slideItemData.public_date}</p>
+								<div className='blog-popup__content-container'>
 									{slideItemData.text_array.map(el => (
-										<div key={el.id}>
-											<h4>{el.title}</h4>
-											<p>{el.content}</p>
+										<div key={el.id} className='blog-popup__content-box'>
+											<h4 className='blog-popup__content-title'>{el.title}</h4>
+											<p className='blog-popup__content-text'>{el.content}</p>
 										</div>
 									))}
+									<button type='button' className='blog-popup__close-btn' onClick={handleCloseBtn}>
+										Zamknij
+									</button>
 								</div>
 							</>
 						)}

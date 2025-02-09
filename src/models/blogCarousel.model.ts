@@ -7,6 +7,7 @@ interface SlideTextDataModel {
 export interface SlideDataModel {
 	id: number;
 	main_title: string;
+	public_date: string;
 	text_array: SlideTextDataModel[];
 }
 
