@@ -2,16 +2,17 @@
 	{
 		"id": 0,
 		"main_title": "Jak zostać kierowcą Bolt, Uber lub FreeNow? Dowiedz się!",
+		"public_date": "09-01-2025",
 		"text_array": [
 			{
 				"id": 11,
 				"title": "Krok 1: Sprawdź wymagania",
-				"content": "Aby zostać kierowcą w jednej z aplikacji, musisz spełniać kilka podstawowych warunków. W przypadku Ubera, Bolta i FreeNow zwykle wymagane są:\n- Posiadanie prawa jazdy kategorii B (zwykle minimum 2 lata doświadczenia),\n- Posiadanie samochodu, który spełnia określone normy (przeważnie rocznik minimum 2006-2010),\n- Bycie osobą pełnoletnią (minimum 21 lat).\nKażda aplikacja może mieć nieco różne wymagania dotyczące stanu technicznego pojazdu, dlatego warto zapoznać się z dokładnymi kryteriami na stronie internetowej konkretnej platformy."
+				"content": "Aby zostać kierowcą w jednej z aplikacji, musisz spełniać kilka podstawowych warunków. W przypadku Ubera, Bolta i FreeNow zwykle wymagane są - posiadanie prawa jazdy kategorii B (zwykle minimum 2 lata doświadczenia), posiadanie samochodu, który spełnia określone normy (przeważnie rocznik minimum 2006-2010) oraz oczywiście bycie osobą pełnoletnią. Każda aplikacja może mieć nieco różne wymagania dotyczące stanu technicznego pojazdu, dlatego warto zapoznać się z dokładnymi kryteriami na stronie internetowej konkretnej platformy."
 			},
 			{
 				"id": 22,
 				"title": "Krok 2: Rejestracja w aplikacji",
-				"content": "Po spełnieniu wymagań czas na rejestrację w aplikacji. Przez internet możesz założyć konto, wypełniając formularz i przesyłając wymagane dokumenty, takie jak:\n- kopia prawa jazdy,\n- zdjęcie samochodu,\n- dokumenty potwierdzające ubezpieczenie.\nPo zatwierdzeniu aplikacji przez system, będziesz mógł rozpocząć jazdy."
+				"content": "Po spełnieniu wymagań czas na rejestrację w aplikacji. Przez internet możesz założyć konto, wypełniając formularz i przesyłając wymagane dokumenty, takie jak - kopia prawa jazdy, zdjęcie samochodu, dokumenty potwierdzające ubezpieczenie. Po zatwierdzeniu aplikacji przez system, będziesz mógł rozpocząć jazdy."
 			},
 			{
 				"id": 33,
@@ -28,6 +29,7 @@
 	{
 		"id": 1,
 		"main_title": "Dlaczego warto pracować jako kierowca?",
+		"public_date": "21-01-2025",
 		"text_array": [
 			{
 				"id": 11,
@@ -54,6 +56,7 @@
 	{
 		"id": 2,
 		"main_title": "Jak dbać o bezpieczeństwo i komfort pracy?",
+		"public_date": "10-02-2025",
 		"text_array": [
 			{
 				"id": 11,
@@ -63,7 +66,7 @@
 			{
 				"id": 22,
 				"title": "Komfort pasażerów",
-				"content": "Aby pasażerowie czuli się komfortowo i bezpiecznie, ważne jest utrzymanie czystości w pojeździe. Regularne sprzątanie wnętrza, kontrolowanie klimatyzacji oraz dbanie o odpowiednią temperaturę to elementy, które wpływają na pozytywne doświadczenia pasażerów i oceny kierowcy."
+				"content": "Utrzymanie czystości w pojeździe i kontrolowanie klimatyzacji to kluczowe elementy wpływające na komfort pasażerów. Regularne sprzątanie wnętrza, dbanie o czystość foteli, pasów bezpieczeństwa i okien sprawiają, że podróż staje się przyjemniejsza. Odpowiednia temperatura i jakość powietrza, wynikająca z dobrze działającej klimatyzacji, również mają duże znaczenie. Pasażerowie doceniają komfort, co przekłada się na ich zadowolenie i pozytywne oceny dla kierowcy. Dbając o te detale, kierowcy zwiększają swoje szanse na lepsze opinie i większą liczbę zleceń."
 			},
 			{
 				"id": 33,

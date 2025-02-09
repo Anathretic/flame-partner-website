@@ -1,9 +1,19 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import { BlogPopupContext } from '../../../context/BlogPopupContext';
 import { SlideModel } from '../../../models/blogCarousel.model';
+import { blogPopupActivityToggle } from '../../../utils/blogPopupActivityToggleUtils';
 
 export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }) => {
 	const { id, main_title } = slide;
 	const slideRef = useRef<HTMLLIElement>(null);
+
+	const slideContext = useContext(BlogPopupContext);
+
+	if (!slideContext) {
+		throw new Error('Błąd użycia useContext!');
+	}
+
+	const { togglePopupVisibility, setSlideItemData } = slideContext;
 
 	const handleMouseMove = (event: React.MouseEvent) => {
 		const el = slideRef.current;
@@ -19,6 +29,12 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 			slideRef.current.style.setProperty('--x', '0');
 			slideRef.current.style.setProperty('--y', '0');
 		}
+	};
+
+	const handleBtn = () => {
+		togglePopupVisibility();
+		setSlideItemData(slide);
+		blogPopupActivityToggle();
 	};
 
 	let classNames = 'slide';
@@ -39,7 +55,9 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 			</div>
 			<article className='slide__content'>
 				<h3 className='slide__headline'>{main_title}</h3>
-				<button className='slide__action btn'>Przeczytaj</button>
+				<button className='slide__action btn' onClick={handleBtn}>
+					Przeczytaj
+				</button>
 			</article>
 		</li>
 	);

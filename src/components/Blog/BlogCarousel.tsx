@@ -34,8 +34,8 @@ export const BlogCarousel: React.FC<SliderModel> = ({ slides }) => {
 				))}
 			</ul>
 			<div className='slider__controls'>
-				<SliderControl type='previous' title='Następny slajd' handleClick={handlePreviousClick} />
-				<SliderControl type='next' title='Poprzedni slajd' handleClick={handleNextClick} />
+				<SliderControl type='previous' title='Poprzedni slajd' handleClick={handlePreviousClick} />
+				<SliderControl type='next' title='Następny slajd' handleClick={handleNextClick} />
 			</div>
 		</div>
 	);

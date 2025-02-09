@@ -1,5 +1,5 @@
 import { Route, Routes, Outlet } from 'react-router-dom';
-import { Navbar, Footer, CookieBanner } from './components';
+import { Navbar, Footer, CookieBanner, BlogPopup } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
 import { WorkOffer, PrivacyPolicy, PageNotFound } from './subpages';
 
@@ -24,13 +24,14 @@ export const App: React.FC = () => {
 					<Route
 						path='/'
 						element={
-							<>
+							<main>
 								<Welcome />
 								<Offer />
 								<ChooseUs />
 								<Blog />
+								<BlogPopup />
 								<Contact />
-							</>
+							</main>
 						}
 					/>
 				</Route>
