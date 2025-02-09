@@ -599,6 +599,45 @@ body {
 	}
 }
 
+.blog-popup {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(10, 10, 10, 0.85);
+	z-index: 100;
+
+	&__container {
+		position: relative;
+		width: 95%;
+		max-width: 525px;
+		height: 95%;
+		max-height: 725px;
+		background-color: globals.$white-color;
+		border-radius: 1rem;
+		overflow-y: auto;
+	}
+
+	&__close-btn {
+		position: absolute;
+		top: 0.5rem;
+		right: 1rem;
+		margin: 0.5rem 0 1.5rem;
+		background-color: transparent;
+		border: none;
+		font-size: 1.5rem;
+		font-family: globals.$main-font;
+		cursor: pointer;
+	}
+}
+
+.blog-popup--is-active {
+	overflow: hidden;
+}
+
 .contact {
 	position: relative;
 	padding: 30px 0 40px;

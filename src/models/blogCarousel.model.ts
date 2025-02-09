@@ -7,7 +7,7 @@ interface SlideTextDataModel {
 export interface SlideDataModel {
 	id: number;
 	main_title: string;
-	text_array: SlideTextDataModel;
+	text_array: SlideTextDataModel[];
 }
 
 export interface SlideModel {
@@ -24,4 +24,11 @@ export interface SliderControlModel {
 	type: 'previous' | 'next';
 	title: string;
 	handleClick: () => void;
+}
+
+export interface BlogPopupContextModel {
+	showPopup: boolean;
+	togglePopupVisibility: () => void;
+	slideItemData: SlideDataModel | undefined;
+	setSlideItemData: React.Dispatch<React.SetStateAction<SlideDataModel | undefined>>;
 }
