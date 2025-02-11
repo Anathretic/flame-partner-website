@@ -7,7 +7,7 @@ YupPassword(yup);
 const errorMessage = { requiredField: 'To pole jest wymagane!' };
 
 export const contactSchema = yup.object({
-	name: yup
+	firstname: yup
 		.string()
 		.min(5, 'Coś za mało liter!')
 		.max(35, 'Chyba trochę za dużo..')
@@ -28,3 +28,25 @@ export const contactSchema = yup.object({
 		.max(2500, 'Nie więcej niż 500 słów..')
 		.required(errorMessage.requiredField),
 });
+
+export const workSchema = yup
+	.object({
+		lastname: yup
+			.string()
+			.min(2, 'Nazwisko jest zbyt krótkie!')
+			.max(51, 'Nazwisko jest zbyt długie!')
+			.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
+			.required(errorMessage.requiredField),
+		phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
+		city: yup
+			.string()
+			.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', ''])
+			.required(errorMessage.requiredField)
+			.test('is-selected', errorMessage.requiredField, value => value !== ''),
+		company: yup
+			.string()
+			.oneOf(['Wszystko', 'Uber', 'Bolt', 'FreeNow', ''], errorMessage.requiredField)
+			.required(errorMessage.requiredField)
+			.test('is-selected', errorMessage.requiredField, value => value !== ''),
+	})
+	.concat(contactSchema.omit(['subject']));

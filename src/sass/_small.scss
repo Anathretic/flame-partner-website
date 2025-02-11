@@ -9,6 +9,14 @@
 		}
 	}
 
+	.work-offer {
+		&__form-title-info-box {
+			li {
+				padding: 0.5em 0;
+			}
+		}
+	}
+
 	.cookie-banner-text {
 		padding: 0.75em;
 	}
@@ -88,8 +96,27 @@
 @media screen and (min-width: 400px) {
 	.form {
 		&__input,
-		&__textarea {
+		&__textarea,
+		&__select {
 			width: 90%;
+		}
+	}
+}
+
+@media screen and (min-height: 400px) {
+	.welcome {
+		&__sub-text {
+			display: block;
+			padding: 0 2em;
+			max-width: 500px;
+			text-align: center;
+			line-height: 1.6em;
+			font-weight: 300;
+
+			span {
+				font-weight: bold;
+				font-style: italic;
+			}
 		}
 	}
 }
@@ -130,6 +157,18 @@
 	.footer {
 		&__copyright-company-name {
 			font-size: 0.75rem;
+		}
+	}
+}
+
+@media screen and (max-height: 500px) {
+	.work-offer {
+		&__hero-image {
+			height: 60vh;
+		}
+
+		&__hero-image-title {
+			font-size: 4rem;
 		}
 	}
 }

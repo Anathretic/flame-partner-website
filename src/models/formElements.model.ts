@@ -1,6 +1,6 @@
 import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { ContactFormModel } from './contactForm.model';
+import { ContactFormModel } from './forms.model';
 
 type Form = ContactFormModel;
 type ErrorMessage = string | FieldError | Merge<FieldError, FieldErrorsImpl<Form>> | undefined;
@@ -12,6 +12,19 @@ export interface InputAndTextareaModel {
 	placeholder?: string;
 	value?: string;
 	readOnly?: boolean;
+}
+
+interface LabelValueItem {
+	value: string;
+	label: string;
+	disabled: boolean;
+}
+
+export interface SelectModel {
+	label: string;
+	selectName: string;
+	errorMessage: ErrorMessage;
+	labelValueArr: LabelValueItem[];
 }
 
 export interface SubmitButtonModel {

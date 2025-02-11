@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { footerHomeItems, footerWorkItems } from './footerItems/footerItems';
+import { footerHomeItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
-import { FaRegCopyright, FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 			<div className='footer__container'>
 				<div className='footer__wrapper'>
 					<div className='footer__box'>
-						<h3>flame</h3>
+						<h2>flame</h2>
 						<p>Pomoc i wspracie na każdym etapie..</p>
 						<div>
 							<a
@@ -23,12 +23,6 @@ const Footer: React.FC = () => {
 								target='_blank'
 								rel='noreferrer'>
 								<FaFacebookSquare fontSize={isMobile ? 20 : 25} />
-							</a>
-							<a href='https://www.instagram.com' target='_blank' rel='noreferrer'>
-								<FaInstagram fontSize={isMobile ? 20 : 25} />
-							</a>
-							<a href='https://www.linkedin.com/' target='_blank' rel='noreferrer'>
-								<FaLinkedin fontSize={isMobile ? 20 : 25} />
 							</a>
 						</div>
 					</div>
@@ -45,13 +39,11 @@ const Footer: React.FC = () => {
 					<div className='footer__box'>
 						<h3>Praca</h3>
 						<ul>
-							{footerWorkItems.map((item, id) => (
-								<li key={id}>
-									<Link to={item.to} onClick={item.onClick}>
-										{item.content}
-									</Link>
-								</li>
-							))}
+							<li>
+								<Link to='/rekrutacja' onClick={scrollToTop}>
+									Rekrutacja
+								</Link>
+							</li>
 						</ul>
 					</div>
 					<div className='footer__box'>

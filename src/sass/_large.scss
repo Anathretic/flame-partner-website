@@ -156,6 +156,7 @@
 	}
 
 	.offer,
+	.work-offer,
 	.choose-us,
 	.blog,
 	.contact,
@@ -240,6 +241,43 @@
 		}
 	}
 
+	.work-offer {
+		&__hero-image-title {
+			font-size: 4.5rem;
+		}
+
+		&__content-wrapper {
+			width: 100%;
+			max-width: 1000px;
+			flex-direction: row;
+		}
+
+		&__text-content {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+			padding-bottom: 3em;
+			max-width: 1000px;
+		}
+
+		&__text-content-box {
+			max-width: 425px;
+		}
+
+		&__banner,
+		&__benefits {
+			padding-bottom: 3rem;
+		}
+
+		&__banner-container-box {
+			h3 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
 	.choose-us {
 		&__box {
 			display: grid;
@@ -312,8 +350,12 @@
 		}
 
 		&__input-error,
-		&__textarea-error {
+		&__select-error {
 			font-size: 0.9em;
+		}
+
+		&__textarea-error {
+			font-size: 0.95em;
 		}
 
 		&__submit {
@@ -412,7 +454,7 @@
 	.blog,
 	.contact {
 		&__special-block {
-			width: 41%;
+			width: 42%;
 			height: 45px;
 
 			&--right {
@@ -445,6 +487,48 @@
 		&__special-circle {
 			&--fifth {
 				top: 130%;
+			}
+		}
+	}
+
+	.work-offer {
+		&__hero-image-title {
+			font-size: 5rem;
+		}
+
+		&__benefits {
+			padding-top: 70px;
+		}
+
+		&__title {
+			font-size: 3.5rem;
+
+			&--special {
+				padding-top: 70px;
+			}
+		}
+
+		&__banner-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1450px;
+		}
+
+		&__banner-container-box {
+			padding: 2rem;
+			margin: 4rem;
+			width: 500px;
+		}
+
+		&__benefits-special-block,
+		&__banner-special-block,
+		&__form-special-block {
+			width: 42%;
+			height: 45px;
+
+			&--right {
+				display: none;
 			}
 		}
 	}
@@ -531,6 +615,47 @@
 				height: 1500px;
 				transform: rotate(65deg);
 			}
+		}
+	}
+
+	.work-offer {
+		&__form {
+			padding-top: 70px;
+		}
+
+		&__form-container {
+			align-items: start;
+			flex-direction: row;
+		}
+
+		&__form-title-box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			margin-left: 4rem;
+		}
+
+		&__form-title,
+		&__form-title-subtext {
+			text-align: left;
+		}
+
+		&__form-title {
+			padding: 0.5rem 0.85rem 0 0.9rem;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__form-title-info-box {
+			padding: 2rem 2.25rem;
+			max-width: 400px;
+			justify-content: start;
+			font-size: 1.1rem;
+		}
+
+		&__work-form {
+			margin-right: 2.5rem;
 		}
 	}
 

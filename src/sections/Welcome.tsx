@@ -17,9 +17,9 @@ const Welcome: React.FC = () => {
 						<p className='welcome__main-text'>
 							z nami <br /> zarobisz <br /> najwięcej!
 						</p>
-						<span className='welcome__sub-text'>
-							Twój rekomendowany partner <span>Bolt</span>
-						</span>
+						<h1 className='welcome__sub-text'>
+							<span>Flame Partner</span> to rozwijający się partner flotowy na terenie województwa lubelskiego
+						</h1>
 						<HashLink className='welcome__special-btn' to='/#oferta'>
 							Oferta
 						</HashLink>
@@ -33,19 +33,23 @@ const Welcome: React.FC = () => {
 			</div>
 			<div className='welcome__btn-container'>
 				<div className='welcome__btn-box'>
-					<Link to='/oferta-pracy' onClick={scrollToTop}>
+					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={BoltIcon} alt='' />
 					</Link>
-					<Link to='/oferta-pracy' onClick={scrollToTop}>
+					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={UberIcon} alt='' />
 					</Link>
-					<Link to='/oferta-pracy' onClick={scrollToTop}>
+					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={FreenowIcon} alt='' />
 					</Link>
 				</div>
 			</div>
 			<div className='welcome__icon-container'>
-				<HashLink smooth to='/#oferta' className='welcome__arrow-icon'>
+				<HashLink
+					smooth
+					to='/#oferta'
+					className='welcome__arrow-icon'
+					aria-label='Przycisk przenoszący do sekcji oferty'>
 					<SlArrowDown fontSize={60} color='#f0f0f0' />
 				</HashLink>
 			</div>

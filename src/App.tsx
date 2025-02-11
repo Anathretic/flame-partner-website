@@ -1,7 +1,7 @@
 import { Route, Routes, Outlet } from 'react-router-dom';
 import { Navbar, Footer, CookieBanner, BlogPopup } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
-import { WorkOffer, PrivacyPolicy, PageNotFound } from './subpages';
+import { Recruitment, PrivacyPolicy, PageNotFound } from './subpages';
 
 export const App: React.FC = () => {
 	return (
@@ -18,24 +18,26 @@ export const App: React.FC = () => {
 					element={
 						<>
 							<Navbar />
-							<Outlet />
+							<main>
+								<Outlet />
+							</main>
 						</>
 					}>
 					<Route
 						path='/'
 						element={
-							<main>
+							<>
 								<Welcome />
 								<Offer />
 								<ChooseUs />
 								<Blog />
 								<BlogPopup />
 								<Contact />
-							</main>
+							</>
 						}
 					/>
 				</Route>
-				<Route path='/oferta-pracy' element={<WorkOffer />} />
+				<Route path='/rekrutacja' element={<Recruitment />} />
 				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				<Route path='*' element={<PageNotFound />} />
 			</Route>

@@ -7,7 +7,7 @@ import { FormSubmit, InputElement, ReCaptchaV2Component, TextareaElement } from 
 import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
-import { ContactFormModel } from '../../models/contactForm.model';
+import { ContactFormModel } from '../../models/forms.model';
 
 const initialSubmitButtonState = 'Wyślij';
 
@@ -23,7 +23,7 @@ export const ContactForm: React.FC = () => {
 		formState: { errors },
 	} = useForm<ContactFormModel>({
 		defaultValues: {
-			name: '',
+			firstname: '',
 			email: '',
 			subject: '',
 			message: '',
@@ -34,7 +34,7 @@ export const ContactForm: React.FC = () => {
 	const refCaptcha = useRef<ReCAPTCHA>(null);
 	const contactFormInputs = contactFormInputsConfig(errors, register);
 
-	const onSubmit: SubmitHandler<ContactFormModel> = async ({ name, email, subject, message }) => {
+	const onSubmit: SubmitHandler<ContactFormModel> = async ({ firstname, email, subject, message }) => {
 		setIsLoading(true);
 		setErrorValue('');
 
@@ -42,7 +42,7 @@ export const ContactForm: React.FC = () => {
 		refCaptcha.current?.reset();
 
 		const params = {
-			name,
+			firstname,
 			email,
 			subject,
 			message,

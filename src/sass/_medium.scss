@@ -57,9 +57,29 @@
 		}
 	}
 
-	.offer {
+	.offer,
+	.work-offer {
+		&__hero-image-title {
+			font-size: 4rem;
+		}
+
 		&__text-content-box {
 			max-width: 325px;
+		}
+	}
+
+	.work-offer {
+		&__form-title-info-box {
+			list-style-type: disc;
+			text-align: left;
+			max-width: 250px;
+		}
+
+		&__benefits-special-block,
+		&__banner-special-block,
+		&__form-special-block {
+			width: 35%;
+			height: 50px;
 		}
 	}
 

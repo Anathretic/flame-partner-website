@@ -16,26 +16,28 @@ const Offer: React.FC = () => {
 						<div className='offer__text-content'>
 							<div className='offer__text-content-box'>
 								<GiTeacher fontSize={56} color='#24485c' />
-								<h3>Profesjonalny onboarding</h3>
+								<h3>Profesjonalne wdrożenie</h3>
 								<p>
 									Nie wiesz jak zacząć? Spokojnie! Jeśli nigdy nie korzystałeś z aplikacji Bolt/Uber/FreeNow
-									przeprowadzimy Cię przez cały proces rejestracji i będziesz mógł od razu zacząć jeździć i zarabiać!
+									<span> przeprowadzimy Cię przez cały proces rejestracji</span> i będziesz mógł od razu zacząć jeździć
+									i zarabiać!
 								</p>
 							</div>
 							<div className='offer__text-content-box'>
 								<HiDocumentCheck fontSize={56} color='#24485c' />
 								<h3>Prostota rozliczeń</h3>
 								<p>
-									Znajomość prawa, jak i wielu systemów rozliczeniowych pozwala nam prowadzić księgowość w sposób prosty
-									i efektywny. Niczym się nie martw, mamy w tym doświadczenie.
+									Znajomość prawa, jak i wielu systemów rozliczeniowych pozwala nam prowadzić księgowość w{' '}
+									<span>sposób prosty i efektywny</span>. Niczym się nie martw, mamy w tym doświadczenie.
 								</p>
 							</div>
 							<div className='offer__text-content-box'>
 								<FaCar fontSize={56} color='#24485c' />
 								<h3>Wynajem samochodów</h3>
 								<p>
-									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż oferujemy wynajem na
-									konkurencyjnych warunkach, a w naszej flocie znajdziesz m.in. Toyotę Corollę, czy Skodę Octavię.
+									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż{' '}
+									<span>oferujemy wynajem na konkurencyjnych warunkach</span>, a w naszej flocie znajdziesz m.in. Toyotę
+									Corollę, czy Skodę Octavię.
 								</p>
 							</div>
 						</div>
@@ -43,11 +45,11 @@ const Offer: React.FC = () => {
 							<div className='offer__image-content-box'>
 								<div className='offer__image-container'>
 									<img src={PhoneImage} alt='Obraz przedstawiający telefon' />
-									<Link to='/oferta-pracy' onClick={scrollToTop}>
-										Sprawdź
-									</Link>
 									<FaPhoneAlt fontSize={56} className='offer__image-container-icon' />
 									<p>Twoja Oferta</p>
+									<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+										Sprawdź
+									</Link>
 								</div>
 								<div className='offer__special-circle offer__special-circle--first' />
 								<div className='offer__special-circle offer__special-circle--second' />
