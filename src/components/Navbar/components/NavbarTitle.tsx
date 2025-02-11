@@ -19,7 +19,7 @@ export const NavbarTitle: React.FC<NavbarTitleModel> = ({ divRef }) => {
 	return (
 		<div className='navbar__title' onClick={scrollToTop}>
 			<div className='navbar__title-box'>
-				<h1 className='navbar__title-text'>flame</h1>
+				<h2 className='navbar__title-text'>flame</h2>
 			</div>
 		</div>
 	);

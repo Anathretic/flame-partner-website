@@ -156,6 +156,7 @@
 	}
 
 	.offer,
+	.work-offer,
 	.choose-us,
 	.blog,
 	.contact,
@@ -240,6 +241,39 @@
 		}
 	}
 
+	.work-offer {
+		&__content-wrapper {
+			width: 100%;
+			max-width: 1000px;
+			flex-direction: row;
+		}
+
+		&__text-content {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+			padding-bottom: 3em;
+			max-width: 1000px;
+		}
+
+		&__text-content-box {
+			max-width: 425px;
+		}
+
+		&__banner,
+		&__benefits {
+			padding-bottom: 3rem;
+		}
+
+		&__banner-container-box {
+			h3 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
 	.choose-us {
 		&__box {
 			display: grid;
@@ -312,8 +346,12 @@
 		}
 
 		&__input-error,
-		&__textarea-error {
+		&__select-error {
 			font-size: 0.9em;
+		}
+
+		&__textarea-error {
+			font-size: 0.95em;
 		}
 
 		&__submit {
@@ -446,6 +484,31 @@
 			&--fifth {
 				top: 130%;
 			}
+		}
+	}
+
+	.work-offer {
+		padding-top: 50px;
+
+		&__title {
+			font-size: 3.5rem;
+
+			&--special {
+				padding-top: 70px;
+			}
+		}
+
+		&__banner-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1450px;
+		}
+
+		&__banner-container-box {
+			padding: 2rem;
+			margin: 4rem;
+			width: 500px;
 		}
 	}
 

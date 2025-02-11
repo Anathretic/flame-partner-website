@@ -88,8 +88,27 @@
 @media screen and (min-width: 400px) {
 	.form {
 		&__input,
-		&__textarea {
+		&__textarea,
+		&__select {
 			width: 90%;
+		}
+	}
+}
+
+@media screen and (min-height: 400px) {
+	.welcome {
+		&__sub-text {
+			display: block;
+			padding: 0 2em;
+			max-width: 500px;
+			text-align: center;
+			line-height: 1.6em;
+			font-weight: 300;
+
+			span {
+				font-weight: bold;
+				font-style: italic;
+			}
 		}
 	}
 }

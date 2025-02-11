@@ -1,7 +1,12 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { InputAndTextareaModel, ReCaptchaV2Model, SubmitButtonModel } from '../../../models/formElements.model';
+import {
+	InputAndTextareaModel,
+	ReCaptchaV2Model,
+	SelectModel,
+	SubmitButtonModel,
+} from '../../../models/formElements.model';
 import { Loader } from '../../Loader';
 
 export const InputElement: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
@@ -48,6 +53,26 @@ export const TextareaElement: React.FC<InputAndTextareaModel> = React.forwardRef
 		</div>
 	);
 });
+
+export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectElement, SelectModel>(
+	({ label, selectName, labelValueArr, errorMessage, ...props }, ref) => {
+		return (
+			<div className='form__box'>
+				<label className='form__label' htmlFor={selectName}>
+					{label}
+				</label>
+				<select className='form__select' ref={ref} {...props}>
+					{labelValueArr.map((option, id) => (
+						<option key={id} disabled={option.disabled} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+				<p className='form__select-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+			</div>
+		);
+	}
+);
 
 export const FormSubmit: React.FC<SubmitButtonModel> = ({ isLoading, buttonText }) => {
 	return (
