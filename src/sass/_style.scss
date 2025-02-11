@@ -417,7 +417,6 @@ body {
 
 .work-offer {
 	position: relative;
-	padding: 30px 0 0;
 	width: 100%;
 	min-height: 100vh;
 	overflow-x: hidden;
@@ -433,6 +432,23 @@ body {
 		flex-direction: column;
 		margin: 0 auto;
 		width: 100%;
+	}
+
+	&__hero-image {
+		@include mixins.flex;
+		flex-direction: column;
+		width: 100%;
+		height: 40vh;
+		background-image: url('../images/work-offer-subpage/work-offer-hero-image.jpg');
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__hero-image-title {
+		color: globals.$white-color;
+		font-size: 3rem;
+		font-weight: 300;
+		font-style: italic;
 	}
 
 	&__title {
@@ -456,7 +472,7 @@ body {
 		@include mixins.flex;
 		flex-direction: column;
 		width: 100%;
-		padding-bottom: 2rem;
+		padding: 50px 0 2rem;
 	}
 
 	&__text-content {
@@ -526,6 +542,109 @@ body {
 			font-style: italic;
 			text-align: center;
 		}
+	}
+
+	&__form {
+		position: relative;
+		padding: 30px 0 40px;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	&__form-container {
+		@include mixins.flex;
+		flex-direction: column;
+	}
+
+	&__form-title {
+		padding-bottom: 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__form-title-box,
+	&__work-form {
+		width: 100%;
+	}
+
+	&__work-form {
+		max-width: 600px;
+	}
+
+	&__form-title-box {
+		@include mixins.flex;
+		flex-direction: column;
+		padding-bottom: 2.5rem;
+		max-width: 600px;
+	}
+
+	&__form-title-subtext {
+		padding: 1rem;
+		width: 90%;
+		max-width: 400px;
+		text-align: center;
+		line-height: 1.8em;
+	}
+
+	&__form-title-info-box {
+		@include mixins.flex;
+		flex-direction: column;
+		padding: 2rem 0;
+		width: 90%;
+		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			padding: 0.5em;
+			width: 100%;
+		}
+
+		p {
+			padding: 0.25rem 0;
+			font-weight: 300;
+
+			span {
+				font-weight: 500;
+			}
+		}
+
+		p:first-of-type {
+			font-weight: 400;
+		}
+	}
+
+	&__form-special-text {
+		line-height: 1.6em;
+	}
+
+	&__benefits-special-block,
+	&__banner-special-block,
+	&__form-special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+
+	&__benefits-special-block,
+	&__form-special-block {
+		background-color: globals.$dark-blue-color;
+	}
+
+	&__banner-special-block {
+		background-color: globals.$white-color;
 	}
 }
 

@@ -98,7 +98,7 @@ export const WorkForm: React.FC = () => {
 	};
 
 	return (
-		<form className='contact__form' onSubmit={handleSubmit(onSubmit)}>
+		<form className='work-offer__work-form' onSubmit={handleSubmit(onSubmit)}>
 			{workFormInputs.map((input, id) => (
 				<InputElement
 					key={id}

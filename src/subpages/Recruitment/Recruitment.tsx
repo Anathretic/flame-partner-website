@@ -5,6 +5,9 @@ const Recruitment: React.FC = () => {
 		<div className='work-offer'>
 			<div className='work-offer__container'>
 				<div className='work-offer__wrapper'>
+					<div className='work-offer__hero-image'>
+						<h1 className='work-offer__hero-image-title'>Rekrutacja</h1>
+					</div>
 					<RecruitmentBenefits />
 					<RecruitmentRequirements />
 					<RecruitmentForm />

@@ -2,38 +2,46 @@ import { WorkForm } from '../../../components/Forms/WorkForm';
 
 const RecruitmentForm: React.FC = () => {
 	return (
-		<section className='contact'>
-			<div className='contact__container'>
-				<div className='contact__title-box'>
-					<h2 className='contact__title'>Zaczynamy?</h2>
-					<p className='contact__title-subtext'>
+		<section className='work-offer__form'>
+			<div className='work-offer__form-container'>
+				<div className='work-offer__form-title-box'>
+					<h2 className='work-offer__form-title'>Zaczynamy?</h2>
+					<p className='work-offer__form-title-subtext'>
 						Gotowy by wyruszyć w drogę? Świetnie! Przed Tobą otwiera się szansa na rozpoczęcie nowego etapu w swoim
 						życiu, który pozwoli Ci zarządzać czasem i łączyć przyjemne z pożytecznym.
 					</p>
-					<ul className='contact__title-info-box'>
+					<ul className='work-offer__form-title-info-box'>
 						<li>
 							<p>Obszar działania:</p>
-							<p style={{ lineHeight: '1.6em' }}>
-								Województwo lubelskie w miastach takich jak Zamość, Lublin, Biłgoraj i Chełm. Pamiętaj, że ciągle się
-								rozwijamy i już niedługo kolejne miasta staną przed Tobą otworem!
+							<p className='work-offer__form-special-text'>
+								Województwo lubelskie w miastach takich jak <span>Zamość, Lublin, Biłgoraj i Chełm.</span> Pamiętaj, że
+								ciągle się rozwijamy i już niedługo <span>kolejne miasta staną przed Tobą otworem!</span>
 							</p>
 						</li>
 						<li>
 							<p>Komfortowe stawki rozliczeń:</p>
-							<p>- do 150 kursów - 50zł</p>
-							<p>- powyżej 150 kurstów - 25zł</p>
+							<p>
+								- do 150 kursów - <span>50zł</span>
+							</p>
+							<p>
+								- powyżej 150 kurstów - <span>25zł</span>
+							</p>
 						</li>
 						<li>
 							<p>Wysokie bonusy:</p>
-							<p>- polecenie pracownika - 200zł</p>
-							<p>- zwrot za badania - 400zł</p>
+							<p>
+								- polecenie pracownika - <span>200zł</span>
+							</p>
+							<p>
+								- zwrot za badania - <span>400zł</span>
+							</p>
 						</li>
 					</ul>
 				</div>
 				<WorkForm />
 			</div>
-			<div className='contact__special-block contact__special-block--left' />
-			<div className='contact__special-block contact__special-block--right' />
+			<div className='work-offer__form-special-block work-offer__form-special-block--left' />
+			<div className='work-offer__form-special-block work-offer__form-special-block--right' />
 		</section>
 	);
 };

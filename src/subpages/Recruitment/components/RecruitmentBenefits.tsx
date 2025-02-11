@@ -41,8 +41,8 @@ const RecruitmentBenefits: React.FC = () => {
 					</p>
 				</div>
 			</div>
-			<div className='contact__special-block contact__special-block--left' />
-			<div className='contact__special-block contact__special-block--right' />
+			<div className='work-offer__benefits-special-block work-offer__benefits-special-block--left' />
+			<div className='work-offer__benefits-special-block work-offer__benefits-special-block--right' />
 		</section>
 	);
 };

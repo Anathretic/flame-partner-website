@@ -22,8 +22,8 @@ const RecruitmentRequirements: React.FC = () => {
 					<h3>4. Telefon lub tablet</h3>
 				</div>
 			</div>
-			<div className='blog__special-block blog__special-block--left' />
-			<div className='blog__special-block blog__special-block--right' />
+			<div className='work-offer__banner-special-block work-offer__banner-special-block--left' />
+			<div className='work-offer__banner-special-block work-offer__banner-special-block--right' />
 		</section>
 	);
 };
