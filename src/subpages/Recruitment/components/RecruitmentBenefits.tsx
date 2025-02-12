@@ -7,8 +7,8 @@ const RecruitmentBenefits: React.FC = () => {
 	return (
 		<section className='work-offer__benefits'>
 			<h2 className='work-offer__title'>Dlaczego my?</h2>
-			<div className='work-offer__text-content'>
-				<div className='work-offer__text-content-box'>
+			<div className='work-offer__benefits-text-content'>
+				<div className='work-offer__benefits-text-content-box'>
 					<HiMiniCurrencyDollar fontSize={56} color='#24485c' />
 					<h3>Konkurencyjne zarobki</h3>
 					<p>
@@ -16,7 +16,7 @@ const RecruitmentBenefits: React.FC = () => {
 						<span>nawet 9000 zł miesięcznie.</span>
 					</p>
 				</div>
-				<div className='work-offer__text-content-box'>
+				<div className='work-offer__benefits-text-content-box'>
 					<FaCalendarAlt fontSize={56} color='#24485c' />
 					<h3>Elastyczny grafik</h3>
 					<p>
@@ -24,7 +24,7 @@ const RecruitmentBenefits: React.FC = () => {
 						<span>Tylko Ty kontrolujesz wysokość wynagrodzenia</span> i ilość przepracowanych godzin!
 					</p>
 				</div>
-				<div className='work-offer__text-content-box'>
+				<div className='work-offer__benefits-text-content-box'>
 					<GiCoinsPile fontSize={56} color='#24485c' />
 					<h3>Przejrzysty system rozliczeń</h3>
 					<p>
@@ -32,7 +32,7 @@ const RecruitmentBenefits: React.FC = () => {
 						<span> zaledwie 1 złotówkę.</span> U Nas nie ma haczyków!
 					</p>
 				</div>
-				<div className='work-offer__text-content-box'>
+				<div className='work-offer__benefits-text-content-box'>
 					<TbPackages fontSize={56} color='#24485c' />
 					<h3>Pakiet benefitów</h3>
 					<p>

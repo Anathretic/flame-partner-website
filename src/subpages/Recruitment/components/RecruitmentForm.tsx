@@ -1,3 +1,4 @@
+import { FaTaxi } from 'react-icons/fa';
 import { WorkForm } from '../../../components/Forms/WorkForm';
 
 const RecruitmentForm: React.FC = () => {
@@ -37,6 +38,9 @@ const RecruitmentForm: React.FC = () => {
 							</p>
 						</li>
 					</ul>
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--first' fontSize={70} />
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--second' fontSize={66} />
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--third' fontSize={54} />
 				</div>
 				<WorkForm />
 			</div>

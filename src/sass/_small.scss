@@ -1,15 +1,9 @@
 @use 'globals';
 
 @media screen and (max-width: 300px) {
-	.contact {
-		&__title-info-box {
-			li {
-				padding: 0.5em 0;
-			}
-		}
-	}
-
+	.contact,
 	.work-offer {
+		&__title-info-box,
 		&__form-title-info-box {
 			li {
 				padding: 0.5em 0;
@@ -89,6 +83,14 @@
 				width: 300px;
 				height: 300px;
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 350px) {
+	.work-offer {
+		&__hero-image-title {
+			font-size: 3.25rem;
 		}
 	}
 }

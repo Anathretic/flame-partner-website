@@ -252,7 +252,7 @@
 			flex-direction: row;
 		}
 
-		&__text-content {
+		&__benefits-text-content {
 			display: flex;
 			justify-content: center;
 			flex-direction: row;
@@ -262,7 +262,7 @@
 			max-width: 1000px;
 		}
 
-		&__text-content-box {
+		&__benefits-text-content-box {
 			max-width: 425px;
 		}
 
@@ -463,14 +463,18 @@
 		}
 	}
 
-	.offer {
-		padding-top: 70px;
-
+	.offer,
+	.blog,
+	.choose-us {
 		&__title {
 			padding: 0.5rem 0.85rem 0;
 			width: 100%;
 			font-size: 3.5rem;
 		}
+	}
+
+	.offer {
+		padding-top: 70px;
 
 		&__content-wrapper {
 			padding: 4em 0;
@@ -535,12 +539,6 @@
 
 	.blog {
 		padding: 70px 0;
-
-		&__title {
-			padding: 0.5rem 0.85rem 5rem;
-			width: 100%;
-			font-size: 3.5rem;
-		}
 	}
 
 	.blog-popup {
@@ -572,12 +570,6 @@
 
 	.choose-us {
 		padding-top: 70px;
-
-		&__title {
-			padding: 0.5rem 0.85rem 0;
-			width: 100%;
-			font-size: 3.5rem;
-		}
 
 		&__box {
 			padding: 4em 0;
@@ -652,6 +644,29 @@
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
+			list-style-type: disc;
+			text-align: left;
+		}
+
+		&__form-title-icon {
+			position: absolute;
+			display: block;
+			color: rgba(10, 10, 10, 0.3);
+
+			&--first {
+				bottom: -1.8em;
+				left: 3.9em;
+			}
+
+			&--second {
+				bottom: -2.7em;
+				left: 5.4em;
+			}
+
+			&--third {
+				bottom: -1.2em;
+				left: 7.5em;
+			}
 		}
 
 		&__work-form {
