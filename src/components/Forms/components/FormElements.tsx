@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import {
 	InputAndTextareaModel,
 	ReCaptchaV2Model,
+	ReturnButtonModel,
 	SelectModel,
 	SubmitButtonModel,
 } from '../../../models/formElements.model';
 import { Loader } from '../../Loader';
+import { scrollToTop } from '../../../utils/scrollToTopUtils';
 
 export const InputElement: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
 	({ label, inputName, type, placeholder, value, readOnly, errorMessage, ...props }, ref) => {
@@ -78,6 +81,21 @@ export const FormSubmit: React.FC<SubmitButtonModel> = ({ isLoading, buttonText 
 	return (
 		<div className='form__box'>
 			{isLoading ? <Loader className='loader' /> : <input className='form__submit' type='submit' value={buttonText} />}
+		</div>
+	);
+};
+
+export const ReturnButton: React.FC<ReturnButtonModel> = ({ isLoading }) => {
+	return (
+		<div className='form__box'>
+			<Link
+				className={isLoading ? 'form__return-btn form__return-btn--opacity' : 'form__return-btn'}
+				to='/'
+				onClick={() => {
+					scrollToTop('');
+				}}>
+				Powrót
+			</Link>
 		</div>
 	);
 };

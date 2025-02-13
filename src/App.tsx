@@ -5,42 +5,37 @@ import { Recruitment, PrivacyPolicy, PageNotFound } from './subpages';
 
 export const App: React.FC = () => {
 	return (
-		<Routes>
-			<Route
-				element={
-					<>
-						<Outlet />
-						<Footer />
-						<CookieBanner />
-					</>
-				}>
+		<>
+			<Routes>
 				<Route
 					element={
 						<>
-							<Navbar />
-							<main>
-								<Outlet />
-							</main>
+							<Outlet />
+							<Footer />
+							<CookieBanner />
 						</>
 					}>
 					<Route
 						path='/'
 						element={
 							<>
-								<Welcome />
-								<Offer />
-								<ChooseUs />
-								<Blog />
-								<BlogPopup />
-								<Contact />
+								<Navbar />
+								<main>
+									<Welcome />
+									<Offer />
+									<ChooseUs />
+									<Blog />
+									<BlogPopup />
+									<Contact />
+								</main>
 							</>
 						}
 					/>
+					<Route path='/rekrutacja' element={<Recruitment />} />
+					<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				</Route>
-				<Route path='/rekrutacja' element={<Recruitment />} />
-				<Route path='/polityka-prywatnosci' element={<PrivacyPolicy />} />
 				<Route path='*' element={<PageNotFound />} />
-			</Route>
-		</Routes>
+			</Routes>
+		</>
 	);
 };

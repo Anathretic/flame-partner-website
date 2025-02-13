@@ -40,6 +40,10 @@ export interface LoaderModel {
 	className: string;
 }
 
+export interface ReturnButtonModel {
+	isLoading: boolean;
+}
+
 export interface ReCaptchaV2Model {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
 	errorValue: string;

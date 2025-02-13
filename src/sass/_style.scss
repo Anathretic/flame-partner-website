@@ -13,7 +13,6 @@
 html {
 	scroll-padding-top: 80px;
 	scroll-behavior: smooth;
-	-webkit-scroll-behavior: smooth;
 }
 
 body {
@@ -88,9 +87,7 @@ body {
 
 	&__title-text {
 		padding: 0.5rem;
-		font-size: 1.65rem;
-		text-transform: uppercase;
-		transition: color 0.3s ease-out;
+		margin-top: 0.35em;
 		cursor: pointer;
 	}
 
@@ -465,7 +462,6 @@ body {
 		color: globals.$white-color;
 		font-size: 3rem;
 		font-weight: 300;
-		font-style: italic;
 	}
 
 	&__title {
@@ -571,6 +567,10 @@ body {
 		max-width: 400px;
 		text-align: center;
 		line-height: 1.8em;
+
+		span {
+			font-weight: 600;
+		}
 	}
 
 	&__form-title-info-box {
@@ -935,6 +935,10 @@ body {
 		max-width: 400px;
 		text-align: center;
 		line-height: 1.8em;
+
+		span {
+			font-weight: 600;
+		}
 	}
 
 	&__title-info-box {
@@ -1083,7 +1087,8 @@ body {
 		text-align: center;
 	}
 
-	&__submit {
+	&__submit,
+	&__return-btn {
 		display: block;
 		padding: 0.75em 3.5em;
 		margin: 1em 1em 1.25em;
@@ -1095,9 +1100,21 @@ body {
 		text-align: center;
 		border: 2px solid globals.$dark-blue-color;
 		border-radius: 2em;
-		transition: background-color 0.3s, color 0.3s;
 		text-decoration: none;
 		cursor: pointer;
+	}
+
+	&__submit {
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	&__return-btn {
+		opacity: 1;
+		transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+
+		&--opacity {
+			opacity: 0;
+		}
 	}
 
 	&__special-text {
@@ -1182,8 +1199,7 @@ body {
 
 	&__box {
 		h2 {
-			font-size: 1.8rem;
-			text-transform: uppercase;
+			margin-left: 0.07em;
 		}
 	}
 
@@ -1213,10 +1229,12 @@ body {
 }
 
 .privacy-policy {
+	position: relative;
 	@include mixins.flex;
 	flex-direction: column;
 	padding: 1em;
 	width: 100%;
+	overflow: hidden;
 
 	&__container {
 		@include mixins.flex;
@@ -1279,14 +1297,37 @@ body {
 		text-decoration: none;
 		cursor: pointer;
 	}
+
+	&__special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+		background-color: globals.$dark-blue-color;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
 }
 
 .notfound {
-	@include mixins.flex;
-	flex-direction: column;
-	padding: 1em;
+	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	overflow: hidden;
+
+	&__container {
+		@include mixins.flex;
+		flex-direction: column;
+		padding: 1em 0 3.75em;
+		width: 100%;
+	}
 
 	&__img {
 		width: 90%;

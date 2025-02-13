@@ -174,7 +174,7 @@
 		}
 
 		&__image-container {
-			width: auto;
+			width: 413px;
 			margin-left: 0;
 
 			img {
@@ -358,7 +358,8 @@
 			font-size: 0.95em;
 		}
 
-		&__submit {
+		&__submit,
+		&__return-btn {
 			font-size: 1.1em;
 
 			&:hover {
@@ -429,7 +430,9 @@
 	}
 
 	.notfound {
-		padding-bottom: 1em;
+		&__container {
+			padding-bottom: 5em;
+		}
 
 		&__img {
 			width: 35%;
@@ -452,7 +455,8 @@
 	.offer,
 	.choose-us,
 	.blog,
-	.contact {
+	.contact,
+	.privacy-policy {
 		&__special-block {
 			width: 42%;
 			height: 45px;
@@ -539,6 +543,10 @@
 
 	.blog {
 		padding: 70px 0;
+
+		&__title {
+			padding-bottom: 2rem;
+		}
 	}
 
 	.blog-popup {
@@ -654,18 +662,18 @@
 			color: rgba(10, 10, 10, 0.3);
 
 			&--first {
-				bottom: -1.8em;
-				left: 3.9em;
+				bottom: -1.3em;
+				left: 4.4em;
 			}
 
 			&--second {
-				bottom: -2.7em;
-				left: 5.4em;
+				bottom: -2.2em;
+				left: 5.9em;
 			}
 
 			&--third {
-				bottom: -1.2em;
-				left: 7.5em;
+				bottom: -0.7em;
+				left: 8em;
 			}
 		}
 
@@ -714,18 +722,18 @@
 			color: rgba(10, 10, 10, 0.3);
 
 			&--first {
-				bottom: -0.5em;
-				left: 3.9em;
+				bottom: 0.5em;
+				left: 4.4em;
 			}
 
 			&--second {
-				bottom: -1.4em;
-				left: 5.4em;
+				bottom: -0.4em;
+				left: 5.9em;
 			}
 
 			&--third {
-				bottom: 0.1em;
-				left: 7.5em;
+				bottom: 1.1em;
+				left: 8em;
 			}
 		}
 
@@ -746,7 +754,7 @@
 		}
 
 		&__title {
-			padding-left: 1rem;
+			padding-left: 0.95rem;
 		}
 
 		&__login-icon {

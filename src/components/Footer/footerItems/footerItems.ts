@@ -1,7 +1,7 @@
 import { FooterItemsModel } from '../../../models/footerItems.model';
 
 export const footerHomeItems: FooterItemsModel[] = [
-	{ to: '/#oferta', content: 'Oferta' },
-	{ to: '/#wybierz-nas', content: 'Wybierz Nas' },
-	{ to: '/#kontakt', content: 'Kontakt' },
+	{ id: 'oferta', to: '/#oferta', content: 'Oferta' },
+	{ id: 'wybierz-nas', to: '/#wybierz-nas', content: 'Wybierz Nas' },
+	{ id: 'kontakt', to: '/#kontakt', content: 'Kontakt' },
 ];
