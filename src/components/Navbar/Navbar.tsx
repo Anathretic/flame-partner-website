@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
 						isScrolled ? 'navbar__container--is-scrolled navbar-is-scrolled' : 'navbar-is-not-scrolled'
 					}`}>
 					<div className='navbar__wrapper'>
-						<NavbarTitle divRef={divRef} />
+						<NavbarTitle divRef={divRef} isScrolled={isScrolled} />
 						{isMobile ? (
 							<>
 								<HiMenuAlt4 className='navbar__mobile-burger-btn' fontSize={32} onClick={() => setToggleMenu(true)} />

@@ -5,6 +5,8 @@ import { footerHomeItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
 
+import FooterLogo from '../../images/logo-images/footer-logo.png';
+
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
 
@@ -15,7 +17,9 @@ const Footer: React.FC = () => {
 			<div className='footer__container'>
 				<div className='footer__wrapper'>
 					<div className='footer__box'>
-						<h2>flame</h2>
+						<h2>
+							<img src={FooterLogo} alt='' />
+						</h2>
 						<p>Pomoc i wspracie na każdym etapie..</p>
 						<div>
 							<a
@@ -31,7 +35,14 @@ const Footer: React.FC = () => {
 						<ul>
 							{footerHomeItems.map((item, id) => (
 								<li key={id}>
-									<HashLink to={item.to}>{item.content}</HashLink>
+									<HashLink
+										smooth
+										to={item.to}
+										onClick={() => {
+											scrollToTop(item.id);
+										}}>
+										{item.content}
+									</HashLink>
 								</li>
 							))}
 						</ul>
@@ -40,7 +51,11 @@ const Footer: React.FC = () => {
 						<h3>Praca</h3>
 						<ul>
 							<li>
-								<Link to='/rekrutacja' onClick={scrollToTop}>
+								<Link
+									to='/rekrutacja'
+									onClick={() => {
+										scrollToTop('');
+									}}>
 									Rekrutacja
 								</Link>
 							</li>
@@ -50,12 +65,21 @@ const Footer: React.FC = () => {
 						<h3>Więcej</h3>
 						<ul>
 							<li>
-								<HashLink to='/#blog' onClick={scrollToTop}>
+								<HashLink
+									smooth
+									to='/#blog'
+									onClick={() => {
+										scrollToTop('blog');
+									}}>
 									Blog
 								</HashLink>
 							</li>
 							<li>
-								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
+								<Link
+									to='/polityka-prywatnosci'
+									onClick={() => {
+										scrollToTop('');
+									}}>
 									Polityka prywatności
 								</Link>
 							</li>

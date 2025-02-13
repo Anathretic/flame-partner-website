@@ -7,4 +7,5 @@ export interface NavbarItemModel {
 
 export interface NavbarTitleModel {
 	divRef: React.MutableRefObject<HTMLDivElement | null>;
+	isScrolled: boolean;
 }

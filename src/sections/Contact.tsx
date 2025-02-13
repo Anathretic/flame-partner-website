@@ -11,6 +11,9 @@ const Contact: React.FC = () => {
 						Gotowy by wyruszyć w drogę? Świetnie! Ale jeśli Twoją głowę męczy jakieś pytanie skorzystaj z formularza
 						kontaktowego lub zadzwoń na poniższy numer!
 					</p>
+					<p className='contact__title-subtext'>
+						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z obowiązującą polityką prywatności.
+					</p>
 					<ul className='contact__title-info-box'>
 						<li>
 							<p>E-mail:</p>

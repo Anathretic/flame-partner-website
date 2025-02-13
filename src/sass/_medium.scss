@@ -50,7 +50,8 @@
 	.offer,
 	.choose-us,
 	.blog,
-	.contact {
+	.contact,
+	.privacy-policy {
 		&__special-block {
 			width: 35%;
 			height: 50px;
@@ -63,18 +64,12 @@
 			font-size: 4rem;
 		}
 
-		&__text-content-box {
+		&__benefits-text-content-box {
 			max-width: 325px;
 		}
 	}
 
 	.work-offer {
-		&__form-title-info-box {
-			list-style-type: disc;
-			text-align: left;
-			max-width: 250px;
-		}
-
 		&__benefits-special-block,
 		&__banner-special-block,
 		&__form-special-block {
@@ -128,7 +123,8 @@
 	}
 
 	.form {
-		&__submit {
+		&__submit,
+		&__return-btn {
 			padding: 0.8em 0;
 			margin-top: 1em;
 			max-width: 250px;

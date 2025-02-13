@@ -174,7 +174,7 @@
 		}
 
 		&__image-container {
-			width: auto;
+			width: 413px;
 			margin-left: 0;
 
 			img {
@@ -252,7 +252,7 @@
 			flex-direction: row;
 		}
 
-		&__text-content {
+		&__benefits-text-content {
 			display: flex;
 			justify-content: center;
 			flex-direction: row;
@@ -262,7 +262,7 @@
 			max-width: 1000px;
 		}
 
-		&__text-content-box {
+		&__benefits-text-content-box {
 			max-width: 425px;
 		}
 
@@ -358,7 +358,8 @@
 			font-size: 0.95em;
 		}
 
-		&__submit {
+		&__submit,
+		&__return-btn {
 			font-size: 1.1em;
 
 			&:hover {
@@ -429,7 +430,9 @@
 	}
 
 	.notfound {
-		padding-bottom: 1em;
+		&__container {
+			padding-bottom: 5em;
+		}
 
 		&__img {
 			width: 35%;
@@ -452,7 +455,8 @@
 	.offer,
 	.choose-us,
 	.blog,
-	.contact {
+	.contact,
+	.privacy-policy {
 		&__special-block {
 			width: 42%;
 			height: 45px;
@@ -463,14 +467,18 @@
 		}
 	}
 
-	.offer {
-		padding-top: 70px;
-
+	.offer,
+	.blog,
+	.choose-us {
 		&__title {
 			padding: 0.5rem 0.85rem 0;
 			width: 100%;
 			font-size: 3.5rem;
 		}
+	}
+
+	.offer {
+		padding-top: 70px;
 
 		&__content-wrapper {
 			padding: 4em 0;
@@ -537,9 +545,7 @@
 		padding: 70px 0;
 
 		&__title {
-			padding: 0.5rem 0.85rem 5rem;
-			width: 100%;
-			font-size: 3.5rem;
+			padding-bottom: 2rem;
 		}
 	}
 
@@ -572,12 +578,6 @@
 
 	.choose-us {
 		padding-top: 70px;
-
-		&__title {
-			padding: 0.5rem 0.85rem 0;
-			width: 100%;
-			font-size: 3.5rem;
-		}
 
 		&__box {
 			padding: 4em 0;
@@ -652,6 +652,29 @@
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
+			list-style-type: disc;
+			text-align: left;
+		}
+
+		&__form-title-icon {
+			position: absolute;
+			display: block;
+			color: rgba(10, 10, 10, 0.3);
+
+			&--first {
+				bottom: -1.3em;
+				left: 4.4em;
+			}
+
+			&--second {
+				bottom: -2.2em;
+				left: 5.9em;
+			}
+
+			&--third {
+				bottom: -0.7em;
+				left: 8em;
+			}
 		}
 
 		&__work-form {
@@ -699,18 +722,18 @@
 			color: rgba(10, 10, 10, 0.3);
 
 			&--first {
-				bottom: -0.5em;
-				left: 3.9em;
+				bottom: 0.5em;
+				left: 4.4em;
 			}
 
 			&--second {
-				bottom: -1.4em;
-				left: 5.4em;
+				bottom: -0.4em;
+				left: 5.9em;
 			}
 
 			&--third {
-				bottom: 0.1em;
-				left: 7.5em;
+				bottom: 1.1em;
+				left: 8em;
 			}
 		}
 
@@ -731,7 +754,7 @@
 		}
 
 		&__title {
-			padding-left: 1rem;
+			padding-left: 0.95rem;
 		}
 
 		&__login-icon {

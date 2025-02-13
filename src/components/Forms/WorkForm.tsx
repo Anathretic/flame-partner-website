@@ -7,6 +7,7 @@ import {
 	FormSubmit,
 	InputElement,
 	ReCaptchaV2Component,
+	ReturnButton,
 	SelectElement,
 	TextareaElement,
 } from './components/FormElements';
@@ -132,6 +133,7 @@ export const WorkForm: React.FC = () => {
 			/>
 			<ReCaptchaV2Component refCaptcha={refCaptcha} errorValue={errorValue} />
 			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
+			<ReturnButton isLoading={isLoading} />
 		</form>
 	);
 };

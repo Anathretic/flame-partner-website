@@ -1,4 +1,5 @@
 import { WorkForm } from '../../../components/Forms/WorkForm';
+import { FaTaxi } from 'react-icons/fa';
 
 const RecruitmentForm: React.FC = () => {
 	return (
@@ -9,6 +10,10 @@ const RecruitmentForm: React.FC = () => {
 					<p className='work-offer__form-title-subtext'>
 						Gotowy by wyruszyć w drogę? Świetnie! Przed Tobą otwiera się szansa na rozpoczęcie nowego etapu w swoim
 						życiu, który pozwoli Ci zarządzać czasem i łączyć przyjemne z pożytecznym.
+					</p>
+					<p className='work-offer__form-title-subtext'>
+						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
+						obowiązującą polityką prywatności.
 					</p>
 					<ul className='work-offer__form-title-info-box'>
 						<li>
@@ -37,6 +42,9 @@ const RecruitmentForm: React.FC = () => {
 							</p>
 						</li>
 					</ul>
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--first' fontSize={70} />
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--second' fontSize={66} />
+					<FaTaxi className='work-offer__form-title-icon work-offer__form-title-icon--third' fontSize={54} />
 				</div>
 				<WorkForm />
 			</div>

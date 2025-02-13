@@ -110,10 +110,18 @@ const PrivacyPolicy: React.FC = () => {
 						świadczeniem usług lub zawarciem umowy może być niemożliwe lub utrudnione.
 					</p>
 				</div>
-				<Link to='/' className='privacy-policy__btn' onClick={scrollToTop} aria-label='Powrót na stronę główną'>
+				<Link
+					to='/'
+					className='privacy-policy__btn'
+					onClick={() => {
+						scrollToTop('');
+					}}
+					aria-label='Powrót na stronę główną'>
 					Powrót
 				</Link>
 			</div>
+			<div className='privacy-policy__special-block privacy-policy__special-block--left' />
+			<div className='privacy-policy__special-block privacy-policy__special-block--right' />
 		</section>
 	);
 };

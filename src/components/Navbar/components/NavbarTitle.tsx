@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { NavbarTitleModel } from '../../../models/navbar.model';
 
-export const NavbarTitle: React.FC<NavbarTitleModel> = ({ divRef }) => {
+import BlackLogoImg from '../../../images/logo-images/black-logo.png';
+import WhiteLogoImg from '../../../images/logo-images/white-logo.png';
+
+export const NavbarTitle: React.FC<NavbarTitleModel> = ({ divRef, isScrolled }) => {
 	const scrollToTop = () => {
 		const { current } = divRef;
 
@@ -19,7 +22,9 @@ export const NavbarTitle: React.FC<NavbarTitleModel> = ({ divRef }) => {
 	return (
 		<div className='navbar__title' onClick={scrollToTop}>
 			<div className='navbar__title-box'>
-				<h2 className='navbar__title-text'>flame</h2>
+				<h2 className='navbar__title-text'>
+					<img src={isScrolled ? BlackLogoImg : WhiteLogoImg} alt='Logo firmy przenoszącę na początek strony' />
+				</h2>
 			</div>
 		</div>
 	);
