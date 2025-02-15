@@ -21,9 +21,11 @@
 	&:active {
 		transform: translateY(1px);
 	}
+}
 
-	&:hover {
-		background-color: globals.$darker-blue-color;
+@media screen and (min-width: 1024px) {
+	.btn:hover {
+		background-color: globals.$sky-blue-color;
 	}
 }
 

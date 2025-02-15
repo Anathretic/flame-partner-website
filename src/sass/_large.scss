@@ -55,7 +55,7 @@
 		grid-template-rows: repeat(1, 1fr);
 		grid-template-columns: repeat(2, 1fr);
 		background: transparent;
-		background-color: globals.$dark-blue-color;
+		background-color: globals.$sky-blue-color;
 
 		&__text-container {
 			position: relative;
@@ -113,7 +113,7 @@
 		}
 
 		&__special-btn:hover {
-			background-color: globals.$darker-blue-color;
+			background-color: globals.$dark-blue-color;
 		}
 
 		&__btn-container {
@@ -364,7 +364,8 @@
 
 			&:hover {
 				color: globals.$white-color;
-				background-color: globals.$dark-blue-color;
+				background-color: globals.$sky-blue-color;
+				border-color: globals.$sky-blue-color;
 			}
 		}
 
@@ -377,7 +378,8 @@
 		&__close-btn {
 			&:hover {
 				color: globals.$white-color;
-				background-color: globals.$dark-blue-color;
+				background-color: globals.$sky-blue-color;
+				border: 2px solid globals.$sky-blue-color;
 			}
 		}
 	}
@@ -394,7 +396,7 @@
 
 		&__box {
 			a:hover {
-				color: globals.$gray-color;
+				color: globals.$black-color;
 			}
 		}
 
@@ -414,7 +416,8 @@
 
 			&:hover {
 				color: globals.$white-color;
-				background-color: globals.$dark-blue-color;
+				background-color: globals.$sky-blue-color;
+				border-color: globals.$sky-blue-color;
 			}
 		}
 	}
@@ -783,10 +786,6 @@
 	.welcome {
 		&__main-text {
 			font-size: 4.5rem;
-		}
-
-		&__sub-text {
-			font-size: 1.1rem;
 		}
 
 		&__special-btn {
