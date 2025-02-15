@@ -75,7 +75,7 @@ export const WorkForm: React.FC = () => {
 			await emailjs
 				.send(
 					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_CONTACT_TEMPLATE_ID}`,
+					`${import.meta.env.VITE_WORK_OFFER_TEMPLATE_ID}`,
 					params,
 					`${import.meta.env.VITE_PUBLIC_KEY}`
 				)

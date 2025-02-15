@@ -1,6 +1,14 @@
+import { useEffect } from 'react';
+import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 import { RecruitmentBenefits, RecruitmentForm, RecruitmentRequirements } from './components';
 
 const Recruitment: React.FC = () => {
+	const { setShowSpecialLinks } = useFooterLinksContext();
+
+	useEffect(() => {
+		setShowSpecialLinks(true);
+	}, []);
+
 	return (
 		<div className='work-offer'>
 			<div className='work-offer__container'>

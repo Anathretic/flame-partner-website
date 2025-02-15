@@ -42,16 +42,18 @@
 	.navbar-is-scrolled {
 		.navbar {
 			&__item-link {
-				color: globals.$darker-blue-color;
+				color: globals.$dark-blue-color;
 			}
 		}
 	}
 
 	.offer,
 	.choose-us,
+	.work-offer,
 	.blog,
 	.contact,
-	.privacy-policy {
+	.privacy-policy,
+	.notfound {
 		&__special-block {
 			width: 35%;
 			height: 50px;

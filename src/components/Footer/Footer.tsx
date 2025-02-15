@@ -4,13 +4,13 @@ import { useMediaQuery } from 'react-responsive';
 import { footerHomeItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
-
 import FooterLogo from '../../images/logo-images/footer-logo.png';
+import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 
 const Footer: React.FC = () => {
-	const currentYear = new Date().getFullYear();
-
+	const { showSpecialLinks } = useFooterLinksContext();
 	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
+	const currentYear = new Date().getFullYear();
 
 	return (
 		<footer className='footer'>
@@ -33,29 +33,30 @@ const Footer: React.FC = () => {
 					<div className='footer__box'>
 						<h3>Home</h3>
 						<ul>
-							{footerHomeItems.map((item, id) => (
-								<li key={id}>
-									<HashLink
-										smooth
-										to={item.to}
-										onClick={() => {
-											scrollToTop(item.id);
-										}}>
-										{item.content}
-									</HashLink>
+							{!showSpecialLinks ? (
+								<>
+									{footerHomeItems.map((item, id) => (
+										<li key={id}>
+											<HashLink smooth to={item.to} onClick={scrollToTop}>
+												{item.content}
+											</HashLink>
+										</li>
+									))}
+								</>
+							) : (
+								<li>
+									<Link to='/' onClick={scrollToTop}>
+										Strona główna
+									</Link>
 								</li>
-							))}
+							)}
 						</ul>
 					</div>
 					<div className='footer__box'>
 						<h3>Praca</h3>
 						<ul>
 							<li>
-								<Link
-									to='/rekrutacja'
-									onClick={() => {
-										scrollToTop('');
-									}}>
+								<Link to='/rekrutacja' onClick={scrollToTop}>
 									Rekrutacja
 								</Link>
 							</li>
@@ -64,22 +65,15 @@ const Footer: React.FC = () => {
 					<div className='footer__box'>
 						<h3>Więcej</h3>
 						<ul>
+							{!showSpecialLinks && (
+								<li>
+									<HashLink smooth to='/#blog' onClick={scrollToTop}>
+										Blog
+									</HashLink>
+								</li>
+							)}
 							<li>
-								<HashLink
-									smooth
-									to='/#blog'
-									onClick={() => {
-										scrollToTop('blog');
-									}}>
-									Blog
-								</HashLink>
-							</li>
-							<li>
-								<Link
-									to='/polityka-prywatnosci'
-									onClick={() => {
-										scrollToTop('');
-									}}>
+								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
 									Polityka prywatności
 								</Link>
 							</li>
