@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useFooterLinksContext } from '../hooks/useFooterLinksContext';
 import { scrollToTop } from '../utils/scrollToTopUtils';
 
 const PrivacyPolicy: React.FC = () => {
+	const { setShowSpecialLinks } = useFooterLinksContext();
+
+	useEffect(() => {
+		setShowSpecialLinks(true);
+	}, []);
+
 	return (
 		<section className='privacy-policy'>
 			<div className='privacy-policy__container'>
@@ -110,13 +118,7 @@ const PrivacyPolicy: React.FC = () => {
 						świadczeniem usług lub zawarciem umowy może być niemożliwe lub utrudnione.
 					</p>
 				</div>
-				<Link
-					to='/'
-					className='privacy-policy__btn'
-					onClick={() => {
-						scrollToTop('');
-					}}
-					aria-label='Powrót na stronę główną'>
+				<Link to='/' className='privacy-policy__btn' onClick={scrollToTop} aria-label='Powrót na stronę główną'>
 					Powrót
 				</Link>
 			</div>

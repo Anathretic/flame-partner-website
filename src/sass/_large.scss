@@ -454,16 +454,34 @@
 
 	.offer,
 	.choose-us,
+	.work-offer,
 	.blog,
 	.contact,
-	.privacy-policy {
+	.privacy-policy,
+	.notfound {
 		&__special-block {
-			width: 42%;
 			height: 45px;
 
 			&--right {
 				display: none;
 			}
+		}
+	}
+
+	.offer,
+	.choose-us,
+	.blog,
+	.contact {
+		&__special-block {
+			width: 42%;
+		}
+	}
+
+	.work-offer,
+	.privacy-policy,
+	.notfound {
+		&__special-block {
+			width: 41.6%;
 		}
 	}
 
@@ -532,7 +550,7 @@
 		&__benefits-special-block,
 		&__banner-special-block,
 		&__form-special-block {
-			width: 42%;
+			width: 41.6%;
 			height: 45px;
 
 			&--right {

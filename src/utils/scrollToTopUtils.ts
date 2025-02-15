@@ -1,10 +1,4 @@
-export const scrollToTop = (id: string) => {
+export const scrollToTop = () => {
 	const body = document.querySelector('#root');
 	body?.scrollIntoView({ behavior: 'smooth' });
-
-	if (id) {
-		setTimeout(() => {
-			window.history.replaceState(null, '', `#${id}`);
-		}, 250);
-	}
 };

@@ -38,6 +38,31 @@ body {
 	color: globals.$special-yellow-color;
 }
 
+.offer,
+.choose-us,
+.work-offer,
+.blog,
+.contact,
+.notfound,
+.privacy-policy {
+	&__special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+}
+
 .navbar {
 	display: flex;
 	justify-content: center;
@@ -393,20 +418,7 @@ body {
 	}
 
 	&__special-block {
-		bottom: 0;
-		width: 40%;
-		height: 40px;
 		background-color: globals.$dark-blue-color;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
 	}
 }
 
@@ -744,22 +756,7 @@ body {
 	}
 
 	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
 		background-color: #c4c4c4;
-		transform: skew(45deg);
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
 	}
 }
 
@@ -799,21 +796,7 @@ body {
 	}
 
 	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
 		background-color: globals.$white-color;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
 	}
 }
 
@@ -972,21 +955,7 @@ body {
 	}
 
 	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
 		background-color: globals.$dark-blue-color;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
 	}
 }
 
@@ -1299,21 +1268,7 @@ body {
 	}
 
 	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
 		background-color: globals.$dark-blue-color;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
 	}
 }
 
@@ -1354,5 +1309,9 @@ body {
 		transition: background-color 0.3s, color 0.3s;
 		text-decoration: none;
 		cursor: pointer;
+	}
+
+	&__special-block {
+		background-color: globals.$dark-blue-color;
 	}
 }
