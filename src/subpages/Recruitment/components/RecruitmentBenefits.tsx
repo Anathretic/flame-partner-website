@@ -29,7 +29,7 @@ const RecruitmentBenefits: React.FC = () => {
 					<h3>Przejrzysty system rozliczeń</h3>
 					<p>
 						Jeśli udało Ci się osiągnąć bardzo wysoką ilość kursów, to nasza usługa rozliczeniowa będzie Cię kosztować
-						<span> zaledwie 1 złotówkę.</span> U Nas nie ma haczyków!
+						<span> zaledwie kilka złotych.</span> U Nas nie ma haczyków!
 					</p>
 				</div>
 				<div className='work-offer__benefits-text-content-box'>

@@ -37,7 +37,7 @@ const Offer: React.FC = () => {
 								<p>
 									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż{' '}
 									<span>oferujemy wynajem na konkurencyjnych warunkach</span>, a w naszej flocie znajdziesz m.in. Toyotę
-									Corollę, czy Skodę Octavię.
+									Corollę, czy Skodę Fabię.
 								</p>
 							</div>
 						</div>
@@ -56,6 +56,8 @@ const Offer: React.FC = () => {
 								<div className='offer__special-circle offer__special-circle--third' />
 								<div className='offer__special-circle offer__special-circle--fourth' />
 								<div className='offer__special-circle offer__special-circle--fifth' />
+								<div className='offer__special-circle offer__special-circle--sixth' />
+								<div className='offer__special-circle offer__special-circle--seventh' />
 							</div>
 						</div>
 					</div>
