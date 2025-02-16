@@ -1,50 +1,19 @@
-# React + TypeScript + Vite
+# Flame Partner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+This is my next website project for a company that partners with Bolt/Uber/FreeNow. Design, mockup, coding - everything was on my side.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Why React? Because in the future the website is to turn into an app to respond to the need of people working in the company for an app to facilitate time management and automation - certain business requirements prevent it from being available, so I present the website itself.
 
-## Expanding the ESLint configuration
+## Coding & Problems
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Given my experience so far, there were no problems, while the carousel appearing in the blog section and the design of the offer section based on dots was an interesting task.
 
-- Configure the top-level `parserOptions` property like this:
+## Links, Tools & Tech-stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Used:** HTML, CSS, SASS, JavaScript, React (incl. react-hook-form), TypeScript, Yup, Vite
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**URL:** [Flame Partner](https://flamepartner.pl/)

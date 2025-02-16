@@ -118,6 +118,12 @@ const PrivacyPolicy: React.FC = () => {
 						świadczeniem usług lub zawarciem umowy może być niemożliwe lub utrudnione.
 					</p>
 				</div>
+				<div className='privacy-policy__box'>
+					<p>Wsparcie merytoryczne, kodowanie oraz wykonanie:</p>
+					<a href='https://www.linkedin.com/in/konrad-wojtylo' target='_blank' rel='noreferrer'>
+						Konrad Wojtyło
+					</a>
+				</div>
 				<Link to='/' className='privacy-policy__btn' onClick={scrollToTop} aria-label='Powrót na stronę główną'>
 					Powrót
 				</Link>
