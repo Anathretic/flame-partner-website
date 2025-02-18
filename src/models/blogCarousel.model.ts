@@ -1,5 +1,4 @@
 interface SlideTextDataModel {
-	id: number;
 	title: string;
 	content: string;
 }
@@ -8,7 +7,7 @@ export interface SlideDataModel {
 	id: number;
 	main_title: string;
 	public_date: string;
-	text_array: SlideTextDataModel[];
+	sections: SlideTextDataModel[];
 }
 
 export interface SlideModel {
@@ -32,4 +31,10 @@ export interface BlogPopupContextModel {
 	togglePopupVisibility: () => void;
 	slideItemData: SlideDataModel | undefined;
 	setSlideItemData: React.Dispatch<React.SetStateAction<SlideDataModel | undefined>>;
+}
+
+export interface GetBlogDataModel {
+	setSlides: React.Dispatch<React.SetStateAction<SlideDataModel[]>>;
+	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+	setError: React.Dispatch<React.SetStateAction<boolean>>;
 }

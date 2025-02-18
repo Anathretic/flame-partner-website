@@ -12,7 +12,7 @@ Given my experience so far, there were no problems, while the carousel appearing
 
 ## Links, Tools & Tech-stack
 
-**Used:** HTML, CSS, SASS, JavaScript, React (incl. react-hook-form), TypeScript, Yup, Vite
+**Used:** HTML, CSS, SASS, JavaScript, React (incl. react-hook-form), TypeScript, Supabase, Yup, Vite
 
 **Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/)
 

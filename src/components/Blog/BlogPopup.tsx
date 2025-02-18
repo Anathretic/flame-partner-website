@@ -27,8 +27,8 @@ const BlogPopup: React.FC = () => {
 								<h4 className='blog-popup__title'>{slideItemData.main_title}</h4>
 								<p className='blog-popup__public-date'>Opublikowano: {slideItemData.public_date}</p>
 								<div className='blog-popup__content-container'>
-									{slideItemData.text_array.map(el => (
-										<div key={el.id} className='blog-popup__content-box'>
+									{slideItemData.sections.map((el, id) => (
+										<div key={id} className='blog-popup__content-box'>
 											<h4 className='blog-popup__content-title'>{el.title}</h4>
 											<p className='blog-popup__content-text'>{el.content}</p>
 										</div>
