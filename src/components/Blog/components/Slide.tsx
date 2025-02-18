@@ -15,12 +15,12 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 
 	const { togglePopupVisibility, setSlideItemData } = slideContext;
 
-	const handleMouseMove = (event: React.MouseEvent) => {
+	const handleMouseMove = (e: React.MouseEvent) => {
 		const el = slideRef.current;
 		const r = el?.getBoundingClientRect();
 		if (r) {
-			el?.style.setProperty('--x', (event.clientX - (r.left + Math.floor(r.width / 2))).toString());
-			el?.style.setProperty('--y', (event.clientY - (r.top + Math.floor(r.height / 2))).toString());
+			el?.style.setProperty('--x', (e.clientX - (r.left + Math.floor(r.width / 2))).toString());
+			el?.style.setProperty('--y', (e.clientY - (r.top + Math.floor(r.height / 2))).toString());
 		}
 	};
 
