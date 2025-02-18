@@ -14,12 +14,12 @@ const Welcome: React.FC = () => {
 			<div className='welcome__wrapper'>
 				<div className='welcome__text-container'>
 					<div className='welcome__text-box'>
-						<p className='welcome__main-text'>
+						<h1 className='welcome__main-text'>
 							z nami <br /> zarobisz <br /> najwięcej!
-						</p>
-						<h1 className='welcome__sub-text'>
-							<span>Flame Partner</span> to rozwijający się partner flotowy na terenie województwa lubelskiego
 						</h1>
+						<p className='welcome__sub-text'>
+							<span>Flame Partner</span> to rozwijający się partner flotowy na terenie województwa lubelskiego
+						</p>
 						<HashLink smooth className='welcome__special-btn' to='/#oferta'>
 							Oferta
 						</HashLink>
