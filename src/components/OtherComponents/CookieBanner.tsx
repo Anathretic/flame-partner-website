@@ -29,7 +29,10 @@ const CookieBanner: React.FC = ({ ...otherProps }) => {
 			<p className='cookie-banner-text'>
 				Ta strona używa plików cookie wyłącznie w celach technicznych (np. google reCaptcha). Dowiedz się więcej z
 				naszej{' '}
-				<Link to='/polityka-prywatnosci' className='cookie-banner-link' onClick={scrollToTop}>
+				<Link
+					to='/polityka-prywatnosci'
+					className='cookie-banner-link'
+					onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}>
 					polityki prywatności
 				</Link>
 				.

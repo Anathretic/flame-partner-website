@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { FaAddressCard, FaCarAlt, FaRegUser, FaTabletAlt } from 'react-icons/fa';
 
 const RecruitmentRequirements: React.FC = () => {
@@ -28,4 +29,4 @@ const RecruitmentRequirements: React.FC = () => {
 	);
 };
 
-export default RecruitmentRequirements;
+export default memo(RecruitmentRequirements);

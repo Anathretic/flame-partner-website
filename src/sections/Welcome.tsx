@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { scrollToTop } from '../utils/scrollToTopUtils';
@@ -33,13 +34,22 @@ const Welcome: React.FC = () => {
 			</div>
 			<div className='welcome__btn-container'>
 				<div className='welcome__btn-box'>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link
+						to='/rekrutacja'
+						onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}
+						aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={BoltIcon} alt='' />
 					</Link>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link
+						to='/rekrutacja'
+						onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}
+						aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={UberIcon} alt='' />
 					</Link>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link
+						to='/rekrutacja'
+						onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}
+						aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={FreenowIcon} alt='' />
 					</Link>
 				</div>
@@ -57,4 +67,4 @@ const Welcome: React.FC = () => {
 	);
 };
 
-export default Welcome;
+export default memo(Welcome);

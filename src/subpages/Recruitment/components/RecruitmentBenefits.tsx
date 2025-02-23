@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { GiCoinsPile } from 'react-icons/gi';
 import { HiMiniCurrencyDollar } from 'react-icons/hi2';
@@ -47,4 +48,4 @@ const RecruitmentBenefits: React.FC = () => {
 	);
 };
 
-export default RecruitmentBenefits;
+export default memo(RecruitmentBenefits);

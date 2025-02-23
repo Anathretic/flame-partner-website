@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const ChooseUs: React.FC = () => {
 	return (
 		<section id='wybierz-nas' className='choose-us'>
@@ -60,4 +62,4 @@ const ChooseUs: React.FC = () => {
 	);
 };
 
-export default ChooseUs;
+export default memo(ChooseUs);

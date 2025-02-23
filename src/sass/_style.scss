@@ -12,7 +12,7 @@
 
 html {
 	scroll-padding-top: 80px;
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 }
 
 body {
@@ -36,6 +36,16 @@ body {
 
 .cookie-banner-link {
 	color: globals.$special-yellow-color;
+}
+
+.subpage-loader {
+	@include mixins.flex;
+	min-height: 100vh;
+
+	&__spinner {
+		@include mixins.loader;
+		font-size: 90px;
+	}
 }
 
 .offer,
@@ -1167,14 +1177,8 @@ body {
 	margin: 1.19em 0;
 
 	&__spinner {
-		position: relative;
-		width: 1em;
-		height: 1em;
-		color: globals.$dark-blue-color;
+		@include mixins.loader;
 		font-size: 45px;
-		border-radius: 50%;
-		animation: spin-animation 1.7s infinite ease, round-animation 1.7s infinite ease;
-		overflow: hidden;
 	}
 }
 

@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
@@ -11,6 +12,8 @@ const Footer: React.FC = () => {
 	const { showSpecialLinks } = useFooterLinksContext();
 	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
 	const currentYear = new Date().getFullYear();
+
+	const memoizedFooterItems = useMemo(() => footerHomeItems, []);
 
 	return (
 		<footer className='footer'>
@@ -35,9 +38,9 @@ const Footer: React.FC = () => {
 						<ul>
 							{!showSpecialLinks ? (
 								<>
-									{footerHomeItems.map((item, id) => (
+									{memoizedFooterItems.map((item, id) => (
 										<li key={id}>
-											<HashLink smooth to={item.to} onClick={scrollToTop}>
+											<HashLink smooth to={item.to}>
 												{item.content}
 											</HashLink>
 										</li>
@@ -45,7 +48,7 @@ const Footer: React.FC = () => {
 								</>
 							) : (
 								<li>
-									<Link to='/' onClick={scrollToTop}>
+									<Link to='/' onClick={() => scrollToTop({ scrollBehaviour: 'smooth' })}>
 										Strona główna
 									</Link>
 								</li>
@@ -56,7 +59,7 @@ const Footer: React.FC = () => {
 						<h3>Praca</h3>
 						<ul>
 							<li>
-								<Link to='/rekrutacja' onClick={scrollToTop}>
+								<Link to='/rekrutacja' onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}>
 									Rekrutacja
 								</Link>
 							</li>
@@ -67,13 +70,13 @@ const Footer: React.FC = () => {
 						<ul>
 							{!showSpecialLinks && (
 								<li>
-									<HashLink smooth to='/#blog' onClick={scrollToTop}>
+									<HashLink smooth to='/#blog'>
 										Blog
 									</HashLink>
 								</li>
 							)}
 							<li>
-								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
+								<Link to='/polityka-prywatnosci' onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}>
 									Polityka prywatności
 								</Link>
 							</li>
