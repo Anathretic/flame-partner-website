@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import { FooterLinksContextModel } from '../models/footer.model';
 
 export const FooterLinksContext = createContext<FooterLinksContextModel | null>(null);
@@ -6,11 +6,9 @@ export const FooterLinksContext = createContext<FooterLinksContextModel | null>(
 const FooterLinksProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	const [showSpecialLinks, setShowSpecialLinks] = useState(false);
 
-	return (
-		<FooterLinksContext.Provider value={{ showSpecialLinks, setShowSpecialLinks }}>
-			{children}
-		</FooterLinksContext.Provider>
-	);
+	const contextValue = useMemo(() => ({ showSpecialLinks, setShowSpecialLinks }), [showSpecialLinks]);
+
+	return <FooterLinksContext.Provider value={contextValue}>{children}</FooterLinksContext.Provider>;
 };
 
 export default FooterLinksProvider;

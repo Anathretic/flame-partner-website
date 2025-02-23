@@ -12,7 +12,8 @@ const Contact: React.FC = () => {
 						kontaktowego lub zadzwoń na poniższy numer!
 					</p>
 					<p className='contact__title-subtext'>
-						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z obowiązującą polityką prywatności.
+						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
+						obowiązującą polityką prywatności.
 					</p>
 					<ul className='contact__title-info-box'>
 						<li>

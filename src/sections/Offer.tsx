@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../utils/scrollToTopUtils';
 import { FaCar, FaPhoneAlt } from 'react-icons/fa';
@@ -47,7 +48,10 @@ const Offer: React.FC = () => {
 									<img src={PhoneImage} alt='Obraz przedstawiający telefon' />
 									<FaPhoneAlt fontSize={56} className='offer__image-container-icon' />
 									<p>Twoja Oferta</p>
-									<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+									<Link
+										to='/rekrutacja'
+										onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}
+										aria-label='Przycisk przenoszący na stronę rekrutacji'>
 										Sprawdź
 									</Link>
 								</div>
@@ -69,4 +73,4 @@ const Offer: React.FC = () => {
 	);
 };
 
-export default Offer;
+export default memo(Offer);

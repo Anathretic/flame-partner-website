@@ -124,7 +124,11 @@ const PrivacyPolicy: React.FC = () => {
 						Konrad Wojtyło
 					</a>
 				</div>
-				<Link to='/' className='privacy-policy__btn' onClick={scrollToTop} aria-label='Powrót na stronę główną'>
+				<Link
+					to='/'
+					className='privacy-policy__btn'
+					onClick={() => scrollToTop({ scrollBehaviour: 'smooth' })}
+					aria-label='Powrót na stronę główną'>
 					Powrót
 				</Link>
 			</div>

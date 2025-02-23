@@ -1,5 +1,17 @@
+@use 'globals';
+
 @mixin flex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@mixin loader {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	color: globals.$dark-blue-color;
+	border-radius: 50%;
+	animation: spin-animation 1.7s infinite ease, round-animation 1.7s infinite ease;
+	overflow: hidden;
 }

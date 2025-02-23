@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { NavbarItem } from './components/NavbarItem';
+import NavbarItem from './components/NavbarItem';
 import { NavbarTitle } from './components/NavbarTitle';
 import { navbarItems } from './components/navbarData/navbarItems';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
+
+import throttle from 'lodash/throttle';
 
 const Navbar: React.FC = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,6 +16,8 @@ const Navbar: React.FC = () => {
 	const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
 	const divRef = useRef<HTMLDivElement | null>(null);
+
+	const memoizedNavbarItems = useMemo(() => navbarItems, []);
 
 	const handleMenuClose = () => {
 		setIsAnimating(true);
@@ -28,15 +32,11 @@ const Navbar: React.FC = () => {
 		setIsAnimating(false);
 	};
 
-	const handleScroll = () => {
-		if (window.scrollY > 30) {
-			setIsScrolled(true);
-		} else {
-			setIsScrolled(false);
-		}
-	};
-
 	useEffect(() => {
+		const handleScroll = throttle(() => {
+			setIsScrolled(window.scrollY > 30);
+		}, 100);
+
 		window.addEventListener('scroll', handleScroll);
 
 		return () => {
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
 											<li className='navbar__mobile-exit-icon'>
 												<AiOutlineClose fontSize={28} onClick={handleMenuClose} />
 											</li>
-											{navbarItems.map(({ title, section }) => (
+											{memoizedNavbarItems.map(({ title, section }) => (
 												<NavbarItem
 													key={title}
 													title={title}
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
 						) : (
 							<nav className='navbar__desktop'>
 								<ul className='navbar__desktop-list'>
-									{navbarItems.map(({ title, section }) => (
+									{memoizedNavbarItems.map(({ title, section }) => (
 										<NavbarItem key={title} title={title} section={section} />
 									))}
 								</ul>
