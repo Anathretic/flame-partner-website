@@ -525,6 +525,14 @@
 		}
 	}
 
+	.contact {
+		&__title-subtext {
+			a:hover {
+				color: globals.$sky-blue-color;
+			}
+		}
+	}
+
 	.form {
 		&__label {
 			font-size: 1.1em;
@@ -934,17 +942,17 @@
 			color: rgba(10, 10, 10, 0.3);
 
 			&--first {
-				bottom: 0.5em;
+				bottom: 1.5em;
 				left: 4.4em;
 			}
 
 			&--second {
-				bottom: -0.4em;
+				bottom: 0.6em;
 				left: 5.9em;
 			}
 
 			&--third {
-				bottom: 1.1em;
+				bottom: 2.6em;
 				left: 8em;
 			}
 		}
@@ -988,16 +996,13 @@
 		}
 
 		&__text-container-icon {
-			display: block;
-			position: absolute;
-			color: rgba(255, 255, 255, 0.15);
-
 			&--first {
 				top: -2.5em;
 				right: 6em;
 			}
 
 			&--second {
+				display: block;
 				top: -0.5em;
 				left: 1.5em;
 				animation: car-appear 4.5s 1 forwards;
