@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
 								</>
 							) : (
 								<li>
-									<Link to='/' onClick={() => scrollToTop({ scrollBehaviour: 'smooth' })}>
+									<Link to='/' onClick={scrollToTop}>
 										Strona główna
 									</Link>
 								</li>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
 						<h3>Praca</h3>
 						<ul>
 							<li>
-								<Link to='/rekrutacja' onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}>
+								<Link to='/rekrutacja' onClick={scrollToTop}>
 									Rekrutacja
 								</Link>
 							</li>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
 								</li>
 							)}
 							<li>
-								<Link to='/polityka-prywatnosci' onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}>
+								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
 									Polityka prywatności
 								</Link>
 							</li>

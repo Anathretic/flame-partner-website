@@ -1,14 +1,8 @@
-export const scrollToTop = ({ scrollBehaviour }: { scrollBehaviour: 'auto' | 'smooth' }) => {
+export const scrollToTop = () => {
 	const body = document.querySelector<HTMLElement>('#root');
 
 	if (!body) return;
-
-	if (scrollBehaviour === 'auto') {
-		body.style.visibility = 'hidden';
-		setTimeout(() => {
-			body.scrollIntoView({ behavior: 'auto' });
-			body.style.visibility = 'visible';
-		}, 75);
-	}
-	if (scrollBehaviour === 'smooth') body.scrollIntoView({ behavior: 'smooth' });
+	setTimeout(() => {
+		body.scrollIntoView({ behavior: 'smooth' });
+	}, 50);
 };

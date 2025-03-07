@@ -1,8 +1,7 @@
-import { lazy, Suspense } from 'react';
-import { Route, Routes, Outlet, useLocation } from 'react-router-dom';
-import { Navbar, Footer, CookieBanner, BlogPopup, HomeWrapper } from './components';
+import { lazy } from 'react';
+import { Route, Routes, Outlet } from 'react-router-dom';
+import { Navbar, Footer, CookieBanner, BlogPopup, HomeWrapper, SuspenseWithFooter } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
-import { SubpageLoader } from './components/Loader';
 import { delaySubpageImport } from './helpers/delaySubpageImport';
 
 const Recruitment = lazy(() => delaySubpageImport(() => import('./subpages/Recruitment/Recruitment'), 1000));
@@ -10,8 +9,6 @@ const PrivacyPolicy = lazy(() => delaySubpageImport(() => import('./subpages/Pri
 const PageNotFound = lazy(() => delaySubpageImport(() => import('./subpages/PageNotFound'), 1000));
 
 export const App: React.FC = () => {
-	const location = useLocation();
-
 	return (
 		<>
 			<Routes>
@@ -19,7 +16,6 @@ export const App: React.FC = () => {
 					element={
 						<>
 							<Outlet />
-							<Footer />
 							<CookieBanner />
 						</>
 					}>
@@ -36,33 +32,13 @@ export const App: React.FC = () => {
 									<BlogPopup />
 									<Contact />
 								</HomeWrapper>
+								<Footer />
 							</>
 						}
 					/>
-					<Route
-						path='/rekrutacja'
-						element={
-							<Suspense key={location.pathname} fallback={<SubpageLoader />}>
-								<Recruitment />
-							</Suspense>
-						}
-					/>
-					<Route
-						path='/polityka-prywatnosci'
-						element={
-							<Suspense key={location.pathname} fallback={<SubpageLoader />}>
-								<PrivacyPolicy />
-							</Suspense>
-						}
-					/>
-					<Route
-						path='*'
-						element={
-							<Suspense key={location.pathname} fallback={<SubpageLoader />}>
-								<PageNotFound />
-							</Suspense>
-						}
-					/>
+					<Route path='/rekrutacja' element={<SuspenseWithFooter children={<Recruitment />} />} />
+					<Route path='/polityka-prywatnosci' element={<SuspenseWithFooter children={<PrivacyPolicy />} />} />
+					<Route path='*' element={<SuspenseWithFooter children={<PageNotFound />} />} />
 				</Route>
 			</Routes>
 		</>
