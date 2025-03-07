@@ -16,11 +16,7 @@ const Contact: React.FC = () => {
 					<p className='contact__title-subtext'>
 						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
 						obowiązującą{' '}
-						<Link
-							to='/polityka-prywatnosci'
-							onClick={() => {
-								scrollToTop({ scrollBehaviour: 'auto' });
-							}}>
+						<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
 							polityką prywatności.
 						</Link>
 					</p>

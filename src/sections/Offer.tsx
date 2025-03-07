@@ -48,10 +48,7 @@ const Offer: React.FC = () => {
 									<img src={PhoneImage} alt='Obraz przedstawiający telefon' />
 									<FaPhoneAlt fontSize={56} className='offer__image-container-icon' />
 									<p>Twoja Oferta</p>
-									<Link
-										to='/rekrutacja'
-										onClick={() => scrollToTop({ scrollBehaviour: 'auto' })}
-										aria-label='Przycisk przenoszący na stronę rekrutacji'>
+									<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 										Sprawdź
 									</Link>
 								</div>
