@@ -602,6 +602,11 @@
 	}
 
 	.privacy-policy {
+		&__title {
+			max-width: 500px;
+			margin-right: 0;
+		}
+
 		&__box {
 			max-width: 480px;
 
@@ -1099,6 +1104,17 @@
 	.contact {
 		&__title-box {
 			margin-left: 2em;
+		}
+	}
+
+	.privacy-policy {
+		&__title {
+			width: 805px;
+			max-width: 805px;
+		}
+
+		&__box {
+			max-width: 800px;
 		}
 	}
 }

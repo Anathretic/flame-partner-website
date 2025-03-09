@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { BlogCarousel } from '../components/Blog/BlogCarousel';
 import { Loader } from '../components/Loader';
 import { getBlogData } from '../helpers/getBlogDataHelper';
@@ -8,6 +8,8 @@ const Blog: React.FC = () => {
 	const [slides, setSlides] = useState<SlideDataModel[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(false);
+
+	const BlogCarouselMemoized = memo(BlogCarousel);
 
 	useEffect(() => {
 		if (isLoading) getBlogData({ setSlides, setIsLoading, setError });
@@ -33,7 +35,7 @@ const Blog: React.FC = () => {
 							</button>
 						</div>
 					) : (
-						<BlogCarousel slides={slides} />
+						<BlogCarouselMemoized slides={slides} />
 					)}
 				</div>
 			</div>
