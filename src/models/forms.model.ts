@@ -1,19 +1,19 @@
 type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | '';
 type Company = 'Wszystko' | 'Uber' | 'Bolt' | 'FreeNow' | '';
 
-export interface ContactFormModel {
+interface DefaultFormModel {
 	firstname: string;
 	email: string;
-	subject: string;
 	message: string;
 }
 
-export interface WorkFormModel {
-	firstname: string;
+export interface ContactFormModel extends DefaultFormModel {
+	subject: string;
+}
+
+export interface WorkFormModel extends DefaultFormModel {
 	lastname: string;
-	email: string;
 	phone: string;
 	city: City;
 	company: Company;
-	message: string;
 }
