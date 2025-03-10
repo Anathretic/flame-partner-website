@@ -4,14 +4,10 @@ import { ContactFormModel } from './forms.model';
 
 type Form = ContactFormModel;
 type ErrorMessage = string | FieldError | Merge<FieldError, FieldErrorsImpl<Form>> | undefined;
-export interface InputAndTextareaModel {
+
+interface DefaultModel {
 	label: string;
-	inputName: string;
 	errorMessage: ErrorMessage;
-	type?: string;
-	placeholder?: string;
-	value?: string;
-	readOnly?: boolean;
 }
 
 interface LabelValueItem {
@@ -19,17 +15,17 @@ interface LabelValueItem {
 	label: string;
 	disabled: boolean;
 }
-
-export interface SelectModel {
-	label: string;
-	selectName: string;
-	errorMessage: ErrorMessage;
-	labelValueArr: LabelValueItem[];
+export interface InputAndTextareaModel extends DefaultModel {
+	inputName: string;
+	type?: string;
+	placeholder?: string;
+	value?: string;
+	readOnly?: boolean;
 }
 
-export interface SubmitButtonModel {
-	isLoading: boolean;
-	buttonText: string;
+export interface SelectModel extends DefaultModel {
+	selectName: string;
+	labelValueArr: LabelValueItem[];
 }
 
 export interface SubmitButtonHookModel {
@@ -42,6 +38,10 @@ export interface LoaderModel {
 
 export interface ReturnButtonModel {
 	isLoading: boolean;
+}
+
+export interface SubmitButtonModel extends ReturnButtonModel {
+	buttonText: string;
 }
 
 export interface ReCaptchaV2Model {
