@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import emailjs from '@emailjs/browser';
 import {
 	FormSubmit,
 	InputElement,
@@ -12,6 +11,7 @@ import {
 	TextareaElement,
 } from './components/FormElements';
 import { workFormInputsConfig, workFormSelectsConfig } from './inputsConfig/inputsConfig';
+import { useFormSubmits } from '../../hooks/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { workSchema } from '../../schemas/schemas';
 import { WorkFormModel } from '../../models/forms.model';
@@ -42,64 +42,12 @@ export const WorkForm: React.FC = () => {
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const { workSubmit } = useFormSubmits({ reset, refCaptcha, setIsLoading, setErrorValue, setButtonText });
 	const workFormInputs = workFormInputsConfig(errors, register);
 	const workFormSelects = workFormSelectsConfig(errors, register);
 
-	const onSubmit: SubmitHandler<WorkFormModel> = async ({
-		firstname,
-		lastname,
-		email,
-		phone,
-		city,
-		company,
-		message,
-	}) => {
-		setIsLoading(true);
-		setErrorValue('');
-
-		const token = refCaptcha.current?.getValue();
-		refCaptcha.current?.reset();
-
-		const params = {
-			firstname,
-			lastname,
-			email,
-			phone,
-			city,
-			company,
-			message,
-			'g-recaptcha-response': token,
-		};
-
-		if (token) {
-			await emailjs
-				.send(
-					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_WORK_OFFER_TEMPLATE_ID}`,
-					params,
-					`${import.meta.env.VITE_PUBLIC_KEY}`
-				)
-				.then(() => {
-					reset();
-					setButtonText('Wysłane!');
-				})
-				.catch(err => {
-					setErrorValue('Coś poszło nie tak..');
-					if (err instanceof Error) {
-						console.log(`Twój błąd: ${err.message}`);
-					}
-				})
-				.finally(() => {
-					setIsLoading(false);
-				});
-		} else {
-			setIsLoading(false);
-			setErrorValue('Nie bądź 🤖!');
-		}
-	};
-
 	return (
-		<form className='work-offer__work-form' onSubmit={handleSubmit(onSubmit)}>
+		<form className='work-offer__work-form' onSubmit={handleSubmit(workSubmit)}>
 			{workFormInputs.map((input, id) => (
 				<InputElement
 					key={id}
