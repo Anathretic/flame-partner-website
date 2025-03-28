@@ -64,7 +64,7 @@ export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectE
 				<label className='form__label' htmlFor={selectName}>
 					{label}
 				</label>
-				<select className='form__select' ref={ref} {...props}>
+				<select className='form__select' ref={ref} id={selectName} autoComplete='off' {...props}>
 					{labelValueArr.map((option, id) => (
 						<option key={id} disabled={option.disabled} value={option.value}>
 							{option.label}
