@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import emailjs from '@emailjs/browser';
 import { FormSubmit, InputElement, ReCaptchaV2Component, TextareaElement } from './components/FormElements';
 import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
+import { useFormSubmits } from '../../hooks/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
 import { ContactFormModel } from '../../models/forms.model';
@@ -32,52 +32,11 @@ export const ContactForm: React.FC = () => {
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const { contactSubmit } = useFormSubmits({ reset, refCaptcha, setIsLoading, setErrorValue, setButtonText });
 	const contactFormInputs = contactFormInputsConfig(errors, register);
 
-	const onSubmit: SubmitHandler<ContactFormModel> = async ({ firstname, email, subject, message }) => {
-		setIsLoading(true);
-		setErrorValue('');
-
-		const token = refCaptcha.current?.getValue();
-		refCaptcha.current?.reset();
-
-		const params = {
-			firstname,
-			email,
-			subject,
-			message,
-			'g-recaptcha-response': token,
-		};
-
-		if (token) {
-			await emailjs
-				.send(
-					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_CONTACT_TEMPLATE_ID}`,
-					params,
-					`${import.meta.env.VITE_PUBLIC_KEY}`
-				)
-				.then(() => {
-					reset();
-					setButtonText('Wysłane!');
-				})
-				.catch(err => {
-					setErrorValue('Coś poszło nie tak..');
-					if (err instanceof Error) {
-						console.log(`Twój błąd: ${err.message}`);
-					}
-				})
-				.finally(() => {
-					setIsLoading(false);
-				});
-		} else {
-			setIsLoading(false);
-			setErrorValue('Nie bądź 🤖!');
-		}
-	};
-
 	return (
-		<form className='contact__form' onSubmit={handleSubmit(onSubmit)}>
+		<form className='contact__form' onSubmit={handleSubmit(contactSubmit)}>
 			{contactFormInputs.map((input, id) => (
 				<InputElement
 					key={id}
