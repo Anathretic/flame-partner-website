@@ -42,7 +42,13 @@ export const WorkForm: React.FC = () => {
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
-	const { workSubmit } = useFormSubmits({ reset, refCaptcha, setIsLoading, setErrorValue, setButtonText });
+	const { workSubmit } = useFormSubmits<WorkFormModel>({
+		reset,
+		refCaptcha,
+		setIsLoading,
+		setErrorValue,
+		setButtonText,
+	});
 	const workFormInputs = workFormInputsConfig(errors, register);
 	const workFormSelects = workFormSelectsConfig(errors, register);
 
