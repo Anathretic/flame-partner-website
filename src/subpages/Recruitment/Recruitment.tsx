@@ -10,7 +10,7 @@ const Recruitment: React.FC = () => {
 	}, []);
 
 	return (
-		<div className='work-offer'>
+		<main className='work-offer'>
 			<div className='work-offer__container'>
 				<div className='work-offer__wrapper'>
 					<div className='work-offer__hero-image'>
@@ -21,7 +21,7 @@ const Recruitment: React.FC = () => {
 					<RecruitmentForm />
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 

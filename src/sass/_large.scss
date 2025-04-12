@@ -157,6 +157,7 @@
 
 	.offer,
 	.work-offer,
+	.rent-car,
 	.choose-us,
 	.blog,
 	.contact,
@@ -171,6 +172,14 @@
 			width: 100%;
 			justify-content: space-evenly;
 			flex-direction: row;
+		}
+
+		&__text-content-box {
+			a:hover {
+				color: globals.$white-color;
+				background-color: globals.$sky-blue-color;
+				border-color: globals.$sky-blue-color;
+			}
 		}
 
 		&__image-container {
@@ -379,7 +388,8 @@
 		}
 	}
 
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__hero-image-title {
 			font-size: 4.5rem;
 		}
@@ -404,8 +414,19 @@
 			max-width: 425px;
 		}
 
-		&__banner,
 		&__benefits {
+			padding-bottom: 3rem;
+		}
+
+		&__form-title-subtext a:hover {
+			color: globals.$sky-blue-color;
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
+	}
+
+	.work-offer {
+		&__banner {
 			padding-bottom: 3rem;
 		}
 
@@ -413,6 +434,16 @@
 			h3 {
 				font-size: 1.6rem;
 			}
+
+			a:hover {
+				color: globals.$dark-blue-color;
+			}
+		}
+	}
+
+	.rent-car {
+		&__list {
+			padding-bottom: 3rem;
 		}
 	}
 
@@ -654,6 +685,7 @@
 	.offer,
 	.choose-us,
 	.work-offer,
+	.rent-car,
 	.blog,
 	.contact,
 	.privacy-policy,
@@ -677,6 +709,7 @@
 	}
 
 	.work-offer,
+	.rent-car,
 	.privacy-policy,
 	.notfound {
 		&__special-block {
@@ -709,7 +742,8 @@
 		}
 	}
 
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__hero-image-title {
 			font-size: 5rem;
 		}
@@ -724,19 +758,6 @@
 			&--special {
 				padding-top: 70px;
 			}
-		}
-
-		&__banner-container {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			max-width: 1450px;
-		}
-
-		&__banner-container-box {
-			padding: 2rem;
-			margin: 4rem;
-			width: 500px;
 		}
 
 		&__form {
@@ -797,13 +818,58 @@
 			}
 		}
 
+		&__benefits-special-block,
+		&__form-special-block {
+			width: 41.6%;
+			height: 45px;
+
+			&--right {
+				display: none;
+			}
+		}
+	}
+
+	.work-offer {
+		&__banner-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1450px;
+		}
+
+		&__banner-container-box {
+			padding: 2rem;
+			margin: 4rem;
+			width: 500px;
+		}
+
 		&__work-form {
 			margin-right: 2.5rem;
 		}
 
-		&__benefits-special-block,
-		&__banner-special-block,
-		&__form-special-block {
+		&__banner-special-block {
+			width: 41.6%;
+			height: 45px;
+
+			&--right {
+				display: none;
+			}
+		}
+	}
+
+	.rent-car {
+		&__list-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1450px;
+		}
+
+		&__car-form {
+			margin-right: 2.5rem;
+		}
+
+		&__list-special-block {
 			width: 41.6%;
 			height: 45px;
 

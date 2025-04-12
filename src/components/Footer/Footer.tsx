@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { footerHomeItems } from './footerItems/footerItems';
+import { footerHomeItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
 import FooterLogo from '../../images/logo-images/footer-logo.png';
@@ -13,7 +13,8 @@ const Footer: React.FC = () => {
 	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
 	const currentYear = new Date().getFullYear();
 
-	const memoizedFooterItems = useMemo(() => footerHomeItems, []);
+	const memoizedFooterHomeItems = useMemo(() => footerHomeItems, []);
+	const memoizedFooterOfferItems = useMemo(() => footerOfferItems, []);
 
 	return (
 		<footer className='footer'>
@@ -38,7 +39,7 @@ const Footer: React.FC = () => {
 						<ul>
 							{!showSpecialLinks ? (
 								<>
-									{memoizedFooterItems.map((item, id) => (
+									{memoizedFooterHomeItems.map((item, id) => (
 										<li key={id}>
 											<HashLink smooth to={item.to}>
 												{item.content}
@@ -56,13 +57,15 @@ const Footer: React.FC = () => {
 						</ul>
 					</div>
 					<div className='footer__box'>
-						<h3>Praca</h3>
+						<h3>Oferta</h3>
 						<ul>
-							<li>
-								<Link to='/rekrutacja' onClick={scrollToTop}>
-									Rekrutacja
-								</Link>
-							</li>
+							{memoizedFooterOfferItems.map((item, id) => (
+								<li key={id}>
+									<Link to={item.to} onClick={scrollToTop}>
+										{item.content}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
 					<div className='footer__box'>

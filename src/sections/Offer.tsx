@@ -37,9 +37,9 @@ const Offer: React.FC = () => {
 								<h3>Wynajem samochodów</h3>
 								<p>
 									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż{' '}
-									<span>oferujemy wynajem na konkurencyjnych warunkach</span>, a w naszej flocie znajdziesz m.in. Toyotę
-									Corollę, czy Skodę Fabię.
+									<span>oferujemy wynajem na konkurencyjnych warunkach!</span>
 								</p>
+								<Link to='/wynajem'>Zobacz</Link>
 							</div>
 						</div>
 						<div className='offer__image-content'>

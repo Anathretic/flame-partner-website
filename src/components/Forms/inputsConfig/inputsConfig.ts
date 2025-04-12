@@ -1,5 +1,5 @@
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import { ContactFormModel, WorkFormModel } from '../../../models/forms.model';
+import { CarFormModel, ContactFormModel, WorkFormModel } from '../../../models/forms.model';
 
 export const contactFormInputsConfig = (errors: FieldErrors, register: UseFormRegister<ContactFormModel>) => [
 	{
@@ -72,7 +72,7 @@ export const workFormInputsConfig = (errors: FieldErrors, register: UseFormRegis
 
 export const workFormSelectsConfig = (errors: FieldErrors, register: UseFormRegister<WorkFormModel>) => [
 	{
-		label: 'Miasto',
+		label: 'Miasto:',
 		selectName: 'city',
 		register: register('city'),
 		isInvalid: !!errors.city,
@@ -86,7 +86,7 @@ export const workFormSelectsConfig = (errors: FieldErrors, register: UseFormRegi
 		errorMessage: errors.city?.message,
 	},
 	{
-		label: 'Firma',
+		label: 'Firma:',
 		selectName: 'company',
 		register: register('company'),
 		isInvalid: !!errors.company,
@@ -98,5 +98,61 @@ export const workFormSelectsConfig = (errors: FieldErrors, register: UseFormRegi
 			{ label: 'FreeNow', value: 'FreeNow', disabled: false },
 		],
 		errorMessage: errors.company?.message,
+	},
+];
+
+export const carFormInputsConfig = (errors: FieldErrors, register: UseFormRegister<CarFormModel>) => [
+	{
+		label: 'Imię:',
+		inputName: 'firstname',
+		type: 'text',
+		placeholder: 'Wprowadź imię..',
+		errorMessage: errors.firstname?.message,
+		isInvalid: !!errors.firstname,
+		register: register('firstname'),
+	},
+	{
+		label: 'Nazwisko:',
+		inputName: 'lastname',
+		type: 'text',
+		placeholder: 'Wprowadź nazwisko..',
+		errorMessage: errors.lastname?.message,
+		isInvalid: !!errors.lastname,
+		register: register('lastname'),
+	},
+	{
+		label: 'E-mail:',
+		inputName: 'email',
+		type: 'text',
+		placeholder: 'Wprowadź e-mail..',
+		errorMessage: errors.email?.message,
+		isInvalid: !!errors.email,
+		register: register('email'),
+	},
+	{
+		label: 'Telefon:',
+		inputName: 'phone',
+		type: 'text',
+		placeholder: 'Wprowadź numer telefonu..',
+		errorMessage: errors.phone?.message,
+		isInvalid: !!errors.phone,
+		register: register('phone'),
+	},
+];
+
+export const carFormSelectsConfig = (errors: FieldErrors, register: UseFormRegister<CarFormModel>) => [
+	{
+		label: 'Samochód:',
+		selectName: 'car',
+		register: register('car'),
+		isInvalid: !!errors.car,
+		labelValueArr: [
+			{ label: '-- wybierz --', value: '', disabled: true },
+			{ label: 'Toyota Prius II', value: 'Zamość', disabled: false },
+			{ label: 'Honda Civic', value: 'Lublin', disabled: false },
+			{ label: 'Skoda Fabia III', value: 'Chełm', disabled: false },
+			{ label: 'Skoda Fabia II', value: 'Biłgoraj', disabled: false },
+		],
+		errorMessage: errors.car?.message,
 	},
 ];

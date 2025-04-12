@@ -3,7 +3,8 @@
 
 @media screen and (max-width: 300px) {
 	.contact,
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__title-info-box,
 		&__form-title-info-box {
 			li {
@@ -97,6 +98,7 @@
 
 	.offer,
 	.work-offer,
+	.rent-car,
 	.choose-us,
 	.blog,
 	.contact,
@@ -106,7 +108,8 @@
 		}
 	}
 
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__hero-image-title {
 			font-size: 3.35rem;
 		}
@@ -179,7 +182,8 @@
 }
 
 @media screen and (max-height: 500px) {
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__hero-image {
 			height: 60vh;
 		}

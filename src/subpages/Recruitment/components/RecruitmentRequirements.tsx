@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
+import { scrollToTop } from '../../../utils/scrollToTopUtils';
 import { FaAddressCard, FaCarAlt, FaRegUser, FaTabletAlt } from 'react-icons/fa';
 
 const RecruitmentRequirements: React.FC = () => {
@@ -16,7 +18,12 @@ const RecruitmentRequirements: React.FC = () => {
 				</div>
 				<div className='work-offer__banner-container-box'>
 					<FaCarAlt fontSize={56} color='#edf0f5' />
-					<h3>3. Twoje auto lub nasze auto</h3>
+					<h3>
+						3. Twoje auto lub{' '}
+						<Link to='/wynajem' onClick={scrollToTop}>
+							nasze auto
+						</Link>
+					</h3>
 				</div>
 				<div className='work-offer__banner-container-box'>
 					<FaTabletAlt fontSize={56} color='#edf0f5' />

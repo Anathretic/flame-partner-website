@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { WorkForm } from '../../../components/Forms/WorkForm';
+import { scrollToTop } from '../../../utils/scrollToTopUtils';
 import { FaTaxi } from 'react-icons/fa';
 
 const RecruitmentForm: React.FC = () => {
@@ -12,8 +14,18 @@ const RecruitmentForm: React.FC = () => {
 						życiu, który pozwoli Ci zarządzać czasem i łączyć przyjemne z pożytecznym.
 					</p>
 					<p className='work-offer__form-title-subtext'>
+						Jeśli chcesz również wynająć u nas samochód to najpierw wypełnij formularz zgłoszeniowy, a potem{' '}
+						<Link to='/wynajem' onClick={scrollToTop}>
+							kliknij tutaj
+						</Link>
+						.
+					</p>
+					<p className='work-offer__form-title-subtext'>
 						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
-						obowiązującą polityką prywatności.
+						obowiązującą{' '}
+						<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
+							polityką prywatności.
+						</Link>
 					</p>
 					<ul className='work-offer__form-title-info-box'>
 						<li>

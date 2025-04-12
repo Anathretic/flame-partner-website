@@ -50,6 +50,7 @@
 	.offer,
 	.choose-us,
 	.work-offer,
+	.rent-car,
 	.blog,
 	.contact,
 	.privacy-policy,
@@ -61,7 +62,8 @@
 	}
 
 	.offer,
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__hero-image-title {
 			font-size: 4rem;
 		}
@@ -71,10 +73,24 @@
 		}
 	}
 
-	.work-offer {
+	.work-offer,
+	.rent-car {
 		&__benefits-special-block,
-		&__banner-special-block,
 		&__form-special-block {
+			width: 35%;
+			height: 50px;
+		}
+	}
+
+	.work-offer {
+		&__banner-special-block {
+			width: 35%;
+			height: 50px;
+		}
+	}
+
+	.rent-car {
+		&__list-special-block {
 			width: 35%;
 			height: 50px;
 		}

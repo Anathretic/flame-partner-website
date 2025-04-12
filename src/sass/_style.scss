@@ -51,6 +51,7 @@ body {
 .offer,
 .choose-us,
 .work-offer,
+.rent-car,
 .blog,
 .contact,
 .notfound,
@@ -322,6 +323,16 @@ body {
 				font-weight: 700;
 			}
 		}
+
+		a {
+			@include mixins.btn;
+			margin: 0 1em 1.5em;
+			width: 175px;
+			max-width: 180px;
+			color: globals.$dark-blue-color;
+			border: 2px solid globals.$dark-blue-color;
+			transition: background-color 0.3s, color 0.3s, border 0.3s;
+		}
 	}
 
 	&__image-content {
@@ -579,6 +590,13 @@ body {
 		h3 {
 			@include mixins.h3;
 		}
+
+		a {
+			color: globals.$white-color;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 3px;
+			transition: color 0.3s;
+		}
 	}
 
 	&__form {
@@ -609,6 +627,12 @@ body {
 
 		span {
 			font-weight: 600;
+		}
+
+		a {
+			color: globals.$dark-blue-color;
+			text-underline-offset: 2px;
+			transition: color 0.3s;
 		}
 	}
 
@@ -671,6 +695,218 @@ body {
 	}
 
 	&__banner-special-block {
+		background-color: globals.$white-color;
+	}
+}
+
+.rent-car {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+
+	&__container,
+	&__wrapper,
+	&__hero-image,
+	&__content-wrapper,
+	&__benefits,
+	&__benefits-text-content-box,
+	&__list,
+	&__list-container,
+	&__form-container,
+	&__form-title-box,
+	&__form-title-info-box {
+		@include mixins.flex;
+		flex-direction: column;
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__wrapper,
+	&__hero-image,
+	&__benefits,
+	&__list,
+	&__list-container,
+	&__form,
+	&__form-title-box,
+	&__car-form {
+		width: 100%;
+	}
+
+	&__wrapper {
+		margin: 0 auto;
+	}
+
+	&__hero-image {
+		height: 40vh;
+		background-image: url('../images/work-offer-subpage/work-offer-hero-image.jpg');
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__hero-image-title {
+		color: globals.$white-color;
+		font-size: 3rem;
+		font-weight: 300;
+	}
+
+	&__title {
+		padding: 0 0.35rem 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+
+		&--special {
+			padding-top: 50px;
+		}
+	}
+
+	&__benefits {
+		position: relative;
+		padding: 50px 0 2rem;
+	}
+
+	&__benefits-text-content {
+		padding-bottom: 1em;
+	}
+
+	&__benefits-text-content-box {
+		margin: 2em;
+		padding: 2em 0.5em 0;
+		max-width: 300px;
+		border: none;
+		border-radius: 1.5em;
+
+		-webkit-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+		-moz-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+		box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+
+		h3 {
+			@include mixins.h3;
+		}
+
+		p {
+			padding: 0 0.75em 2em;
+			text-align: center;
+			font-weight: 350;
+			line-height: 1.6em;
+
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__list {
+		position: relative;
+		height: 100%;
+		padding-bottom: 2rem;
+		background-color: globals.$sky-blue-color;
+		color: globals.$white-color;
+	}
+
+	&__list-container {
+		max-width: 1000px;
+	}
+
+	&__form {
+		position: relative;
+		padding: 30px 0 40px;
+		overflow: hidden;
+	}
+
+	&__form-title {
+		@include mixins.title;
+	}
+
+	&__form-title-box,
+	&__car-form {
+		max-width: 600px;
+	}
+
+	&__form-title-box {
+		padding-bottom: 2.5rem;
+	}
+
+	&__form-title-subtext {
+		padding: 1rem;
+		width: 90%;
+		max-width: 400px;
+		text-align: center;
+		line-height: 1.8em;
+
+		span {
+			font-weight: 600;
+		}
+
+		a {
+			color: globals.$dark-blue-color;
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
+	}
+
+	&__form-title-info-box {
+		padding: 2rem 0;
+		width: 90%;
+		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			padding: 0.5em;
+			width: 100%;
+		}
+
+		p {
+			padding: 0.25rem 0;
+			font-weight: 300;
+
+			span {
+				font-weight: 600;
+			}
+		}
+
+		p:first-of-type {
+			font-weight: 500;
+		}
+	}
+
+	&__form-special-text {
+		line-height: 1.6em;
+	}
+
+	&__form-title-icon {
+		display: none;
+	}
+
+	&__benefits-special-block,
+	&__list-special-block,
+	&__form-special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+
+	&__benefits-special-block,
+	&__form-special-block {
+		background-color: globals.$sky-blue-color;
+	}
+
+	&__list-special-block {
 		background-color: globals.$white-color;
 	}
 }

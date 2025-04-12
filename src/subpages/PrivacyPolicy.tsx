@@ -11,8 +11,8 @@ const PrivacyPolicy: React.FC = () => {
 	}, []);
 
 	return (
-		<section className='privacy-policy'>
-			<div className='privacy-policy__container'>
+		<main className='privacy-policy'>
+			<section className='privacy-policy__container'>
 				<h1 className='privacy-policy__title'>Polityka Prywatności</h1>
 				<div className='privacy-policy__box'>
 					<h2>1. Informacje ogólne</h2>
@@ -127,10 +127,10 @@ const PrivacyPolicy: React.FC = () => {
 				<Link to='/' className='privacy-policy__btn' onClick={scrollToTop} aria-label='Powrót na stronę główną'>
 					Powrót
 				</Link>
-			</div>
+			</section>
 			<div className='privacy-policy__special-block privacy-policy__special-block--left' />
 			<div className='privacy-policy__special-block privacy-policy__special-block--right' />
-		</section>
+		</main>
 	);
 };
 

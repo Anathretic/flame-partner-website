@@ -3,6 +3,7 @@ import { UseFormReset } from 'react-hook-form';
 
 type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | '';
 type Company = 'Wszystko' | 'Uber' | 'Bolt' | 'FreeNow' | '';
+type Car = 'Toyota Prius II' | 'Honda Civic' | 'Skoda Fabia III' | 'Skoda Fabia II' | '';
 
 interface DefaultFormModel {
 	firstname: string;
@@ -12,7 +13,7 @@ interface DefaultFormModel {
 
 // --------------- useFormSubmits -----------------------
 
-export type FormTypes = ContactFormModel | WorkFormModel;
+export type FormTypes = ContactFormModel | WorkFormModel | CarFormModel;
 
 export interface UseFormSubmitsModel<T extends FormTypes> {
 	reset: UseFormReset<T>;
@@ -33,4 +34,10 @@ export interface WorkFormModel extends DefaultFormModel {
 	phone: string;
 	city: City;
 	company: Company;
+}
+
+export interface CarFormModel extends DefaultFormModel {
+	lastname: string;
+	phone: string;
+	car: Car;
 }

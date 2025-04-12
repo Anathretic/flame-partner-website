@@ -1,6 +1,6 @@
 import { SubmitHandler } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { ContactFormModel, FormTypes, UseFormSubmitsModel, WorkFormModel } from '../models/forms.model';
+import { CarFormModel, ContactFormModel, FormTypes, UseFormSubmitsModel, WorkFormModel } from '../models/forms.model';
 
 export const useFormSubmits = <T extends FormTypes>({
 	reset,
@@ -108,5 +108,51 @@ export const useFormSubmits = <T extends FormTypes>({
 		}
 	};
 
-	return { contactSubmit, workSubmit };
+	const carSubmit: SubmitHandler<CarFormModel> = async ({ firstname, lastname, email, phone, car, message }) => {
+		setIsLoading(true);
+		setErrorValue('');
+
+		if (!refCaptcha) return;
+
+		const token = refCaptcha.current?.getValue();
+		refCaptcha.current?.reset();
+
+		const params = {
+			firstname,
+			lastname,
+			email,
+			phone,
+			car,
+			message,
+			'g-recaptcha-response': token,
+		};
+
+		if (token) {
+			await emailjs
+				.send(
+					`${import.meta.env.VITE_SERVICE_ID}`,
+					`${import.meta.env.VITE_RENT_CAR_TEMPLATE_ID}`,
+					params,
+					`${import.meta.env.VITE_PUBLIC_KEY}`
+				)
+				.then(() => {
+					reset();
+					setButtonText('Wysłane!');
+				})
+				.catch(err => {
+					setErrorValue('Coś poszło nie tak..');
+					if (err instanceof Error) {
+						console.log(`Twój błąd: ${err.message}`);
+					}
+				})
+				.finally(() => {
+					setIsLoading(false);
+				});
+		} else {
+			setIsLoading(false);
+			setErrorValue('Nie bądź 🤖!');
+		}
+	};
+
+	return { contactSubmit, workSubmit, carSubmit };
 };

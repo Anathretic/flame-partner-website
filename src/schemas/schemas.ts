@@ -50,3 +50,20 @@ export const workSchema = yup
 			.test('is-selected', errorMessage.requiredField, value => value !== ''),
 	})
 	.concat(contactSchema.omit(['subject']));
+
+export const carSchema = yup
+	.object({
+		lastname: yup
+			.string()
+			.min(2, 'Nazwisko jest zbyt krótkie!')
+			.max(51, 'Nazwisko jest zbyt długie!')
+			.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
+			.required(errorMessage.requiredField),
+		phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
+		car: yup
+			.string()
+			.oneOf(['Toyota Prius II', 'Honda Civic', 'Skoda Fabia III', 'Skoda Fabia II', ''])
+			.required(errorMessage.requiredField)
+			.test('is-selected', errorMessage.requiredField, value => value !== ''),
+	})
+	.concat(contactSchema.omit(['subject']));
