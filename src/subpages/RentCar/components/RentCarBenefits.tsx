@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { TbPackages } from 'react-icons/tb';
+import { FaCar, FaSearchDollar } from 'react-icons/fa';
 
 import styles from '../styles/styles.module.scss';
 
@@ -9,35 +9,22 @@ const RentCarBenefits: React.FC = () => {
 			<h2 className={styles['rent-car__title']}>Twoje korzyści</h2>
 			<div className={styles['rent-car__benefits-text-content']}>
 				<div className={styles['rent-car__benefits-text-content-box']}>
-					<TbPackages fontSize={56} color='#24485c' />
-					<h3>Lorem, ipsum dolor.</h3>
+					<FaSearchDollar fontSize={56} color='#24485c' />
+					<h3>Konkurencyjne warunki</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga hic dolorem explicabo adipisci debitis odit
-						dolor minima architecto. <span>Lorem ipsum dolor sit.</span>
+						Szukasz niezawodnego auta w atrakcyjnej cenie? Oferujemy <span>konkurencyjne warunki wynajmu</span> – bez
+						ukrytych opłat, z szerokim wyborem pojazdów. Niezależnie od tego, czy potrzebujesz zgrabnego sedana,
+						pojemnego kombi, czy zwinnego hothatcha – <span>mamy rozwiązanie dopasowane do Twoich potrzeb!</span>
 					</p>
 				</div>
 				<div className={styles['rent-car__benefits-text-content-box']}>
-					<TbPackages fontSize={56} color='#24485c' />
-					<h3>Lorem, ipsum dolor.</h3>
+					<FaCar fontSize={56} color='#24485c' />
+					<h3>Nowe samochody</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga hic dolorem explicabo adipisci debitis odit
-						dolor minima architecto. <span>Lorem ipsum dolor sit.</span>
-					</p>
-				</div>
-				<div className={styles['rent-car__benefits-text-content-box']}>
-					<TbPackages fontSize={56} color='#24485c' />
-					<h3>Lorem, ipsum dolor.</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga hic dolorem explicabo adipisci debitis odit
-						dolor minima architecto. <span>Lorem ipsum dolor sit.</span>
-					</p>
-				</div>
-				<div className={styles['rent-car__benefits-text-content-box']}>
-					<TbPackages fontSize={56} color='#24485c' />
-					<h3>Lorem, ipsum dolor.</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga hic dolorem explicabo adipisci debitis odit
-						dolor minima architecto. <span>Lorem ipsum dolor sit.</span>
+						Podróżuj komfortowo i bezpiecznie dzięki naszej flocie{' '}
+						<span>nowoczesnych, regularnie serwisowanych pojazdów. </span>
+						Stawiamy na jakość i oferujemy wyłącznie <span>nowe lub maksymalnie kilkuletnie auta</span>, wyposażone w
+						najnowsze technologie i udogodnienia, dzięki czemu praca będzie formalnością.
 					</p>
 				</div>
 			</div>

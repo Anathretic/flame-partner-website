@@ -12,8 +12,8 @@ const RentCarForm: React.FC = () => {
 				<div className={styles['rent-car__form-title-box']}>
 					<h2 className={styles['rent-car__form-title']}>Zaczynamy?</h2>
 					<p className={styles['rent-car__form-title-subtext']}>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime soluta id voluptas qui minus iure suscipit.
-						Ullam vitae consequuntur deleniti ut rerum quam amet ab.
+						Gotowy by wyruszyć w drogę naszym autem? Świetnie! Przed Tobą otwiera się szansa na rozpoczęcie nowego etapu
+						w życiu, przez który poprowadzą Cię nasze cztery koła.
 					</p>
 					<p className={styles['rent-car__form-title-subtext']}>
 						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
@@ -24,21 +24,29 @@ const RentCarForm: React.FC = () => {
 					</p>
 					<ul className={styles['rent-car__form-title-info-box']}>
 						<li>
-							<p>Lorem, ipsum:</p>
+							<p>Obszar działania:</p>
 							<p className={styles['rent-car__form-special-text']}>
-								Lorem ipsum dolor sit amet. <span>Lorem ipsum dolor sit.</span> Lorem ipsum dolor sit amet consectetur,
-								adipisicing elit. Natus, quos.
+								Województwo lubelskie w miastach takich jak <span>Zamość, Lublin, Biłgoraj i Chełm.</span> Pamiętaj, że
+								ciągle się rozwijamy i już niedługo <span>kolejne miasta staną przed Tobą otworem!</span>
 							</p>
 						</li>
 						<li>
-							<p>Lorem, ipsum:</p>
-							<p>- Lorem ipsum dolor sit.</p>
-							<p>- Lorem ipsum dolor sit.</p>
+							<p>Komfortowe stawki rozliczeń:</p>
+							<p>
+								- do 150 kursów - <span>50zł</span>
+							</p>
+							<p>
+								- powyżej 150 kurstów - <span>25zł</span>
+							</p>
 						</li>
 						<li>
-							<p>Lorem, ipsum::</p>
-							<p>- Lorem ipsum dolor sit.</p>
-							<p>- Lorem ipsum dolor sit.</p>
+							<p>Wysokie bonusy:</p>
+							<p>
+								- polecenie pracownika - <span>200zł</span>
+							</p>
+							<p>
+								- zwrot za badania - <span>400zł</span>
+							</p>
 						</li>
 					</ul>
 					<FaTaxi

@@ -31,26 +31,6 @@ body {
 	font-size: 16px;
 }
 
-@media screen and (min-width: 1358px) {
-	.blog-popup--is-active {
-		.navbar__container {
-			padding-right: calc(6rem + 17px);
-		}
-	}
-}
-
-@media screen and (min-width: 1536px) {
-	.blog-popup--is-active {
-		.navbar__container {
-			padding-right: calc(8rem + 17px);
-		}
-	}
-}
-
-@media screen and (min-width: 1920px) {
-	.blog-popup--is-active {
-		.navbar__container {
-			padding-right: calc(11.6rem + 17px);
-		}
-	}
+.blog-popup--is-active {
+	overflow: hidden;
 }

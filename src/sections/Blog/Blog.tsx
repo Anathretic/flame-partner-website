@@ -28,7 +28,7 @@ const Blog: React.FC = () => {
 				<div className={styles.blog__wrapper}>
 					<h2 className={styles.blog__title}>Blog</h2>
 					{isLoading ? (
-						<Loader className={styles.blog__loader} />
+						<Loader />
 					) : error ? (
 						<div className={styles['blog__error-box']}>
 							<p>Niestety wystąpił błąd.. Spróbuj jeszcze raz!</p>
