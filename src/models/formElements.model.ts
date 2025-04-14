@@ -32,10 +32,6 @@ export interface SubmitButtonHookModel {
 	initialSubmitButtonState: string;
 }
 
-export interface LoaderModel {
-	className: string;
-}
-
 export interface ReturnButtonModel {
 	isLoading: boolean;
 }

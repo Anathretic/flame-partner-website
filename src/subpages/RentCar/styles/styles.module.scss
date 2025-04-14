@@ -1,0 +1,455 @@
+.rent-car {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+
+	&__container,
+	&__wrapper,
+	&__hero-image,
+	&__content-wrapper,
+	&__benefits,
+	&__benefits-text-content-box,
+	&__list,
+	&__list-container,
+	&__form-container,
+	&__form-title-box,
+	&__form-title-info-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__wrapper,
+	&__hero-image,
+	&__benefits,
+	&__list,
+	&__list-container,
+	&__form,
+	&__form-title-box,
+	&__car-form {
+		width: 100%;
+	}
+
+	&__wrapper {
+		margin: 0 auto;
+	}
+
+	&__hero-image {
+		height: 40vh;
+		background-image: url('../images/work-offer-subpage/work-offer-hero-image.jpg');
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__hero-image-title {
+		color: var(--white-color);
+		font-size: 3rem;
+		font-weight: 300;
+	}
+
+	&__title {
+		padding: 0 0.35rem 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+
+		&--special {
+			padding-top: 50px;
+		}
+	}
+
+	&__benefits {
+		position: relative;
+		padding: 50px 0 2rem;
+	}
+
+	&__benefits-text-content {
+		padding-bottom: 1em;
+	}
+
+	&__benefits-text-content-box {
+		margin: 2em;
+		padding: 2em 0.5em 0;
+		max-width: 300px;
+		border: none;
+		border-radius: 1.5em;
+
+		-webkit-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+		-moz-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+		box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
+
+		h3 {
+			padding: 1em;
+			font-size: 1.5em;
+			font-weight: 200;
+			font-style: italic;
+			text-align: center;
+		}
+
+		p {
+			padding: 0 0.75em 2em;
+			text-align: center;
+			font-weight: 350;
+			line-height: 1.6em;
+
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__list {
+		position: relative;
+		height: 100%;
+		padding-bottom: 2rem;
+		background-color: var(--sky-blue-color);
+		color: var(--white-color);
+	}
+
+	&__list-container {
+		max-width: 1000px;
+	}
+
+	&__form {
+		position: relative;
+		padding: 30px 0 40px;
+		overflow: hidden;
+	}
+
+	&__form-title {
+		padding-bottom: 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__form-title-box,
+	&__car-form {
+		max-width: 600px;
+	}
+
+	&__form-title-box {
+		padding-bottom: 2.5rem;
+	}
+
+	&__form-title-subtext {
+		padding: 1rem;
+		width: 90%;
+		max-width: 400px;
+		text-align: center;
+		line-height: 1.8em;
+
+		span {
+			font-weight: 600;
+		}
+
+		a {
+			color: var(--dark-blue-color);
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
+	}
+
+	&__form-title-info-box {
+		padding: 2rem 0;
+		width: 90%;
+		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			padding: 0.5em;
+			width: 100%;
+		}
+
+		p {
+			padding: 0.25rem 0;
+			font-weight: 300;
+
+			span {
+				font-weight: 600;
+			}
+		}
+
+		p:first-of-type {
+			font-weight: 500;
+		}
+	}
+
+	&__form-special-text {
+		line-height: 1.6em;
+	}
+
+	&__form-title-icon {
+		display: none;
+	}
+
+	&__benefits-special-block,
+	&__list-special-block,
+	&__form-special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+
+	&__benefits-special-block,
+	&__form-special-block {
+		background-color: var(--sky-blue-color);
+	}
+
+	&__list-special-block {
+		background-color: var(--white-color);
+	}
+
+	&__special-block {
+		position: absolute;
+		bottom: 0;
+		width: 40%;
+		height: 40px;
+
+		&--left {
+			left: -50px;
+			transform: skew(45deg);
+		}
+
+		&--right {
+			right: -50px;
+			transform: skew(-45deg);
+		}
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.rent-car {
+		&__title-info-box,
+		&__form-title-info-box {
+			li {
+				padding: 0.5em 0;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 350px) {
+	.rent-car {
+		&__hero-image-title {
+			font-size: 3.35rem;
+		}
+
+		&__title {
+			font-size: 2.75rem;
+		}
+
+		&__form-title {
+			font-size: 2.75rem;
+		}
+	}
+}
+
+@media screen and (max-height: 500px) {
+	.rent-car {
+		&__hero-image {
+			height: 60vh;
+		}
+
+		&__hero-image-title {
+			font-size: 4rem;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.rent-car {
+		&__hero-image-title {
+			font-size: 4rem;
+		}
+
+		&__benefits-text-content-box {
+			max-width: 325px;
+		}
+
+		&__benefits-special-block,
+		&__list-special-block,
+		&__form-special-block {
+			width: 35%;
+			height: 50px;
+		}
+
+		&__special-block {
+			width: 35%;
+			height: 50px;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.rent-car {
+		&__hero-image-title {
+			font-size: 4.5rem;
+		}
+
+		&__content-wrapper {
+			width: 100%;
+			max-width: 1000px;
+			flex-direction: row;
+		}
+
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__benefits-text-content {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+			padding-bottom: 3em;
+			max-width: 1000px;
+		}
+
+		&__benefits-text-content-box {
+			max-width: 425px;
+		}
+
+		&__benefits {
+			padding-bottom: 3rem;
+		}
+
+		&__list {
+			padding-bottom: 3rem;
+		}
+
+		&__form-title-subtext a:hover {
+			color: var(--sky-blue-color);
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
+	}
+}
+
+@media screen and (min-width: 1358px) {
+	.rent-car {
+		&__hero-image-title {
+			font-size: 5rem;
+		}
+
+		&__benefits {
+			padding-top: 70px;
+		}
+
+		&__title {
+			font-size: 3.5rem;
+
+			&--special {
+				padding-top: 70px;
+			}
+		}
+
+		&__list-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 1450px;
+		}
+
+		&__car-form {
+			margin-right: 2.5rem;
+		}
+
+		&__form {
+			padding-top: 70px;
+		}
+
+		&__form-container {
+			align-items: start;
+			flex-direction: row;
+		}
+
+		&__form-title-box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			margin-left: 4rem;
+		}
+
+		&__form-title,
+		&__form-title-subtext {
+			text-align: left;
+		}
+
+		&__form-title {
+			padding: 0.5rem 0.85rem 0 0.9rem;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__form-title-info-box {
+			padding: 2rem 2.25rem;
+			max-width: 400px;
+			justify-content: start;
+			font-size: 1.1rem;
+			list-style-type: disc;
+			text-align: left;
+		}
+
+		&__form-title-icon {
+			position: absolute;
+			display: block;
+			color: rgba(10, 10, 10, 0.3);
+
+			&--first {
+				bottom: -1.3em;
+				left: 4.4em;
+			}
+
+			&--second {
+				bottom: -2.2em;
+				left: 5.9em;
+			}
+
+			&--third {
+				bottom: -0.7em;
+				left: 8em;
+			}
+		}
+
+		&__benefits-special-block,
+		&__list-special-block,
+		&__form-special-block {
+			width: 41.6%;
+			height: 45px;
+
+			&--right {
+				display: none;
+			}
+		}
+
+		&__special-block {
+			height: 45px;
+			width: 41.6%;
+
+			&--right {
+				display: none;
+			}
+		}
+	}
+}

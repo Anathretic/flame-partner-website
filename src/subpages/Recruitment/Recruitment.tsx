@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { RecruitmentBenefits, RecruitmentForm, RecruitmentRequirements } from './components';
+import { RecruitmentBenefits, RecruitmentForm, RecruitmentBanner } from './components';
+
+import styles from './styles/styles.module.scss';
 
 const Recruitment: React.FC = () => {
 	const { setShowSpecialLinks } = useFooterLinksContext();
@@ -10,14 +12,14 @@ const Recruitment: React.FC = () => {
 	}, []);
 
 	return (
-		<main className='work-offer'>
-			<div className='work-offer__container'>
-				<div className='work-offer__wrapper'>
-					<div className='work-offer__hero-image'>
-						<h1 className='work-offer__hero-image-title'>Rekrutacja</h1>
+		<main className={styles.recruitment}>
+			<div className={styles.recruitment__container}>
+				<div className={styles.recruitment__wrapper}>
+					<div className={styles['recruitment__hero-image']}>
+						<h1 className={styles['recruitment__hero-image-title']}>Rekrutacja</h1>
 					</div>
 					<RecruitmentBenefits />
-					<RecruitmentRequirements />
+					<RecruitmentBanner />
 					<RecruitmentForm />
 				</div>
 			</div>

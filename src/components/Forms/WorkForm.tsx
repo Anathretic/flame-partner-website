@@ -16,6 +16,8 @@ import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { workSchema } from '../../schemas/schemas';
 import { WorkFormModel } from '../../models/forms.model';
 
+import styles from '../../subpages/Recruitment/styles/styles.module.scss';
+
 const initialSubmitButtonState = 'Wyślij';
 
 export const WorkForm: React.FC = () => {
@@ -53,7 +55,7 @@ export const WorkForm: React.FC = () => {
 	const workFormSelects = workFormSelectsConfig(errors, register);
 
 	return (
-		<form className='work-offer__work-form' onSubmit={handleSubmit(workSubmit)}>
+		<form className={styles['recruitment__work-form']} onSubmit={handleSubmit(workSubmit)}>
 			{workFormInputs.map((input, id) => (
 				<InputElement
 					key={id}

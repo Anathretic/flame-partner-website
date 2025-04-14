@@ -8,6 +8,8 @@ import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
 import FooterLogo from '../../images/logo-images/footer-logo.png';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 
+import styles from './styles/styles.module.scss';
+
 const Footer: React.FC = () => {
 	const { showSpecialLinks } = useFooterLinksContext();
 	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
@@ -17,10 +19,10 @@ const Footer: React.FC = () => {
 	const memoizedFooterOfferItems = useMemo(() => footerOfferItems, []);
 
 	return (
-		<footer className='footer'>
-			<div className='footer__container'>
-				<div className='footer__wrapper'>
-					<div className='footer__box'>
+		<footer className={styles.footer}>
+			<div className={styles.footer__container}>
+				<div className={styles.footer__wrapper}>
+					<div className={styles.footer__box}>
 						<h2>
 							<img src={FooterLogo} alt='' />
 						</h2>
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
 							</a>
 						</div>
 					</div>
-					<div className='footer__box'>
+					<div className={styles.footer__box}>
 						<h3>Home</h3>
 						<ul>
 							{!showSpecialLinks ? (
@@ -56,7 +58,7 @@ const Footer: React.FC = () => {
 							)}
 						</ul>
 					</div>
-					<div className='footer__box'>
+					<div className={styles.footer__box}>
 						<h3>Oferta</h3>
 						<ul>
 							{memoizedFooterOfferItems.map((item, id) => (
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
 							))}
 						</ul>
 					</div>
-					<div className='footer__box'>
+					<div className={styles.footer__box}>
 						<h3>Więcej</h3>
 						<ul>
 							{!showSpecialLinks && (
@@ -87,9 +89,9 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<div className='footer__copyright-box'>
-				<FaRegCopyright className='footer__copyright-icon' />
-				<p className='footer__copyright-company-name'> {currentYear} flame partner</p>
+			<div className={styles['footer__copyright-box']}>
+				<FaRegCopyright className={styles['footer__copyright-icon']} />
+				<p className={styles['footer__copyright-company-name']}> {currentYear} flame partner</p>
 			</div>
 		</footer>
 	);

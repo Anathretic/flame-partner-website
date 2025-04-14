@@ -1,0 +1,56 @@
+:root {
+	--main-font: 'Montserrat', 'serif';
+
+	--white-color: #edf0f5;
+	--black-color: #1b1b1b;
+	--sky-blue-color: #0695d8;
+	--dark-blue-color: #24485c;
+	--gray-color: #979797;
+	--special-yellow-color: #ffdf00;
+	--placeholder-color: #8a8989;
+	--error-color: #fc4848;
+}
+
+*,
+::after,
+::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-padding-top: 80px;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--white-color);
+	color: var(--dark-blue-color);
+	font-family: var(--main-font);
+	font-size: 16px;
+}
+
+@media screen and (min-width: 1358px) {
+	.blog-popup--is-active {
+		.navbar__container {
+			padding-right: calc(6rem + 17px);
+		}
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.blog-popup--is-active {
+		.navbar__container {
+			padding-right: calc(8rem + 17px);
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.blog-popup--is-active {
+		.navbar__container {
+			padding-right: calc(11.6rem + 17px);
+		}
+	}
+}

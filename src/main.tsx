@@ -5,7 +5,7 @@ import { App } from './App.tsx';
 
 import BlogPopupProvider from './context/BlogPopupContext.tsx';
 import FooterLinksProvider from './context/FooterLinksContext.tsx';
-import './sass/main.scss';
+import './sass/globals.scss';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>

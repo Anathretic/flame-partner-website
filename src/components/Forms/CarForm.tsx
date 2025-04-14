@@ -16,6 +16,8 @@ import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { carSchema } from '../../schemas/schemas';
 import { CarFormModel } from '../../models/forms.model';
 
+import styles from '../../subpages/RentCar/styles/styles.module.scss';
+
 const initialSubmitButtonState = 'Wyślij';
 
 export const CarForm: React.FC = () => {
@@ -52,7 +54,7 @@ export const CarForm: React.FC = () => {
 	const carFormSelects = carFormSelectsConfig(errors, register);
 
 	return (
-		<form className='rent-car__car-form' onSubmit={handleSubmit(carSubmit)}>
+		<form className={styles['rent-car__car-form']} onSubmit={handleSubmit(carSubmit)}>
 			{carFormInputs.map((input, id) => (
 				<InputElement
 					key={id}

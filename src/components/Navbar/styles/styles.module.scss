@@ -1,0 +1,272 @@
+.navbar {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	&__wrapper,
+	&__container,
+	&__title,
+	&__title-box {
+		display: flex;
+		align-items: center;
+	}
+
+	&__wrapper,
+	&__container {
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__wrapper {
+		margin: 0 auto;
+		max-width: 2160px;
+	}
+
+	&__container {
+		position: fixed;
+		padding: 1rem 0.5rem;
+		margin-right: auto;
+		top: 0;
+		height: 80px;
+		letter-spacing: 0.1em;
+		background-color: transparent;
+		transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		z-index: 50;
+
+		&--is-scrolled {
+			background-color: var(--white-color);
+			-webkit-box-shadow: 0px 11px 16px -10px rgba(27, 27, 27, 1);
+			-moz-box-shadow: 0px 11px 16px -10px rgba(27, 27, 27, 1);
+			box-shadow: 0px 11px 16px -15px rgba(27, 27, 27, 1);
+		}
+	}
+
+	&__title {
+		justify-content: center;
+	}
+
+	&__title-text {
+		padding: 0.5rem;
+		margin-top: 0.35em;
+		cursor: pointer;
+	}
+
+	&__desktop {
+		display: none;
+	}
+
+	&__mobile-burger-btn {
+		position: absolute;
+		display: flex;
+		right: 0;
+		margin: 1rem;
+		transition: color 0.3s ease-out;
+	}
+
+	&__mobile-list,
+	&__login-icon {
+		display: flex;
+		align-items: center;
+	}
+
+	&__mobile-list {
+		position: fixed;
+		justify-content: flex-start;
+		flex-direction: column;
+		padding: 0.75rem;
+		top: 0.25rem;
+		right: 0.25rem;
+		bottom: 0.25rem;
+		width: 80vw;
+		color: var(--dark-blue-color);
+		background-color: var(--white-color);
+		border-radius: 0.375rem;
+		box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.25);
+		list-style-type: none;
+		z-index: 50;
+	}
+
+	&__mobile-exit-icon {
+		align-self: flex-start;
+		margin: 0.5rem 0 1.5rem;
+		color: var(--dark-blue-color);
+		font-size: 1.25rem;
+		cursor: pointer;
+	}
+
+	&__item {
+		margin: 0 0.5rem;
+		z-index: 10;
+	}
+
+	&__item-margin {
+		margin-bottom: 1.25rem;
+	}
+
+	&__item-link {
+		padding: 0.5rem;
+		color: var(--dark-blue-color);
+		text-decoration: none;
+		transition: color 0.3s ease-out;
+	}
+}
+
+.navbar-is-not-scrolled {
+	.navbar {
+		&__mobile-burger-btn {
+			color: var(--white-color);
+		}
+	}
+}
+
+.navbar-is-scrolled {
+	.navbar {
+		&__mobile-burger-btn {
+			color: var(--dark-blue-color);
+		}
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.navbar {
+		&__mobile-list {
+			width: 70vw;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.navbar {
+		&__container {
+			padding: 0 2.5rem;
+			justify-content: space-between;
+		}
+
+		&__desktop {
+			display: block;
+		}
+
+		&__mobile-burger-btn {
+			display: none;
+		}
+
+		&__desktop-list {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			list-style-type: none;
+		}
+
+		&__item {
+			margin: 0 1rem;
+		}
+
+		&__login-icon {
+			margin-top: 5px;
+		}
+	}
+
+	.navbar-is-not-scrolled {
+		.navbar {
+			&__item-link {
+				color: var(--white-color);
+			}
+		}
+	}
+
+	.navbar-is-scrolled {
+		.navbar {
+			&__item-link {
+				color: var(--dark-blue-color);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.navbar {
+		&__title-box {
+			margin: 0 0.5rem;
+		}
+
+		&__title-text {
+			padding: 0;
+		}
+
+		&__desktop-list {
+			font-size: 1.125rem;
+		}
+
+		&__item {
+			margin: 0 1.15rem;
+		}
+
+		&__item-link {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.navbar {
+		&__container {
+			padding: 0 0.5rem;
+		}
+
+		&__title {
+			padding-left: 2rem;
+		}
+
+		&__item-link:hover {
+			color: var(--gray-color);
+		}
+	}
+}
+
+@media screen and (min-width: 1208px) {
+	.navbar {
+		&__item {
+			margin: 0 1.5rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1358px) {
+	.navbar {
+		&__container {
+			padding: 0 6rem;
+		}
+
+		&__item-link {
+			font-size: 1.1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.navbar {
+		&__container {
+			padding: 0 8rem;
+		}
+
+		&__title {
+			padding-left: 0.95rem;
+		}
+
+		&__item {
+			margin: 0 2rem;
+		}
+
+		&__login-icon {
+			margin: 5px 2rem 0;
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.navbar {
+		&__container {
+			padding: 0 11.6rem;
+		}
+	}
+}
