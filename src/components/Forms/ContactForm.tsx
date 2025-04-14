@@ -9,6 +9,8 @@ import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
 import { ContactFormModel } from '../../models/forms.model';
 
+import styles from '../../sections/Contact/styles/styles.module.scss';
+
 const initialSubmitButtonState = 'Wyślij';
 
 export const ContactForm: React.FC = () => {
@@ -42,7 +44,7 @@ export const ContactForm: React.FC = () => {
 	const contactFormInputs = contactFormInputsConfig(errors, register);
 
 	return (
-		<form className='contact__form' onSubmit={handleSubmit(contactSubmit)}>
+		<form className={styles.contact__form} onSubmit={handleSubmit(contactSubmit)}>
 			{contactFormInputs.map((input, id) => (
 				<InputElement
 					key={id}

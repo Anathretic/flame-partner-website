@@ -1,0 +1,144 @@
+.footer {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+
+	&__container,
+	&__wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		width: 100%;
+	}
+
+	&__container {
+		padding: 2rem;
+		margin-bottom: 0.5rem;
+		background-color: var(--sky-blue-color);
+		color: var(--white-color);
+		z-index: 10;
+	}
+
+	&__wrapper {
+		margin: 0 auto;
+		max-width: 2160px;
+	}
+
+	&__box {
+		font-size: 0.9rem;
+		z-index: 10;
+
+		a {
+			padding: 2px 0.35rem 0.35rem;
+			color: var(--white-color);
+			text-decoration: none;
+			transition: color 0.3s ease-out;
+		}
+
+		a:first-of-type {
+			padding: 2px 0.25rem 0.25rem 0;
+		}
+
+		p {
+			margin: 0.65rem 0 1.25rem;
+		}
+
+		ul {
+			list-style-type: none;
+
+			li {
+				margin: 0.5rem 0;
+			}
+		}
+	}
+
+	&__box {
+		h2 {
+			margin-left: 0.07em;
+		}
+	}
+
+	&__box:nth-of-type(2),
+	&__box:nth-of-type(3),
+	&__box:nth-of-type(4) {
+		display: none;
+	}
+
+	&__copyright-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0.75rem 0 1.25rem;
+		z-index: 10;
+	}
+
+	&__copyright-icon {
+		margin: 0 0.25rem;
+		height: auto;
+		color: var(--dark-blue-color);
+	}
+
+	&__copyright-company-name {
+		font-size: 0.875rem;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.footer {
+		&__copyright-company-name {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.footer {
+		&__box:nth-of-type(2) {
+			display: block;
+		}
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.footer {
+		&__copyright-company-name {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.footer {
+		&__container {
+			padding: 4rem;
+			margin: 0;
+		}
+
+		&__box {
+			a:hover {
+				color: var(--black-color);
+			}
+		}
+
+		&__box:nth-of-type(3) {
+			display: block;
+		}
+
+		&__copyright-box {
+			margin: 1.25rem 0;
+		}
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.footer {
+		&__box:nth-of-type(4) {
+			display: block;
+		}
+	}
+}

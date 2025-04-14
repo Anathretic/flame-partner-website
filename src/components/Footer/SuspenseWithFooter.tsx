@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { useLocation } from 'react-router-dom';
-import { SubpageLoader } from '../Loader';
+import { SubpageLoader } from '../Loader/Loader';
 import { SuspenseWithFooterModel } from '../../models/footer.model';
 
 const Footer = lazy(() => import('./Footer'));

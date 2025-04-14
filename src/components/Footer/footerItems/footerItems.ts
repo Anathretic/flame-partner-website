@@ -5,3 +5,8 @@ export const footerHomeItems: FooterItemsModel[] = [
 	{ to: '/#wybierz-nas', content: 'Wybierz Nas' },
 	{ to: '/#kontakt', content: 'Kontakt' },
 ];
+
+export const footerOfferItems: FooterItemsModel[] = [
+	{ to: '/rekrutacja', content: 'Rekrutacja' },
+	{ to: '/wynajem', content: 'Wynajem' },
+];

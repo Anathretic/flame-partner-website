@@ -5,8 +5,9 @@ import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
 import { delaySubpageImport } from './helpers/delaySubpageImport';
 
 const Recruitment = lazy(() => delaySubpageImport(() => import('./subpages/Recruitment/Recruitment'), 1000));
-const PrivacyPolicy = lazy(() => delaySubpageImport(() => import('./subpages/PrivacyPolicy'), 1000));
-const PageNotFound = lazy(() => delaySubpageImport(() => import('./subpages/PageNotFound'), 1000));
+const RentCar = lazy(() => delaySubpageImport(() => import('./subpages/RentCar/RentCar'), 1000));
+const PrivacyPolicy = lazy(() => delaySubpageImport(() => import('./subpages/PrivacyPolicy/PrivacyPolicy'), 1000));
+const PageNotFound = lazy(() => delaySubpageImport(() => import('./subpages/PageNotFound/PageNotFound'), 1000));
 
 export const App: React.FC = () => {
 	return (
@@ -37,6 +38,7 @@ export const App: React.FC = () => {
 						}
 					/>
 					<Route path='/rekrutacja' element={<SuspenseWithFooter children={<Recruitment />} />} />
+					<Route path='/wynajem' element={<SuspenseWithFooter children={<RentCar />} />} />
 					<Route path='/polityka-prywatnosci' element={<SuspenseWithFooter children={<PrivacyPolicy />} />} />
 					<Route path='*' element={<SuspenseWithFooter children={<PageNotFound />} />} />
 				</Route>

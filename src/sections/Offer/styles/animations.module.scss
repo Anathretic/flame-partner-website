@@ -1,0 +1,15 @@
+.phone-animation {
+	animation: phone-bounce 3s infinite 1s;
+}
+
+@keyframes phone-bounce {
+	0% {
+		transform: translateX(0);
+	}
+	45% {
+		transform: translateX(3%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

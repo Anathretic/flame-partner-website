@@ -2,24 +2,27 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { footerHomeItems } from './footerItems/footerItems';
+import { footerHomeItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
 import FooterLogo from '../../images/logo-images/footer-logo.png';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
+
+import styles from './styles/styles.module.scss';
 
 const Footer: React.FC = () => {
 	const { showSpecialLinks } = useFooterLinksContext();
 	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
 	const currentYear = new Date().getFullYear();
 
-	const memoizedFooterItems = useMemo(() => footerHomeItems, []);
+	const memoizedFooterHomeItems = useMemo(() => footerHomeItems, []);
+	const memoizedFooterOfferItems = useMemo(() => footerOfferItems, []);
 
 	return (
-		<footer className='footer'>
-			<div className='footer__container'>
-				<div className='footer__wrapper'>
-					<div className='footer__box'>
+		<footer className={styles.footer}>
+			<div className={styles.footer__container}>
+				<div className={styles.footer__wrapper}>
+					<div className={styles.footer__box}>
 						<h2>
 							<img src={FooterLogo} alt='' />
 						</h2>
@@ -33,12 +36,12 @@ const Footer: React.FC = () => {
 							</a>
 						</div>
 					</div>
-					<div className='footer__box'>
+					<div className={styles.footer__box}>
 						<h3>Home</h3>
 						<ul>
 							{!showSpecialLinks ? (
 								<>
-									{memoizedFooterItems.map((item, id) => (
+									{memoizedFooterHomeItems.map((item, id) => (
 										<li key={id}>
 											<HashLink smooth to={item.to}>
 												{item.content}
@@ -55,17 +58,19 @@ const Footer: React.FC = () => {
 							)}
 						</ul>
 					</div>
-					<div className='footer__box'>
-						<h3>Praca</h3>
+					<div className={styles.footer__box}>
+						<h3>Oferta</h3>
 						<ul>
-							<li>
-								<Link to='/rekrutacja' onClick={scrollToTop}>
-									Rekrutacja
-								</Link>
-							</li>
+							{memoizedFooterOfferItems.map((item, id) => (
+								<li key={id}>
+									<Link to={item.to} onClick={scrollToTop}>
+										{item.content}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
-					<div className='footer__box'>
+					<div className={styles.footer__box}>
 						<h3>Więcej</h3>
 						<ul>
 							{!showSpecialLinks && (
@@ -84,9 +89,9 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<div className='footer__copyright-box'>
-				<FaRegCopyright className='footer__copyright-icon' />
-				<p className='footer__copyright-company-name'> {currentYear} flame partner</p>
+			<div className={styles['footer__copyright-box']}>
+				<FaRegCopyright className={styles['footer__copyright-icon']} />
+				<p className={styles['footer__copyright-company-name']}> {currentYear} flame partner</p>
 			</div>
 		</footer>
 	);

@@ -1,0 +1,42 @@
+.subpage-loader,
+.loader {
+	&__spinner {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		color: var(--dark-blue-color);
+		border-radius: 50%;
+		overflow: hidden;
+	}
+}
+
+.subpage-loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+
+	&__spinner {
+		font-size: 90px;
+	}
+}
+
+.loader {
+	margin: 1.19em 0;
+
+	&__spinner {
+		font-size: 45px;
+	}
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+	.loader {
+		margin: 1.23em 0;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.loader {
+		margin: 1.49em 0;
+	}
+}

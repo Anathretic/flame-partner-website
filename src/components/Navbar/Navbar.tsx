@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import throttle from 'lodash/throttle';
 import NavbarItem from './components/NavbarItem';
 import { NavbarTitle } from './components/NavbarTitle';
 import { navbarItems } from './components/navbarData/navbarItems';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 
-import throttle from 'lodash/throttle';
+import styles from './styles/styles.module.scss';
+import animations from './styles/animations.module.scss';
 
 const Navbar: React.FC = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
@@ -46,22 +48,28 @@ const Navbar: React.FC = () => {
 
 	return (
 		<header ref={divRef}>
-			<div className='navbar'>
+			<div className={styles.navbar}>
 				<div
-					className={`navbar__container ${
-						isScrolled ? 'navbar__container--is-scrolled navbar-is-scrolled' : 'navbar-is-not-scrolled'
+					className={`${styles.navbar__container} ${
+						isScrolled ? styles['navbar__container--is-scrolled'] : styles['navbar-is-not-scrolled']
 					}`}>
-					<div className='navbar__wrapper'>
+					<div className={styles.navbar__wrapper}>
 						<NavbarTitle divRef={divRef} isScrolled={isScrolled} />
 						{isMobile ? (
 							<>
-								<HiMenuAlt4 className='navbar__mobile-burger-btn' fontSize={32} onClick={() => setToggleMenu(true)} />
+								<HiMenuAlt4
+									className={styles['navbar__mobile-burger-btn']}
+									fontSize={32}
+									onClick={() => setToggleMenu(true)}
+								/>
 								{(toggleMenu || isAnimating) && (
-									<nav className='navbar__mobile'>
+									<nav className={styles.navbar__mobile}>
 										<ul
 											onAnimationEnd={handleAnimationEnd}
-											className={`navbar__mobile-list ${toggleMenu ? 'animate-slide-in' : 'animate-slide-out'}`}>
-											<li className='navbar__mobile-exit-icon'>
+											className={`${styles['navbar__mobile-list']} ${
+												toggleMenu ? animations['animate-slide-in'] : animations['animate-slide-out']
+											}`}>
+											<li className={styles['navbar__mobile-exit-icon']}>
 												<AiOutlineClose fontSize={28} onClick={handleMenuClose} />
 											</li>
 											{memoizedNavbarItems.map(({ title, section }) => (
@@ -69,7 +77,7 @@ const Navbar: React.FC = () => {
 													key={title}
 													title={title}
 													section={section}
-													classProps={'navbar__item-margin'}
+													classProps={styles['navbar__item-margin']}
 													onClick={handleMenuClose}
 												/>
 											))}
@@ -78,8 +86,8 @@ const Navbar: React.FC = () => {
 								)}
 							</>
 						) : (
-							<nav className='navbar__desktop'>
-								<ul className='navbar__desktop-list'>
+							<nav className={styles.navbar__desktop}>
+								<ul className={styles['navbar__desktop-list']}>
 									{memoizedNavbarItems.map(({ title, section }) => (
 										<NavbarItem key={title} title={title} section={section} />
 									))}

@@ -9,18 +9,20 @@ import {
 	SelectModel,
 	SubmitButtonModel,
 } from '../../../models/formElements.model';
-import { Loader } from '../../Loader';
+import { Loader } from '../../Loader/Loader';
 import { scrollToTop } from '../../../utils/scrollToTopUtils';
+
+import styles from '../styles/styles.module.scss';
 
 export const InputElement: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
 	({ label, inputName, type, placeholder, value, readOnly, errorMessage, ...props }, ref) => {
 		return (
-			<div className='form__box'>
-				<label className='form__label' htmlFor={inputName}>
+			<div className={styles.form__box}>
+				<label className={styles.form__label} htmlFor={inputName}>
 					{label}
 				</label>
 				<input
-					className='form__input'
+					className={styles.form__input}
 					type={type}
 					id={inputName}
 					placeholder={placeholder}
@@ -30,7 +32,7 @@ export const InputElement: React.FC<InputAndTextareaModel> = React.forwardRef<HT
 					autoComplete='off'
 					{...props}
 				/>
-				<p className='form__input-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+				<p className={styles['form__input-error']}>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 			</div>
 		);
 	}
@@ -41,18 +43,18 @@ export const TextareaElement: React.FC<InputAndTextareaModel> = React.forwardRef
 	InputAndTextareaModel
 >(({ label, inputName, placeholder, errorMessage, ...props }, ref) => {
 	return (
-		<div className='form__box'>
-			<label className='form__label' htmlFor={inputName}>
+		<div className={styles.form__box}>
+			<label className={styles.form__label} htmlFor={inputName}>
 				{label}
 			</label>
 			<textarea
-				className='form__textarea'
+				className={styles.form__textarea}
 				id='message'
 				placeholder={placeholder}
 				autoComplete='off'
 				ref={ref}
 				{...props}></textarea>
-			<p className='form__textarea-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+			<p className={styles['form__textarea-error']}>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 		</div>
 	);
 });
@@ -60,18 +62,18 @@ export const TextareaElement: React.FC<InputAndTextareaModel> = React.forwardRef
 export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectElement, SelectModel>(
 	({ label, selectName, labelValueArr, errorMessage, ...props }, ref) => {
 		return (
-			<div className='form__box'>
-				<label className='form__label' htmlFor={selectName}>
+			<div className={styles.form__box}>
+				<label className={styles.form__label} htmlFor={selectName}>
 					{label}
 				</label>
-				<select className='form__select' ref={ref} id={selectName} autoComplete='off' {...props}>
+				<select className={styles.form__select} ref={ref} id={selectName} autoComplete='off' {...props}>
 					{labelValueArr.map((option, id) => (
 						<option key={id} disabled={option.disabled} value={option.value}>
 							{option.label}
 						</option>
 					))}
 				</select>
-				<p className='form__select-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+				<p className={styles['form__select-error']}>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 			</div>
 		);
 	}
@@ -79,17 +81,19 @@ export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectE
 
 export const FormSubmit: React.FC<SubmitButtonModel> = ({ isLoading, buttonText }) => {
 	return (
-		<div className='form__box'>
-			{isLoading ? <Loader className='loader' /> : <input className='form__submit' type='submit' value={buttonText} />}
+		<div className={styles.form__box}>
+			{isLoading ? <Loader /> : <input className={styles.form__submit} type='submit' value={buttonText} />}
 		</div>
 	);
 };
 
 export const ReturnButton: React.FC<ReturnButtonModel> = ({ isLoading }) => {
 	return (
-		<div className='form__box'>
+		<div className={styles.form__box}>
 			<Link
-				className={isLoading ? 'form__return-btn form__return-btn--opacity' : 'form__return-btn'}
+				className={
+					isLoading ? styles['form__return-btn'] + styles['form__return-btn--opacity'] : styles['form__return-btn']
+				}
 				to='/'
 				onClick={scrollToTop}>
 				Powrót
@@ -102,14 +106,14 @@ export const ReCaptchaV2Component: React.FC<ReCaptchaV2Model> = ({ refCaptcha, e
 	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
 
 	return (
-		<div className='form__recaptcha-box'>
+		<div className={styles['form__recaptcha-box']}>
 			<ReCAPTCHA
 				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 				size={isMobile ? 'compact' : 'normal'}
 				sitekey={import.meta.env.VITE_SITE_KEY}
 				ref={refCaptcha}
 			/>
-			<div className='form__recaptcha-error'>
+			<div className={styles['form__recaptcha-error']}>
 				<p>{errorValue}</p>
 			</div>
 		</div>
