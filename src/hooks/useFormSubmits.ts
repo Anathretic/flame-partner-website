@@ -71,6 +71,7 @@ export const useFormSubmits = <T extends FormTypes>({
 		refCaptcha.current?.reset();
 
 		const params = {
+			subject: 'rekrutacji',
 			firstname,
 			lastname,
 			email,
@@ -85,7 +86,7 @@ export const useFormSubmits = <T extends FormTypes>({
 			await emailjs
 				.send(
 					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_WORK_OFFER_TEMPLATE_ID}`,
+					`${import.meta.env.VITE_SPECIAL_TEMPLATE_ID}`,
 					params,
 					`${import.meta.env.VITE_PUBLIC_KEY}`
 				)
@@ -118,6 +119,7 @@ export const useFormSubmits = <T extends FormTypes>({
 		refCaptcha.current?.reset();
 
 		const params = {
+			subject: 'wynajmu samochodu',
 			firstname,
 			lastname,
 			email,
@@ -131,7 +133,7 @@ export const useFormSubmits = <T extends FormTypes>({
 			await emailjs
 				.send(
 					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_RENT_CAR_TEMPLATE_ID}`,
+					`${import.meta.env.VITE_SPECIAL_TEMPLATE_ID}`,
 					params,
 					`${import.meta.env.VITE_PUBLIC_KEY}`
 				)
