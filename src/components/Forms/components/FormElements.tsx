@@ -91,9 +91,7 @@ export const ReturnButton: React.FC<ReturnButtonModel> = ({ isLoading }) => {
 	return (
 		<div className={styles.form__box}>
 			<Link
-				className={
-					isLoading ? styles['form__return-btn'] + styles['form__return-btn--opacity'] : styles['form__return-btn']
-				}
+				className={`${styles['form__return-btn']} ${isLoading && styles['form__return-btn--opacity']}`}
 				to='/'
 				onClick={scrollToTop}>
 				Powrót

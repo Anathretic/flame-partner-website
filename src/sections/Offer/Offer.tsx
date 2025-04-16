@@ -42,7 +42,12 @@ const Offer: React.FC = () => {
 									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż{' '}
 									<span>oferujemy wynajem na konkurencyjnych warunkach!</span>
 								</p>
-								<Link to='/wynajem-samochodu'>Zobacz</Link>
+								<Link
+									to='/wynajem-samochodu'
+									onClick={scrollToTop}
+									aria-label='Przycisk przenoszący na stronę wynajmu samochodów'>
+									Zobacz
+								</Link>
 							</div>
 						</div>
 						<div className={styles['offer__image-content']}>
