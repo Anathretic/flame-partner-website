@@ -1,6 +1,6 @@
-import { SlideDataModel } from '../../../models/carRentCarousel.model';
+import { RentCarSlideDataModel } from '../../../models/carousel.model';
 
-export const carListData: SlideDataModel[] = [
+export const carListData: RentCarSlideDataModel[] = [
 	{
 		id: 0,
 		main_title: 'Toyota Prius II',
