@@ -1,29 +1,14 @@
-import { useContext, useRef } from 'react';
-import { BlogPopupContext } from '../../../../context/BlogPopupContext';
+import { useRef } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { useSlideOptions } from '../../../../hooks/useSlideOptions';
-import { BlogSlideDataModel, SlideModel } from '../../../../models/carousel.model';
-import { blogPopupActivityToggle } from '../../../../utils/blogPopupActivityToggleUtils';
+import { RentCarSlideDataModel, SlideModel } from '../../../../models/carousel.model';
 
 import styles from '../styles/styles.module.scss';
 
 export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }) => {
-	const { id, main_title } = slide as BlogSlideDataModel;
+	const { id, main_title, combustion, advantages, price } = slide as RentCarSlideDataModel;
 	const slideRef = useRef<HTMLLIElement>(null);
 	const { handleMouseLeave, handleMouseMove } = useSlideOptions({ slideRef });
-
-	const slideContext = useContext(BlogPopupContext);
-
-	if (!slideContext) {
-		throw new Error('Błąd użycia useContext!');
-	}
-
-	const { togglePopupVisibility, setSlideItemData } = slideContext;
-
-	const handleBtn = () => {
-		togglePopupVisibility();
-		setSlideItemData(slide as BlogSlideDataModel);
-		blogPopupActivityToggle();
-	};
 
 	let classNames = `${styles.slide} `;
 
@@ -43,9 +28,23 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 			</div>
 			<article className={styles.slide__content}>
 				<h3 className={styles.slide__headline}>{main_title}</h3>
-				<button className={`${styles.slide__action} ${styles.btn}`} onClick={handleBtn}>
-					Przeczytaj
-				</button>
+				<div className={styles['slide__car-content']}>
+					<div className={styles['slide__car-content-box']}>
+						<h4>Spalanie:</h4>
+						<span>{combustion}</span>
+					</div>
+					<div className={styles['slide__car-content-box']}>
+						<h4>Zalety:</h4>
+						<span>{advantages}</span>
+					</div>
+					<div className={styles['slide__car-content-box']}>
+						<h4>Cena:</h4>
+						<span>{price}</span>
+					</div>
+				</div>
+				<HashLink to={'/wynajem-samochodu/#formularz'} className={`${styles.slide__action} ${styles.btn}`}>
+					Wybieram
+				</HashLink>
 			</article>
 		</li>
 	);

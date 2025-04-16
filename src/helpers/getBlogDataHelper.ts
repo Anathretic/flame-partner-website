@@ -1,5 +1,5 @@
 import { supabase } from '../supabase/supabase';
-import { GetBlogDataModel } from '../models/blogCarousel.model';
+import { GetBlogDataModel } from '../models/blogPopup.model';
 
 export const getBlogData = async ({ setSlides, setIsLoading, setError }: GetBlogDataModel): Promise<void> => {
 	const cachedData = localStorage.getItem('blogData');

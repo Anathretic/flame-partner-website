@@ -237,23 +237,6 @@
 	&__banner-special-block {
 		background-color: var(--white-color);
 	}
-
-	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
-	}
 }
 
 @media screen and (max-width: 300px) {
@@ -308,11 +291,6 @@
 		&__benefits-special-block,
 		&__banner-special-block,
 		&__form-special-block {
-			width: 35%;
-			height: 50px;
-		}
-
-		&__special-block {
 			width: 35%;
 			height: 50px;
 		}
@@ -471,17 +449,8 @@
 		&__benefits-special-block,
 		&__banner-special-block,
 		&__form-special-block {
-			width: 41.6%;
 			height: 45px;
-
-			&--right {
-				display: none;
-			}
-		}
-
-		&__special-block {
-			height: 45px;
-			width: 41.6%;
+			width: 40.1%;
 
 			&--right {
 				display: none;

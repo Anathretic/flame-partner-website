@@ -24,7 +24,7 @@ const RecruitmentBanner: React.FC = () => {
 					<FaCarAlt fontSize={56} color='#edf0f5' />
 					<h3>
 						3. Twoje auto lub{' '}
-						<Link to='/wynajem' onClick={scrollToTop}>
+						<Link to='/wynajem-samochodu' onClick={scrollToTop}>
 							nasze auto
 						</Link>
 					</h3>

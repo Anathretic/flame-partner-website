@@ -6,7 +6,7 @@ import { SliderModel } from '../../../models/carousel.model';
 
 import styles from './styles/styles.module.scss';
 
-export const BlogCarousel: React.FC<SliderModel> = ({ slides }) => {
+export const RentCarCarousel: React.FC<SliderModel> = ({ slides }) => {
 	const [current, setCurrent] = useState(0);
 
 	const { handleNextClick, handlePreviousClick, handleSlideClick, wrapperTransform } = useCarouselOptions({

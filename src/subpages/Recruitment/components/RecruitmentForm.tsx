@@ -17,7 +17,7 @@ const RecruitmentForm: React.FC = () => {
 					</p>
 					<p className={styles['recruitment__form-title-subtext']}>
 						Jeśli chcesz również wynająć u nas samochód to najpierw wypełnij formularz zgłoszeniowy, a potem{' '}
-						<Link to='/wynajem' onClick={scrollToTop}>
+						<Link to='/wynajem-samochodu' onClick={scrollToTop}>
 							kliknij tutaj
 						</Link>
 						.
