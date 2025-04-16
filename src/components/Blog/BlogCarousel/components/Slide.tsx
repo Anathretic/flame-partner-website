@@ -1,13 +1,15 @@
 import { useContext, useRef } from 'react';
 import { BlogPopupContext } from '../../../../context/BlogPopupContext';
+import { useSlideOptions } from '../../../../hooks/useSlideOptions';
+import { BlogSlideDataModel, SlideModel } from '../../../../models/carousel.model';
 import { blogPopupActivityToggle } from '../../../../utils/blogPopupActivityToggleUtils';
-import { SlideModel } from '../../../../models/blogCarousel.model';
 
 import styles from '../styles/styles.module.scss';
 
 export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }) => {
-	const { id, main_title } = slide;
+	const { id, main_title } = slide as BlogSlideDataModel;
 	const slideRef = useRef<HTMLLIElement>(null);
+	const { handleMouseLeave, handleMouseMove } = useSlideOptions({ slideRef });
 
 	const slideContext = useContext(BlogPopupContext);
 
@@ -17,25 +19,9 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 
 	const { togglePopupVisibility, setSlideItemData } = slideContext;
 
-	const handleMouseMove = (e: React.MouseEvent) => {
-		const el = slideRef.current;
-		const r = el?.getBoundingClientRect();
-		if (r) {
-			el?.style.setProperty('--x', (e.clientX - (r.left + Math.floor(r.width / 2))).toString());
-			el?.style.setProperty('--y', (e.clientY - (r.top + Math.floor(r.height / 2))).toString());
-		}
-	};
-
-	const handleMouseLeave = () => {
-		if (slideRef.current) {
-			slideRef.current.style.setProperty('--x', '0');
-			slideRef.current.style.setProperty('--y', '0');
-		}
-	};
-
 	const handleBtn = () => {
 		togglePopupVisibility();
-		setSlideItemData(slide);
+		setSlideItemData(slide as BlogSlideDataModel);
 		blogPopupActivityToggle();
 	};
 

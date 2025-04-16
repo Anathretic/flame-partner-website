@@ -1,4 +1,4 @@
-import { SliderControlModel } from '../../../../models/blogCarousel.model';
+import { SliderControlModel } from '../../../../models/carousel.model';
 
 import styles from '../styles/styles.module.scss';
 

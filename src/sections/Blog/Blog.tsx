@@ -2,12 +2,12 @@ import { memo, useEffect, useState } from 'react';
 import { BlogCarousel } from '../../components/Blog/BlogCarousel/BlogCarousel';
 import { Loader } from '../../components/Loader/Loader';
 import { getBlogData } from '../../helpers/getBlogDataHelper';
-import { SlideDataModel } from '../../models/blogCarousel.model';
+import { BlogSlideDataModel } from '../../models/carousel.model';
 
 import styles from './styles/styles.module.scss';
 
 const Blog: React.FC = () => {
-	const [slides, setSlides] = useState<SlideDataModel[]>([]);
+	const [slides, setSlides] = useState<BlogSlideDataModel[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(false);
 
