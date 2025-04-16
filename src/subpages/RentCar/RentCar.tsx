@@ -16,7 +16,9 @@ const RentCar: React.FC = () => {
 			<div className={styles['rent-car__container']}>
 				<div className={styles['rent-car__wrapper']}>
 					<div className={styles['rent-car__hero-image']}>
-						<h1 className={styles['rent-car__hero-image-title']}>Wynajem</h1>
+						<h1 className={styles['rent-car__hero-image-title']}>
+							Wynajem <br /> samochodu
+						</h1>
 					</div>
 					<RentCarBenefits />
 					<RentCarList />

@@ -8,5 +8,5 @@ export const footerHomeItems: FooterItemsModel[] = [
 
 export const footerOfferItems: FooterItemsModel[] = [
 	{ to: '/rekrutacja', content: 'Rekrutacja' },
-	{ to: '/wynajem', content: 'Wynajem' },
+	{ to: '/wynajem-samochodu', content: 'Wynajem samochodu' },
 ];

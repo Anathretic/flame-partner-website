@@ -11,7 +11,7 @@ const RentCarForm: React.FC = () => {
 			<div className={styles['rent-car__form-container']}>
 				<div className={styles['rent-car__form-title-box']}>
 					<h2 className={styles['rent-car__form-title']}>Zaczynamy?</h2>
-					<p className={styles['rent-car__form-title-subtext']}>
+					<p id='formularz' className={styles['rent-car__form-title-subtext']}>
 						Gotowy by wyruszyć w drogę naszym autem? Świetnie! Przed Tobą otwiera się szansa na rozpoczęcie nowego etapu
 						w życiu, przez który poprowadzą Cię nasze cztery koła.
 					</p>

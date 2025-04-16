@@ -12,6 +12,7 @@
 	&__benefits-text-content-box,
 	&__list,
 	&__list-container,
+	&__list-wrapper,
 	&__form-container,
 	&__form-title-box,
 	&__form-title-info-box {
@@ -51,6 +52,7 @@
 		color: var(--white-color);
 		font-size: 3rem;
 		font-weight: 300;
+		text-align: center;
 	}
 
 	&__title {
@@ -60,7 +62,7 @@
 		font-weight: 300;
 
 		&--special {
-			padding-top: 50px;
+			padding-top: 46px;
 		}
 	}
 
@@ -104,16 +106,23 @@
 		}
 	}
 
-	&__list {
+	&__list,
+	&__list-container,
+	&__list-wrapper {
 		position: relative;
-		height: 100%;
-		padding-bottom: 2rem;
+	}
+
+	&__list {
+		padding-bottom: min(6em, 4em);
 		background-color: var(--sky-blue-color);
 		color: var(--white-color);
 	}
 
-	&__list-container {
-		max-width: 1000px;
+	&__list-wrapper {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 2160px;
+		padding-bottom: 4.5em;
 	}
 
 	&__form {
@@ -123,7 +132,7 @@
 	}
 
 	&__form-title {
-		padding-bottom: 2rem;
+		padding: 1rem 0;
 		font-size: 2.5rem;
 		text-align: center;
 		font-weight: 300;
@@ -217,23 +226,6 @@
 	&__list-special-block {
 		background-color: var(--white-color);
 	}
-
-	&__special-block {
-		position: absolute;
-		bottom: 0;
-		width: 40%;
-		height: 40px;
-
-		&--left {
-			left: -50px;
-			transform: skew(45deg);
-		}
-
-		&--right {
-			right: -50px;
-			transform: skew(-45deg);
-		}
-	}
 }
 
 @media screen and (max-width: 300px) {
@@ -243,6 +235,14 @@
 			li {
 				padding: 0.5em 0;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 315px) {
+	.rent-car {
+		&__hero-image-title {
+			font-size: 2.5rem;
 		}
 	}
 }
@@ -291,10 +291,13 @@
 			width: 35%;
 			height: 50px;
 		}
+	}
+}
 
-		&__special-block {
-			width: 35%;
-			height: 50px;
+@media screen and (min-width: 768px) and (min-height: 500px) {
+	.rent-car {
+		&__list {
+			padding-bottom: 4em;
 		}
 	}
 }
@@ -333,10 +336,6 @@
 			padding-bottom: 3rem;
 		}
 
-		&__list {
-			padding-bottom: 3rem;
-		}
-
 		&__form-title-subtext a:hover {
 			color: var(--sky-blue-color);
 			text-underline-offset: 2px;
@@ -359,15 +358,12 @@
 			font-size: 3.5rem;
 
 			&--special {
-				padding-top: 70px;
+				padding: 70px 0 64px;
 			}
 		}
 
-		&__list-container {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			max-width: 1450px;
+		&__list-wrapper {
+			padding-bottom: 3em;
 		}
 
 		&__car-form {
@@ -435,21 +431,20 @@
 		&__benefits-special-block,
 		&__list-special-block,
 		&__form-special-block {
-			width: 41.6%;
+			width: 40.1%;
 			height: 45px;
 
 			&--right {
 				display: none;
 			}
 		}
+	}
+}
 
-		&__special-block {
-			height: 45px;
-			width: 41.6%;
-
-			&--right {
-				display: none;
-			}
+@media screen and (min-height: 1110px) {
+	.rent-car {
+		&__list {
+			padding-bottom: 6em;
 		}
 	}
 }
