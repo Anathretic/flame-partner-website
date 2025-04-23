@@ -28,7 +28,7 @@ const PrivacyPolicy: React.FC = () => {
 					<h2>2. Administrator Danych Osobowych</h2>
 					<p>
 						Administratorem danych osobowych Użytkowników jest Flame Partner. Kontakt z administratorem jest możliwy pod
-						adresem e-mail: biuro.flamepartner@gmail.com.
+						adresem e-mail: <span>biuro.flamepartner@gmail.com</span>
 					</p>
 				</div>
 				<div className={styles['privacy-policy__box']}>
@@ -108,7 +108,7 @@ const PrivacyPolicy: React.FC = () => {
 					<h2>9. Kontakt</h2>
 					<p>
 						W przypadku pytań dotyczących Polityki Prywatności prosimy o kontakt pod adresem e-mail:
-						biuro.flamepartner@gmail.com.
+						<span>biuro.flamepartner@gmail.com</span>
 					</p>
 				</div>
 				<div className={styles['privacy-policy__box']}>

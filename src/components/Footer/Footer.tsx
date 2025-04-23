@@ -2,11 +2,12 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
+import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 import { footerHomeItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
-import { FaRegCopyright, FaFacebookSquare } from 'react-icons/fa';
+import { FaRegCopyright, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+
 import FooterLogo from '../../images/logo-images/footer-logo.png';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 
 import styles from './styles/styles.module.scss';
 
@@ -26,13 +27,16 @@ const Footer: React.FC = () => {
 						<h2>
 							<img src={FooterLogo} alt='' />
 						</h2>
-						<p>Pomoc i wspracie na każdym etapie..</p>
+						<p>Pomoc i wsparcie na każdym etapie..</p>
 						<div>
-							<a
-								href='https://www.facebook.com/people/Flame-Partner-BoltUberFreeNow/61570176986872/'
-								target='_blank'
-								rel='noreferrer'>
-								<FaFacebookSquare fontSize={isMobile ? 20 : 25} />
+							<a href='https://www.facebook.com/profile.php?id=61574789965056' target='_blank' rel='noreferrer'>
+								<FaFacebook fontSize={isMobile ? 20 : 25} />
+							</a>
+							<a href='https://www.instagram.com/flame.partner' target='_blank' rel='noreferrer'>
+								<FaInstagram fontSize={isMobile ? 20 : 25} />
+							</a>
+							<a href='https://www.tiktok.com/@flame.partner' target='_blank' rel='noreferrer'>
+								<FaTiktok fontSize={isMobile ? 20 : 25} />
 							</a>
 						</div>
 					</div>
