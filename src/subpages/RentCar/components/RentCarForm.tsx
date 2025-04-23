@@ -33,10 +33,7 @@ const RentCarForm: React.FC = () => {
 						<li>
 							<p>Komfortowe stawki rozliczeń:</p>
 							<p>
-								- do 150 kursów - <span>50zł</span>
-							</p>
-							<p>
-								- powyżej 150 kurstów - <span>25zł</span>
+								- stała, jasna kwota - <span>50zł</span>
 							</p>
 						</li>
 						<li>
@@ -45,7 +42,7 @@ const RentCarForm: React.FC = () => {
 								- polecenie pracownika - <span>200zł</span>
 							</p>
 							<p>
-								- zwrot za badania - <span>400zł</span>
+								- zwrot za badania - <span>200zł</span>
 							</p>
 						</li>
 					</ul>
