@@ -6,6 +6,26 @@ YupPassword(yup);
 
 const errorMessage = { requiredField: 'To pole jest wymagane!' };
 
+const workAndCarSchema = yup.object({
+	lastname: yup
+		.string()
+		.min(2, 'Nazwisko jest zbyt krótkie!')
+		.max(51, 'Nazwisko jest zbyt długie!')
+		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
+		.required(errorMessage.requiredField),
+	phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
+	city: yup
+		.string()
+		.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', ''])
+		.required(errorMessage.requiredField)
+		.test('is-selected', errorMessage.requiredField, value => value !== ''),
+	company: yup
+		.string()
+		.oneOf(['Wszystko', 'Uber', 'Bolt', 'FreeNow', ''], errorMessage.requiredField)
+		.required(errorMessage.requiredField)
+		.test('is-selected', errorMessage.requiredField, value => value !== ''),
+});
+
 export const contactSchema = yup.object({
 	firstname: yup
 		.string()
@@ -29,41 +49,15 @@ export const contactSchema = yup.object({
 		.required(errorMessage.requiredField),
 });
 
-export const workSchema = yup
-	.object({
-		lastname: yup
-			.string()
-			.min(2, 'Nazwisko jest zbyt krótkie!')
-			.max(51, 'Nazwisko jest zbyt długie!')
-			.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
-			.required(errorMessage.requiredField),
-		phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
-		city: yup
-			.string()
-			.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', ''])
-			.required(errorMessage.requiredField)
-			.test('is-selected', errorMessage.requiredField, value => value !== ''),
-		company: yup
-			.string()
-			.oneOf(['Wszystko', 'Uber', 'Bolt', 'FreeNow', ''], errorMessage.requiredField)
-			.required(errorMessage.requiredField)
-			.test('is-selected', errorMessage.requiredField, value => value !== ''),
-	})
-	.concat(contactSchema.omit(['subject']));
+export const workSchema = workAndCarSchema.concat(contactSchema.omit(['subject']));
 
 export const carSchema = yup
 	.object({
-		lastname: yup
-			.string()
-			.min(2, 'Nazwisko jest zbyt krótkie!')
-			.max(51, 'Nazwisko jest zbyt długie!')
-			.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
-			.required(errorMessage.requiredField),
-		phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
 		car: yup
 			.string()
 			.oneOf(['Toyota Prius II', 'Honda Civic', 'Skoda Fabia III', 'Skoda Fabia II', ''])
 			.required(errorMessage.requiredField)
 			.test('is-selected', errorMessage.requiredField, value => value !== ''),
 	})
-	.concat(contactSchema.omit(['subject']));
+	.concat(contactSchema.omit(['subject']))
+	.concat(workAndCarSchema);

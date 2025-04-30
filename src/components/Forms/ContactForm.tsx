@@ -2,21 +2,18 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FormSubmit, InputElement, ReCaptchaV2Component, TextareaElement } from './components/FormElements';
-import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
+import { contactFormInputs } from './inputsConfig/inputsConfig';
+import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
-import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
 import { ContactFormModel } from '../../models/forms.model';
 
 import styles from '../../sections/Contact/styles/styles.module.scss';
 
-const initialSubmitButtonState = 'Wyślij';
-
 export const ContactForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorValue, setErrorValue] = useState('');
-	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState });
+	const [buttonText, setButtonText] = useState('Wyślij');
 
 	const {
 		register,
@@ -24,16 +21,12 @@ export const ContactForm: React.FC = () => {
 		reset,
 		formState: { errors },
 	} = useForm<ContactFormModel>({
-		defaultValues: {
-			firstname: '',
-			email: '',
-			subject: '',
-			message: '',
-		},
+		defaultValues: { firstname: '', email: '', subject: '', message: '' },
 		resolver: yupResolver(contactSchema),
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
+
 	const { contactSubmit } = useFormSubmits<ContactFormModel>({
 		reset,
 		refCaptcha,
@@ -41,32 +34,20 @@ export const ContactForm: React.FC = () => {
 		setErrorValue,
 		setButtonText,
 	});
-	const contactFormInputs = contactFormInputsConfig(errors, register);
 
 	return (
-		<form className={styles.contact__form} onSubmit={handleSubmit(contactSubmit)}>
-			{contactFormInputs.map((input, id) => (
-				<InputElement
-					key={id}
-					label={input.label}
-					inputName={input.inputName}
-					type={input.type}
-					placeholder={input.placeholder}
-					errorMessage={input.errorMessage}
-					aria-invalid={input.isInvalid}
-					{...input.register}
-				/>
-			))}
-			<TextareaElement
-				label='Wiadomość:'
-				inputName='message'
-				placeholder='Wprowadź wiadomość..'
-				errorMessage={errors.message?.message}
-				aria-invalid={errors.message ? true : false}
-				{...register('message')}
-			/>
-			<ReCaptchaV2Component refCaptcha={refCaptcha} errorValue={errorValue} />
-			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
-		</form>
+		<GenericForm<ContactFormModel>
+			register={register}
+			handleSubmit={handleSubmit}
+			onSubmit={contactSubmit}
+			inputs={contactFormInputs}
+			cssClass={styles.contact__form}
+			buttonText={buttonText}
+			isLoading={isLoading}
+			errors={errors}
+			refCaptcha={refCaptcha}
+			errorValue={errorValue}
+			includeReturnButton={false}
+		/>
 	);
 };
