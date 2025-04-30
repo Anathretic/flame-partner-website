@@ -1,5 +1,6 @@
 import ReCAPTCHA from 'react-google-recaptcha';
-import { UseFormReset } from 'react-hook-form';
+import { FieldErrors, FieldValues, UseFormHandleSubmit, UseFormRegister, UseFormReset } from 'react-hook-form';
+import { InputAndTextareaConfigModel, SelectConfigModel } from './inputConfig.model';
 
 type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | '';
 type Company = 'Wszystko' | 'Uber' | 'Bolt' | 'FreeNow' | '';
@@ -25,6 +26,21 @@ export interface UseFormSubmitsModel<T extends FormTypes> {
 
 // -------------------------------------------------------
 
+export interface GenericFormProps<T extends FieldValues> {
+	register: UseFormRegister<T>;
+	handleSubmit: UseFormHandleSubmit<T>;
+	onSubmit: (data: T) => void;
+	inputs: InputAndTextareaConfigModel<T>[];
+	cssClass: string;
+	buttonText: string;
+	isLoading: boolean;
+	errors: FieldErrors<T>;
+	refCaptcha: React.RefObject<ReCAPTCHA>;
+	errorValue: string;
+	selects?: SelectConfigModel<T>[];
+	includeReturnButton?: boolean;
+}
+
 export interface ContactFormModel extends DefaultFormModel {
 	subject: string;
 }
@@ -39,5 +55,7 @@ export interface WorkFormModel extends DefaultFormModel {
 export interface CarFormModel extends DefaultFormModel {
 	lastname: string;
 	phone: string;
+	city: City;
+	company: Company;
 	car: Car;
 }

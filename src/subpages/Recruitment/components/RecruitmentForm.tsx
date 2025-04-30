@@ -16,7 +16,7 @@ const RecruitmentForm: React.FC = () => {
 						życiu, który pozwoli Ci zarządzać czasem i łączyć przyjemne z pożytecznym.
 					</p>
 					<p className={styles['recruitment__form-title-subtext']}>
-						Jeśli chcesz również wynająć u nas samochód to najpierw wypełnij formularz zgłoszeniowy, a potem{' '}
+						Jeśli chcesz również wynająć u nas samochód i zacząć pracę, to wypełnij pełny formularz dostępny pod -{' '}
 						<Link to='/wynajem-samochodu' onClick={scrollToTop}>
 							kliknij tutaj
 						</Link>
