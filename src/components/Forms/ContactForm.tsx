@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormInputs } from './inputsConfig/inputsConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
+import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
 import { ContactFormModel } from '../../models/forms.model';
 
@@ -13,7 +14,7 @@ import styles from '../../sections/Contact/styles/styles.module.scss';
 export const ContactForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorValue, setErrorValue] = useState('');
-	const [buttonText, setButtonText] = useState('Wyślij');
+	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState: 'Wyślij' });
 
 	const {
 		register,

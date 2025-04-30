@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { workFormInputs, workFormSelects } from './inputsConfig/inputsConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
+import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { workSchema } from '../../schemas/schemas';
 import { WorkFormModel } from '../../models/forms.model';
 
@@ -13,7 +14,7 @@ import styles from '../../subpages/Recruitment/styles/styles.module.scss';
 export const WorkForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorValue, setErrorValue] = useState('');
-	const [buttonText, setButtonText] = useState('Wyślij');
+	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState: 'Wyślij' });
 
 	const {
 		register,

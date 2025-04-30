@@ -11,6 +11,7 @@ const workAndCarSchema = yup.object({
 		.string()
 		.min(2, 'Nazwisko jest zbyt krótkie!')
 		.max(51, 'Nazwisko jest zbyt długie!')
+		.minUppercase(1, 'Nazwisko zaczyna się z dużej litery!')
 		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
 		.required(errorMessage.requiredField),
 	phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
@@ -29,16 +30,16 @@ const workAndCarSchema = yup.object({
 export const contactSchema = yup.object({
 	firstname: yup
 		.string()
-		.min(5, 'Coś za mało liter!')
-		.max(35, 'Chyba trochę za dużo..')
+		.min(5, 'Imię jest za krótkie!')
+		.max(35, 'Imię jest zbyt długie!')
 		.minUppercase(1, 'Imię zaczyna się z dużej litery!')
 		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$/, 'Używaj tylko liter!')
 		.required(errorMessage.requiredField),
 	email: yup.string().email('Wprowadź poprawny e-mail!').required(errorMessage.requiredField),
 	subject: yup
 		.string()
-		.min(5, 'Coś za mało liter!')
-		.max(40, 'Chyba trochę za dużo..')
+		.min(5, 'Temat jest za krótki!')
+		.max(40, 'Temat jest zbyt długi!')
 		.minUppercase(1, 'Temat zaczyna się z dużej litery!')
 		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$/, 'Używaj tylko liter!')
 		.required(errorMessage.requiredField),
