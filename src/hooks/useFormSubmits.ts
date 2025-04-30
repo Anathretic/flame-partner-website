@@ -109,7 +109,16 @@ export const useFormSubmits = <T extends FormTypes>({
 		}
 	};
 
-	const carSubmit: SubmitHandler<CarFormModel> = async ({ firstname, lastname, email, phone, car, message }) => {
+	const carSubmit: SubmitHandler<CarFormModel> = async ({
+		firstname,
+		lastname,
+		email,
+		phone,
+		city,
+		company,
+		car,
+		message,
+	}) => {
 		setIsLoading(true);
 		setErrorValue('');
 
@@ -124,6 +133,8 @@ export const useFormSubmits = <T extends FormTypes>({
 			lastname,
 			email,
 			phone,
+			city,
+			company,
 			car,
 			message,
 			'g-recaptcha-response': token,
