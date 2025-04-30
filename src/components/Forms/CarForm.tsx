@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { carFormInputs, carFormSelects } from './inputsConfig/inputsConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
+import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { carSchema } from '../../schemas/schemas';
 import { CarFormModel } from '../../models/forms.model';
 
@@ -13,7 +14,7 @@ import styles from '../../subpages/RentCar/styles/styles.module.scss';
 export const CarForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorValue, setErrorValue] = useState('');
-	const [buttonText, setButtonText] = useState('Wyślij');
+	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState: 'Wyślij' });
 
 	const {
 		register,
