@@ -53,15 +53,7 @@ export const useFormSubmits = <T extends FormTypes>({
 		}
 	};
 
-	const workSubmit: SubmitHandler<WorkFormModel> = async ({
-		firstname,
-		lastname,
-		email,
-		phone,
-		city,
-		company,
-		message,
-	}) => {
+	const workSubmit: SubmitHandler<WorkFormModel> = async ({ firstname, lastname, email, phone, city, message }) => {
 		setIsLoading(true);
 		setErrorValue('');
 
@@ -77,7 +69,6 @@ export const useFormSubmits = <T extends FormTypes>({
 			email,
 			phone,
 			city,
-			company,
 			message,
 			'g-recaptcha-response': token,
 		};
@@ -109,16 +100,7 @@ export const useFormSubmits = <T extends FormTypes>({
 		}
 	};
 
-	const carSubmit: SubmitHandler<CarFormModel> = async ({
-		firstname,
-		lastname,
-		email,
-		phone,
-		city,
-		company,
-		car,
-		message,
-	}) => {
+	const carSubmit: SubmitHandler<CarFormModel> = async ({ firstname, lastname, email, phone, city, car, message }) => {
 		setIsLoading(true);
 		setErrorValue('');
 
@@ -134,7 +116,6 @@ export const useFormSubmits = <T extends FormTypes>({
 			email,
 			phone,
 			city,
-			company,
 			car,
 			message,
 			'g-recaptcha-response': token,

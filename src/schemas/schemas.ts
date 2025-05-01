@@ -20,11 +20,6 @@ const workAndCarSchema = yup.object({
 		.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', ''])
 		.required(errorMessage.requiredField)
 		.test('is-selected', errorMessage.requiredField, value => value !== ''),
-	company: yup
-		.string()
-		.oneOf(['Wszystko', 'Uber', 'Bolt', 'FreeNow', ''], errorMessage.requiredField)
-		.required(errorMessage.requiredField)
-		.test('is-selected', errorMessage.requiredField, value => value !== ''),
 });
 
 export const contactSchema = yup.object({
