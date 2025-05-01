@@ -3,7 +3,6 @@ import { FieldErrors, FieldValues, UseFormHandleSubmit, UseFormRegister, UseForm
 import { InputAndTextareaConfigModel, SelectConfigModel } from './inputConfig.model';
 
 type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | '';
-type Company = 'Wszystko' | 'Uber' | 'Bolt' | 'FreeNow' | '';
 type Car = 'Toyota Prius II' | 'Honda Civic' | 'Skoda Fabia III' | 'Skoda Fabia II' | '';
 
 interface DefaultFormModel {
@@ -49,13 +48,8 @@ export interface WorkFormModel extends DefaultFormModel {
 	lastname: string;
 	phone: string;
 	city: City;
-	company: Company;
 }
 
-export interface CarFormModel extends DefaultFormModel {
-	lastname: string;
-	phone: string;
-	city: City;
-	company: Company;
+export interface CarFormModel extends DefaultFormModel, WorkFormModel {
 	car: Car;
 }

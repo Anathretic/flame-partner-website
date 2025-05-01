@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { carFormInputs, carFormSelects } from './inputsConfig/inputsConfig';
+import { carFormInputs, carFormSelects } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
@@ -28,7 +28,6 @@ export const CarForm: React.FC = () => {
 			email: '',
 			phone: '',
 			city: '',
-			company: '',
 			car: '',
 			message: '',
 		},

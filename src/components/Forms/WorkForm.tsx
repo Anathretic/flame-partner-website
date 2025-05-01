@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { workFormInputs, workFormSelects } from './inputsConfig/inputsConfig';
+import { workFormInputs, workFormSelects } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
@@ -28,7 +28,6 @@ export const WorkForm: React.FC = () => {
 			email: '',
 			phone: '',
 			city: '',
-			company: '',
 			message: '',
 		},
 		resolver: yupResolver(workSchema),
