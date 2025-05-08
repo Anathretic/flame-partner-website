@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
 						</li>
 						<li>
 							<p>Biuro:</p>
-							<p>ul. Peowiaków 90B</p>
+							<p>ul. Peowiaków 90B (II piętro)</p>
 							<p>22-400 Zamość</p>
 						</li>
 						<li>

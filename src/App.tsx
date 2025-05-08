@@ -37,7 +37,7 @@ export const App: React.FC = () => {
 							</>
 						}
 					/>
-					<Route path='/rekrutacja' element={<SuspenseWithFooter children={<Recruitment />} />} />
+					<Route path='/rekrutacja-kierowcow' element={<SuspenseWithFooter children={<Recruitment />} />} />
 					<Route path='/wynajem-samochodu' element={<SuspenseWithFooter children={<RentCar />} />} />
 					<Route path='/polityka-prywatnosci' element={<SuspenseWithFooter children={<PrivacyPolicy />} />} />
 					<Route path='*' element={<SuspenseWithFooter children={<PageNotFound />} />} />

@@ -51,13 +51,13 @@ const Welcome: React.FC = () => {
 			</div>
 			<div className={styles['welcome__btn-container']}>
 				<div className={styles['welcome__btn-box']}>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link to='/rekrutacja-kierowcow' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={BoltIcon} alt='' />
 					</Link>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link to='/rekrutacja-kierowcow' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={UberIcon} alt='' />
 					</Link>
-					<Link to='/rekrutacja' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
+					<Link to='/rekrutacja-kierowcow' onClick={scrollToTop} aria-label='Przycisk przenoszący na stronę rekrutacji'>
 						<img src={FreenowIcon} alt='' />
 					</Link>
 				</div>
