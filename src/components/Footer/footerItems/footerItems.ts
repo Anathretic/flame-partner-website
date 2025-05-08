@@ -7,6 +7,6 @@ export const footerHomeItems: FooterItemsModel[] = [
 ];
 
 export const footerOfferItems: FooterItemsModel[] = [
-	{ to: '/rekrutacja', content: 'Rekrutacja' },
+	{ to: '/rekrutacja-kierowcow', content: 'Rekrutacja kierowców' },
 	{ to: '/wynajem-samochodu', content: 'Wynajem samochodu' },
 ];
