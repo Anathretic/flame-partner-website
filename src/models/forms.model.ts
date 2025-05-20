@@ -11,7 +11,7 @@ interface DefaultFormModel {
 	message: string;
 }
 
-// --------------- useFormSubmits -----------------------
+// --------------- useFormSubmits ------------------------
 
 export type FormTypes = ContactFormModel | WorkFormModel | CarFormModel;
 
@@ -21,6 +21,22 @@ export interface UseFormSubmitsModel<T extends FormTypes> {
 	setErrorValue: React.Dispatch<React.SetStateAction<string>>;
 	setButtonText: React.Dispatch<React.SetStateAction<string>>;
 	refCaptcha?: React.RefObject<ReCAPTCHA>;
+}
+
+// -------------------------------------------------------
+
+// --------------- useFormHandlers -----------------------
+
+export type UseFormHandlersModel = {
+	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+	setErrorValue: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export interface HandleEmailJsModel<TFormData extends object> {
+	templateID: string;
+	params: Record<string, unknown>;
+	setButtonText: React.Dispatch<React.SetStateAction<string>>;
+	reset: UseFormReset<TFormData>;
 }
 
 // -------------------------------------------------------
