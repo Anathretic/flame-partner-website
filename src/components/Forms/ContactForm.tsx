@@ -4,7 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormInputs } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
-import { useFormSubmits } from '../../hooks/useFormSubmits';
+import { useFormSubmits } from '../../hooks/useForm/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { contactSchema } from '../../schemas/schemas';
 import { ContactFormModel } from '../../models/forms.model';

@@ -4,7 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { carFormInputs, carFormSelects } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
-import { useFormSubmits } from '../../hooks/useFormSubmits';
+import { useFormSubmits } from '../../hooks/useForm/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
 import { carSchema } from '../../schemas/schemas';
 import { CarFormModel } from '../../models/forms.model';
