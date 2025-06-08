@@ -21,7 +21,7 @@ const Welcome: React.FC = () => {
 							z nami <br /> zarobisz <br /> najwięcej!
 						</h1>
 						<p className={styles['welcome__sub-text']}>
-							<span>Flame Partner</span> to rozwijający się partner flotowy na terenie województwa lubelskiego
+							<span>Flame Partner</span> to rozwijający się partner flotowy na terenie województwa lubelskiego i okolic
 						</p>
 						<HashLink smooth className={styles['welcome__special-btn']} to='/#oferta'>
 							Oferta

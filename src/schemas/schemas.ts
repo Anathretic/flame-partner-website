@@ -17,7 +17,7 @@ const workAndCarSchema = yup.object({
 	phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
 	city: yup
 		.string()
-		.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', ''])
+		.oneOf(['Zamość', 'Lublin', 'Chełm', 'Biłgoraj', 'Radom', 'Kielce', ''])
 		.required(errorMessage.requiredField)
 		.test('is-selected', errorMessage.requiredField, value => value !== ''),
 });
