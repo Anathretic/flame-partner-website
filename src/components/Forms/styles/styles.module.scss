@@ -24,6 +24,8 @@
 
 	&__label {
 		padding-bottom: 0.25em;
+		width: 100%;
+		text-align: start;
 	}
 
 	&__input,
@@ -140,7 +142,8 @@
 	.form {
 		&__input,
 		&__textarea,
-		&__select {
+		&__select,
+		&__label {
 			width: 90%;
 		}
 	}

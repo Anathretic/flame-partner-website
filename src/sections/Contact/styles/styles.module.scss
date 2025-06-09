@@ -30,11 +30,13 @@
 		max-width: 600px;
 	}
 
-	&__title-subtext {
-		padding: 1rem;
+	&__title-subtext,
+	&__title-info-box {
+		padding: 1em 0.05em;
 		width: 90%;
-		max-width: 400px;
-		text-align: center;
+	}
+
+	&__title-subtext {
 		line-height: 1.8em;
 
 		span {
@@ -49,15 +51,28 @@
 	}
 
 	&__title-info-box {
-		padding: 2rem 0;
-		width: 90%;
-		max-width: 400px;
 		list-style-type: none;
-		text-align: center;
 
 		li {
-			padding: 0.5em;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			padding: 0.5em 0;
+			margin: 0.25em 0;
 			width: 100%;
+
+			div:first-of-type {
+				display: block;
+				margin-right: 20px;
+
+				svg {
+					font-size: 28px;
+				}
+			}
+		}
+
+		li:nth-of-type(2) div svg {
+			margin-top: 5px;
 		}
 
 		p {
@@ -68,10 +83,6 @@
 		p:first-of-type {
 			font-weight: 500;
 		}
-	}
-
-	&__title-icon {
-		display: none;
 	}
 
 	&__form {
@@ -97,13 +108,12 @@
 	}
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
 	.contact {
-		&__title-info-box,
-		&__form-title-info-box {
-			li {
-				padding: 0.5em 0;
-			}
+		&__title-info-box li {
+			margin: 0.5em 0;
+			align-items: start;
+			flex-direction: column;
 		}
 	}
 }
@@ -116,12 +126,30 @@
 	}
 }
 
+@media screen and (min-width: 400px) {
+	.contact {
+		&__title-subtext,
+		&__title-info-box {
+			padding: 1em 0.4em;
+			margin-left: -18px;
+			width: 84%;
+		}
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 550px) {
+	.contact {
+		&__title-subtext,
+		&__title-info-box {
+			margin-left: -10px;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.contact {
 		&__title-info-box {
-			list-style-type: disc;
 			text-align: left;
-			max-width: 250px;
 		}
 
 		&__special-block {
@@ -173,31 +201,18 @@
 			font-size: 3.5rem;
 		}
 
+		&__title-subtext {
+			padding: 2rem 4rem 1rem 2.1rem;
+		}
+
 		&__title-info-box {
-			padding: 2rem 2.25rem;
+			padding: 2rem 2.25rem 2rem 2.6rem;
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
-		}
 
-		&__title-icon {
-			position: absolute;
-			display: block;
-			color: rgba(10, 10, 10, 0.3);
-
-			&--first {
-				bottom: 1.5em;
-				left: 4.4em;
-			}
-
-			&--second {
-				bottom: 0.6em;
-				left: 5.9em;
-			}
-
-			&--third {
-				bottom: 2.6em;
-				left: 8em;
+			li div:first-of-type {
+				margin-left: -9px;
 			}
 		}
 
