@@ -24,20 +24,26 @@ const RentCarForm: React.FC = () => {
 					</p>
 					<ul className={styles['rent-car__form-title-info-box']}>
 						<li>
-							<p>Obszar działania:</p>
+							<p>
+								<FaTaxi /> Obszar działania:
+							</p>
 							<p className={styles['rent-car__form-special-text']}>
 								Województwo lubelskie w miastach takich jak <span>Zamość, Lublin, Biłgoraj i Chełm.</span> Ciągle się
 								rozwijamy i dodaliśmy do oferty <span>Radom</span> oraz <span> Kielce!</span>
 							</p>
 						</li>
 						<li>
-							<p>Komfortowe stawki rozliczeń:</p>
+							<p>
+								<FaTaxi /> Komfortowe stawki rozliczeń:
+							</p>
 							<p>
 								- stała, jasna kwota - <span>30zł</span>
 							</p>
 						</li>
 						<li>
-							<p>Wysokie bonusy:</p>
+							<p>
+								<FaTaxi /> Wysokie bonusy:
+							</p>
 							<p>
 								- kierowca miesiąca - <span>+200zł</span>
 							</p>
@@ -49,18 +55,6 @@ const RentCarForm: React.FC = () => {
 							</p>
 						</li>
 					</ul>
-					<FaTaxi
-						className={`${styles['rent-car__form-title-icon']} ${styles['rent-car__form-title-icon--first']}`}
-						fontSize={70}
-					/>
-					<FaTaxi
-						className={`${styles['rent-car__form-title-icon']} ${styles['rent-car__form-title-icon--second']}`}
-						fontSize={66}
-					/>
-					<FaTaxi
-						className={`${styles['rent-car__form-title-icon']} ${styles['rent-car__form-title-icon--third']}`}
-						fontSize={54}
-					/>
 				</div>
 				<CarForm />
 			</div>

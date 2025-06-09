@@ -147,11 +147,13 @@
 		padding-bottom: 2.5rem;
 	}
 
-	&__form-title-subtext {
-		padding: 1rem;
+	&__form-title-subtext,
+	&__form-title-info-box {
+		padding: 1em 0.05em;
 		width: 90%;
-		max-width: 400px;
-		text-align: center;
+	}
+
+	&__form-title-subtext {
 		line-height: 1.8em;
 
 		span {
@@ -166,14 +168,11 @@
 	}
 
 	&__form-title-info-box {
-		padding: 2rem 0;
-		width: 90%;
-		max-width: 400px;
 		list-style-type: none;
-		text-align: center;
 
 		li {
-			padding: 0.5em;
+			padding: 0.5em 0;
+			margin: 0.25em 0;
 			width: 100%;
 		}
 
@@ -187,16 +186,19 @@
 		}
 
 		p:first-of-type {
+			display: flex;
+			align-items: center;
 			font-weight: 500;
+
+			svg {
+				margin-right: 10px;
+				font-size: 16px;
+			}
 		}
 	}
 
 	&__form-special-text {
 		line-height: 1.6em;
-	}
-
-	&__form-title-icon {
-		display: none;
 	}
 
 	&__benefits-special-block,
@@ -228,12 +230,12 @@
 	}
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
 	.rent-car {
-		&__form-title-info-box {
-			li {
-				padding: 0.5em 0;
-			}
+		&__form-title-info-box li {
+			margin: 0.5em 0;
+			align-items: start;
+			flex-direction: column;
 		}
 	}
 }
@@ -258,6 +260,26 @@
 
 		&__form-title {
 			font-size: 2.75rem;
+		}
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.rent-car {
+		&__form-title-subtext,
+		&__form-title-info-box {
+			padding: 1em 0.4em;
+			margin-left: -18px;
+			width: 84%;
+		}
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 550px) {
+	.rent-car {
+		&__form-title-subtext,
+		&__form-title-info-box {
+			margin-left: -10px;
 		}
 	}
 }
@@ -397,34 +419,15 @@
 			font-size: 3.5rem;
 		}
 
+		&__form-title-subtext {
+			padding: 2rem 4rem 1rem 2.1rem;
+		}
+
 		&__form-title-info-box {
-			padding: 2rem 2.25rem;
+			padding: 2rem 2.25rem 2rem 2.1rem;
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
-			list-style-type: disc;
-			text-align: left;
-		}
-
-		&__form-title-icon {
-			position: absolute;
-			display: block;
-			color: rgba(10, 10, 10, 0.3);
-
-			&--first {
-				bottom: -3.1em;
-				left: 4.4em;
-			}
-
-			&--second {
-				bottom: -4em;
-				left: 6.2em;
-			}
-
-			&--third {
-				bottom: -3em;
-				left: 8em;
-			}
 		}
 
 		&__benefits-special-block,
