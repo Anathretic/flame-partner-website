@@ -68,17 +68,30 @@
 	}
 
 	&__icons-box {
+		position: relative;
 		display: flex;
 		align-items: center;
-		height: 28px;
+		justify-content: space-between;
+		padding-top: 10px;
+		width: 100px;
+		height: 32px;
 
-		a:nth-of-type(2) {
-			margin-top: 2px;
+		a {
+			position: absolute;
+			padding: 0;
 		}
 
-		a:last-of-type {
-			margin-top: 1px;
-			margin-left: -2px;
+		a:nth-of-type(1) {
+			padding: 0;
+		}
+
+		a:nth-of-type(2) {
+			margin-left: 35px;
+		}
+
+		a:nth-of-type(3) {
+			margin-top: 0;
+			margin-left: 69px;
 		}
 	}
 
@@ -107,6 +120,20 @@
 	.footer {
 		&__copyright-company-name {
 			font-size: 0.75rem;
+		}
+	}
+}
+
+@media screen and (min-width: 501px) {
+	.footer {
+		&__icons-box {
+			a:nth-of-type(2) {
+				margin-left: 40px;
+			}
+
+			a:nth-of-type(3) {
+				margin-left: 79px;
+			}
 		}
 	}
 }
