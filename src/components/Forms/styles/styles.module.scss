@@ -20,6 +20,11 @@
 
 	&__recaptcha-box {
 		padding: 1em 0 1em 4px;
+
+		div div div div iframe {
+			border: 1px solid transparent;
+			border-radius: 0.35em;
+		}
 	}
 
 	&__label {
@@ -39,6 +44,20 @@
 		box-shadow: inset 0 0 0.25em var(--white-color), 0 0 0.25em var(--white-color);
 		font-family: var(--main-font);
 		transition: border 0.3s, box-shadow 0.3s;
+
+		&:focus {
+			border-color: var(--dark-blue-color);
+			outline: var(--white-color);
+		}
+
+		&::placeholder {
+			color: var(--placeholder-color);
+			opacity: 1;
+		}
+
+		&[aria-invalid='true'] {
+			border: 1px solid var(--error-color);
+		}
 	}
 
 	&__select {
@@ -63,24 +82,6 @@
 		resize: vertical;
 	}
 
-	&__input,
-	&__textarea,
-	&__select {
-		&:focus {
-			border-color: var(--dark-blue-color);
-			outline: var(--white-color);
-		}
-
-		&::placeholder {
-			color: var(--placeholder-color);
-			opacity: 1;
-		}
-
-		&[aria-invalid='true'] {
-			border: 1px solid var(--error-color);
-		}
-	}
-
 	&__input-error,
 	&__textarea-error,
 	&__select-error {
@@ -93,12 +94,9 @@
 	}
 
 	&__recaptcha-error {
-		padding: 8px;
-		height: 2px;
-		width: 90%;
-		color: var(--error-color);
-		font-size: 0.95em;
-		text-align: center;
+		div div div div iframe {
+			border: 3px solid var(--error-color);
+		}
 	}
 
 	&__submit,

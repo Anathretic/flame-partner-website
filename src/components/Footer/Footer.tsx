@@ -5,7 +5,8 @@ import { useMediaQuery } from 'react-responsive';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 import { footerHomeItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
-import { FaRegCopyright, FaFacebookSquare, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaRegCopyright, FaFacebookSquare, FaInstagram } from 'react-icons/fa';
+import { AiFillTikTok } from 'react-icons/ai';
 
 import FooterLogo from '../../images/logo-images/footer-logo.png';
 
@@ -30,13 +31,13 @@ const Footer: React.FC = () => {
 						<p>Pomoc i wsparcie na każdym etapie..</p>
 						<div className={styles['footer__icons-box']}>
 							<a href='https://www.facebook.com/profile.php?id=61574789965056' target='_blank' rel='noreferrer'>
-								<FaFacebookSquare fontSize={isMobile ? 20 : 25} />
+								<FaFacebookSquare fontSize={isMobile ? 24 : 28} />
 							</a>
 							<a href='https://www.instagram.com/flame.partner' target='_blank' rel='noreferrer'>
-								<FaInstagram fontSize={isMobile ? 20 : 25} />
+								<FaInstagram fontSize={isMobile ? 24 : 28} />
 							</a>
 							<a href='https://www.tiktok.com/@flame.partner' target='_blank' rel='noreferrer'>
-								<FaTiktok fontSize={isMobile ? 15 : 20} />
+								<AiFillTikTok fontSize={isMobile ? 24 : 28} />
 							</a>
 						</div>
 					</div>
