@@ -5,9 +5,9 @@ const sitemap = new SitemapStream({ hostname: 'https://flamepartner.pl/' });
 const writeStream = createWriteStream('public/sitemap.xml');
 
 const urls = [
-	{ url: '/', changefreq: 'weekly', priority: 1.0, lastmod: '2025-05-13' },
-	{ url: '/rekrutacja-kierowcow', changefreq: 'monthly', priority: 0.8, lastmod: '2025-05-13' },
-	{ url: '/wynajem-samochodu', changefreq: 'monthly', priority: 0.8, lastmod: '2025-05-13' },
+	{ url: '/', changefreq: 'weekly', priority: 1.0, lastmod: '2025-06-09' },
+	{ url: '/rekrutacja-kierowcow', changefreq: 'monthly', priority: 0.8, lastmod: '2025-06-09' },
+	{ url: '/wynajem-samochodu', changefreq: 'monthly', priority: 0.8, lastmod: '2025-06-09' },
 	{ url: '/polityka-prywatnosci', changefreq: 'yearly', priority: 0.3, lastmod: '2025-05-13' },
 ];
 

@@ -45,6 +45,8 @@ export const citySelect = <T>(selectName: Path<T>): SelectConfigModel<T> => ({
 		{ label: 'Lublin', value: 'Lublin', disabled: false },
 		{ label: 'Chełm', value: 'Chełm', disabled: false },
 		{ label: 'Biłgoraj', value: 'Biłgoraj', disabled: false },
+		{ label: 'Radom', value: 'Radom', disabled: false },
+		{ label: 'Kielce', value: 'Kielce', disabled: false },
 	],
 });
 

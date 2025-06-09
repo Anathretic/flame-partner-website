@@ -67,6 +67,21 @@
 		display: none;
 	}
 
+	&__icons-box {
+		display: flex;
+		align-items: center;
+		height: 28px;
+
+		a:nth-of-type(2) {
+			margin-top: 2px;
+		}
+
+		a:last-of-type {
+			margin-top: 1px;
+			margin-left: -2px;
+		}
+	}
+
 	&__copyright-box {
 		display: flex;
 		justify-content: center;

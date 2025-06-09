@@ -2,7 +2,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { FieldErrors, FieldValues, UseFormHandleSubmit, UseFormRegister, UseFormReset } from 'react-hook-form';
 import { InputAndTextareaConfigModel, SelectConfigModel } from './inputConfig.model';
 
-type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | '';
+type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | 'Radom' | 'Kielce' | '';
 type Car = 'Toyota Prius II' | 'Honda Civic' | 'Skoda Fabia III' | 'Skoda Fabia II' | '';
 
 interface DefaultFormModel {

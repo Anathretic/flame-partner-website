@@ -124,7 +124,7 @@ const PrivacyPolicy: React.FC = () => {
 						<h2>9. Kontakt</h2>
 						<p>
 							W przypadku pytań dotyczących Polityki Prywatności prosimy o kontakt pod adresem e-mail:
-							<span>biuro.flamepartner@gmail.com</span>
+							<span> biuro.flamepartner@gmail.com</span>
 						</p>
 					</div>
 					<div className={styles['privacy-policy__box']}>

@@ -26,18 +26,21 @@ const RentCarForm: React.FC = () => {
 						<li>
 							<p>Obszar działania:</p>
 							<p className={styles['rent-car__form-special-text']}>
-								Województwo lubelskie w miastach takich jak <span>Zamość, Lublin, Biłgoraj i Chełm.</span> Pamiętaj, że
-								ciągle się rozwijamy i już niedługo <span>kolejne miasta staną przed Tobą otworem!</span>
+								Województwo lubelskie w miastach takich jak <span>Zamość, Lublin, Biłgoraj i Chełm.</span> Ciągle się
+								rozwijamy i dodaliśmy do oferty <span>Radom</span> oraz <span> Kielce!</span>
 							</p>
 						</li>
 						<li>
 							<p>Komfortowe stawki rozliczeń:</p>
 							<p>
-								- stała, jasna kwota - <span>50zł</span>
+								- stała, jasna kwota - <span>30zł</span>
 							</p>
 						</li>
 						<li>
 							<p>Wysokie bonusy:</p>
+							<p>
+								- kierowca miesiąca - <span>+200zł</span>
+							</p>
 							<p>
 								- polecenie pracownika - <span>200zł</span>
 							</p>

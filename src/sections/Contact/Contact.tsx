@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ContactForm } from '../../components/Forms/ContactForm';
-import { FaTaxi } from 'react-icons/fa';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
+import { FiMail, FiPhone } from 'react-icons/fi';
+import { FaBriefcase, FaRegBuilding } from 'react-icons/fa';
 
 import styles from './styles/styles.module.scss';
 
@@ -24,36 +25,44 @@ const Contact: React.FC = () => {
 					</p>
 					<ul className={styles['contact__title-info-box']}>
 						<li>
-							<p>E-mail:</p>
-							<p>biuro.flamepartner@gmail.com</p>
+							<div>
+								<FiMail />
+							</div>
+							<div>
+								<p>E-mail:</p>
+								<p>biuro.flamepartner@gmail.com</p>
+							</div>
 						</li>
 						<li>
-							<p>Telefon:</p>
-							<p>+48 730 940 691</p>
-							<p>+48 730 940 696</p>
+							<div>
+								<FiPhone />
+							</div>
+							<div>
+								<p>Telefon:</p>
+								<p>+48 730 940 691</p>
+								<p>+48 730 940 696</p>
+							</div>
 						</li>
 						<li>
-							<p>Biuro:</p>
-							<p>ul. Peowiaków 90B (II piętro)</p>
-							<p>22-400 Zamość</p>
+							<div>
+								<FaRegBuilding />
+							</div>
+							<div>
+								<p>Biuro:</p>
+								<p>ul. Peowiaków 90B (II piętro)</p>
+								<p>22-400 Zamość</p>
+							</div>
 						</li>
 						<li>
-							<p>NIP:</p>
-							<p>525-302-61-91</p>
+							<div>
+								<FaBriefcase />
+							</div>
+							<div>
+								<p>NIP:</p>
+								<p>525-302-61-91</p>
+							</div>
 						</li>
 					</ul>
-					<FaTaxi
-						className={`${styles['contact__title-icon']} ${styles['contact__title-icon--first']}`}
-						fontSize={70}
-					/>
-					<FaTaxi
-						className={`${styles['contact__title-icon']} ${styles['contact__title-icon--second']}`}
-						fontSize={66}
-					/>
-					<FaTaxi
-						className={`${styles['contact__title-icon']} ${styles['contact__title-icon--third']}`}
-						fontSize={54}
-					/>
 				</div>
 				<ContactForm />
 			</div>
