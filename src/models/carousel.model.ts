@@ -24,12 +24,12 @@ export interface SlideModel {
 	slide: RentCarSlideDataModel | BlogSlideDataModel;
 	current: number;
 	handleSlideClick: (id: number) => void;
-	formRef: React.RefObject<HTMLFormElement>;
+	formRef?: React.RefObject<HTMLFormElement>;
 }
 
 export interface SliderModel {
 	slides: RentCarSlideDataModel[] | BlogSlideDataModel[];
-	formRef: React.RefObject<HTMLFormElement>;
+	formRef?: React.RefObject<HTMLFormElement>;
 }
 
 export interface SliderControlModel {
