@@ -1,14 +1,20 @@
 import { useEffect } from 'react';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/useCarSelectContext';
 import { HomeWrapperProps } from '../../models/homeWrapper.model';
 import { Helmet } from 'react-helmet-async';
 
 const HomeWrapper: React.FC<HomeWrapperProps> = ({ children }) => {
 	const { setShowSpecialLinks } = useFooterLinksContext();
+	const { setSelectedCar } = useCarSelectContext();
 
 	useEffect(() => {
 		setShowSpecialLinks(false);
 	}, []);
+
+	useEffect(() => {
+		setSelectedCar('');
+	});
 
 	return (
 		<>

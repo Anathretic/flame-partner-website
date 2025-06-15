@@ -6,7 +6,7 @@ import { SliderModel } from '../../../models/carousel.model';
 
 import styles from './styles/styles.module.scss';
 
-export const RentCarCarousel: React.FC<SliderModel> = ({ slides }) => {
+export const RentCarCarousel: React.FC<SliderModel> = ({ slides, formRef }) => {
 	const [current, setCurrent] = useState(0);
 
 	const { handleNextClick, handlePreviousClick, handleSlideClick, wrapperTransform } = useCarouselOptions({
@@ -19,7 +19,7 @@ export const RentCarCarousel: React.FC<SliderModel> = ({ slides }) => {
 		<div className={styles.slider}>
 			<ul className={styles.slider__wrapper} style={wrapperTransform}>
 				{slides.map(slide => (
-					<Slide key={slide.id} slide={slide} current={current} handleSlideClick={handleSlideClick} />
+					<Slide key={slide.id} slide={slide} current={current} handleSlideClick={handleSlideClick} formRef={formRef} />
 				))}
 			</ul>
 			<div className={styles.slider__controls}>

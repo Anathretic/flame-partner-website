@@ -1,20 +1,30 @@
 import { useRef } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { useNavigate } from 'react-router-dom';
 import { useSlideOptions } from '../../../../hooks/useSlideOptions';
+import { useCarSelectContext } from '../../../../hooks/useCarSelectContext';
 import { RentCarSlideDataModel, SlideModel } from '../../../../models/carousel.model';
+import { Car } from '../../../../models/forms.model';
 
 import styles from '../styles/styles.module.scss';
 
-export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }) => {
+export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick, formRef }) => {
 	const { id, main_title, combustion, advantages, price } = slide as RentCarSlideDataModel;
 	const slideRef = useRef<HTMLLIElement>(null);
+	const navigate = useNavigate();
 	const { handleMouseLeave, handleMouseMove } = useSlideOptions({ slideRef });
+	const { setSelectedCar } = useCarSelectContext();
 
 	let classNames = `${styles.slide} `;
 
 	if (current === id) classNames += styles['slide--current'];
 	else if (current - 1 === id) classNames += styles['slide--previous'];
 	else if (current + 1 === id) classNames += styles['slide--next'];
+
+	const handleSlideBtn = () => {
+		setSelectedCar(main_title as Car);
+		formRef.current?.scrollIntoView({ behavior: 'smooth' });
+		navigate('#formularz', { replace: true });
+	};
 
 	return (
 		<li
@@ -26,7 +36,7 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 			<div className={styles['slide__image-wrapper']}>
 				<div className={`${styles['slide__image']} ${styles[`slide__image--${id}`]}`} />
 			</div>
-			<article className={styles.slide__content}>
+			<div className={styles.slide__content}>
 				<h3 className={styles.slide__headline}>{main_title}</h3>
 				<div className={styles['slide__car-content']}>
 					<div className={styles['slide__car-content-box']}>
@@ -42,10 +52,10 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 						<span>{price}</span>
 					</div>
 				</div>
-				<HashLink to={'/wynajem-samochodu/#formularz'} className={`${styles.slide__action} ${styles.btn}`}>
+				<button type='button' onClick={handleSlideBtn} className={`${styles.slide__action} ${styles.btn}`}>
 					Wybieram
-				</HashLink>
-			</article>
+				</button>
+			</div>
 		</li>
 	);
 };

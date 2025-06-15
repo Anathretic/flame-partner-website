@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { CarForm } from '../../../components/Forms/CarForm';
 import { scrollToTop } from '../../../utils/scrollToTopUtils';
+import { RentCarFormRefModel } from '../../../models/rentCar.model';
 import { FaTaxi } from 'react-icons/fa';
 
 import styles from '../styles/styles.module.scss';
 
-const RentCarForm: React.FC = () => {
+const RentCarForm: React.FC<RentCarFormRefModel> = ({ formRef }) => {
 	return (
 		<section className={styles['rent-car__form']}>
 			<div className={styles['rent-car__form-container']}>
@@ -56,7 +57,7 @@ const RentCarForm: React.FC = () => {
 						</li>
 					</ul>
 				</div>
-				<CarForm />
+				<CarForm formRef={formRef} />
 			</div>
 			<div className={`${styles['rent-car__form-special-block']} ${styles['rent-car__form-special-block--left']}`} />
 			<div className={`${styles['rent-car__form-special-block']} ${styles['rent-car__form-special-block--right']}`} />

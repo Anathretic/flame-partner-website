@@ -22,9 +22,10 @@ export const GenericForm = <T extends FieldValues>({
 	refCaptcha,
 	errorValue,
 	includeReturnButton = false,
+	formRef,
 }: GenericFormProps<T>) => {
 	return (
-		<form className={cssClass} onSubmit={handleSubmit(onSubmit)}>
+		<form className={cssClass} onSubmit={handleSubmit(onSubmit)} ref={formRef}>
 			{inputs.map((input, id) => {
 				const error = errors[input.inputName as Path<T>];
 				return (

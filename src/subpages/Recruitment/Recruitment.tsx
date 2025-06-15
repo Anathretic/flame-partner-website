@@ -1,16 +1,22 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/useCarSelectContext';
 import { RecruitmentBenefits, RecruitmentForm, RecruitmentBanner } from './components';
 
 import styles from './styles/styles.module.scss';
 
 const Recruitment: React.FC = () => {
 	const { setShowSpecialLinks } = useFooterLinksContext();
+	const { setSelectedCar } = useCarSelectContext();
 
 	useEffect(() => {
 		setShowSpecialLinks(true);
 	}, []);
+
+	useEffect(() => {
+		setSelectedCar('');
+	});
 
 	return (
 		<>
