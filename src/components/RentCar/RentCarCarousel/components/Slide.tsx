@@ -22,7 +22,7 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick, 
 
 	const handleSlideBtn = () => {
 		setSelectedCar(main_title as Car);
-		formRef.current?.scrollIntoView({ behavior: 'smooth' });
+		if (formRef) formRef.current?.scrollIntoView({ behavior: 'smooth' });
 		navigate('#formularz', { replace: true });
 	};
 
