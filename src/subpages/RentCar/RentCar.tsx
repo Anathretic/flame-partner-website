@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
 import { RentCarBenefits, RentCarForm, RentCarList } from './components';
@@ -6,10 +6,19 @@ import { RentCarBenefits, RentCarForm, RentCarList } from './components';
 import styles from './styles/styles.module.scss';
 
 const RentCar: React.FC = () => {
+	const formRef = useRef<HTMLFormElement | null>(null);
 	const { setShowSpecialLinks } = useFooterLinksContext();
 
 	useEffect(() => {
 		setShowSpecialLinks(true);
+	}, []);
+
+	useEffect(() => {
+		document.documentElement.style.scrollPaddingTop = '40px';
+
+		return () => {
+			document.documentElement.style.scrollPaddingTop = '';
+		};
 	}, []);
 
 	return (
@@ -35,8 +44,8 @@ const RentCar: React.FC = () => {
 							</h1>
 						</div>
 						<RentCarBenefits />
-						<RentCarList />
-						<RentCarForm />
+						<RentCarList formRef={formRef} />
+						<RentCarForm formRef={formRef} />
 					</div>
 				</div>
 			</main>

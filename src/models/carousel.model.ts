@@ -1,3 +1,5 @@
+import { Car } from './forms.model';
+
 interface BlogSlideTextDataModel {
 	title: string;
 	content: string;
@@ -22,10 +24,12 @@ export interface SlideModel {
 	slide: RentCarSlideDataModel | BlogSlideDataModel;
 	current: number;
 	handleSlideClick: (id: number) => void;
+	formRef: React.RefObject<HTMLFormElement>;
 }
 
 export interface SliderModel {
 	slides: RentCarSlideDataModel[] | BlogSlideDataModel[];
+	formRef: React.RefObject<HTMLFormElement>;
 }
 
 export interface SliderControlModel {
@@ -44,6 +48,15 @@ export interface CarouselOptionsModel {
 
 export interface SlideOptionsModel {
 	slideRef: React.RefObject<HTMLLIElement>;
+}
+
+// ------------------------
+
+// ------- Context --------
+
+export interface CarSelectContextModel {
+	selectedCar: Car;
+	setSelectedCar: React.Dispatch<React.SetStateAction<Car>>;
 }
 
 // ------------------------

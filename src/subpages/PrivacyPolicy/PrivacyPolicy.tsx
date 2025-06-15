@@ -2,16 +2,22 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/useCarSelectContext';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 
 import styles from './styles/styles.module.scss';
 
 const PrivacyPolicy: React.FC = () => {
 	const { setShowSpecialLinks } = useFooterLinksContext();
+	const { setSelectedCar } = useCarSelectContext();
 
 	useEffect(() => {
 		setShowSpecialLinks(true);
 	}, []);
+
+	useEffect(() => {
+		setSelectedCar('');
+	});
 
 	return (
 		<>
