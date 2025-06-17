@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useBlogAndArticleData } from '../../../hooks/useBlogAndArticleData';
 import { ArticleItem } from './ArticleItem';
 import { Loader } from '../../../components/Loader/Loader';
+import { scrollToTop } from '../../../utils/scrollToTopUtils';
 
 import styles from '../styles/styles.module.scss';
 
@@ -35,7 +36,7 @@ const ArticlesArray: React.FC = () => {
 				)}
 			</div>
 			{!isLoading && (
-				<Link to='/' className={styles['articles__btn']} aria-label='Powrót na stronę główną'>
+				<Link to='/' className={styles['articles__btn']} aria-label='Powrót na stronę główną' onClick={scrollToTop}>
 					Powrót
 				</Link>
 			)}
