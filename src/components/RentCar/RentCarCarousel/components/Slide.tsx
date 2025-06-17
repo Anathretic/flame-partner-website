@@ -2,13 +2,14 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSlideOptions } from '../../../../hooks/useSlideOptions';
 import { useCarSelectContext } from '../../../../hooks/useCarSelectContext';
-import { RentCarSlideDataModel, SlideModel } from '../../../../models/carousel.model';
+import { SlideModel } from '../../../../models/carousel.model';
+import { RentCarDataModel } from '../../../../models/data.model';
 import { Car } from '../../../../models/forms.model';
 
 import styles from '../styles/styles.module.scss';
 
 export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick, formRef }) => {
-	const { id, main_title, combustion, advantages, price } = slide as RentCarSlideDataModel;
+	const { id, main_title, combustion, advantages, price } = slide as RentCarDataModel;
 	const slideRef = useRef<HTMLLIElement>(null);
 	const navigate = useNavigate();
 	const { handleMouseLeave, handleMouseMove } = useSlideOptions({ slideRef });

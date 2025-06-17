@@ -1,21 +1,14 @@
-import { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
+import { useBlogAndArticleData } from '../../hooks/useBlogAndArticleData';
 import { BlogCarousel } from '../../components/Blog/BlogCarousel/BlogCarousel';
 import { Loader } from '../../components/Loader/Loader';
-import { getBlogData } from '../../helpers/getBlogDataHelper';
-import { BlogSlideDataModel } from '../../models/carousel.model';
 
 import styles from './styles/styles.module.scss';
 
 const Blog: React.FC = () => {
-	const [slides, setSlides] = useState<BlogSlideDataModel[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState(false);
-
 	const BlogCarouselMemoized = memo(BlogCarousel);
 
-	useEffect(() => {
-		if (isLoading) getBlogData({ setSlides, setIsLoading, setError });
-	}, [isLoading]);
+	const { slides, isLoading, error, setIsLoading, setError } = useBlogAndArticleData();
 
 	const handleReFetchButton = () => {
 		setError(false);
