@@ -1,29 +1,17 @@
-import { useContext, useRef } from 'react';
-import { BlogPopupContext } from '../../../../context/BlogPopupContext';
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useSlideOptions } from '../../../../hooks/useSlideOptions';
-import { BlogSlideDataModel, SlideModel } from '../../../../models/carousel.model';
-import { blogPopupActivityToggle } from '../../../../utils/blogPopupActivityToggleUtils';
+import { scrollToTop } from '../../../../utils/scrollToTopUtils';
+import { SlideModel } from '../../../../models/carousel.model';
+import { BlogAndArticleDataModel } from '../../../../models/data.model';
 
 import styles from '../styles/styles.module.scss';
 
 export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }) => {
-	const { id, main_title } = slide as BlogSlideDataModel;
+	const { id, main_title, href, image } = slide as BlogAndArticleDataModel;
 	const slideRef = useRef<HTMLLIElement>(null);
 	const { handleMouseLeave, handleMouseMove } = useSlideOptions({ slideRef });
-
-	const slideContext = useContext(BlogPopupContext);
-
-	if (!slideContext) {
-		throw new Error('Błąd użycia useContext!');
-	}
-
-	const { togglePopupVisibility, setSlideItemData } = slideContext;
-
-	const handleBtn = () => {
-		togglePopupVisibility();
-		setSlideItemData(slide as BlogSlideDataModel);
-		blogPopupActivityToggle();
-	};
+	const articleImage = `/${image}.jpg`;
 
 	let classNames = `${styles.slide} `;
 
@@ -39,14 +27,14 @@ export const Slide: React.FC<SlideModel> = ({ slide, current, handleSlideClick }
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}>
 			<div className={styles['slide__image-wrapper']}>
-				<div className={`${styles['slide__image']} ${styles[`slide__image--${id}`]}`} />
+				<img src={articleImage} alt='Obrazek przedstawiający temat artykułu' className={styles.slide__image} />
 			</div>
-			<article className={styles.slide__content}>
+			<div className={styles.slide__content}>
 				<h3 className={styles.slide__headline}>{main_title}</h3>
-				<button className={`${styles.slide__action} ${styles.btn}`} onClick={handleBtn}>
+				<Link to={`/${href}`} className={`${styles.slide__action} ${styles.btn}`} onClick={scrollToTop}>
 					Przeczytaj
-				</button>
-			</article>
+				</Link>
+			</div>
 		</li>
 	);
 };

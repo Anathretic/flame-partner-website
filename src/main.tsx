@@ -5,7 +5,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { App } from './App.tsx';
 
 import CarSelectProvider from './context/CarSelectContext.tsx';
-import BlogPopupProvider from './context/BlogPopupContext.tsx';
 import FooterLinksProvider from './context/FooterLinksContext.tsx';
 import './sass/globals.scss';
 
@@ -14,11 +13,9 @@ createRoot(document.getElementById('root')!).render(
 		<HelmetProvider>
 			<BrowserRouter>
 				<CarSelectProvider>
-					<BlogPopupProvider>
-						<FooterLinksProvider>
-							<App />
-						</FooterLinksProvider>
-					</BlogPopupProvider>
+					<FooterLinksProvider>
+						<App />
+					</FooterLinksProvider>
 				</CarSelectProvider>
 			</BrowserRouter>
 		</HelmetProvider>

@@ -1,6 +1,6 @@
-import { RentCarSlideDataModel } from '../../../models/carousel.model';
+import { RentCarDataModel } from '../../../models/data.model';
 
-export const carListData: RentCarSlideDataModel[] = [
+export const carListData: RentCarDataModel[] = [
 	{
 		id: 0,
 		main_title: 'Skoda Fabia III',

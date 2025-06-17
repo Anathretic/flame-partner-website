@@ -1,7 +1,11 @@
 import { supabase } from '../supabase/supabase';
-import { GetBlogDataModel } from '../models/blogPopup.model';
+import { GetBlogAndArticleDataModel } from '../models/data.model';
 
-export const getBlogData = async ({ setSlides, setIsLoading, setError }: GetBlogDataModel): Promise<void> => {
+export const getBlogAndArticleData = async ({
+	setSlides,
+	setIsLoading,
+	setError,
+}: GetBlogAndArticleDataModel): Promise<void> => {
 	const cachedData = localStorage.getItem('blogData');
 	const cachedTimestamp = localStorage.getItem('blogDataTimestamp');
 	const cacheExpiry = 60 * 30 * 1000;
@@ -15,7 +19,7 @@ export const getBlogData = async ({ setSlides, setIsLoading, setError }: GetBlog
 	try {
 		const { data, error } = await supabase
 			.from(import.meta.env.VITE_ARRAY_NAME)
-			.select('id, main_title, public_date, sections(title, content)')
+			.select('id, main_title, text, specialText, href, image, public_date, sections(title, content)')
 			.order('public_date', { ascending: true });
 
 		if (error) {

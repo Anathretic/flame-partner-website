@@ -11,6 +11,7 @@
 	border-radius: 0.125rem;
 	font-family: inherit;
 	font-size: inherit;
+	text-decoration: none;
 	transition: background-color 0.3s;
 	cursor: pointer;
 
@@ -155,18 +156,6 @@
 			.slide--current & {
 				transform: translate(calc(var(--x) / var(--d) * 1px), calc(var(--y) / var(--d) * 1px));
 			}
-		}
-
-		&--0 {
-			background-image: url('../../../../images/blog-section/first-blog-image.jpg');
-		}
-
-		&--1 {
-			background-image: url('../../../../images/blog-section/second-blog-image.jpg');
-		}
-
-		&--2 {
-			background-image: url('../../../../images/blog-section/third-blog-image.jpg');
 		}
 	}
 

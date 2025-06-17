@@ -1,34 +1,15 @@
+import { BlogAndArticleDataModel, RentCarDataModel } from './data.model';
 import { Car } from './forms.model';
 
-interface BlogSlideTextDataModel {
-	title: string;
-	content: string;
-}
-
-export interface RentCarSlideDataModel {
-	id: number;
-	main_title: string;
-	combustion: string;
-	advantages: string;
-	price: string;
-}
-
-export interface BlogSlideDataModel {
-	id: number;
-	main_title: string;
-	public_date: string;
-	sections: BlogSlideTextDataModel[];
-}
-
 export interface SlideModel {
-	slide: RentCarSlideDataModel | BlogSlideDataModel;
+	slide: RentCarDataModel | BlogAndArticleDataModel;
 	current: number;
 	handleSlideClick: (id: number) => void;
 	formRef?: React.RefObject<HTMLFormElement>;
 }
 
 export interface SliderModel {
-	slides: RentCarSlideDataModel[] | BlogSlideDataModel[];
+	slides: RentCarDataModel[] | BlogAndArticleDataModel[];
 	formRef?: React.RefObject<HTMLFormElement>;
 }
 
@@ -43,7 +24,7 @@ export interface SliderControlModel {
 export interface CarouselOptionsModel {
 	setCurrent: React.Dispatch<React.SetStateAction<number>>;
 	current: number;
-	slides: RentCarSlideDataModel[] | BlogSlideDataModel[];
+	slides: RentCarDataModel[] | BlogAndArticleDataModel[];
 }
 
 export interface SlideOptionsModel {

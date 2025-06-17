@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
 import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { footerHomeItems, footerOfferItems } from './footerItems/footerItems';
+import { footerHomeItems, footerMoreItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 import { AiFillTikTok } from 'react-icons/ai';
@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
 
 	const memoizedFooterHomeItems = useMemo(() => footerHomeItems, []);
 	const memoizedFooterOfferItems = useMemo(() => footerOfferItems, []);
+	const memoizedFooterMoreItems = useMemo(() => footerMoreItems, []);
 
 	return (
 		<footer className={styles.footer}>
@@ -78,18 +79,13 @@ const Footer: React.FC = () => {
 					<div className={styles.footer__box}>
 						<h3>Więcej</h3>
 						<ul>
-							{!showSpecialLinks && (
-								<li>
-									<HashLink smooth to='/#blog'>
-										Blog
-									</HashLink>
+							{memoizedFooterMoreItems.map((item, id) => (
+								<li key={id}>
+									<Link to={item.to} onClick={scrollToTop}>
+										{item.content}
+									</Link>
 								</li>
-							)}
-							<li>
-								<Link to='/polityka-prywatnosci' onClick={scrollToTop}>
-									Polityka prywatności
-								</Link>
-							</li>
+							))}
 						</ul>
 					</div>
 				</div>
