@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FooterLinksContext } from '../context/FooterLinksContext';
+import { FooterLinksContext } from '../../context/FooterLinksContext';
 
 export const useFooterLinksContext = () => {
 	const footerContext = useContext(FooterLinksContext);

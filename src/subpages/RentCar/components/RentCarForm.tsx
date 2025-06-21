@@ -8,7 +8,7 @@ import styles from '../styles/styles.module.scss';
 
 const RentCarForm: React.FC<RentCarFormRefModel> = ({ formRef }) => {
 	return (
-		<section className={styles['rent-car__form']}>
+		<section className={styles['rent-car__form']} id='formularz'>
 			<div className={styles['rent-car__form-container']}>
 				<div className={styles['rent-car__form-title-box']}>
 					<h2 className={styles['rent-car__form-title']}>Zaczynamy?</h2>

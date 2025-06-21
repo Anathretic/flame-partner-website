@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 
 import NotFoundImage from '../../images/notfound-subpage/notfound-image.png';
@@ -21,7 +21,7 @@ const PageNotFound: React.FC = () => {
 
 	useEffect(() => {
 		setSelectedCar('');
-	});
+	}, []);
 
 	return (
 		<>

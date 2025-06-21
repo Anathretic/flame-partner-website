@@ -4,19 +4,23 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { App } from './App.tsx';
 
-import CarSelectProvider from './context/CarSelectContext.tsx';
+import NavbarItemsProvider from './context/NavbarItemsContext.tsx';
 import FooterLinksProvider from './context/FooterLinksContext.tsx';
+import CarSelectProvider from './context/CarSelectContext.tsx';
+
 import './sass/globals.scss';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<HelmetProvider>
 			<BrowserRouter>
-				<CarSelectProvider>
+				<NavbarItemsProvider>
 					<FooterLinksProvider>
-						<App />
+						<CarSelectProvider>
+							<App />
+						</CarSelectProvider>
 					</FooterLinksProvider>
-				</CarSelectProvider>
+				</NavbarItemsProvider>
 			</BrowserRouter>
 		</HelmetProvider>
 	</StrictMode>

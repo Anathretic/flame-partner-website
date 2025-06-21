@@ -30,9 +30,14 @@ export const getBlogAndArticleData = async ({
 			throw new Error('Wystąpił nieoczekiwany błąd.. Spróbuj ponownie..');
 		}
 
-		setSlides(data);
+		const sortedData = data.map(item => ({
+			...item,
+			sections: item.sections ? [...item.sections].sort((a, b) => a.title.localeCompare(b.title)) : [],
+		}));
 
-		localStorage.setItem('blogData', JSON.stringify(data));
+		setSlides(sortedData);
+
+		localStorage.setItem('blogData', JSON.stringify(sortedData));
 		localStorage.setItem('blogDataTimestamp', Date.now().toString());
 
 		setTimeout(() => {

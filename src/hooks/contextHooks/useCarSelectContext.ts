@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CarSelectContext } from '../context/CarSelectContext';
+import { CarSelectContext } from '../../context/CarSelectContext';
 
 export const useCarSelectContext = () => {
 	const carSelectContext = useContext(CarSelectContext);

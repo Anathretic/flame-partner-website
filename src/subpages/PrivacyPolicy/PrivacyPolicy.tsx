@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 
 import styles from './styles/styles.module.scss';
@@ -17,7 +17,7 @@ const PrivacyPolicy: React.FC = () => {
 
 	useEffect(() => {
 		setSelectedCar('');
-	});
+	}, []);
 
 	return (
 		<>
@@ -48,7 +48,7 @@ const PrivacyPolicy: React.FC = () => {
 						<h2>2. Administrator Danych Osobowych</h2>
 						<p>
 							Administratorem danych osobowych Użytkowników jest Flame Partner. Kontakt z administratorem jest możliwy
-							pod adresem e-mail: <span>biuro.flamepartner@gmail.com</span>
+							pod adresem e-mail: <a href='mailto:biuro.flamepartner@gmail.com'>biuro.flamepartner@gmail.com</a>
 						</p>
 					</div>
 					<div className={styles['privacy-policy__box']}>
@@ -129,8 +129,8 @@ const PrivacyPolicy: React.FC = () => {
 					<div className={styles['privacy-policy__box']}>
 						<h2>9. Kontakt</h2>
 						<p>
-							W przypadku pytań dotyczących Polityki Prywatności prosimy o kontakt pod adresem e-mail:
-							<span> biuro.flamepartner@gmail.com</span>
+							W przypadku pytań dotyczących Polityki Prywatności prosimy o kontakt pod adresem e-mail:{' '}
+							<a href='mailto:biuro.flamepartner@gmail.com'>biuro.flamepartner@gmail.com</a>
 						</p>
 					</div>
 					<div className={styles['privacy-policy__box']}>
@@ -146,6 +146,12 @@ const PrivacyPolicy: React.FC = () => {
 						<p>Wsparcie merytoryczne, kodowanie oraz wykonanie:</p>
 						<a href='https://www.linkedin.com/in/konrad-wojtylo' target='_blank' rel='noreferrer'>
 							Konrad Wojtyło
+						</a>
+					</div>
+					<div className={styles['privacy-policy__box']}>
+						<p>Audyt UX/UI - poprawa user-flow i designu:</p>
+						<a href='https://www.linkedin.com/in/kaliszmalgorzata/' target='_blank' rel='noreferrer'>
+							Małgorzata Kalisz
 						</a>
 					</div>
 					<Link

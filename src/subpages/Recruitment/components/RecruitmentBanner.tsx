@@ -7,7 +7,7 @@ import styles from '../styles/styles.module.scss';
 
 const RecruitmentBanner: React.FC = () => {
 	return (
-		<section className={styles.recruitment__banner}>
+		<section className={styles.recruitment__banner} id='wymagania'>
 			<h2 className={`${styles['recruitment__title']} ${styles['recruitment__title--special']}`}>
 				Czego potrzebujesz?
 			</h2>

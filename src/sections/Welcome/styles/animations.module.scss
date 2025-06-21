@@ -1,0 +1,35 @@
+.animation-arrow-bounce {
+	animation: arrow-bounce 2s infinite;
+}
+
+.animation-car-appear--first {
+	animation: car-appear 5s 1 forwards;
+}
+
+.animation-car-appear--second {
+	animation: car-appear 4.5s 1 forwards;
+}
+
+.animation-car-appear--third {
+	animation: car-appear 5.5s 1 forwards;
+}
+
+.animation-car-appear--fourth {
+	animation: car-appear 4s 1 forwards;
+}
+
+.animation-car-appear--fifth {
+	animation: car-appear 6s 1 forwards;
+}
+
+@keyframes arrow-bounce {
+	65% {
+		bottom: 5em;
+	}
+}
+
+@keyframes car-appear {
+	100% {
+		transform: scale(100%);
+	}
+}

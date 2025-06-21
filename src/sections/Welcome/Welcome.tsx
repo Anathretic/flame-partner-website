@@ -10,6 +10,7 @@ import UberIcon from '../../images/welcome-section/brand-icons/uber-icon.jpg';
 import FreenowIcon from '../../images/welcome-section/brand-icons/freenow-icon.jpg';
 
 import styles from './styles/styles.module.scss';
+import animations from './styles/animations.module.scss';
 
 const Welcome: React.FC = () => {
 	return (
@@ -28,23 +29,23 @@ const Welcome: React.FC = () => {
 						</HashLink>
 					</div>
 					<FaTaxi
-						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--first']}`}
+						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--first']} ${animations['animation-car-appear--first']}`}
 						fontSize={70}
 					/>
 					<FaTaxi
-						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--second']}`}
+						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--second']}  ${animations['animation-car-appear--second']}`}
 						fontSize={66}
 					/>
 					<FaTaxi
-						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--third']}`}
+						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--third']}  ${animations['animation-car-appear--third']}`}
 						fontSize={54}
 					/>
 					<FaTaxi
-						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--fourth']}`}
+						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--fourth']}  ${animations['animation-car-appear--fourth']}`}
 						fontSize={62}
 					/>
 					<FaTaxi
-						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--fifth']}`}
+						className={`${styles['welcome__text-container-icon']} ${styles['welcome__text-container-icon--fifth']}  ${animations['animation-car-appear--fifth']}`}
 						fontSize={80}
 					/>
 				</div>
@@ -62,7 +63,7 @@ const Welcome: React.FC = () => {
 					</Link>
 				</div>
 			</div>
-			<div className={styles['welcome__icon-container']}>
+			<div className={`${styles['welcome__icon-container']} ${animations['animation-arrow-bounce']}`}>
 				<HashLink
 					smooth
 					to='/#oferta'

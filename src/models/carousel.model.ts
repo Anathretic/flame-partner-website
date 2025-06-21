@@ -1,5 +1,4 @@
 import { BlogAndArticleDataModel, RentCarDataModel } from './data.model';
-import { Car } from './forms.model';
 
 export interface SlideModel {
 	slide: RentCarDataModel | BlogAndArticleDataModel;
@@ -29,15 +28,6 @@ export interface CarouselOptionsModel {
 
 export interface SlideOptionsModel {
 	slideRef: React.RefObject<HTMLLIElement>;
-}
-
-// ------------------------
-
-// ------- Context --------
-
-export interface CarSelectContextModel {
-	selectedCar: Car;
-	setSelectedCar: React.Dispatch<React.SetStateAction<Car>>;
 }
 
 // ------------------------

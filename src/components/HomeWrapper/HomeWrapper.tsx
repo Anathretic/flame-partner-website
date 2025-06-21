@@ -1,12 +1,19 @@
 import { useEffect } from 'react';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
-import { HomeWrapperProps } from '../../models/homeWrapper.model';
 import { Helmet } from 'react-helmet-async';
+import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
+import { homeNavbarItems } from '../Navbar/components/navbarData/navbarItems';
+import { HomeWrapperProps } from '../../models/homeWrapper.model';
 
 const HomeWrapper: React.FC<HomeWrapperProps> = ({ children }) => {
+	const { setNavbarItems } = useNavbarItemsContext();
 	const { setShowSpecialLinks } = useFooterLinksContext();
 	const { setSelectedCar } = useCarSelectContext();
+
+	useEffect(() => {
+		setNavbarItems(homeNavbarItems);
+	}, []);
 
 	useEffect(() => {
 		setShowSpecialLinks(false);
@@ -14,7 +21,7 @@ const HomeWrapper: React.FC<HomeWrapperProps> = ({ children }) => {
 
 	useEffect(() => {
 		setSelectedCar('');
-	});
+	}, []);
 
 	return (
 		<>

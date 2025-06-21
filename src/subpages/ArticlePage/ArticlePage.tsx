@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useBlogAndArticleData } from '../../hooks/useBlogAndArticleData';
 import PageNotFound from '../PageNotFound/PageNotFound';
@@ -9,6 +9,8 @@ import styles from './styles/styles.module.scss';
 const ArticlePage: React.FC = () => {
 	const { id } = useParams();
 	const { slides } = useBlogAndArticleData();
+
+	const navigate = useNavigate();
 
 	const slide = slides.filter(slide => slide.href.split('/')[1] === id);
 
@@ -38,9 +40,15 @@ const ArticlePage: React.FC = () => {
 												<p>{section.content}</p>
 											</div>
 										))}
-										<Link to='/artykuly-i-porady' className={styles.article__btn} onClick={scrollToTop}>
+										<button
+											type='button'
+											className={styles.article__btn}
+											onClick={() => {
+												navigate(-1);
+												scrollToTop();
+											}}>
 											Powrót
-										</Link>
+										</button>
 									</>
 								) : (
 									<PageNotFound />

@@ -25,7 +25,7 @@ const workAndCarSchema = yup.object({
 export const contactSchema = yup.object({
 	firstname: yup
 		.string()
-		.min(5, 'Imię jest za krótkie!')
+		.min(3, 'Imię jest za krótkie!')
 		.max(35, 'Imię jest zbyt długie!')
 		.minUppercase(1, 'Imię zaczyna się z dużej litery!')
 		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$/, 'Używaj tylko liter!')

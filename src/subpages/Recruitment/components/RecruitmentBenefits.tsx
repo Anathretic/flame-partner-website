@@ -8,7 +8,7 @@ import styles from '../styles/styles.module.scss';
 
 const RecruitmentBenefits: React.FC = () => {
 	return (
-		<section className={styles.recruitment__benefits}>
+		<section className={styles.recruitment__benefits} id='informacje'>
 			<h2 className={styles.recruitment__title}>Dlaczego my?</h2>
 			<div className={styles['recruitment__benefits-text-content']}>
 				<div className={styles['recruitment__benefits-text-content-box']}>

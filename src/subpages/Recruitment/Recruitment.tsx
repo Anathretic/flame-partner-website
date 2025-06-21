@@ -1,14 +1,26 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
+import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
+import { recruitmentNavbarItems } from '../../components/Navbar/components/navbarData/navbarItems';
 import { RecruitmentBenefits, RecruitmentForm, RecruitmentBanner } from './components';
+import { SubpageWithNavbarModel } from '../../models/subpage.model';
 
 import styles from './styles/styles.module.scss';
 
-const Recruitment: React.FC = () => {
+const Recruitment: React.FC<SubpageWithNavbarModel> = ({ setSubpageIsLoading, subpageIsLoading }) => {
+	const { setNavbarItems } = useNavbarItemsContext();
 	const { setShowSpecialLinks } = useFooterLinksContext();
 	const { setSelectedCar } = useCarSelectContext();
+
+	useEffect(() => {
+		setSubpageIsLoading(false);
+	}, [subpageIsLoading]);
+
+	useEffect(() => {
+		setNavbarItems(recruitmentNavbarItems);
+	}, []);
 
 	useEffect(() => {
 		setShowSpecialLinks(true);
@@ -16,7 +28,7 @@ const Recruitment: React.FC = () => {
 
 	useEffect(() => {
 		setSelectedCar('');
-	});
+	}, []);
 
 	return (
 		<>
@@ -36,9 +48,7 @@ const Recruitment: React.FC = () => {
 				<div className={styles.recruitment__container}>
 					<div className={styles.recruitment__wrapper}>
 						<div className={styles['recruitment__hero-image']}>
-							<h1 className={styles['recruitment__hero-image-title']}>
-								Rekrutacja <br /> kierowców
-							</h1>
+							<h1 className={styles['recruitment__hero-image-title']}>Rekrutacja kierowców</h1>
 						</div>
 						<RecruitmentBenefits />
 						<RecruitmentBanner />

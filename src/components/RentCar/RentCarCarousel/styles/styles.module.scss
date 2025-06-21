@@ -1,6 +1,13 @@
 .icon {
 	fill: var(--white-color);
 	width: 100%;
+	transition: fill 0.3s;
+}
+
+@media screen and (min-width: 1024px) {
+	.icon:hover {
+		fill: var(--dark-blue-color);
+	}
 }
 
 .btn {
@@ -65,6 +72,27 @@
 	}
 }
 
+@media screen and (min-width: 1536px) {
+	.slider {
+		&__controls {
+			justify-content: space-between;
+			top: calc(45% + 1rem);
+
+			button {
+				position: absolute;
+			}
+
+			button:first-of-type {
+				left: -15em;
+			}
+
+			button:last-of-type {
+				right: -15em;
+			}
+		}
+	}
+}
+
 .slide {
 	position: relative;
 	display: flex;
@@ -92,7 +120,7 @@
 	}
 
 	&--previous {
-		cursor: w-resize;
+		cursor: pointer;
 
 		&:hover {
 			transform: translateX(2%);
@@ -100,7 +128,7 @@
 	}
 
 	&--next {
-		cursor: e-resize;
+		cursor: pointer;
 
 		&:hover {
 			transform: translateX(-2%);
@@ -132,7 +160,7 @@
 		max-width: 645px;
 		max-height: 750px;
 		background-color: var(--white-color);
-		border-radius: 1%;
+		border-radius: 0.5em;
 		transition: transform calc(600ms / 4) cubic-bezier(0.25, 0.46, 0.45, 0.84);
 		overflow: hidden;
 	}
@@ -151,12 +179,6 @@
 		transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.84), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.84);
 		pointer-events: none;
 		user-select: none;
-
-		@media (hover: hover) {
-			.slide--current & {
-				transform: translate(calc(var(--x) / var(--d) * 1px), calc(var(--y) / var(--d) * 1px));
-			}
-		}
 
 		&--0 {
 			background-image: url('../../../../images/rent-car-subpage/rent-car-list/fabia-III-image.jpg');
@@ -220,10 +242,6 @@
 		.slide--current & {
 			animation: fade-in calc(600ms / 2) cubic-bezier(0.25, 0.46, 0.45, 0.84) forwards;
 			visibility: visible;
-
-			@media (hover: hover) {
-				transform: translate(calc(var(--x) / var(--d) * -1px), calc(var(--y) / var(--d) * -1px));
-			}
 		}
 
 		> * + * {
@@ -243,5 +261,13 @@
 	.slider,
 	.slide {
 		height: 70vmin;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.slide {
+		&__headline {
+			font-size: 50px;
+		}
 	}
 }

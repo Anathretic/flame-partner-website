@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSlideOptions } from '../../../../hooks/useSlideOptions';
-import { useCarSelectContext } from '../../../../hooks/useCarSelectContext';
+import { useCarSelectContext } from '../../../../hooks/contextHooks/useCarSelectContext';
 import { SlideModel } from '../../../../models/carousel.model';
 import { RentCarDataModel } from '../../../../models/data.model';
 import { Car } from '../../../../models/forms.model';
