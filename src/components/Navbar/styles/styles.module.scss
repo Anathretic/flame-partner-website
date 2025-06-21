@@ -63,8 +63,7 @@
 		transition: color 0.3s ease-out;
 	}
 
-	&__mobile-list,
-	&__login-icon {
+	&__mobile-list {
 		display: flex;
 		align-items: center;
 	}
@@ -141,7 +140,11 @@
 			padding: 0 2.5rem;
 			justify-content: space-between;
 		}
+	}
+}
 
+@media screen and (min-width: 890px) {
+	.navbar {
 		&__desktop {
 			display: block;
 		}
@@ -159,10 +162,6 @@
 
 		&__item {
 			margin: 0 1rem;
-		}
-
-		&__login-icon {
-			margin-top: 5px;
 		}
 	}
 
@@ -255,10 +254,6 @@
 
 		&__item {
 			margin: 0 2rem;
-		}
-
-		&__login-icon {
-			margin: 5px 2rem 0;
 		}
 	}
 }

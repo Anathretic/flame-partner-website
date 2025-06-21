@@ -21,40 +21,40 @@ export const homeNavbarItems = [
 
 export const recruitmentNavbarItems = [
 	{
-		title: 'Home',
+		title: 'Strona główna',
 		section: '/',
 		onClick: () => scrollToTop(),
 	},
 	{
 		title: 'Informacje',
-		section: '/rekrutacja-kierowcow/#informacje',
+		section: '#informacje',
 	},
 	{
 		title: 'Wymagania',
-		section: '/rekrutacja-kierowcow/#wymagania',
+		section: '#wymagania',
 	},
 	{
 		title: 'Formularz',
-		section: '/rekrutacja-kierowcow/#formularz',
+		section: '#formularz',
 	},
 ];
 
 export const rentCarNavbarItems = [
 	{
-		title: 'Home',
+		title: 'Strona główna',
 		section: '/',
 		onClick: () => scrollToTop(),
 	},
 	{
 		title: 'Informacje',
-		section: '/wynajem-samochodu/#informacje',
+		section: '#informacje',
 	},
 	{
 		title: 'Lista samochodów',
-		section: '/wynajem-samochodu/#lista-samochodow',
+		section: '#lista-samochodow',
 	},
 	{
 		title: 'Formularz',
-		section: '/wynajem-samochodu/#formularz',
+		section: '#formularz',
 	},
 ];
