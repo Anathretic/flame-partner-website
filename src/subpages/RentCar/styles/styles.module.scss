@@ -42,13 +42,14 @@
 	}
 
 	&__hero-image {
-		height: 40vh;
+		height: 60vh;
 		background-image: url('../../../images/rent-car-subpage/rent-car-hero-image.jpg');
 		background-position: center;
 		background-size: cover;
 	}
 
 	&__hero-image-title {
+		padding: 0 0.5em;
 		color: var(--white-color);
 		font-size: 3rem;
 		font-weight: 300;
@@ -80,7 +81,7 @@
 		padding: 2em 0.5em 0;
 		max-width: 300px;
 		border: none;
-		border-radius: 1.5em;
+		border-radius: 0.5em;
 
 		-webkit-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
 		-moz-box-shadow: 0px 0px 10px 2px rgba(25, 50, 63, 0.25);
@@ -89,7 +90,7 @@
 		h3 {
 			padding: 1em;
 			font-size: 1.5em;
-			font-weight: 200;
+			font-weight: 350;
 			font-style: italic;
 			text-align: center;
 		}
@@ -287,7 +288,7 @@
 @media screen and (max-height: 500px) {
 	.rent-car {
 		&__hero-image {
-			height: 60vh;
+			height: 100vh;
 		}
 
 		&__hero-image-title {
@@ -325,6 +326,10 @@
 
 @media screen and (min-width: 1024px) {
 	.rent-car {
+		&__hero-image {
+			height: 57vh;
+		}
+
 		&__hero-image-title {
 			font-size: 4.5rem;
 		}

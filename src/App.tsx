@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useState } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
 import { Navbar, Footer, CookieBanner, HomeWrapper, SuspenseWithFooter } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
@@ -14,6 +14,8 @@ const PrivacyPolicy = lazy(() => delaySubpageImport(() => import('./subpages/Pri
 const PageNotFound = lazy(() => delaySubpageImport(() => import('./subpages/PageNotFound/PageNotFound'), 1000));
 
 export const App: React.FC = () => {
+	const [subpageIsLoading, setSubpageIsLoading] = useState(false);
+
 	return (
 		<>
 			<Routes>
@@ -25,23 +27,50 @@ export const App: React.FC = () => {
 						</>
 					}>
 					<Route
-						path='/'
 						element={
 							<>
-								<Navbar />
-								<HomeWrapper>
-									<Welcome />
-									<Offer />
-									<ChooseUs />
-									<Blog />
-									<Contact />
-								</HomeWrapper>
-								<Footer />
+								{!subpageIsLoading && <Navbar />}
+								<Outlet />
 							</>
-						}
-					/>
-					<Route path='/rekrutacja-kierowcow' element={<SuspenseWithFooter children={<Recruitment />} />} />
-					<Route path='/wynajem-samochodu' element={<SuspenseWithFooter children={<RentCar />} />} />
+						}>
+						<Route
+							path='/'
+							element={
+								<>
+									<HomeWrapper>
+										<Welcome />
+										<Offer />
+										<ChooseUs />
+										<Blog />
+										<Contact />
+									</HomeWrapper>
+									<Footer />
+								</>
+							}
+						/>
+						<Route
+							path='/rekrutacja-kierowcow'
+							element={
+								<SuspenseWithFooter
+									subpageIsLoading={subpageIsLoading}
+									setSubpageIsLoading={setSubpageIsLoading}
+									children={
+										<Recruitment subpageIsLoading={subpageIsLoading} setSubpageIsLoading={setSubpageIsLoading} />
+									}
+								/>
+							}
+						/>
+						<Route
+							path='/wynajem-samochodu'
+							element={
+								<SuspenseWithFooter
+									subpageIsLoading={subpageIsLoading}
+									setSubpageIsLoading={setSubpageIsLoading}
+									children={<RentCar subpageIsLoading={subpageIsLoading} setSubpageIsLoading={setSubpageIsLoading} />}
+								/>
+							}
+						/>
+					</Route>
 					<Route path='/artykuly-i-porady' element={<SuspenseWithFooter children={<ArticlesAndAdvices />} />} />
 					<Route path='/artykuly-i-porady/:id' element={<SuspenseWithFooter children={<ArticlePage />} />} />
 					<Route path='/polityka-prywatnosci' element={<SuspenseWithFooter children={<PrivacyPolicy />} />} />

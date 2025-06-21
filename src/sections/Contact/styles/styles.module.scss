@@ -47,6 +47,7 @@
 			color: var(--dark-blue-color);
 			text-underline-offset: 2px;
 			transition: color 0.3s;
+			cursor: pointer;
 		}
 	}
 
@@ -75,9 +76,17 @@
 			margin-top: 5px;
 		}
 
-		p {
+		p,
+		a {
 			padding: 0.25rem 0;
 			font-weight: 300;
+		}
+
+		a {
+			color: var(--dark-blue-color);
+			text-decoration: none;
+			transition: color 0.3s;
+			cursor: pointer;
 		}
 
 		p:first-of-type {
@@ -165,7 +174,8 @@
 			font-size: 3rem;
 		}
 
-		&__title-subtext {
+		&__title-subtext,
+		&__title-info-box {
 			a:hover {
 				color: var(--sky-blue-color);
 			}

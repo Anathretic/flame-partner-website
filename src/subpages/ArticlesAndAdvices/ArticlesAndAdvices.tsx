@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
 import ArticlesArray from './components/ArticlesArray';
 
 import styles from './styles/styles.module.scss';
@@ -16,7 +16,7 @@ const ArticlesAndAdvices: React.FC = () => {
 
 	useEffect(() => {
 		setSelectedCar('');
-	});
+	}, []);
 
 	return (
 		<>

@@ -1,8 +1,21 @@
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
+import { translations } from './components/translationsData';
 
 import styles from './styles/styles.module.scss';
 
 const ChooseUs: React.FC = () => {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setIndex(prev => (prev + 1) % translations.length);
+		}, 5000);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	const { title, text } = translations[index];
+
 	return (
 		<section id='wybierz-nas' className={styles['choose-us']}>
 			<div className={styles['choose-us__container']}>
@@ -44,11 +57,8 @@ const ChooseUs: React.FC = () => {
 						</div>
 						<div className={styles['choose-us__box-item']}>
 							<div className={styles['choose-us__box-item-image']} />
-							<h3>5. Obsługa w wielu językach</h3>
-							<p>
-								Nie bój się napisać! Nasz zespół jest wielojęzyczny i zapewnimy Ci odpowiedni komfort pracy, który
-								będzie widoczny już od pierwszej rozmowy.
-							</p>
+							<h3>{title}</h3>
+							<p>{text}</p>
 						</div>
 					</div>
 				</div>

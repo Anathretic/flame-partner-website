@@ -7,7 +7,7 @@ import styles from '../styles/styles.module.scss';
 
 const RecruitmentForm: React.FC = () => {
 	return (
-		<section className={styles.recruitment__form}>
+		<section className={styles.recruitment__form} id='formularz'>
 			<div className={styles['recruitment__form-container']}>
 				<div className={styles['recruitment__form-title-box']}>
 					<h2 className={styles['recruitment__form-title']}>Zaczynamy?</h2>

@@ -7,6 +7,7 @@ import styles from './styles/styles.module.scss';
 const CookieBanner: React.FC = ({ ...otherProps }) => {
 	return (
 		<CookieConsent
+			buttonId='cookie-btn'
 			location='bottom'
 			buttonText='OK'
 			style={{

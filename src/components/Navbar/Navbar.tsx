@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import throttle from 'lodash/throttle';
+import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsContext';
 import NavbarItem from './components/NavbarItem';
 import { NavbarTitle } from './components/NavbarTitle';
-import { navbarItems } from './components/navbarData/navbarItems';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 
@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
 	const divRef = useRef<HTMLDivElement | null>(null);
 
-	const memoizedNavbarItems = useMemo(() => navbarItems, []);
+	const { navbarItems } = useNavbarItemsContext();
 
 	const handleMenuClose = () => {
 		setIsAnimating(true);
@@ -72,13 +72,16 @@ const Navbar: React.FC = () => {
 											<li className={styles['navbar__mobile-exit-icon']}>
 												<AiOutlineClose fontSize={28} onClick={handleMenuClose} />
 											</li>
-											{memoizedNavbarItems.map(({ title, section }) => (
+											{navbarItems.map(({ title, section, onClick }) => (
 												<NavbarItem
 													key={title}
 													title={title}
 													section={section}
 													classProps={styles['navbar__item-margin']}
-													onClick={handleMenuClose}
+													onClick={() => {
+														handleMenuClose();
+														if (onClick) onClick();
+													}}
 												/>
 											))}
 										</ul>
@@ -88,8 +91,8 @@ const Navbar: React.FC = () => {
 						) : (
 							<nav className={styles.navbar__desktop}>
 								<ul className={styles['navbar__desktop-list']}>
-									{memoizedNavbarItems.map(({ title, section }) => (
-										<NavbarItem key={title} title={title} section={section} />
+									{navbarItems.map(({ title, section, onClick }) => (
+										<NavbarItem key={title} title={title} section={section} onClick={onClick} />
 									))}
 								</ul>
 							</nav>

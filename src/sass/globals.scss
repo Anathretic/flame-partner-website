@@ -34,3 +34,21 @@ body {
 .blog-popup--is-active {
 	overflow: hidden;
 }
+
+@media screen and (min-width: 1358px) {
+	#cookie-btn {
+		margin-right: 7rem !important;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	#cookie-btn {
+		margin-right: 9rem !important;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	#cookie-btn {
+		margin-right: 13rem !important;
+	}
+}

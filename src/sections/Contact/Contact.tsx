@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
 							</div>
 							<div>
 								<p>E-mail:</p>
-								<p>biuro.flamepartner@gmail.com</p>
+								<a href='mailto:biuro.flamepartner@gmail.com'>biuro.flamepartner@gmail.com</a>
 							</div>
 						</li>
 						<li>
@@ -39,8 +39,12 @@ const Contact: React.FC = () => {
 							</div>
 							<div>
 								<p>Telefon:</p>
-								<p>+48 730 940 691</p>
-								<p>+48 730 940 696</p>
+								<p>
+									<a href='tel:+48730940691'>+48 730 940 691</a>
+								</p>
+								<p>
+									<a href='tel:+48730940696'>+48 730 940 696</a>
+								</p>
 							</div>
 						</li>
 						<li>

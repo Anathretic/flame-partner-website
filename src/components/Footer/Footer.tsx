@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useMediaQuery } from 'react-responsive';
-import { useFooterLinksContext } from '../../hooks/useFooterLinksContext';
+import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
 import { footerHomeItems, footerMoreItems, footerOfferItems } from './footerItems/footerItems';
 import { scrollToTop } from '../../utils/scrollToTopUtils';
 import { FaRegCopyright, FaFacebookSquare, FaInstagram } from 'react-icons/fa';
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 						<h2>
 							<img src={FooterLogo} alt='' />
 						</h2>
-						<p>Pomoc i wsparcie na każdym etapie..</p>
+						<p>Pomoc i wsparcie na każdym etapie!</p>
 						<div className={styles['footer__icons-box']}>
 							<a href='https://www.facebook.com/profile.php?id=61574789965056' target='_blank' rel='noreferrer'>
 								<FaFacebookSquare fontSize={isMobile ? 24 : 28} />
@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
 						</div>
 					</div>
 					<div className={styles.footer__box}>
-						<h3>Home</h3>
-						<ul>
-							{!showSpecialLinks ? (
-								<>
+						{!showSpecialLinks && (
+							<>
+								<h3>Home</h3>
+								<ul>
 									{memoizedFooterHomeItems.map((item, id) => (
 										<li key={id}>
 											<HashLink smooth to={item.to}>
@@ -54,15 +54,9 @@ const Footer: React.FC = () => {
 											</HashLink>
 										</li>
 									))}
-								</>
-							) : (
-								<li>
-									<Link to='/' onClick={scrollToTop}>
-										Strona główna
-									</Link>
-								</li>
-							)}
-						</ul>
+								</ul>
+							</>
+						)}
 					</div>
 					<div className={styles.footer__box}>
 						<h3>Oferta</h3>

@@ -6,7 +6,7 @@ import { carFormInputs, carFormSelects } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
 import { useFormSubmits } from '../../hooks/useForm/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/useSubmitFormButton';
-import { useCarSelectContext } from '../../hooks/useCarSelectContext';
+import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
 import { carSchema } from '../../schemas/schemas';
 import { CarFormModel } from '../../models/forms.model';
 import { RentCarFormRefModel } from '../../models/rentCar.model';
