@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 	const [isAnimating, setIsAnimating] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+	const isMobile = useMediaQuery({ query: '(max-width: 889px)' });
 
 	const divRef = useRef<HTMLDivElement | null>(null);
 
