@@ -43,7 +43,7 @@
 	&__text-content-box {
 		margin: 2em;
 		padding: 2em 0.5em 0;
-		max-width: 300px;
+		max-width: 325px;
 		border: none;
 		border-radius: 0.5em;
 
@@ -334,6 +334,10 @@
 
 @media screen and (min-width: 768px) {
 	.offer {
+		&__text-content-box {
+			max-width: 335px;
+		}
+
 		&__special-block {
 			width: 35%;
 			height: 50px;
@@ -583,10 +587,6 @@
 
 		&__text-content {
 			margin-left: 10em;
-		}
-
-		&__text-content-box {
-			max-width: 325px;
 		}
 
 		&__image-content {
