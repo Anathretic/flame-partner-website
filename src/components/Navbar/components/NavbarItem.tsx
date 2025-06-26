@@ -7,7 +7,14 @@ import styles from '../styles/styles.module.scss';
 const NavbarItem: React.FC<NavbarItemModel> = ({ title, section, classProps, onClick, ...linkProps }) => {
 	return (
 		<li className={`${styles.navbar__item} ${classProps}`}>
-			<HashLink smooth to={section} onClick={onClick} className={styles['navbar__item-link']} {...linkProps}>
+			<HashLink
+				smooth
+				to={section}
+				onClick={e => {
+					if (onClick) onClick(e);
+				}}
+				className={styles['navbar__item-link']}
+				{...linkProps}>
 				{title}
 			</HashLink>
 		</li>

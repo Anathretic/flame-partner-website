@@ -2,7 +2,7 @@ export interface NavbarItemModel {
 	title: string;
 	section: string;
 	classProps?: string;
-	onClick?: () => void;
+	onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 export interface NavbarTitleModel {

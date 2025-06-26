@@ -82,9 +82,9 @@ const Navbar: React.FC = () => {
 													title={title}
 													section={section}
 													classProps={styles['navbar__item-margin']}
-													onClick={() => {
+													onClick={(e) => {
 														handleMenuClose();
-														if (onClick) onClick();
+														if (onClick) onClick(e);
 													}}
 												/>
 											))}
