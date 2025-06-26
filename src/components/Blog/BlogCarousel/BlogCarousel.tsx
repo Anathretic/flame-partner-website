@@ -3,11 +3,11 @@ import { useCarouselOptions } from '../../../hooks/carouselHooks/useCarousel/use
 import { useCarouselTouch } from '../../../hooks/carouselHooks/useCarousel/useCarouselTouch';
 import { Slide } from './components/Slide';
 import { SliderControl } from './components/SliderControl';
-import { SliderModel } from '../../../models/carousel.model';
+import { CarouselModel } from '../../../models/carousel.model';
 
 import styles from './styles/styles.module.scss';
 
-export const BlogCarousel: React.FC<SliderModel> = ({ slides }) => {
+export const BlogCarousel: React.FC<CarouselModel> = ({ slides }) => {
 	const [current, setCurrent] = useState(0);
 
 	const { handleNextClick, handlePreviousClick, handleSlideClick, wrapperTransform } = useCarouselOptions({

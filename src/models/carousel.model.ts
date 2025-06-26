@@ -7,7 +7,7 @@ export interface SlideModel {
 	formRef?: React.RefObject<HTMLFormElement>;
 }
 
-export interface SliderModel {
+export interface CarouselModel {
 	slides: RentCarDataModel[] | BlogAndArticleDataModel[];
 	formRef?: React.RefObject<HTMLFormElement>;
 }
