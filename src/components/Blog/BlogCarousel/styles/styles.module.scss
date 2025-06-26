@@ -90,13 +90,6 @@
 	}
 }
 
-@media screen and (min-width: 768px) and (min-height: 500px) {
-	.slider {
-		height: 70vmin;
-		width: 70vmin;
-	}
-}
-
 @media screen and (min-width: 1536px) {
 	.slider {
 		&__controls-wrapper {
@@ -248,17 +241,10 @@
 }
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
+	.slider,
 	.slide {
 		height: 70vmin;
 		width: 70vmin;
-	}
-}
-
-@media screen and (min-width: 1920px) and (max-height: 767px) {
-	.slide {
-		&__headline {
-			font-size: 35px;
-		}
 	}
 }
 
@@ -266,6 +252,14 @@
 	.slide {
 		&__headline {
 			font-size: 50px;
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) and (max-height: 767px) {
+	.slide {
+		&__headline {
+			font-size: 30px;
 		}
 	}
 }
