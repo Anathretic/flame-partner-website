@@ -143,7 +143,7 @@
 	}
 }
 
-@media screen and (min-width: 890px) {
+@media screen and (min-width: 990px) {
 	.navbar {
 		&__desktop {
 			display: block;
@@ -160,8 +160,30 @@
 			list-style-type: none;
 		}
 
+		&__title-box {
+			margin: 0 0.5rem;
+		}
+
+		&__title-text {
+			padding: 0;
+		}
+
 		&__item {
-			margin: 0 1rem;
+			margin: 0 1.15rem;
+		}
+
+		&__item-link,
+		&__special-item-link {
+			font-size: 1rem;
+		}
+
+		&__special-item-link {
+			padding: 0.75em 3.5em;
+			background: var(--sky-blue-color);
+			color: var(--white-color);
+			text-decoration: none;
+			border-radius: 2em;
+			transition: background-color 0.3s;
 		}
 	}
 
@@ -182,30 +204,6 @@
 	}
 }
 
-@media screen and (min-width: 990px) {
-	.navbar {
-		&__title-box {
-			margin: 0 0.5rem;
-		}
-
-		&__title-text {
-			padding: 0;
-		}
-
-		&__desktop-list {
-			font-size: 1.125rem;
-		}
-
-		&__item {
-			margin: 0 1.15rem;
-		}
-
-		&__item-link {
-			font-size: 1rem;
-		}
-	}
-}
-
 @media screen and (min-width: 1024px) {
 	.navbar {
 		&__container {
@@ -218,6 +216,10 @@
 
 		&__item-link:hover {
 			color: var(--gray-color);
+		}
+
+		&__special-item-link:hover {
+			background-color: var(--dark-blue-color);
 		}
 	}
 }
@@ -233,10 +235,15 @@
 @media screen and (min-width: 1358px) {
 	.navbar {
 		&__container {
-			padding: 0 6rem;
+			padding: 0 1.5rem 0 6rem;
+
+			&--subpage {
+				padding: 0 6rem;
+			}
 		}
 
-		&__item-link {
+		&__item-link,
+		&__special-item-link {
 			font-size: 1.1rem;
 		}
 	}
@@ -245,7 +252,11 @@
 @media screen and (min-width: 1536px) {
 	.navbar {
 		&__container {
-			padding: 0 8rem;
+			padding: 0 0 0 8rem;
+
+			&--subpage {
+				padding: 0 8rem;
+			}
 		}
 
 		&__title {
@@ -253,7 +264,7 @@
 		}
 
 		&__item {
-			margin: 0 2rem;
+			margin: 0 1.35rem;
 		}
 	}
 }
@@ -261,7 +272,11 @@
 @media screen and (min-width: 1920px) {
 	.navbar {
 		&__container {
-			padding: 0 11.6rem;
+			padding: 0 4.5rem 0 11.3rem;
+
+			&--subpage {
+				padding: 0 12.05rem;
+			}
 		}
 	}
 }

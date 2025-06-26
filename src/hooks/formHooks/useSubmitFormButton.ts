@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SubmitButtonHookModel } from '../models/formElements.model';
+import { SubmitButtonHookModel } from '../../models/formElements.model';
 
 export const useSubmitFormButton = ({ initialSubmitButtonState }: SubmitButtonHookModel) => {
 	const [buttonText, setButtonText] = useState(initialSubmitButtonState);

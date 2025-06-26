@@ -1,4 +1,4 @@
-import { CarouselOptionsModel } from '../models/carousel.model';
+import { CarouselOptionsModel } from '../../../models/carousel.model';
 
 export const useCarouselOptions = ({ setCurrent, current, slides }: CarouselOptionsModel) => {
 	const handlePreviousClick = () => {

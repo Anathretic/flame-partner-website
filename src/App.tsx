@@ -1,6 +1,6 @@
 import { lazy, useState } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
-import { Navbar, Footer, CookieBanner, HomeWrapper, SuspenseWithFooter } from './components';
+import { Navbar, Footer, CookieBanner, HomeWrapper, SuspenseWithFooter, RecruitmentSpecialBtn } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
 import { delaySubpageImport } from './helpers/delaySubpageImport';
 
@@ -45,6 +45,7 @@ export const App: React.FC = () => {
 										<Contact />
 									</HomeWrapper>
 									<Footer />
+									<RecruitmentSpecialBtn />
 								</>
 							}
 						/>

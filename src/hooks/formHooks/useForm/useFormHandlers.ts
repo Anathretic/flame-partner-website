@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { HandleEmailJsModel, UseFormHandlersModel } from '../../models/forms.model';
+import { HandleEmailJsModel, UseFormHandlersModel } from '../../../models/forms.model';
 
 export const useFormHandlers = ({ setIsLoading, setErrorValue }: UseFormHandlersModel) => {
 	const handleReCaptcha = (refCaptcha: React.RefObject<ReCAPTCHA> | undefined) => {

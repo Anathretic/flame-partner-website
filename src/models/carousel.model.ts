@@ -26,6 +26,11 @@ export interface CarouselOptionsModel {
 	slides: RentCarDataModel[] | BlogAndArticleDataModel[];
 }
 
+export interface CarouselTouchModel {
+	onSwipeLeft: () => void;
+	onSwipeRight: () => void;
+}
+
 export interface SlideOptionsModel {
 	slideRef: React.RefObject<HTMLLIElement>;
 }

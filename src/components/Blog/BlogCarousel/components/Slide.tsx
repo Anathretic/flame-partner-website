@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useSlideOptions } from '../../../../hooks/useSlideOptions';
+import { useSlideOptions } from '../../../../hooks/carouselHooks/useSlideOptions';
 import { scrollToTop } from '../../../../utils/scrollToTopUtils';
 import { SlideModel } from '../../../../models/carousel.model';
 import { BlogAndArticleDataModel } from '../../../../models/data.model';
