@@ -126,16 +126,23 @@
 			width: 250px;
 			text-align: center;
 		}
+	}
+}
 
+@media screen and (min-width: 990px) and (min-height: 500px) {
+	.welcome {
 		&__icon-container {
 			position: absolute;
 			display: block;
-			bottom: 1em;
+			bottom: -1em;
 			left: 50%;
 			padding: 0.25em;
 			transform: translateX(-50%);
 
 			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				padding: 3em 1em;
 			}
 		}
@@ -295,7 +302,6 @@
 		}
 
 		&__icon-container {
-			bottom: 2em;
 			left: 50%;
 		}
 	}

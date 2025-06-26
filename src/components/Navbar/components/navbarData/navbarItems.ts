@@ -23,7 +23,7 @@ export const recruitmentNavbarItems = [
 	{
 		title: 'Strona główna',
 		section: '/',
-		onClick: () => scrollToTop(),
+		onClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToTop(e),
 	},
 	{
 		title: 'Informacje',
@@ -43,7 +43,7 @@ export const rentCarNavbarItems = [
 	{
 		title: 'Strona główna',
 		section: '/',
-		onClick: () => scrollToTop(),
+		onClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToTop(e),
 	},
 	{
 		title: 'Informacje',

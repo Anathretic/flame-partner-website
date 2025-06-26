@@ -5,7 +5,7 @@ import {
 	FormTypes,
 	UseFormSubmitsModel,
 	WorkFormModel,
-} from '../../models/forms.model';
+} from '../../../models/forms.model';
 import { useFormHandlers } from './useFormHandlers';
 
 export const useFormSubmits = <T extends FormTypes>({

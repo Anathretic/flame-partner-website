@@ -4,9 +4,9 @@ import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsCo
 import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
 import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
 import { homeNavbarItems } from '../Navbar/components/navbarData/navbarItems';
-import { HomeWrapperProps } from '../../models/homeWrapper.model';
+import { HomeWrapperModel } from '../../models/homeWrapper.model';
 
-const HomeWrapper: React.FC<HomeWrapperProps> = ({ children }) => {
+const HomeWrapper: React.FC<HomeWrapperModel> = ({ children }) => {
 	const { setNavbarItems } = useNavbarItemsContext();
 	const { setShowSpecialLinks } = useFooterLinksContext();
 	const { setSelectedCar } = useCarSelectContext();

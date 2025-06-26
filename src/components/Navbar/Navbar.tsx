@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import throttle from 'lodash/throttle';
 import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsContext';
 import NavbarItem from './components/NavbarItem';
 import { NavbarTitle } from './components/NavbarTitle';
+import { NavbarSpecialDesktopButton } from './components/NavbarSpecialDesktopButton';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 
@@ -15,7 +17,9 @@ const Navbar: React.FC = () => {
 	const [isAnimating, setIsAnimating] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	const isMobile = useMediaQuery({ query: '(max-width: 889px)' });
+	const location = useLocation();
+
+	const isMobile = useMediaQuery({ query: '(max-width: 989px)' });
 
 	const divRef = useRef<HTMLDivElement | null>(null);
 
@@ -51,8 +55,8 @@ const Navbar: React.FC = () => {
 			<div className={styles.navbar}>
 				<div
 					className={`${styles.navbar__container} ${
-						isScrolled ? styles['navbar__container--is-scrolled'] : styles['navbar-is-not-scrolled']
-					}`}>
+						location.pathname !== '/' && styles['navbar__container--subpage']
+					} ${isScrolled ? styles['navbar__container--is-scrolled'] : styles['navbar-is-not-scrolled']}`}>
 					<div className={styles.navbar__wrapper}>
 						<NavbarTitle divRef={divRef} isScrolled={isScrolled} />
 						{isMobile ? (
@@ -94,6 +98,7 @@ const Navbar: React.FC = () => {
 									{navbarItems.map(({ title, section, onClick }) => (
 										<NavbarItem key={title} title={title} section={section} onClick={onClick} />
 									))}
+									<NavbarSpecialDesktopButton />
 								</ul>
 							</nav>
 						)}

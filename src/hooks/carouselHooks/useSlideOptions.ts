@@ -1,4 +1,4 @@
-import { SlideOptionsModel } from '../models/carousel.model';
+import { SlideOptionsModel } from '../../models/carousel.model';
 
 export const useSlideOptions = ({ slideRef }: SlideOptionsModel) => {
 	const handleMouseMove = (e: React.MouseEvent) => {
