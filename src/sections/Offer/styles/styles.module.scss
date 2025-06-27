@@ -54,7 +54,7 @@
 		h3 {
 			padding: 1em;
 			font-size: 1.5em;
-			font-weight: 350;
+			font-weight: 450;
 			font-style: italic;
 			text-align: center;
 		}
@@ -62,7 +62,7 @@
 		p {
 			padding: 0 0.75em 2em;
 			text-align: center;
-			font-weight: 350;
+			font-weight: 400;
 			line-height: 1.6em;
 
 			span {
@@ -74,8 +74,7 @@
 			display: block;
 			padding: 0.75em 3.5em;
 			margin: 0 1em 1.5em;
-			width: 175px;
-			max-width: 180px;
+			width: 220px;
 			background-color: transparent;
 			color: var(--dark-blue-color);
 			border-radius: 0.125em;
@@ -416,7 +415,7 @@
 			}
 
 			&--first {
-				top: -55%;
+				top: -47.5%;
 				left: -10%;
 				width: 75px;
 				height: 75px;
@@ -591,6 +590,12 @@
 
 		&__image-content {
 			margin-right: 10em;
+		}
+
+		&__special-circle {
+			&--first {
+				top: -50%;
+			}
 		}
 
 		&__special-block {

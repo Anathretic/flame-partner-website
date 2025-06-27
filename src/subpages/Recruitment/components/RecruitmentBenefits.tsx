@@ -24,7 +24,7 @@ const RecruitmentBenefits: React.FC = () => {
 					<h3>Elastyczny grafik</h3>
 					<p>
 						Sam ustalasz sobie grafik, co zapewnia Ci elastyczność i możliwość największego zarobku.{' '}
-						<span>Tylko Ty kontrolujesz wysokość wynagrodzenia</span> i ilość przepracowanych godzin!
+						<span>Ty kontrolujesz wysokość wynagrodzenia</span> i ilość przepracowanych godzin!
 					</p>
 				</div>
 				<div className={styles['recruitment__benefits-text-content-box']}>
@@ -39,8 +39,8 @@ const RecruitmentBenefits: React.FC = () => {
 					<TbPackages fontSize={56} color='#24485c' />
 					<h3>Pakiet benefitów</h3>
 					<p>
-						Ekstra dodatki dla kierowców, które wynagrodzą ciężką pracę - <span>stawki gwarantowane</span>, system
-						bonusów lub pieniądze za polecanie nowych kierowców.
+						Ekstra dodatki dla kierowców, wynagradzające ciężką pracę - <span>stawki gwarantowane</span>, system bonusów
+						lub pieniądze za polecanie nowych kierowców.
 					</p>
 				</div>
 			</div>

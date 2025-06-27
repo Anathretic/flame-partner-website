@@ -20,34 +20,36 @@ const Offer: React.FC = () => {
 						<div className={styles['offer__text-content']}>
 							<div className={styles['offer__text-content-box']}>
 								<GiTeacher fontSize={56} color='#24485c' />
-								<h3>Profesjonalne wdrożenie</h3>
+								<h3>Wdrożenie</h3>
 								<p>
-									Nie wiesz jak zacząć? Spokojnie! Jeśli nigdy nie korzystałeś z aplikacji Bolt/Uber/FreeNow
+									Nie wiesz jak zacząć? Spokojnie! Jeśli nigdy nie korzystałeś z aplikacji Bolt, Uber lub FreeNow
 									<span> przeprowadzimy Cię przez cały proces rejestracji</span> i będziesz mógł od razu zacząć jeździć
 									i zarabiać!
 								</p>
 							</div>
 							<div className={styles['offer__text-content-box']}>
 								<HiDocumentCheck fontSize={56} color='#24485c' />
-								<h3>Prostota rozliczeń</h3>
+								<h3>Księgowość</h3>
 								<p>
-									Znajomość prawa, jak i wielu systemów rozliczeniowych pozwala nam prowadzić księgowość w{' '}
-									<span>sposób prosty i efektywny</span>. Niczym się nie martw, mamy w tym doświadczenie.
+									Znajomość prawa, jak i systemów rozliczeniowych pozwala nam prowadzić{' '}
+									<span> księgowość w sposób prosty i efektywny</span>. Niczym się nie martw, mamy w tym doświadczenie.
 								</p>
 							</div>
 							<div className={styles['offer__text-content-box']}>
 								<FaCar fontSize={56} color='#24485c' />
-								<h3>Wynajem samochodów</h3>
+								<h3>Wynajem</h3>
 								<p>
-									Nie posiadasz własnego samochodu? To nie będzie żadną przeszkodą, gdyż{' '}
-									<span>oferujemy wynajem na konkurencyjnych warunkach!</span>
+									Nie posiadasz własnego auta? To nie będzie żadną przeszkodą, gdyż{' '}
+									<span>oferujemy wynajem w warunkach przystępnych dla każdego!</span> Sprawdź sam!
 								</p>
-								<Link
-									to='/wynajem-samochodu'
-									onClick={scrollToTop}
-									aria-label='Przycisk przenoszący na stronę wynajmu samochodów'>
-									Zobacz
-								</Link>
+								<div className={styles['offer__button-box']}>
+									<Link
+										to='/wynajem-samochodu'
+										onClick={scrollToTop}
+										aria-label='Przycisk przenoszący na stronę wynajmu samochodów'>
+										Zobacz
+									</Link>
+								</div>
 							</div>
 						</div>
 						<div className={styles['offer__image-content']}>
