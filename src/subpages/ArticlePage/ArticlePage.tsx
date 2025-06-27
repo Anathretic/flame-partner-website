@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useBlogAndArticleData } from '../../hooks/useBlogAndArticleData';
 import PageNotFound from '../PageNotFound/PageNotFound';
@@ -11,6 +11,15 @@ const ArticlePage: React.FC = () => {
 	const { slides } = useBlogAndArticleData();
 
 	const navigate = useNavigate();
+	const location = useLocation();
+
+	const handleBack = () => {
+		if (location.key !== 'default') {
+			navigate(-1);
+		} else {
+			navigate('/');
+		}
+	};
 
 	const slide = slides.filter(slide => slide.href.split('/')[1] === id);
 
@@ -44,7 +53,7 @@ const ArticlePage: React.FC = () => {
 											type='button'
 											className={styles.article__btn}
 											onClick={() => {
-												navigate(-1);
+												handleBack();
 												scrollToTop();
 											}}>
 											Powrót
