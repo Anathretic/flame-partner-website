@@ -21,27 +21,53 @@ const Offer: React.FC = () => {
 							<div className={styles['offer__text-content-box']}>
 								<GiTeacher fontSize={56} color='#24485c' />
 								<h3>Wdrożenie</h3>
-								<p>
-									Nie wiesz jak zacząć? Spokojnie! Jeśli nigdy nie korzystałeś z aplikacji Bolt, Uber lub FreeNow
-									<span> przeprowadzimy Cię przez cały proces rejestracji</span> i będziesz mógł od razu zacząć jeździć
-									i zarabiać!
-								</p>
+								<ul>
+									<li>
+										<span>Prosta rejestracja</span> w aplikacjach Bolt, Uber i FreeNow
+									</li>
+									<li>
+										Szybkie i przejrzyste formalności, <span>bez kruczków!</span>
+									</li>
+									<li>
+										<span>Instrukcje</span>, jak zacząć zarabiać jako kierowca
+									</li>
+									<li>
+										Elastyczny start, <span> pracuj natychmiast!</span>
+									</li>
+								</ul>
 							</div>
 							<div className={styles['offer__text-content-box']}>
 								<HiDocumentCheck fontSize={56} color='#24485c' />
 								<h3>Księgowość</h3>
-								<p>
-									Znajomość prawa, jak i systemów rozliczeniowych pozwala nam prowadzić{' '}
-									<span> księgowość w sposób prosty i efektywny</span>. Niczym się nie martw, mamy w tym doświadczenie.
-								</p>
+								<ul>
+									<li>
+										<span>Systemy rozliczeniowe</span> dla kierowców Bolt, Uber i FreeNow
+									</li>
+									<li>
+										Prosta i przejrzysta księgowość <span>bez zbędnych formalności</span>
+									</li>
+									<li>
+										<span>Doświadczenie i znajomość prawa</span>, które Cię odciążą
+									</li>
+									<li>
+										<span>Wsparcie na każdym etapie</span> rozliczeń i podatków.
+									</li>
+								</ul>
 							</div>
 							<div className={styles['offer__text-content-box']}>
 								<FaCar fontSize={56} color='#24485c' />
 								<h3>Wynajem</h3>
-								<p>
-									Nie posiadasz własnego auta? To nie będzie żadną przeszkodą, gdyż{' '}
-									<span>oferujemy wynajem w warunkach przystępnych dla każdego!</span> Sprawdź sam!
-								</p>
+								<ul>
+									<li>
+										Oferujemy <span>samochody w przystępnych cenach.</span>
+									</li>
+									<li>
+										<span>Elastyczne warunki</span> dopasowane do Twoich potrzeb
+									</li>
+									<li>
+										<span>Sprawne auta gotowe do pracy</span> w Bolt, Uber i FreeNow
+									</li>
+								</ul>
 								<div className={styles['offer__button-box']}>
 									<Link
 										to='/wynajem-samochodu'

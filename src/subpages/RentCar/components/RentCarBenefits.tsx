@@ -11,21 +11,38 @@ const RentCarBenefits: React.FC = () => {
 				<div className={styles['rent-car__benefits-text-content-box']}>
 					<FaSearchDollar fontSize={56} color='#24485c' />
 					<h3>Konkurencyjne warunki</h3>
-					<p>
-						Szukasz niezawodnego auta w atrakcyjnej cenie? Oferujemy <span>konkurencyjne warunki wynajmu</span> – bez
-						ukrytych opłat, z szerokim wyborem pojazdów. Niezależnie od tego, czy potrzebujesz zgrabnego sedana,
-						pojemnego kombi, czy zwinnego hothatcha – <span>mamy rozwiązanie dopasowane do Twoich potrzeb!</span>
-					</p>
+					<ul>
+						<li>
+							Warunki wynajmu <span>bez ukrytych opłat</span>
+						</li>
+						<li>
+							<span>Szeroki wybór pojazdów</span> dostosowanych do potrzeb
+						</li>
+						<li>
+							Modele od <span>sedana</span> po <span>hothatcha i kombi</span>
+						</li>
+						<li>
+							<span>Oferta dopasowana do każdego kierowcy</span>
+						</li>
+					</ul>
 				</div>
 				<div className={styles['rent-car__benefits-text-content-box']}>
 					<FaCar fontSize={56} color='#24485c' />
 					<h3>Nowe samochody</h3>
-					<p>
-						Podróżuj komfortowo i bezpiecznie dzięki naszej flocie{' '}
-						<span>nowoczesnych, regularnie serwisowanych pojazdów. </span>
-						Stawiamy na jakość i oferujemy wyłącznie <span>nowe lub maksymalnie kilkuletnie auta</span>, wyposażone w
-						najnowsze technologie i udogodnienia, dzięki czemu praca będzie formalnością.
-					</p>
+					<ul>
+						<li>
+							<span>Nowoczesna, serwisowana flota</span>
+						</li>
+						<li>
+							Praca w komfortowych i <span>bezpiecznych warunkach</span>
+						</li>
+						<li>
+							Kilkuletnie auta, <span>w pełni wyposażone</span>
+						</li>
+						<li>
+							<span>Wysoki standard</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div
