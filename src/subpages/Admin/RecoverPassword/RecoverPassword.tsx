@@ -1,10 +1,18 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useCheckSessionStatus } from '../../../hooks/useCheckSessionStatus';
 import { RecoverPasswordForm } from '../../../components/Forms/RecoverPasswordForm';
 
 import styles from './styles/styles.module.scss';
 
 const RecoverPassword: React.FC = () => {
+	const { checkSessionStatus } = useCheckSessionStatus();
+
+	useEffect(() => {
+		checkSessionStatus();
+	}, []);
+
 	return (
 		<>
 			<Helmet htmlAttributes={{ lang: 'pl' }}>

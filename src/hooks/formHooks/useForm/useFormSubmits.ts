@@ -115,7 +115,7 @@ export const useFormSubmits = <T extends FormTypes>({
 			options: { captchaToken: token },
 		});
 
-		handleUserActions<T>({ error, reset, onSuccessActions: [() => navigate('/panel-uzytkownika')] });
+		handleUserActions<T>({ error, reset, onSuccessActions: [() => navigate('/admin')] });
 	};
 
 	const recoverPasswordSubmit: SubmitHandler<RecoverPasswordFormModel> = async ({ email }) => {
@@ -139,7 +139,7 @@ export const useFormSubmits = <T extends FormTypes>({
 					setButtonText('Wysłane!');
 					setTimeout(() => {
 						setButtonText('Wyślij!');
-						navigate('/logowanie');
+						navigate('/admin/logowanie');
 					}, 2500);
 				},
 			],

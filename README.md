@@ -14,6 +14,6 @@ Given my experience so far, there were no problems, while the carousel appearing
 
 **Used:** HTML, CSS, SASS, JavaScript, React (incl. react-hook-form), TypeScript, Supabase, Yup, Vite
 
-**Tools:** [EmailJS](https://www.emailjs.com/), [Google reCaptcha](https://www.google.com/recaptcha/about/)
+**Tools:** [Formcarry](https://formcarry.com/), [hCaptcha](https://www.hcaptcha.com/)
 
 **URL:** [Flame Partner](https://flamepartner.pl/)

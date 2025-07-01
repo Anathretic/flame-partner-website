@@ -1,11 +1,25 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { supabase } from '../../../supabase/supabase';
 import { useCheckSessionStatus } from '../../../hooks/useCheckSessionStatus';
 
 import styles from './styles/styles.module.scss';
 
 const AdminPanel: React.FC = () => {
+	const navigate = useNavigate();
+
 	const { checkUserStatus } = useCheckSessionStatus();
+
+	const logout = async () => {
+		const { error } = await supabase.auth.signOut();
+
+		if (!error) {
+			navigate('/admin/logowanie');
+		} else {
+			console.error('Błąd podczas wylogowywania: ', error.message);
+		}
+	};
 
 	useEffect(() => {
 		checkUserStatus();
@@ -23,7 +37,12 @@ const AdminPanel: React.FC = () => {
 				<meta name='robots' content='noindex, nofollow' />
 			</Helmet>
 			<main className={styles.main}>
-				<div>AdminPanel</div>
+				<div>
+					<h1>AdminPanel</h1>
+					<button type='button' onClick={logout}>
+						Wyloguj
+					</button>
+				</div>
 			</main>
 		</>
 	);

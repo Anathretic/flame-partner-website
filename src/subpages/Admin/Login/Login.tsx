@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useCheckSessionStatus } from '../../../hooks/useCheckSessionStatus';
 import { LoginForm } from '../../../components/Forms/LoginForm';
 
 import styles from './styles/styles.module.scss';
 
 const Login: React.FC = () => {
+	const { checkSessionStatus } = useCheckSessionStatus();
+
+	useEffect(() => {
+		checkSessionStatus();
+	}, []);
+
 	return (
 		<>
 			<Helmet htmlAttributes={{ lang: 'pl' }}>
