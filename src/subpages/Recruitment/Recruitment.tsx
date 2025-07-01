@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useMediaQuery } from 'react-responsive';
 import { useNavbarItemsContext } from '../../hooks/contextHooks/useNavbarItemsContext';
 import { useFooterLinksContext } from '../../hooks/contextHooks/useFooterLinksContext';
 import { useCarSelectContext } from '../../hooks/contextHooks/useCarSelectContext';
@@ -10,9 +11,17 @@ import { SubpageWithNavbarModel } from '../../models/subpage.model';
 import styles from './styles/styles.module.scss';
 
 const Recruitment: React.FC<SubpageWithNavbarModel> = ({ setSubpageIsLoading, subpageIsLoading }) => {
+	const [desktopBtnValue, setDesktopBtnValue] = useState('Zadzwoń');
+
 	const { setNavbarItems } = useNavbarItemsContext();
 	const { setShowSpecialLinks } = useFooterLinksContext();
 	const { setSelectedCar } = useCarSelectContext();
+
+	const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+
+	const handleDesktopBtn = () => {
+		setDesktopBtnValue('+48 730 940 691');
+	};
 
 	useEffect(() => {
 		setSubpageIsLoading(false);
@@ -49,6 +58,20 @@ const Recruitment: React.FC<SubpageWithNavbarModel> = ({ setSubpageIsLoading, su
 					<div className={styles.recruitment__wrapper}>
 						<div className={styles['recruitment__hero-image']}>
 							<h1 className={styles['recruitment__hero-image-title']}>Rekrutacja kierowców</h1>
+							{!isDesktop ? (
+								<a href='tel:+48730940691' className={styles['recruitment__hero-image-btn']}>
+									Zadzwoń
+								</a>
+							) : (
+								<button
+									type='button'
+									className={`${styles['recruitment__hero-image-btn']} ${
+										desktopBtnValue !== 'Zadzwoń' && styles['recruitment__hero-image-btn--after-click']
+									}`}
+									onClick={handleDesktopBtn}>
+									{desktopBtnValue}
+								</button>
+							)}
 						</div>
 						<RecruitmentBenefits />
 						<RecruitmentBanner />

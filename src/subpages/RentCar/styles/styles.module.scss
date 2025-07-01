@@ -49,11 +49,32 @@
 	}
 
 	&__hero-image-title {
-		padding: 0 0.5em;
+		padding: 1em 0.5em 1em;
 		color: var(--white-color);
 		font-size: 3rem;
 		font-weight: 300;
 		text-align: center;
+	}
+
+	&__hero-image-btn {
+		display: block;
+		padding: 0.85em 3.5em;
+		max-width: 195px;
+		background-color: var(--sky-blue-color);
+		color: var(--white-color);
+		border-radius: 2em;
+		border: none;
+		font-family: var(--main-font);
+		font-size: 1em;
+		text-align: center;
+		text-decoration: none;
+		transition: background-color 0.3s;
+		cursor: pointer;
+
+		&--after-click {
+			background-color: var(--dark-blue-color);
+			cursor: default;
+		}
 	}
 
 	&__title {
@@ -242,6 +263,14 @@
 	}
 }
 
+@media screen and (max-height: 350px) {
+	.rent-car {
+		&__hero-image-title {
+			padding: 0.75em 0.5em 0.35em;
+		}
+	}
+}
+
 @media screen and (max-width: 350px) {
 	.rent-car {
 		&__form-title-info-box li {
@@ -329,6 +358,13 @@
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
 	.rent-car {
+		&__hero-image-btn {
+			padding: 0.95em 0;
+			max-width: 250px;
+			width: 250px;
+			text-align: center;
+		}
+
 		&__list {
 			padding-bottom: 4em;
 		}
@@ -343,6 +379,10 @@
 
 		&__hero-image-title {
 			font-size: 4.5rem;
+		}
+
+		&__hero-image-btn:hover {
+			background-color: var(--dark-blue-color);
 		}
 
 		&__content-wrapper {
@@ -456,6 +496,14 @@
 			&--right {
 				display: none;
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.rent-car {
+		&__hero-image-btn {
+			font-size: 1.1em;
 		}
 	}
 }
