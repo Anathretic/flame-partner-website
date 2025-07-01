@@ -1,6 +1,6 @@
-import ReCAPTCHA from 'react-google-recaptcha';
 import { FieldErrors, FieldValues, UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
 import { InputAndTextareaConfigModel, SelectConfigModel } from './inputConfig.model';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 type City = 'Zamość' | 'Lublin' | 'Chełm' | 'Biłgoraj' | 'Radom' | 'Kielce' | '';
 export type Car = 'Toyota Prius II' | 'Honda Civic' | 'Skoda Fabia III' | 'Skoda Fabia II' | '';
@@ -26,7 +26,7 @@ export interface GenericFormProps<T extends FieldValues> {
 	buttonText: string;
 	isLoading: boolean;
 	errors: FieldErrors<T>;
-	refCaptcha: React.RefObject<ReCAPTCHA>;
+	refCaptcha: React.RefObject<HCaptcha>;
 	errorValue: string;
 	includeTextarea: boolean;
 	selects?: SelectConfigModel<T>[];

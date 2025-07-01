@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { workFormInputs, workFormSelects } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
@@ -33,7 +33,7 @@ export const WorkForm: React.FC = () => {
 		resolver: yupResolver(workSchema),
 	});
 
-	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const refCaptcha = useRef<HCaptcha>(null);
 
 	const { workSubmit } = useFormSubmits<WorkFormModel>({
 		reset,

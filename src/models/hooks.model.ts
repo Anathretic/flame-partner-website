@@ -1,5 +1,5 @@
 import { UseFormReset } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { AuthError } from '@supabase/supabase-js';
 import { CarFormModel, ContactFormModel, LoginFormModel, RecoverPasswordFormModel, WorkFormModel } from './forms.model';
 import { BlogAndArticleDataModel, RentCarDataModel } from './data.model';
@@ -11,7 +11,7 @@ export interface UseFormSubmitsModel<T extends FormTypes> {
 	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 	setErrorValue: React.Dispatch<React.SetStateAction<string>>;
 	setButtonText: React.Dispatch<React.SetStateAction<string>>;
-	refCaptcha?: React.RefObject<ReCAPTCHA>;
+	refCaptcha?: React.RefObject<HCaptcha>;
 }
 
 export type UseFormHandlersModel = {
@@ -19,11 +19,10 @@ export type UseFormHandlersModel = {
 	setErrorValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export interface HandleEmailJsModel<TFormData extends object> {
-	templateID: string;
-	params: Record<string, unknown>;
+export interface HandleFormcarryModel<TFormData extends object> {
+	formData: TFormData;
+	reset: () => void;
 	setButtonText: React.Dispatch<React.SetStateAction<string>>;
-	reset: UseFormReset<TFormData>;
 }
 
 export interface HandleUserActionsModel<TFormData extends object> {

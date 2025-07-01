@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormInputs } from './config/formConfig';
 import { GenericForm } from './GenericForm/GenericForm';
@@ -26,7 +26,7 @@ export const ContactForm: React.FC = () => {
 		resolver: yupResolver(contactSchema),
 	});
 
-	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const refCaptcha = useRef<HCaptcha>(null);
 
 	const { contactSubmit } = useFormSubmits<ContactFormModel>({
 		reset,

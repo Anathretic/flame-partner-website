@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import {
 	InputAndTextareaModel,
-	ReCaptchaV2Model,
+	CaptchaModel,
 	ReturnButtonModel,
 	SelectModel,
 	SubmitButtonModel,
@@ -100,12 +100,12 @@ export const ReturnButton: React.FC<ReturnButtonModel> = ({ isLoading }) => {
 	);
 };
 
-export const ReCaptchaV2Component: React.FC<ReCaptchaV2Model> = ({ refCaptcha, errorValue }) => {
+export const CaptchaComponent: React.FC<CaptchaModel> = ({ refCaptcha, errorValue }) => {
 	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
 
 	return (
 		<div className={`${styles['form__recaptcha-box']} ${errorValue && styles['form__recaptcha-error']}`}>
-			<ReCAPTCHA
+			<HCaptcha
 				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 				size={isMobile ? 'compact' : 'normal'}
 				sitekey={import.meta.env.VITE_SITE_KEY}

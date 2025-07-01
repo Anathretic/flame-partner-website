@@ -20,67 +20,70 @@ export const useFormSubmits = <T extends FormTypes>({
 }: UseFormSubmitsModel<T>) => {
 	const navigate = useNavigate();
 
-	const { handleUserActions, handleReCaptcha, handleEmailJs, handleErrors } = useFormHandlers({
+	const { handleUserActions, handleHCaptcha, handleFormcarry, handleErrors } = useFormHandlers({
 		setIsLoading,
 		setErrorValue,
 	});
 
 	const contactSubmit: SubmitHandler<ContactFormModel> = async ({ firstname, email, subject, message }) => {
-		const token = handleReCaptcha(refCaptcha);
+		const token = handleHCaptcha(refCaptcha);
 
 		if (!token) {
 			handleErrors();
 			return;
 		}
 
-		const params = {
+		const formData = {
 			firstname,
 			email,
 			subject,
 			message,
-			'g-recaptcha-response': token,
+			'h-captcha-response': token,
 		};
 
-		await handleEmailJs<T>({
-			templateID: `${import.meta.env.VITE_CONTACT_TEMPLATE_ID}`,
-			params,
-			setButtonText,
+		await handleFormcarry<ContactFormModel>({
+			formData,
 			reset,
+			setButtonText,
 		});
 	};
 
 	const workSubmit: SubmitHandler<WorkFormModel> = async ({ firstname, lastname, email, phone, city, message }) => {
-		const token = handleReCaptcha(refCaptcha);
+		const token = handleHCaptcha(refCaptcha);
 
 		if (!token) {
 			handleErrors();
 			return;
 		}
 
-		const params = {
-			subject: 'rekrutacji',
+		const formData = {
+			subject: 'Rekrutacja',
 			firstname,
 			lastname,
 			email,
 			phone,
 			city,
 			message,
-			'g-recaptcha-response': token,
+			'h-captcha-response': token,
 		};
 
-		await handleEmailJs<T>({ templateID: `${import.meta.env.VITE_SPECIAL_TEMPLATE_ID}`, params, setButtonText, reset });
+		await handleFormcarry<WorkFormModel>({
+			formData,
+			reset,
+			setButtonText,
+		});
 	};
 
 	const carSubmit: SubmitHandler<CarFormModel> = async ({ firstname, lastname, email, phone, city, car, message }) => {
-		const token = handleReCaptcha(refCaptcha);
+		const token = handleHCaptcha(refCaptcha);
 
 		if (!token) {
 			handleErrors();
 			return;
 		}
 
-		const params = {
-			subject: 'wynajmu samochodu',
+		const formData = {
+			subject: 'Wynajem samochodu',
 			firstname,
 			lastname,
 			email,
@@ -88,40 +91,44 @@ export const useFormSubmits = <T extends FormTypes>({
 			city,
 			car,
 			message,
-			'g-recaptcha-response': token,
+			'h-captcha-response': token,
 		};
 
-		await handleEmailJs<T>({ templateID: `${import.meta.env.VITE_SPECIAL_TEMPLATE_ID}`, params, setButtonText, reset });
+		await handleFormcarry<ContactFormModel>({
+			formData,
+			reset,
+			setButtonText,
+		});
 	};
 
 	const loginSubmit: SubmitHandler<LoginFormModel> = async ({ email, password }) => {
-		// const token = handleHCaptcha(refCaptcha);
+		const token = handleHCaptcha(refCaptcha);
 
-		// if (!token) {
-		// 	handleErrors();
-		// 	return;
-		// }
+		if (!token) {
+			handleErrors();
+			return;
+		}
 
 		const { error } = await supabase.auth.signInWithPassword({
 			email,
 			password,
-			// options: { captchaToken: token },
+			options: { captchaToken: token },
 		});
 
 		handleUserActions<T>({ error, reset, onSuccessActions: [() => navigate('/panel-uzytkownika')] });
 	};
 
 	const recoverPasswordSubmit: SubmitHandler<RecoverPasswordFormModel> = async ({ email }) => {
-		// const token = handleHCaptcha(refCaptcha);
+		const token = handleHCaptcha(refCaptcha);
 
-		// if (!token) {
-		// 	handleErrors();
-		// 	return;
-		// }
+		if (!token) {
+			handleErrors();
+			return;
+		}
 
 		const { error } = await supabase.auth.resetPasswordForEmail(email, {
 			redirectTo: `${import.meta.env.VITE_RESET_PASSWORD_URL}`,
-			// captchaToken: token,
+			captchaToken: token,
 		});
 
 		handleUserActions<T>({

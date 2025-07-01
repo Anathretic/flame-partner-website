@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useSubmitFormButton } from '../../hooks/formHooks/useSubmitFormButton';
 import { useFormSubmits } from '../../hooks/formHooks/useForm/useFormSubmits';
@@ -29,7 +29,7 @@ export const LoginForm: React.FC = () => {
 		resolver: yupResolver(loginSchema),
 	});
 
-	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const refCaptcha = useRef<HCaptcha>(null);
 
 	const { loginSubmit } = useFormSubmits<LoginFormModel>({
 		reset,

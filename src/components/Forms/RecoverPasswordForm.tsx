@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
-import { useSubmitFormButton } from '../../hooks/formHooks/useSubmitFormButton';
-import { RecoverPasswordFormModel } from '../../models/forms.model';
 import { useForm } from 'react-hook-form';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { recoverPasswordSchema } from '../../schemas/schemas';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useSubmitFormButton } from '../../hooks/formHooks/useSubmitFormButton';
 import { useFormSubmits } from '../../hooks/formHooks/useForm/useFormSubmits';
-import { GenericForm } from './GenericForm/GenericForm';
 import { recoverPasswordFormInputs } from './config/formConfig';
+import { GenericForm } from './GenericForm/GenericForm';
+import { recoverPasswordSchema } from '../../schemas/schemas';
+import { RecoverPasswordFormModel } from '../../models/forms.model';
 
 import styles from '../../subpages/Admin/RecoverPassword/styles/styles.module.scss';
 
@@ -27,7 +27,7 @@ export const RecoverPasswordForm: React.FC = () => {
 		resolver: yupResolver(recoverPasswordSchema),
 	});
 
-	const refCaptcha = useRef<ReCAPTCHA>(null);
+	const refCaptcha = useRef<HCaptcha>(null);
 
 	const { recoverPasswordSubmit } = useFormSubmits<RecoverPasswordFormModel>({
 		reset,
