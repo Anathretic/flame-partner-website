@@ -1,8 +1,23 @@
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { HandleEmailJsModel, UseFormHandlersModel } from '../../../models/forms.model';
+import { HandleEmailJsModel, HandleUserActionsModel, UseFormHandlersModel } from '../../../models/hooks.model';
 
 export const useFormHandlers = ({ setIsLoading, setErrorValue }: UseFormHandlersModel) => {
+	const handleUserActions = <TFormData extends object>({
+		error,
+		reset,
+		onSuccessActions,
+	}: HandleUserActionsModel<TFormData>) => {
+		if (!error) {
+			reset();
+			setIsLoading(false);
+			onSuccessActions.forEach(fn => fn());
+		} else {
+			setIsLoading(false);
+			setErrorValue('Coś poszło nie tak.. Spróbuj ponownie!');
+		}
+	};
+
 	const handleReCaptcha = (refCaptcha: React.RefObject<ReCAPTCHA> | undefined) => {
 		setIsLoading(true);
 		setErrorValue('');
@@ -47,5 +62,5 @@ export const useFormHandlers = ({ setIsLoading, setErrorValue }: UseFormHandlers
 		setErrorValue('Nie bądź 🤖!');
 	};
 
-	return { handleReCaptcha, handleEmailJs, handleErrors };
+	return { handleUserActions, handleReCaptcha, handleEmailJs, handleErrors };
 };

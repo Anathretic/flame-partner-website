@@ -66,6 +66,7 @@ export const CarForm: React.FC<RentCarFormRefModel> = ({ formRef }) => {
 			errors={errors}
 			refCaptcha={refCaptcha}
 			errorValue={errorValue}
+			includeTextarea={true}
 			includeReturnButton={true}
 			formRef={formRef}
 		/>

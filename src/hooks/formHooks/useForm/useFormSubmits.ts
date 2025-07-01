@@ -1,12 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
+import { supabase } from '../../../supabase/supabase';
+import { useFormHandlers } from './useFormHandlers';
 import {
 	CarFormModel,
 	ContactFormModel,
-	FormTypes,
-	UseFormSubmitsModel,
+	LoginFormModel,
+	RecoverPasswordFormModel,
 	WorkFormModel,
 } from '../../../models/forms.model';
-import { useFormHandlers } from './useFormHandlers';
+import { FormTypes, UseFormSubmitsModel } from '../../../models/hooks.model';
 
 export const useFormSubmits = <T extends FormTypes>({
 	reset,
@@ -15,7 +18,12 @@ export const useFormSubmits = <T extends FormTypes>({
 	setErrorValue,
 	setButtonText,
 }: UseFormSubmitsModel<T>) => {
-	const { handleReCaptcha, handleEmailJs, handleErrors } = useFormHandlers({ setIsLoading, setErrorValue });
+	const navigate = useNavigate();
+
+	const { handleUserActions, handleReCaptcha, handleEmailJs, handleErrors } = useFormHandlers({
+		setIsLoading,
+		setErrorValue,
+	});
 
 	const contactSubmit: SubmitHandler<ContactFormModel> = async ({ firstname, email, subject, message }) => {
 		const token = handleReCaptcha(refCaptcha);
@@ -86,5 +94,50 @@ export const useFormSubmits = <T extends FormTypes>({
 		await handleEmailJs<T>({ templateID: `${import.meta.env.VITE_SPECIAL_TEMPLATE_ID}`, params, setButtonText, reset });
 	};
 
-	return { contactSubmit, workSubmit, carSubmit };
+	const loginSubmit: SubmitHandler<LoginFormModel> = async ({ email, password }) => {
+		// const token = handleHCaptcha(refCaptcha);
+
+		// if (!token) {
+		// 	handleErrors();
+		// 	return;
+		// }
+
+		const { error } = await supabase.auth.signInWithPassword({
+			email,
+			password,
+			// options: { captchaToken: token },
+		});
+
+		handleUserActions<T>({ error, reset, onSuccessActions: [() => navigate('/panel-uzytkownika')] });
+	};
+
+	const recoverPasswordSubmit: SubmitHandler<RecoverPasswordFormModel> = async ({ email }) => {
+		// const token = handleHCaptcha(refCaptcha);
+
+		// if (!token) {
+		// 	handleErrors();
+		// 	return;
+		// }
+
+		const { error } = await supabase.auth.resetPasswordForEmail(email, {
+			redirectTo: `${import.meta.env.VITE_RESET_PASSWORD_URL}`,
+			// captchaToken: token,
+		});
+
+		handleUserActions<T>({
+			error,
+			reset,
+			onSuccessActions: [
+				() => {
+					setButtonText('Wysłane!');
+					setTimeout(() => {
+						setButtonText('Wyślij!');
+						navigate('/logowanie');
+					}, 2500);
+				},
+			],
+		});
+	};
+
+	return { contactSubmit, workSubmit, carSubmit, loginSubmit, recoverPasswordSubmit };
 };

@@ -1,4 +1,10 @@
-import { CarFormModel, ContactFormModel, WorkFormModel } from '../../../models/forms.model';
+import {
+	CarFormModel,
+	ContactFormModel,
+	LoginFormModel,
+	RecoverPasswordFormModel,
+	WorkFormModel,
+} from '../../../models/forms.model';
 import { InputAndTextareaConfigModel, SelectConfigModel } from '../../../models/inputConfig.model';
 import {
 	carSelect,
@@ -6,6 +12,7 @@ import {
 	emailField,
 	firstnameField,
 	lastnameField,
+	passwordField,
 	phoneField,
 	subjectField,
 } from './inputsConfig';
@@ -33,3 +40,10 @@ export const carFormInputs: InputAndTextareaConfigModel<CarFormModel>[] = [
 ];
 
 export const carFormSelects: SelectConfigModel<CarFormModel>[] = [citySelect('city'), carSelect('car')];
+
+export const loginFormInputs: InputAndTextareaConfigModel<LoginFormModel>[] = [
+	emailField('email'),
+	passwordField('password'),
+];
+
+export const recoverPasswordFormInputs: InputAndTextareaConfigModel<RecoverPasswordFormModel>[] = [emailField('email')];

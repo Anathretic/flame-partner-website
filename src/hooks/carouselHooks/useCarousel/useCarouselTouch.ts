@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
-import { CarouselTouchModel } from '../../../models/carousel.model';
+import { UseCarouselTouchModel } from '../../../models/hooks.model';
 
-export const useCarouselTouch = ({ onSwipeLeft, onSwipeRight }: CarouselTouchModel) => {
+export const useCarouselTouch = ({ onSwipeLeft, onSwipeRight }: UseCarouselTouchModel) => {
 	const ref = useRef<HTMLDivElement | null>(null);
 	const touchStartX = useRef(0);
 	const touchStartY = useRef(0);

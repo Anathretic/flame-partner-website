@@ -56,6 +56,7 @@ export const WorkForm: React.FC = () => {
 			errors={errors}
 			refCaptcha={refCaptcha}
 			errorValue={errorValue}
+			includeTextarea={true}
 			includeReturnButton={true}
 		/>
 	);

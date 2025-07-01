@@ -1,0 +1,132 @@
+.main {
+	background-image: url('../../../../images/admin/hero-bg.jpg');
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.recover-password {
+	padding: 3em 1em;
+	margin: auto;
+	width: 100%;
+
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: 1em;
+		background-color: var(--white-color);
+		border-radius: 0.25em;
+		box-shadow: 0 0 0.25em var(--gray-color);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+	}
+
+	&__title {
+		padding: 1.5em;
+		font-size: 1.5em;
+		font-weight: 400;
+	}
+
+	&__form {
+		width: 100%;
+	}
+
+	&__strap {
+		margin-bottom: 1em;
+		height: 1px;
+		width: 90%;
+	}
+
+	&__form-toggle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 1em 0 0.5em;
+
+		a {
+			display: block;
+			padding: 0.75em 1em;
+			margin: 1em 1em 1.25em;
+			width: 190px;
+			max-width: 190px;
+			background-color: transparent;
+			color: var(--dark-blue-color);
+			border-radius: 2em;
+			border: 2px solid var(--dark-blue-color);
+			font-family: var(--main-font);
+			font-size: 1em;
+			text-align: center;
+			text-decoration: none;
+			transition: background-color 0.3s, color 0.3s, border 0.3s;
+			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.recover-password {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.recover-password {
+		width: 70%;
+
+		&__title {
+			font-size: 1.7em;
+		}
+
+		&__form-toggle a {
+			padding: 0.8em 0;
+			margin-top: 1em;
+			max-width: 250px;
+			width: 250px;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.recover-password {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100vh;
+
+		&__container {
+			width: 100%;
+			max-width: 490px;
+		}
+
+		&__title {
+			font-size: 1.8em;
+		}
+
+		&__form-toggle a {
+			font-size: 1.1em;
+
+			&:hover {
+				color: var(--white-color);
+				background-color: var(--sky-blue-color);
+				border-color: var(--sky-blue-color);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1358px) {
+	.recover-password {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.recover-password {
+		width: 35%;
+	}
+}

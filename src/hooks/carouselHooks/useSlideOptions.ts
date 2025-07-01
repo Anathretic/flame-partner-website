@@ -1,6 +1,6 @@
-import { SlideOptionsModel } from '../../models/carousel.model';
+import { UseSlideOptionsModel } from '../../models/hooks.model';
 
-export const useSlideOptions = ({ slideRef }: SlideOptionsModel) => {
+export const useSlideOptions = ({ slideRef }: UseSlideOptionsModel) => {
 	const handleMouseMove = (e: React.MouseEvent) => {
 		const el = slideRef.current;
 		const r = el?.getBoundingClientRect();

@@ -29,6 +29,13 @@ export const phoneField = <T>(inputName: Path<T>): InputAndTextareaConfigModel<T
 	placeholder: 'Wprowadź numer telefonu',
 });
 
+export const passwordField = <T>(inputName: Path<T>): InputAndTextareaConfigModel<T> => ({
+	label: 'Hasło:',
+	inputName,
+	type: 'password',
+	placeholder: 'Wprowadź hasło..',
+});
+
 export const subjectField = <T>(inputName: Path<T>): InputAndTextareaConfigModel<T> => ({
 	label: 'Temat:',
 	inputName,

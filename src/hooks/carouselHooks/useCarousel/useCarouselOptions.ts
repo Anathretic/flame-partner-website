@@ -1,6 +1,6 @@
-import { CarouselOptionsModel } from '../../../models/carousel.model';
+import { UseCarouselOptionsModel } from '../../../models/hooks.model';
 
-export const useCarouselOptions = ({ setCurrent, current, slides }: CarouselOptionsModel) => {
+export const useCarouselOptions = ({ setCurrent, current, slides }: UseCarouselOptionsModel) => {
 	const handlePreviousClick = () => {
 		const previous = current - 1;
 		setCurrent(previous < 0 ? slides.length - 1 : previous);

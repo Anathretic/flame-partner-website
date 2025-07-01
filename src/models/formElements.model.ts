@@ -28,10 +28,6 @@ export interface SelectModel extends DefaultModel {
 	labelValueArr: LabelValueItem[];
 }
 
-export interface SubmitButtonHookModel {
-	initialSubmitButtonState: string;
-}
-
 export interface ReturnButtonModel {
 	isLoading: boolean;
 }

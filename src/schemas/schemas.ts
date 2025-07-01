@@ -57,3 +57,18 @@ export const carSchema = yup
 	})
 	.concat(contactSchema.omit(['subject']))
 	.concat(workAndCarSchema);
+
+export const loginSchema = yup
+	.object({
+		password: yup
+			.string()
+			.min(10, 'Minimum 10 znaków!')
+			.minLowercase(1, 'Powinna być 1 mała litera!')
+			.minUppercase(1, 'Powinna być 1 duża litera!')
+			.minNumbers(1, 'Powinien być 1 symbol!')
+			.minSymbols(1, 'Powinien być 1 znak specjalny!')
+			.required(errorMessage.requiredField),
+	})
+	.concat(contactSchema.pick(['email']));
+
+export const recoverPasswordSchema = contactSchema.pick(['email']);

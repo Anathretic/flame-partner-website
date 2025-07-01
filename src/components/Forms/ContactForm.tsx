@@ -46,8 +46,9 @@ export const ContactForm: React.FC = () => {
 			buttonText={buttonText}
 			isLoading={isLoading}
 			errors={errors}
-			refCaptcha={refCaptcha}
 			errorValue={errorValue}
+			refCaptcha={refCaptcha}
+			includeTextarea={true}
 			includeReturnButton={false}
 		/>
 	);
