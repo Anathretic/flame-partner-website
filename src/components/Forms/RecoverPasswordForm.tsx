@@ -2,62 +2,55 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { workFormInputs, workFormSelects } from './config/formConfig';
-import { GenericForm } from './GenericForm/GenericForm';
-import { useFormSubmits } from '../../hooks/formHooks/useForm/useFormSubmits';
 import { useSubmitFormButton } from '../../hooks/formHooks/useSubmitFormButton';
-import { workSchema } from '../../schemas/schemas';
-import { WorkFormModel } from '../../models/forms.model';
+import { useFormSubmits } from '../../hooks/formHooks/useForm/useFormSubmits';
+import { recoverPasswordFormInputs } from './config/formConfig';
+import { GenericForm } from './GenericForm/GenericForm';
+import { recoverPasswordSchema } from '../../schemas/schemas';
+import { RecoverPasswordFormModel } from '../../models/forms.model';
 
-import styles from '../../subpages/Recruitment/styles/styles.module.scss';
+import styles from '../../subpages/Admin/RecoverPassword/styles/styles.module.scss';
 
-export const WorkForm: React.FC = () => {
+export const RecoverPasswordForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorValue, setErrorValue] = useState('');
 	const [buttonText, setButtonText] = useSubmitFormButton({ initialSubmitButtonState: 'Wyślij' });
-
 	const {
 		register,
 		handleSubmit,
 		reset,
 		formState: { errors },
-	} = useForm<WorkFormModel>({
+	} = useForm<RecoverPasswordFormModel>({
 		defaultValues: {
-			firstname: '',
-			lastname: '',
 			email: '',
-			phone: '',
-			city: '',
-			message: '',
 		},
-		resolver: yupResolver(workSchema),
+		resolver: yupResolver(recoverPasswordSchema),
 	});
 
 	const refCaptcha = useRef<HCaptcha>(null);
 
-	const { workSubmit } = useFormSubmits<WorkFormModel>({
+	const { recoverPasswordSubmit } = useFormSubmits<RecoverPasswordFormModel>({
 		reset,
-		refCaptcha,
 		setIsLoading,
 		setErrorValue,
 		setButtonText,
+		refCaptcha,
 	});
 
 	return (
-		<GenericForm<WorkFormModel>
+		<GenericForm<RecoverPasswordFormModel>
 			register={register}
 			handleSubmit={handleSubmit}
-			onSubmit={workSubmit}
-			inputs={workFormInputs}
-			selects={workFormSelects}
-			cssClass={styles['recruitment__work-form']}
+			onSubmit={recoverPasswordSubmit}
+			inputs={recoverPasswordFormInputs}
+			cssClass={styles['recover-password__form']}
 			buttonText={buttonText}
 			isLoading={isLoading}
 			errors={errors}
 			refCaptcha={refCaptcha}
 			errorValue={errorValue}
-			includeTextarea={true}
-			includeReturnButton={true}
+			includeTextarea={false}
+			includeReturnButton={false}
 		/>
 	);
 };

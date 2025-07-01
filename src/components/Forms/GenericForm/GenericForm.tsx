@@ -2,7 +2,7 @@ import { FieldValues, Path } from 'react-hook-form';
 import {
 	FormSubmit,
 	InputElement,
-	ReCaptchaV2Component,
+	CaptchaComponent,
 	ReturnButton,
 	SelectElement,
 	TextareaElement,
@@ -14,14 +14,15 @@ export const GenericForm = <T extends FieldValues>({
 	handleSubmit,
 	onSubmit,
 	inputs,
-	selects = [],
 	cssClass,
 	buttonText,
 	isLoading,
 	errors,
 	refCaptcha,
 	errorValue,
-	includeReturnButton = false,
+	includeTextarea,
+	selects = [],
+	includeReturnButton,
 	formRef,
 }: GenericFormProps<T>) => {
 	return (
@@ -55,15 +56,17 @@ export const GenericForm = <T extends FieldValues>({
 					/>
 				);
 			})}
-			<TextareaElement
-				label='Wiadomość:'
-				inputName='message'
-				placeholder='Wprowadź wiadomość'
-				errorMessage={errors.message?.message}
-				aria-invalid={errors.message ? true : false}
-				{...register('message' as Path<T>)}
-			/>
-			<ReCaptchaV2Component refCaptcha={refCaptcha} errorValue={errorValue} />
+			{includeTextarea && (
+				<TextareaElement
+					label='Wiadomość:'
+					inputName='message'
+					placeholder='Wprowadź wiadomość'
+					errorMessage={errors.message?.message}
+					aria-invalid={errors.message ? true : false}
+					{...register('message' as Path<T>)}
+				/>
+			)}
+			<CaptchaComponent refCaptcha={refCaptcha} errorValue={errorValue} />
 			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
 			{includeReturnButton && <ReturnButton isLoading={isLoading} />}
 		</form>

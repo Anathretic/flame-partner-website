@@ -1,39 +1,62 @@
-import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { HandleEmailJsModel, UseFormHandlersModel } from '../../../models/forms.model';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { HandleFormcarryModel, HandleUserActionsModel, UseFormHandlersModel } from '../../../models/hooks.model';
 
 export const useFormHandlers = ({ setIsLoading, setErrorValue }: UseFormHandlersModel) => {
-	const handleReCaptcha = (refCaptcha: React.RefObject<ReCAPTCHA> | undefined) => {
+	const handleUserActions = <TFormData extends object>({
+		error,
+		reset,
+		onSuccessActions,
+	}: HandleUserActionsModel<TFormData>) => {
+		if (!error) {
+			reset();
+			setIsLoading(false);
+			onSuccessActions.forEach(fn => fn());
+		} else {
+			setIsLoading(false);
+			setErrorValue('Coś poszło nie tak.. Spróbuj ponownie!');
+		}
+	};
+
+	const handleHCaptcha = (refCaptcha: React.RefObject<HCaptcha> | undefined) => {
 		setIsLoading(true);
 		setErrorValue('');
 
-		if (!refCaptcha?.current) {
-			return null;
-		}
+		if (!refCaptcha?.current) return undefined;
 
-		const token = refCaptcha.current.getValue();
-		refCaptcha.current.reset();
+		const token = refCaptcha.current.getResponse();
+		refCaptcha.current.resetCaptcha();
 
-		return token || null;
+		return token || undefined;
 	};
 
-	const handleEmailJs = async <TFormData extends object>({
-		templateID,
-		params,
-		setButtonText,
+	const handleFormcarry = async <TFormData extends object>({
+		formData,
 		reset,
-	}: HandleEmailJsModel<TFormData>) => {
+		setButtonText,
+	}: HandleFormcarryModel<TFormData>) => {
 		try {
-			await emailjs.send(
-				`${import.meta.env.VITE_SERVICE_ID}`,
-				`${templateID}`,
-				params,
-				`${import.meta.env.VITE_PUBLIC_KEY}`
-			);
-			reset();
-			setButtonText('Wysłane!');
+			setIsLoading(true);
+
+			const response = await fetch(`${import.meta.env.VITE_FORMCARRY_ENDPOINT}`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			const result = await response.json();
+
+			if (result.code === 200) {
+				reset();
+				setButtonText('Wysłane!');
+			} else {
+				setErrorValue('Coś poszło nie tak...');
+			}
 		} catch (err) {
-			setErrorValue('Coś poszło nie tak..');
+			setErrorValue('Coś poszło nie tak...');
+
 			if (err instanceof Error) {
 				console.log(`Twój błąd: ${err.message}`);
 			}
@@ -47,5 +70,5 @@ export const useFormHandlers = ({ setIsLoading, setErrorValue }: UseFormHandlers
 		setErrorValue('Nie bądź 🤖!');
 	};
 
-	return { handleReCaptcha, handleEmailJs, handleErrors };
+	return { handleUserActions, handleHCaptcha, handleFormcarry, handleErrors };
 };

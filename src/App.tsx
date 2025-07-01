@@ -2,6 +2,7 @@ import { lazy, useState } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
 import { Navbar, Footer, CookieBanner, HomeWrapper, SuspenseWithFooter, RecruitmentSpecialBtn } from './components';
 import { Welcome, Offer, ChooseUs, Blog, Contact } from './sections';
+import { AdminPanel, RecoverPassword, Login } from './subpages/Admin';
 import { delaySubpageImport } from './helpers/delaySubpageImport';
 
 const Recruitment = lazy(() => delaySubpageImport(() => import('./subpages/Recruitment/Recruitment'), 1000));
@@ -75,6 +76,9 @@ export const App: React.FC = () => {
 					<Route path='/artykuly-i-porady' element={<SuspenseWithFooter children={<ArticlesAndAdvices />} />} />
 					<Route path='/artykuly-i-porady/:id' element={<SuspenseWithFooter children={<ArticlePage />} />} />
 					<Route path='/polityka-prywatnosci' element={<SuspenseWithFooter children={<PrivacyPolicy />} />} />
+					<Route path='/admin' element={<AdminPanel />} />
+					<Route path='/admin/logowanie' element={<Login />} />
+					<Route path='/admin/odzyskiwanie-hasla' element={<RecoverPassword />} />
 					<Route path='*' element={<SuspenseWithFooter children={<PageNotFound />} />} />
 				</Route>
 			</Routes>

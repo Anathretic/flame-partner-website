@@ -1,5 +1,5 @@
 import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { ContactFormModel } from './forms.model';
 
 type Form = ContactFormModel;
@@ -28,10 +28,6 @@ export interface SelectModel extends DefaultModel {
 	labelValueArr: LabelValueItem[];
 }
 
-export interface SubmitButtonHookModel {
-	initialSubmitButtonState: string;
-}
-
 export interface ReturnButtonModel {
 	isLoading: boolean;
 }
@@ -40,7 +36,7 @@ export interface SubmitButtonModel extends ReturnButtonModel {
 	buttonText: string;
 }
 
-export interface ReCaptchaV2Model {
-	refCaptcha: React.RefObject<ReCAPTCHA>;
+export interface CaptchaModel {
+	refCaptcha: React.RefObject<HCaptcha>;
 	errorValue: string;
 }
